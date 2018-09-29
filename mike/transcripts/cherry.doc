@@ -1,0 +1,464 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f6\fmodern\fcharset0\fprq1{\*\panose 00000000000000000000}Courier;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\nowidctlpar\widctlpar\adjustright \fs20 \snext0 Normal;}{\s1\keepn\nowidctlpar\widctlpar\adjustright \sbasedon0 \snext0 heading 1;}{\*\cs10 
+\additive Default Paragraph Font;}{\s15\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20 \sbasedon0 \snext15 footer;}{\*\cs16 \additive \sbasedon10 page number;}{\s17\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20 
+\sbasedon0 \snext17 header;}}{\info{\title Interview with Lorinda Cherry}{\author Rohatgi}{\operator Michael S. Mahoney}{\creatim\yr1998\mo4\dy2\hr20\min59}{\revtim\yr1998\mo4\dy19\hr17\min37}{\printim\yr1998\mo4\dy19\hr16\min55}{\version3}{\edmins52}
+{\nofpages17}{\nofwords6706}{\nofchars38227}{\*\company  }{\nofcharsws46945}{\vern71}}\margl1440\margr1440 \widowctrl\ftnbj\aenddoc\hyphcaps0\formshade\viewkind1\viewscale100 \fet0\sectd \sbknone\linex0\endnhere\titlepg\sectdefaultcl {\header \pard\plain 
+\s17\qr\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20 {\b Lorinda Cherry, page }{\field{\*\fldinst {\cs16\b  PAGE }}{\fldrslt {\cs16\b\lang1024 5}}}{
+\par }}{\headerf \pard\plain \s17\qr\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20 {
+\par }}{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}
+{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8
+\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \s1\fi-1440\li1440\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright {\b Interview with Lorinda Cherry}{\ul 
+
+\par }\pard\plain \fi-1440\li1440\nowidctlpar\widctlpar\adjustright \fs20 {\fs24 
+\par MSM:\tab Well, how did you get into Unix? When did you first get involved in it?
+\par 
+\par Cherry:\tab Well, Unix didn\rquote t exist, I don\rquote t think, when I left for Kwajalein.  And at that point I was to resolve with Nolton. And, as I say, I was go
+ne for about a year, maybe a little more than a year.  I went and did like six months in Whippany, four months in Kwaj and then back, took another couple months to escape from Whippany.  And when I came back, Unix existed in some very, very early action [
+i
+naudible].  I remember Doug sitting me down at a teletype and telling me to type.  A big, old, clunky teletype. And I think the idea at that point of what they thought I was going to do was build Unix systems, that was the assembly version used at Unix. A
+nd each system had to be hand-crafted with the proper device drivers and stuff like that.   And I did build a couple of systems, one that we, I\rquote ve forgotten for what group they were for.  But I did build a couple of them.
+\par 
+\par MSM:\tab Now when was this, can you give a date?
+\par 
+\par Cherry:\tab \lquote 72? \lquote 73? So that was a job with assembly-language Unix
+\par 
+\par MSM:\tab Yeah, I think it went over to C in \lquote 73.
+\par 
+\par Cherry:\tab So this was \rquote 72 then.  And I ended up working with, still doing lots of text stuff.  All of text tools were developed.  And w
+ith Bob Morris and Lee McMahon, doing the Federalist papers from this paperback, all of them, taking turns typing.
+\par 
+\par MSM:\tab What was this, to redo Mosteller\rquote s stuff?
+\par 
+\par Cherry:\tab This was to see if we could confirm or deny who wrote which papers.
+\par 
+\par MSM:\tab Yeah, this is Mosteller\rquote s statistical analysis of authorship.
+\par 
+\par Cherry:\tab We never did come to any conclusions, I don\rquote t think, but we developed lots of tools for processing text in the process.  And this led to some other statistical stuff that led to }{\f6\fs24 typo}{\fs24 , which is on
+e of the early spell-checkers, really was a typo checker.  It worked based on trigram statistics.  And there was some compression stuff based on trigram statistics also.  And I can\rquote t remember which came first, whether }{\f6\fs24 typo}{\fs24 
+ came before the compression or if the compression made life to }{\f6\fs24 typo}{\fs24 .  Way before }{\f6\fs24 spell}{\fs24 , again I could find a year on that.  When }{\f6\fs24 spell}{\fs24  got good, }{\f6\fs24 typo}{\fs24 
+ got dropped, although it still turned out to be a somewhat useful program.
+\par 
+\par MSM:\tab For other reasons or other applications?  The serendipity factor in Unix seems to be quite high.
+\par 
+\par Cherry:\tab Yes, it is.  Very high. And there was this flavor, other people probably talked about this, but it was group dynamics all going on up there.   We were all up in the sixth floor.  Although I think I worked mos
+tly in my office and visited the sixth floor with questions, [inaudible] the sixth floor.  But there was this attitude, there were all these little tools built, and it was the idea of pipes that just kinda, of stringing things together, that was all neat 
+and wonderful.  And there was this attitude that he who touched it last owned it.  So if you needed }{\f6\fs24 pr}{\fs24  to do something }{\f6\fs24 pr}{\fs24  didn\rquote t do, and you went and added it, you now owned }{\f6\fs24 pr}{\fs24 
+.  And so if some other part of it broke, you owned it.
+\par 
+\par MSM:\tab You were now }{\f6\fs24 pr}{\fs24 \rquote s support.
+\par 
+\par Cherry:\tab You were }{\f6\fs24 pr}{\fs24 \rquote s support. Yeah, so a lot of the programs floated from person to person because somebody would add a feature to }{\f6\fs24 sort}{\fs24 , and they owned }{\f6\fs24 sort}{\fs24 
+.  Somebody else would add a feature to }{\f6\fs24 sort}{\fs24  and then they owned }{\f6\fs24 sort}{\fs24 .
+\par 
+\par MSM:\tab Actually, let
+ me back up a bit, because you talked about coming back from Kwajalein, breaking away form Whippany and then said they put you in front of teletype.  But how did you know about this at all.  I mean, did you seek to join the group or were you looking aroun
+d for another assignment?
+\par 
+\par Cherry:\tab Oh, see, well, I transferred from, the Kwajalein experience was, I really loved my job and I was not thrilled with it, going into Kwajalein in the first place.  And my husband had done two tours of Kwajalein and really wan
+ted to go, and the chances of coming back with what at that time seemed like a large amount of money, \lquote cause he didn\rquote t pay taxes at Kwajalein.  And we would be a two-salaried couple at Kwajalein and there\rquote 
+s almost no expenses in Kwajalein; their housing\rquote s free, your entertainment\rquote s free.  You buy food and you shop.  You buy things and you store money away.
+\par 
+\par MSM:\tab Not a lot of shops in the quarter-mile area.
+\par 
+\par Cherry:\tab You did a lot of mail-order.  Everybody bought crystal and china and the best electronics.  G
+o and you name it, they had it there.  No car to support and actually there were only about four technical women on island, that whole experience.  It was interesting in itself.  They didn\rquote 
+t know what to do with us, there were various perks that they didn\rquote 
+t feel one couple should have twice and I figured I worked for it too.  That was the way it went.  I fought a fair number of battles, going out there, but I had transferred, I had worked for Nolton but in Flannigan\rquote 
+s area for about a year and I finally managed to get transferred into this area.  I took myself to see Morgan, but don\rquote 
+t print that. And so I had been, I guess, in this group for about a year when we got the opportunity to go to Kwaj.  And I extracted from Mr. Morgan a promise that when I came back from Kwaj I could come back here.  Now I didn\rquote t know if whether he
+\rquote d still be here or whether he\rquote d remember his promise.  And then we were supposed to do a 18-month tour of Kwajalein and my husband had an ulcer that kicked up after two-and-a-half months
+ and they were not willing to let him go to Honolulu, have the surgery and come back.  They just said \ldblquote out.\rdblquote   And so we were there basically two-and-a-half months, actually.  And we hadn\rquote t sold our house and it hadn\rquote 
+t rented, so we had a place go back to live.  But we\rquote d sold our cars and he\rquote d sold a boat, and all the stuff you do when you go abroad for eighteen months, we\rquote 
+d done.  We shipped off all our household goods a month before we were supposed to go, and everything you consider essential, you can\rquote t l
+ive without, you pack it all up in a box and ship it.  Well there was a strike on the West coast and so our box went from New Jersey to the West coast.  We lived without our stuff for a month, we got to Kwajalein, there was a strike.  The stuff got to Kwa
+j
+alein a week before we were due to be shipped back and so everything we considered essential to life was in transit for about six months.  Just unbelievable.  I mean we opened the container to shove some stuff in that we bought, and we left stuff there, w
+e left the dishwasher there with the bicycles and stuff.  It was a very traumatic experience.
+\par 
+\par MSM:\tab It must have been.
+\par 
+\par Cherry:\tab And I got back to Whippany, and they wouldn\rquote t let me escape. I mean, they had done all this personnel and who was shuffling where and whatever, and they wouldn\rquote 
+t let me escape for a couple months.  But as soon as they let me escape I was back here.
+\par 
+\par MSM:\tab What attracted you here, to this group in the first place? What were you going to work on? 
+\par 
+\par Cherry:\tab I had been doing support programming, FORTRAN programming for Flannigan and Schroeder, who were down there.  Almost exclusively FORTRAN programming and after about a year-and-a-half\rquote 
+s worth of FORTRAN programming, I realized that this could be speech signals or soy beans, it didn\rquote t matter what it was.   And it was very boring for programming somebody else\rquote s ideas and that time I wanted to do systems work and couldn
+\rquote t get transferred inside and actually sent resumes outside to a bunch of places and was overqualified for all of those jobs.  It was in the days when everybody was training their own.  They\rquote 
+d bring you in green and train you on their programming language \lquote cause they\rquote d bought the system with no software so they had their own unique system.  And so it wasn\rquote t easy to be mobile b
+ack then, not like it is now.  So I hung out there a while and I managed to, I don\rquote t know how I ended up working with Ken.  That was real interesting work that led to those pictures behind your head there: 3-D ball and stick models of atoms.
+\par 
+\par MSM:\tab So you were working with Ken Thompson? 
+\par 
+\par Cherry:\tab Ken Nolton on graphics.  We did E-flicks and we did the atom stuff, those were the two main projects.  I\rquote d done some graphics and some other stuff.  I can\rquote t remember how I got in with Nolton, except we did some sign
+ed processing with Manfred Schroeder also back in those days similar to this stuff.  I believe that [indicating a photograph on the wall] was done by Leon Herman.  But Schroeder and I did a similar picture, maybe even before Herman did, I\rquote 
+m not sure now, that was used in the Experiment in Arts show at the Brooklyn Museum that had some [inaudible].  I believe that\rquote 
+s the first time I met Herman, and we did the cover of the program in this style with a picture of the Brooklyn Museum but with a text of the dates and name of the show and that whole business.  But the same idea.  And we\rquote 
+d done some other picture processing, I think it was an offshoot of Speech.  And that\rquote s probably how I ended up working with Ken.  Also Jim ____ was not happy doing what I was doing.  So he was like, let me loose to something else but don\rquote 
+t quite let me loose, that kind of thing.
+\par 
+\par MSM:\tab So you got involved in Unix essentially as a programmer, assembly language programmer.
+\par 
+\par Cherry:\tab And did bunches of several little tools, most of whic
+h have since totally disappeared.  There was a form letter generator and form letter editor.  Either Bob or Doug was one of the ACM editors, so we did this thing for all their correspondence and stuff.  It died \lquote 
+cause no one was interested in rewriting it in C when everything went to C.  }{\f6\fs24 dc}{\fs24 , the desk calculator, and the storage applicators were translated into C.  And every now and then we still find bugs in them.  It\rquote 
+s been fifteen years and we still.  About a year ago, we still have the assembly version around here.  I can go to the assembly when I got a bug report.  I went back and it was in the original design.  It wasn\rquote t one I\rquote 
+d created in changing everything to C.  Divide, it\rquote s always the divide element.  It does digit-by-digit long division and getting it right used to be very hard.\line 
+\par MSM:\tab I\rquote d mentioned how people found their projects.  You get a good person and then give her a chance to find her project?\line 
+\par Cherry:\tab They don\rquote t give projects here. You invent your projects.  Now I was promoted to MTS in \lquote 76 and so before \lquote 
+76 I was almost always collaborating with someone and it was mostly me doing the programming, although we certainly it.  I mean, Brian and I both did programming on }{\f6\fs24 eqn}{\fs24 
+ and that was a real collaboration.  I think a lot of the stuff I had with Morris was more an honess to his programming, and then from \lquote 
+76 on I was a full member of staff and it was a somewhat different kind of collaboration.  The compression project, I did all the work on that.  I came with a phone company.  They had this gi
+ant phone book and it had this wonderful possibility for compression and the way it was stored you could compress pieces of it and store it in little blocks and they had major update problems and a bus schedule to meet and all sorts of other stuff.  So it
+ was like, how can we compress this cheaply but save ourselves a bunch of disks? And that was where some of the ideas for the trigram stuff, to take the largest strings based on trigram statistics.
+\par 
+\par MSM:\tab What are trigram statistics?
+\par 
+\par Cherry:\tab Three-letter com
+binations.  The way that worked was if you had a word ten letters long you do a running three-letter statistical computation and you get ___ and you can go off and grab the statistical string that had the greatest payoff in terms of compression and ____.
+\line 
+\par MSM:\tab And they get compressed by what?
+\par 
+\par Cherry:\tab You take the whole string, if your ten-letter work had maybe a trigram that was six letters long that had a high enough count to be worthwhile, you pick that entire six-letter string off and store it in a dict
+ionary and replace it with a byte and then with an index into the dictionary.  And then we further Huffman-encoded it.  There were several levels of compression, and I don\rquote 
+t remember all the details anymore, it was a long time ago.  But the thing that was so unique about it was using trigram statistics to pick the strings \lquote 
+cause this stuff, as I remember, had data as well as ASCII, I think a thing that ordinary compression techniques that were known at the time, it didn\rquote t work.  We wanted to see if we could
+ compress strings that were longer, you know, as long as possible.  I think trigram statistics worked well for that.  I think }{\f6\fs24 typo}{\fs24 
+ must have grown out of that, as opposed to the other way, now that I think about it.  I think that trigram compression stuff came first, then I think the we said \ldblquote aha, I bet we can use that for finding typos.\rdblquote 
+  I would have to go back and look at something and see which way, which was the chicken and which was the egg, on that one.\line 
+\par MSM:\tab You then got involved in Tech preparation?\line 
+\par Cherry:\tab Yeah, }{\f6\fs24 eqn}{\fs24  came about right after Hannah got t
+roff [inaudible].  You could do this stuff, but how could you do them.  As I remember, Brian had a summer student who worked on the problem for a couple months.  And he left and it was still good so 
+the two of us picked up and started working on it.  Brian may remember that differently than I do.\line 
+\par MSM:\tab I talked to him about }{\f6\fs24 eqn}{\fs24 , we started to talk about [inaudible], a problem in language, I didn\rquote t think about it as a problem in graphics.\line 
+\par Cherry:\tab No, the graphics is easy.  The hard part is getting a language that you can teach to a math typist that will just flow off her fingertips to complicated graphics.  I think the language part of that is what was neat about it.  It\rquote 
+s still what\rquote s neat about it.  The graphics part of it, I think Tech is still better as far as what EQN does and what Tech does.  From a mathematical standpoint I think you\rquote ll find Tech better, but I don\rquote 
+t think Tech stuff is anywhere near as natural to work with.  That may be very prejudiced, I don\rquote t have a\'85\line 
+\par MSM:\tab As a historian, well I don history of math so it has a certain amount of math typeset in there.  So I\rquote m used to EQN.  I must say it\rquote s good enough that I\rquote 
+m not tempted to go through the work of learning Tech and make the transition.
+\par 
+\par Cherry:\tab Yeah, I\rquote ve had to learn Tech in the latest thing I\rquote ve been working on and I\rquote ve found it very painful.\line 
+\par MSM:\tab You said you got your Masters at Stevens.  Is it in math or computer science?\line 
+\par Cherry:\tab Out of the math department, but in computer science.\line 
+\par MSM:\tab Did you have to design that program yourself?
+\par 
+\par Cherry:\tab No, it was in place.  I finished that in \lquote 69.\line 
+\par MSM:\tab Did you find that curriculum by and large supportive of what you\rquote re doing here? Was Stevens\rquote  idea of computer science was and this research groups\rquote  idea of what computer science was, the same thing?
+\par 
+\par Cherry:\tab No, the computer science aspect of what I took at Stevens, things like Turing machines and numerical analysis, which I didn\rquote t care for even as much as I love math, I could not get into that.  But there wasn\rquote 
+t really a compiler course.  It was very early in their computer science.  So although it had computer science leanings, it wasn\rquote t much of a computer science curriculum really.  Much more heavily in math.  When I started that I was in Flannigan
+\rquote s area and that was quite appropriate \lquote cause I was working with all the engineering, quark models, and differential equations, and simulations stuff.  And so it dovetailed into that perfectly.  And no, it didn\rquote 
+t fit here at all.  But I don\rquote t know where you could have gone for a curriculum that would have fit here.  In fact, I\rquote m not sure that anyone who was here at that time was really a computer scientist.  I think everyone\rquote 
+s training was in something else \endash  it was in math or engineering.  It was sort of a pre-advanced degree of computer science.  Programming courses, yeah, but not a lot with theory out there beyond the Turing machine.
+\par 
+\par MSM:\tab So the theory sort of caved the group while you were here working.
+\par 
+\par Cherry:\tab I think so, yeah.
+\par 
+\par MSM:\tab Did you notice it slipping in the door?  Did you see it coming?
+\par 
+\par Cherry:\tab Certainly, a lot of the compiler theory and stuff.  I think it sort of came ____.  Compiler theory\rquote s gotten very strong and I don\rquote t think it was back in those days.  I\rquote m not a real good theory person, I\rquote 
+m a practitioner.  I\rquote m off to write programs with any excuse or any activity.  A lot of the things I\rquote m involved in outside of here still end up involving programming.  Maybe that comes from working here.
+\par 
+\par MSM:\tab Oh really?
+\par 
+\par Cherry:\tab When I was s
+howing Dobermans, I did statistics on judging, published articles on some of the, did publications on who did what to whom and whether judges seem to have color biases, whether judges would put up puppies or they would only give points to the adult dogs. 
+ Some very angry people, if you show them what the statistics said.
+\par 
+\par MSM:\tab The reason I was asking that was that one of the things that struck me from the beginning about Unix was that on the one hand the elegance, professionalism.  The coding, on the one ha
+nd, really clever coding.  On the other hand, the way in which everything seems to have, if it\rquote s not driven by theory it at least has some theoretical point to it or at least some theoretical foundation to it.  So that it\rquote 
+s highly disciplined and has a purpose.
+\par 
+\par Cherry:\tab There\rquote s certainly some discipline in what\rquote s allowed to hang around and what isn\rquote 
+t.  One can watch that in whatever manual is produced and Doug starts throwing programs or people start, rather than document this file were going to remove it.  It\rquote s not really necessary, there\rquote s another way to do it.\line 
+\par MSM:\tab But what constitutes documentation? I mean, does a documentation have to be of a certain ___, does one have to justify ___ in terms of practicality?  I can find a use for it therefore it stays?
+\par 
+\par Cherry:\tab That\rquote s hard to say.  If you look at the Berkeley Unix system and some of the commands that are similar, the same in Berkeley as what we have here but you look at the Berkeley manual they\rquote 
+ve added 85 flags to the Cat command or something.  It was a very simple elegant thing that did a very simple job.  I guess we\rquote ve always had the attitude that it has to be really useful to be worthwhile putting in.  Maybe just \lquote 
+cause it was a smaller group than at Berkeley or maybe people in Berkeley, everybody needs to find a niche so they\rquote ve got to put a flag on something, I don\rquote 
+t know what the environment is there.  But I think it was here to prevent featurism.  I think that\rquote s the difference between the two systems.  And I think that undoubtedly has to do with 
+the university environment where everybody has to do something as opposed to the environment where in some sense everybody had to justify what it is they were doing to your cause.  And there is also some hesitancy \lquote 
+cause it you touched it you owned it, you thought hard about whether you needed to add that flag or whether there was some other way around it.  Whether there was some program.  You said \ldblquote I\rquote ll find some other way to do this \lquote 
+cause I don\rquote t want to own this program.\rdblquote 
+\par 
+\par MSM:\tab How long did that continue? Owning?
+\par 
+\par }\pard \fi-1440\li1440\nowidctlpar\widctlpar\hyphpar0\adjustright {\fs24 Cherry:\tab Gee I don't know when that went away.  It persisted a while after things were in C.  \{\}  It was certainly the attitude.  And that did give you pause.  [laugh]
+\par  
+\par MSM:\tab It seems like a \{\}  marvelous, marvelous way.  I've got to think of so
+me way to impose that on my colleagues.  You teach the student you own her. [laugh] she's your responsibility.  The text preparation program, if I understand correctly, was some thing that got started up as a joint venture with human...
+\par  
+\par Cherry:\tab I thought it was with the patent department
+\par  
+\par MSM:\tab my understanding was that the patent department took over the device but that it originally started with something \{McMahon\} and Max Matthews.
+\par  
+\par Cherry:\tab That may be how they got Lee, \{John Degrew\} who did a lot of,
+ as I said, statistical stuff and things of that nature, but Lee I can't remember exactly when He came on the scene.  Um, may be on line somewhere because we put together some stuff for him \{\}
+ and some dates and things.  So I may have been on line.  It was um all done from people's memories.  Although some of it certainly from the employment records and when he actually switched cause he was, he was department head in \{ops\}
+ center for a while he did the snake there and I think he came to us from there although he may have made he may have gone through Max's area on the way to this area.  I'm not certain.
+\par  
+\par MSM:\tab How did this, the um statistical analysis of text was this a research interest that people had or was it written by some practical ...
+\par  
+\par Cherry:\tab I th
+ink it was research sort of the attitude back then at least my attitude and what I thought was sort of the prevailing attitude um and I still consider it, its still an attitude, um if asked what it is I do I see what kind of neat new things I can make the
+ computer do and in those days the computer wasn't doing a lot, but it was super\_
+interesting and there was a lot more stuff you could make it do.  And things just kind of evolved from sort of that attitude. Oh, we've got all these new tools what can we do w
+ith them?  One thing we can do is some statistical analysis of text and see where that leads us and we can do it on gobs of text now instead of the hand\_
+counting text that had been done Now that computers had upper and lower case that's another thing that changed with UNIX but um was the case recognition.  DOS still doesn't recognize case in some sense.  DOS \{\}
+ its command line which is upper case you can type lower at it and it will type upper at you.  But there's the case distinction I think we've been ah
+ something was new and that lets you do different kinds of text analysis or statistics that then had been done before.  Interestingly enough I had a call from somebody from Adobe um about a month ago looking for some text statistics.  Because they took ou
+t \{\} their caching stuff on the on the ah printers.  Bob \{lianov\} had \{\} our own text statistics in \{ATT\} tech  um you know that accounted for punctuation and blank space and upper/ lower case things of that nature.
+\par  
+\par MSM:\tab Is this \{writer's\} workbench or were you involved in that project?\{\}
+\par  
+\par Cherry:\tab I'm certainly grandmother of that project.  Um That was another serendipity  Um project um that all evolved from um a program I wrote for finding part of speech running English text.  And part of speech project started because um \{Brent\}
+ Aker had the office next door to me and he had just gotten the um the votrex machine and there was some um I think Doug wrote the speak program that ah \{\} through that machine and there was interest in adding proper intonation um \{\}
+ intonation to emphasis ah to speak and \{Brendan\}  was working on that and you need part of speech to do that properly you need it for syllabic stress perfect and perfect and that whole class of words that's stressed differently depending on \{part of s
+peech\}
+ and you need to know the part of speech to know which word in the sentence to stress um and so Brendan was working on the stress part of it and I was working on the part of speech part of it  and ah he left to go teach at Michigan before the stress p
+art of it uh ever materialized and I had this part of speech program languishing for something to do.  And Doug talked to ah a guy who was actually working at Princeton Bill Bestry \{\}
+ in the English department and one of the things he had his students do was count parts of speech in things.  \{\}
+  we can do that automatically and so part of speech program that turns out a few, there are various things you would count and look at using parts of speech to decide whether you've got a compound or compound sentenc
+ing sentences types, so the part of speech program turned into the style program.  We added some readability stuff \{from the books down the hall\}
+and we read as many things as it made sense to count and at that time um there was a human factors group in Piscataway um to which Nina McDonald was a member and I think she worked here maybe for a summer while she was \{\}
+ before she finished her degree and her husband worked here and one of the things that they were suppose to do was um one of their main jobs actually was look at documentation and decide whether it was reasonable from a human factors standpoint. \{\}
+ They were interested in funding some way to ah getting all this stuff um you know what can we do we analyze this stuff and decide.  And so we ended up working together. By \{\}
+ for them and they put this layer on top of style and diction um and the whole thing turned into writer's workbench and that was sort of a back and forth with this development group and they'd do things and I'd take it and send it back did a \{
+very much extended year probably\} maybe more than that kind of back and forth with them. Gee what new thing can we measure or what new thing can we find um it never really did check grammar because you need a you need a real parser to check grammar
+.  And so it does as much as it can with out having a real parser.  There's the problem of having a real parser that's going to parse incorrect English anyway.  That's not a problem I think is going to get solved in a big hurry \{\}
+ Somebody has one that's using \{\} and a dictionary that does a fair job at some kinds of grammatical \{\}
+  That was a fun project because Lance Miller at IBM was developing epistle at the time we were developing writer's workbench.  The two projects paralleled and we'd go to we'd go 
+to conferences and give talks and he'd give his epistle talk which was based on a real parser written in LISP, it took three minutes to parse a sentence and I would give my writer's workbench for style and diction talk and at that time part of speech prog
+r
+am was running at something like three words a second on a rolling seventy and so it was feasible to parse even on 1170 it was feasible to run this on a reasonably large paper.  And it wasn't feasible to run a real parser on reasonably large paper and eve
+rything's gotten faster um probably the part of speech program wouldn't have been developed at \{\}
+ cause it was very constrained and design requirements from where it got its basis name when it was part of this small string of programs that was learning to speak to the \{vocoder\}
+.  Um and what was what turned out to be interesting the parallel continued and writer's work bench went to Colorado State for a sort of a beta test in their English department and they use it and loved it and you know it has sort of s
+ince become a project \{its..\}
+ its out there in English departments um IBM did their beta test I think at Chicago and it fell on its face because it was presented with this incorrect grammar that the students were writing and the parser couldn't cope with i
+t um and I think the whole thing ended up getting canned [phone] and parts works because its got a press\_on\_
+regardless attitude it's going to assign some part of speech and go on and it may not be write, but statistically across the paper it will be.  And its that press\_on\_
+regardless instead of taking ah building this tree that's got twenty different possibilities that you know a real parser ends up having to do um that just doesn't fly in the face of ah student text. 
+\par  
+\par MSM:\tab Is writer's workbench being used?
+\par  
+\par Cherry:\tab I believe its being used.  About every six months they try to resurrect a group um or they assign somebody else to it so it must be still out there lost track of it and ah the person who's in charge of it seems to be a moving target the actual
+ technical person who owns it but I believe its out there in \{\} being sold in \{\}
+ and some high school and college English departments.  I haven't talked to Colorado recently to find outs what's happened, they are still writing papers about it so that must say they're still using it.
+\par  
+\par MSM:\tab We talked when we were going through having \{\} how we were going to spend the big IBM grant for computerization at Princeton back in 1984.  The idea was gee we ought to get writer's workbench.  It turns out when people th
+ink about computers and education today first off, the scientist and engineers know exactly what they want to do
+\par  
+\par Cherry:\tab Right, the humanities folks do not
+\par  
+\par MSM:\tab And the humanities folks don't
+\par  
+\par Cherry:\tab And they're afraid  
+\par  
+\par MSM:\tab \{\} To use it as ah writing as a tool for teaching writing and then the question well what tools have we got for doing that and ah that's where it sits right now.  I was wondering if other schools were \{\}
+  I ran my own stuff through style the other night so  
+\par  
+\par Cherry:\tab Uh\_huh, a
+t the time we were working on style and diction Andy Tannenbaum was here and he was across the hall working on a book and they're some interesting human factors, things about diction in particular um he had done the first couple of chapters.  And he ran t
+h
+e program on the first couple chapters and it gave him all this output and it worked and what happens if you use the tools and you're in a large writing project at any rate is the kind of wordiness that it points out to you.  You stop writing=2E  So it se
+lf\_
+destructs.  By the time you write the last chapter, you're not writing that kind of prose anymore.  My feeling about a lot of those tools is there value in education um is as much pointing out to people who are learning to write that they have choices an
+d make choices when they do it.  They don't think of a writing task as making choices per se.  Once they get it on paper they think it's cast in stone.  So it makes them edit.
+\par  
+\par MSM:\tab Yeah, that and computers exacerbated that problem.  I've f\{ough\}t a like \{mad \}
+ against the proliferation of laser printers on campus.  The computer people all want them in there and my attitude has been, "Look, you keep telling them to use the word processor because they can then treat their writing tentatively and they can go
+ back and make corrections and re\_write and re\_write um and let's set aside the whole problem of yes its easier for us to re\_write but its not any easier for us to re\_read
+\par  
+\par Cherry:\tab Yes
+\par  
+\par MSM:\tab Um but when you put a laser printer there they get it off the laser printer and it looks so good it...
+\par  
+\par Cherry:\tab must be okay yes it must be okay cause it looks pretty.
+\par  
+\par MSM:\tab That's right \{\} from my point of view I'm getting the same junk
+\par  
+\par Cherry:\tab The same garbage, only it's pretty [laugh]
+\par  
+\par MSM:\tab But it does, the hardest thing with students is getting them to appreciate a sense of  voice, that is, you talk to different people different ways, you gotta have an audience in mind, you got to choose what you say on\{\}
+, you're not writing for me.  This paper doesn't sound l
+ike you, have you ever tried reading to your roommate and asking your roommate if it sounds like you [laugh by O].  "No, I've never thought of ever reading my paper out loud."  Not even to yourself, I bet. "No, not even to myself"  Well, why don't we star
+t there.  And you know so fundamental  
+\par  
+\par Cherry:\tab Yeah
+\par  
+\par MSM:\tab Then we'll start working on writer's workbench.  When we've got you with some sense of audience then we can talk about what readability index might mean or we'll talk about variety of sentence length
+\par  
+\par Cherry:\tab Yeah readability indexes are real iffy, questionably things the reason writer's workbench computes readability um first of all, they wanted it in there and I said, "Okay we will put four different readability.  I grabbed every readability in
+dex I could and put all four in there, because it's obvious when a it computes four different ones that it's a moving target.  And when they put the section in \{\}
+ prose, um they were going to report readability to the decimal place.  "No decimal places, ju
+st give 'em rate."  Cause you get supervisors around here who will say, "No I want at this readability index."  So I made them give a range or at least not report it, report it in such a way that it's a questionable number.  I think it says something abou
+t text um but I don't think you can write to one.  \{\} Nor do I think you can go back and revise to one.  It has to do with voice and audience, word choice \_
+ you can choose monosyllabic words that everybody understands and get a high readability index and yo
+u can pick small words that nobody understands and get a low readability index and you're going to have the opposite effect on whether people can understand the document.
+\par  
+\par MSM:\tab Did UNIX lend itself particularly to this kind of work, er, was this the sort of thing one could have put on any system?
+\par  
+\par Cherry:\tab It lent itself to the kind of work because it was time\_sharing.  You could do stuff in the background.  It's hard to remember not having multiple windows and multiple things and so it's hard for me to st
+ep back.  Computing today is a lot different from what it was then but computing then it was my first experience with a time sharing system.  I didn't do very much on the Honeywell system \{\}
+ um but it was still slow and um maybe part of that whole UNIX thi
+ng was that there were just a few of us on this machine and response time was pretty quick and you could think about doing things that would take forever and they wouldn't charge you or wouldn't take forever but\{\}
+ some other environment There was no chargi
+ng so you didn't think twice about running something which used to happen if you had a computing budget there was no computing budget involved with UNIX.  We were inventing ways to use all these cut little programs that would string together.  That was al
+l in the concept.  Um \{\}
+ using other programs, very special, specially developed programs that do their own little task very well, adding to that, that pipeline.  I can't remember when I didn't think that way, but there was a time I didn't think that way I 
+know it [laugh].  And that kind of thinking sort of came along.
+\par  
+\par MSM:\tab Yeah, \{\} that's happened with \{\}.  Basically laid down my question.  
+\par  
+\par Cherry:\tab And so, yeah I think all those nice little pieces if you wanted to sort something you didn't have to thin
+k about writing sort, sort existed.  And you could think about may be using "said" to call out exactly what it was you wanted to sort um.  Just the concept of putting all these pieces together was new.  Those kinds of programs didn't exist except as big m
+onolithic things.  And so I think that did lead to a lot of the interest in doing some of the other text stuff that hadn't been done before and things like that.
+\par  
+\par MSM:\tab \{\} Textual flavor to UNIX.
+\par  
+\par Cherry:\tab yes.
+\par  
+\par MSM:\tab It's just sort of built into its basic design.
+\par  
+\par Cherry:\tab \{\} because we were all editing programs.  We wanted to it, the editors and things all came about they were off shoots of other editors um \{\}.  Maintaining programs is maintaining text.  \{\}
+ of a group that's maintaining and writing program
+s which we view as text and publishing papers um I think that's where a lot of it came from.  They were tools that we were gonna use ourselves.  And that's different than writing a system for somebody that where you don't plan to use it.  It's not part of
+ your day to day living.  Also it's a funny group.  I've had a friend who works in acoustics now and talked to later.  It was a McLaren a real, live McLaren seven liter. [laughter]  \{What a thrill [from somewhere else]\}
+  You got it.  I had a ride around a race track in a seven liter McLaren two weeks ago and I'm still walking around \{\} hot.  Um in some sense it's a very tolerant group from a computing standpoint. Um \{\}
+ down the hall who use computers in a different way.  Um would not tolerate a lot of what we would tolerate and that's because we all belong to the programs and if you're intolerant of somebody else' program they're \{\}
+ going to come back to you when they find your bug.  Um \{\}the person that lent most to a lot of the flavor of um maybe not the flavor of the programs, but the robustness of the programs is Bob Ross.  I was asking Doug if he wouldn't \{\}
+ talk to him.  I think you should.  Bob was a person that if you thought you had a program that worked you went and said, "Bob, I think this program works." And if it was expecting ASCII text he would feed a \{core\}
+ dump to see what it would do.  He would do the absolute unexpected to your program and you would end up going on and making sure your program survived whatever it was could be feed. And he ju
+st had a tendency to break things intentionally.  That's his specialty, just like security's now a specialty, breaking programs is now a specialty.  [laughter about son ]  He did not fall far from the tree.
+\par  
+\par MSM:\tab I thought it was so ironic. I re\_read \{\} came to talk to Ken I re\_read his Turing ward lecture and I thought how ironic that it should be about Morris' son who...
+\par  
+\par Cherry:\tab No, it's absolutely appropriate, absolutely appropriate.  Just the kind of \{\} nut, really the kind of thing I don't.  Morris Sr. wouldn't have had the bug in it.
+\par  
+\par MSM:\tab [laughter] Okay.   
+\par  
+\par Cherry:\tab He would have tested it enough to not have the bug in it.  This is the next generation computing you're looking at here.   
+\par  
+\par MSM:\tab [laugh] I didn't think there was entropy in every situation  
+\par  
+\par Cherry:\tab Right. But no Bob had this unique ability to be able to break things and he'd break 'em and they'd get fixed.  I really think that's one of the reasons that the tools are so powerful because they're so good.  And they're so good becaus
+e they're very, very robust.  And ah you feed them things they don't expect and they at least
+\par  
+\par BREAK IN tape, switch sides
+\par  
+\par Cherry:\tab The 11/45didn't have hardware protection. So you'd write a program, and this was where some of the inter\_communications st
+uff came from I think um.   Before you typed 'a.al" to try that program you broadcast I'm going to type "a.al" because you might bring the system down.  You never typed "a.al" from home because you might have to go in and flip the switches to restart the 
+machine. \{laughter from M\}
+  And you know when you were editing something it was a write early and often.  It was somebody's going to try something that's going to bring the system down, and ah that added to the interaction a lot.  You have to interact with 
+everybody.  You had to tell 'em you're about to run your new program that may well bring the world down.
+\par  
+\par MSM:\tab Well also that ah gets backs on the notion of tolerance to though because
+\par  
+\par Cherry:\tab Yep, you had to be tolerant \{\} you looked I mean you did a lot more I mean programming then was very different because you really eye\_
+balled that thing before you typed "a.al" in hopes that it wouldn't bring the system down.  Cause it was an embarrassment to bring the system down three or four times in an afternoon
+.  You got a reputation, you didn't want that reputation.  Um so there were some group dynamics that worked there ah I think the ah fact we all had terminals at home or shortly might have terminals at home \{\}
+ without things like the UNIX write command you needed the write command anyway to tell everybody you were about to crash the system maybe [laugh] ah but there was a fair amount of dialog that was pre\_
+mail um there was a fair amount of dialog that went back and forth.  You had a question and you'd write to somebody and they'd write back.   
+\par  
+\par MSM:\tab So they started talking to each other...
+\par  
+\par Cherry:\tab Talking to each other through the machine.  Very early \{\} Very early on.  Um I mean it was a necessity because you could bring the world down.  But it did change the, it added group dynamics that wouldn't have been there in other systems \{
+\}
+\par  
+\par MSM:\tab You never worked on a system like CTSS
+\par  
+\par Cherry:\tab No. \{\} No, we had TS setup in the GECOS time\_share system and worked on that.  \{\} I don't remember just \{\} that was down there and that was working on your own project and when you were \{\} there was no real reason to communicate.   
+
+\par  
+\par MSM:\tab But the reason here was in part just because you had to let people know you were about to try something.
+\par  
+\par Cherry:\tab That's right.
+\par  
+\par MSM:\tab Well that's another way of being hard\{\} determined, when you talk about the extent to which the hardware has given shape to it.
+\par  
+\par Cherry:\tab Yeah um and things in the operating system changed as a result of typing things.  If you remember typing split, so that some huge file could \{\}
+ papers I don't remember how long it was but I had this huge file that was too big to edit.  The editor wouldn't take it.  So\{\} split it up into pieces or maybe I was splitting it up into pieces for something else.  Meant to type
+ split 100, split it into a hundred files, and I typed  split 1 ran it in the background, hit return, and went home.   [snicker] Got home and I now had this directory full of files named with unprintable characters that I couldn't delete.  And I couldn't,
+ 
+I couldn't use the wild card characters, that's vocabulary coming from MSDOS bite my tongue, I couldn't us * and  ? cause it produced lists that were too long and it took me all night I think to get rid of that mess that I created and I think I crashed th
+e system in doing that as I remember.  The system ran at a I node \{\} something \{\}
+ changes.  But you know there were various things like that that happened and you said,  "Whoops we need to change that or we need to test that or whatever."  And part of that 
+again was this group of people pounding on these programs in ways that I think programs are usually not pounded on um.
+\par  
+\par MSM:\tab \{\} bout the tolerance.   It's also a UNIX way of doing things.   
+\par  
+\par Cherry:\tab O yeah.
+\par  
+\par MSM:\tab \{\} ethos
+\par  
+\par Cherry:\tab There's a UNIX attitude.   
+\par  
+\par MSM:\tab a UNIX attitude and ah, do you have a sense that that's blocked people from following other lines that ah does UNIX hold people back?   
+\par  
+\par Cherry:\tab Gee, I don't know.  I think in UNIX.  [laughter] So it's hard to say.  But it is an attitude.  I \{\}
+ the number of times I've wanted to be able to grep a newspaper or a book for something I know is in there.  But there is no physical version of grep [laugh] \{\} vocabulary um.  I don't think it blocks.  In that the basic concepts, the thing that make 
+UNIX UNIX, at least to me, is the notion of building blocks and breaking things into small pieces, divide and concur type thing and having those small pieces do a specific job very well.   I don't think that's blocking ah, somehow that makes more sense th
+a
+n writing a monolith which is the other side of it that I keep encountering.  I just bought my mother a new PC.  I'm having to learn some MSDOS, which I did not want to do.  I keep hitting these monolithic programs which I can't get out of and I can't mak
+e
+ them do what I want to do.  And I don't think MSDOS, I think differently, I don't think PC, my instincts aren't there, and I don't want to read the manuals=2E  [laugh]  I want to be able to sit down and do what I want to do and I can't do that.  It's ver
+y frustrating.
+\par  
+\par MSM:\tab That's funny because though I, I learned UNIX  and CMS before I ever learned, before I ever had a personal.  I nonetheless went the IBM route and I'm glad I did.  Um, but it's always struck me the reason for that is that DOS, I feel mo
+re comfortable using DOS because of the UNIX.
+\par  
+\par Cherry:\tab Well, it's UNIX\_like. It's UNIX flavor and it's UNIX\_like, but its not enough UNIX\_like um.   The idea that *.* is an idiom and doesn't mean star dot, the dot is not literal.  The idea that that's an idiom offends me.
+\par  
+\par MSM:\tab I see.
+\par  
+\par Cherry:\tab You got a real meaning in UNIX.  Um there are lots of little things like that ah that are just backwards.  I can't get pipes to work on it.
+\par  
+\par MSM:\tab That's why I like it.
+\par  
+\par Cherry:\tab And well, then I must have it set up wrong. \{\}  I can't get it to find the second command in the pipes without having a full path name in it.  Don't know how I \{\} talked to some people who say, "Well, people don't use pipes in DOS."   
+
+\par  
+\par MSM:\tab I use it all the time.
+\par  
+\par Cherry:\tab No as I say, I might have it set up wrong.  I've only had this machine for a couple days to myself.   
+\par  
+\par MSM:\tab What I've done is to go get Polytron's PC version of AWK.   
+\par  
+\par Cherry:\tab That's what I need is AWK.
+\par  
+\par MSM:\tab Okay.  It's nice, you can get it for 85 bucks.  And it follows the, in fact what they do they say its 85 bucks if you don't need the manual.  If you already have the manual you get it at a lower price cause the manual is the manual.
+\par  
+\par Cherry:\tab Yes, okay.
+\par  
+\par MSM:\tab And ah, so you can do things.  For instance DOS doe
+sn't come with a um way of finding out how many bytes are in a directory.  It'll give you total number of bytes on the disk, but not in a directory.  Turned out that's a very simple program, if you pipe it from directory.   
+\par  
+\par Cherry:\tab Oh yeah, I program in AWK lots.  I program in SED also which is a little strange
+\par  
+\par MSM:\tab It, it did respond well to a UNIX mentality which is well I'll just take the output for directory and now I'm going to have to strip off the first two lines.  But I'm going to get this text and therefore this column is going to work...
+\par  
+\par Cherry:\tab As I say I may have the configuration table setup wrong it's entirely possible.  But I couldn't get it to recognize more at the end of a pipeline without giving it a full path to it.  I was very anno
+yed.  It would recognize it with a full path and it would recognize it if it were the first command but not if it was in the pipeline.  So I don't know what I've done wrong.  At any rate that's a diversion.  Except one of the things that blew me away when
+ I bought this machine.  I bought \{\} the 1200 with a hard disk.  And it's the size of your case, in fact your case looks very much like it's a carrying case
+\par  
+\par MSM:\tab Yeah, now I have.  I have an 1100+   
+\par  
+\par Cherry:\tab That's why the case looks familiar.   
+\par  
+\par \{\}
+\par  
+\par MSM:\tab My 1100+ case fits right next to it.  
+\par  
+\par Cherry:\tab Right, but it would fit in it. \{\}  That machine is so much bigger and so much more powerful than the 11/45we started on.  It took up a whole room.  That just blows me away.  It just blows me away. [lau
+gh]  It weighs ten pounds and its got a hard disk, a twenty meg hard disk.  And it costs two thousand dollars.  I just can't believe it.  Not all that long ago we were announcing to the world we were about to type "a.al" because there was no protection on
+ the hardware.  And I think the biggest program you could run was 64K or something crazy like that.  So it's, it's changed so much.
+\par  
+\par MSM:\tab My daughter just got rid of her PC from several years ago.  Bought one of these two\_floppies to take back to school.  She'd like to\{\} rather.
+\par  
+\par Cherry:\tab The other thing that boggles my brain is that it's battery powered.  I'm trying to learn how to use this thing and\{\} I'll just take this thing in the living room, sit on the couch and play with it.  [laugh]  That concept s
+till blows me away also.
+\par }\pard \fi-1440\li1440\nowidctlpar\widctlpar\adjustright {\fs24 
+\par }}

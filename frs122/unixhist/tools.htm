@@ -1,0 +1,594 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>The Tool Box</title>
+</head>
+
+<body bgcolor="#FFFFFF" link="#0000FF" vlink="#800080">
+
+<h3><a name="pipes">The Origin of Pipes</a></h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first edition of Thompson
+and Ritchie's <i>The Unix Programmer's Manual</i> was dated
+November 3, 1971; however, the idea of pipes is not mentioned
+until the Version 3 Unix manual, published in February 1973.
+Although Unix was functional without pipes, it was this concept
+and notation for linking several programs together that
+transformed Unix from a basic file-sharing system to an entirely
+new way of computing. The ideas that led to pipes had existed in
+various forms long before the concept was formally implemented.
+In fact, McIlroy explains that pipes sprang from the earlier use
+of macros:</p>
+
+<blockquote>
+    <p><font size="2">[I]n the early sixties, Conway wrote an
+    article about co-routines. Sixty-three, perhaps in the <i>C[ommunications
+    of the] ACM</i>, I had been doing macros, starting back in
+    &#145;59 or &#145;60. And if you think about macros, they
+    mainly involve switching data streams. You're taking in your
+    input, you suddenly come to a macro call, and that says,
+    'Stop taking input from here, go take it from the
+    definition.' In the middle of the definition, you'll find
+    another macro call. So, macros... even as early as
+    &#145;64... Somewhere I talked of a macro processor as a
+    switchyard for data streams. </font></p>
+</blockquote>
+
+<p>Aho recalls that McIlroy had developed the concept of pipes
+much further:</p>
+
+<blockquote>
+    <p><font size="2">Doug McIlroy, though, I think is probably
+    the author of translation...of pipes. That he had written, I
+    think, this unpublished paper when he [was] at Oxford back in
+    the &#145;60s....You should read this paper because it's UNIX
+    pipes. One of the interesting things about Doug is that he
+    has had these great, seminal ideas which not everyone knows
+    about. And whether his standards are so high that he doesn't
+    publish them...or what? But it's remarkable.... <!--webbot
+    bot="PurpleText"
+    preview="This is really a different issue, and should be taken up in a section devoted to McIlroy and his management of the project."
+    --></font></p>
+</blockquote>
+
+<p>According to Thompson, the concept of pipes developed as a
+result of a combination of ideas from the 940 system, CTSS, and
+Multics. </p>
+
+<blockquote>
+    <p><font size="2">There were a lot of things that were talked
+    about but weren't really done. Like treating files and
+    devices the same, you know, having the same read calls.
+    Typically during those days there were special calls for the
+    terminal and then the file system itself. Those calls weren't
+    the same. Confusing them and redirecting I/O was just not
+    done in those days. So, that was... I think everyone sort of
+    viewed that as a clean concept and the right thing to do, but
+    for some reason it just wasn't done. </font></p>
+</blockquote>
+
+<p>Ritchie is even more willing to acknowledge the contributions
+of earlier systems to pipes. To him, &quot;the pipeline is merely
+a specific form of co-routine. Even the implementation was not
+unprecedented, although we didn't know it at the time; the
+&#145;communication files' of the Dartmouth Time-Sharing System
+did very nearly what Unix pipes do, though they seem not to have
+been exploited so fully.&quot;<a href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_1"><sup>1</sup></a></p>
+
+<h4>McIlroy, Thompson, and Pipes</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Although the concept of pipes
+existed in some form long before 1972, it was McIlroy who
+advocated an implementation of a pipeline structure into Unix.
+From the beginning stages of the project, he had been seeking an
+improved method of dealing with input/output structures. &quot;It
+was clearly a beautiful mental model, this idea that the output
+from one process would just feed in as input to another.&quot;
+McIlroy further explains:</p>
+
+<blockquote>
+    <p><font size="2">So, this idea had been ironed on in my head
+    for a long time....at the same time that Thompson and Ritchie
+    were on their blackboard, sketching out their file system, I
+    was sketching out on how to do data processing on this
+    blackboard, by connecting together cascades of processes and
+    looking for a kind of prefix notation language for connecting
+    processes together... </font></p>
+</blockquote>
+
+<p>It was largely a result of his insistence that pipes was
+finally implemented.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;According to Ritchie, McIlroy
+later explained the pipeline idea to the Unix team on a
+blackboard. However, this did not spark immediate enthusiasm.
+There were objections to the notations and the one-input,
+one-output command execution structure. <a
+href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_2"><sup>2</sup></a> Nevertheless,
+McIlroy succeeded in convincing Thompson to add pipes to Unix.
+Thompson explains the difficulty in implementing McIlroy's ideas:</p>
+
+<blockquote>
+    <p><font size="2">Doug had...talked to us continually about
+    it, a notion of interconnecting computers in grids, and
+    arrays, you know very complex, you know, and there were
+    always problems in his proposals....I mean there's just no
+    way to implement his ideas and we kept trying to pare him
+    down and weed him down and get him down, you know, and get
+    something useful and distill it. What was going on, what was
+    needed, what was real ideas, what was the fantasy of
+    his...and we ...there were constant discussions all through
+    this period, and it hit just one night, it just hit, and they
+    went in instantly, I mean they are utterly trivial. </font></p>
+</blockquote>
+
+<p>McIlroy recalls the events a bit differently:</p>
+
+<blockquote>
+    <p><font size="2">Over a period from 1970 till '72, I would,
+    from time to time, say 'How about making something like
+    this?', and I would put up another proposal, another
+    proposal, another proposal. Then one day I came up with a
+    syntax for the shell, that went along with the piping and Ken
+    said, 'I'm gonna do it.' He was tired of hearing all this
+    stuff...and that was certainly what makes it....That was
+    absolutely a fabulous day, the next day too. 'I'm gonna do
+    it.' He didn't do exactly what I had proposed for the pipe
+    system call. He invented a slightly better one, that finally
+    got changed once more to what we have today. He did use my
+    clumsy syntax... </font></p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Originally, pipes used the same
+syntax as redirection (&lt; and &gt;). However, this proved to be
+cumbersome, as several different combinations could represent the
+same command. Just before a presentation in London, Thompson
+decided to replace McIlroy's syntax with the vertical bar,
+eliminating the ambiguities of the old syntax. As Kernighan
+recalls, &quot;I remember the preposterous syntax, that
+&quot;&gt;&gt;&quot; or whatever syntax, that somebody came up
+with, and then all of a sudden there was the vertical bar, and
+just [snaps fingers] everything clicked at that point.&quot; The
+beauty of the structure that McIlroy once described as
+&quot;garden hoses&quot; was recognized; data would simply flow
+from one program to another.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In retrospect, the notation and
+syntax of pipes were just as important as the concept itself;
+pipes might not have been so successful without this further
+distinction from redirection. As Aho recalls, the full
+implications of pipes gradually developed after this:</p>
+
+<blockquote>
+    <p><font size="2">I really didn't appreciate the significance
+    of what you could do with it, at the time, in the &#145;60s.
+    And I don't think anyone did, because...what made a lot of
+    this philosophy...a lot of these tools go was the framework
+    that Unix provided. That you could have pipes on which you
+    could take the output of one program, and transmit it as
+    input to another program. </font></p>
+</blockquote>
+
+<p>Kernighan explains why pipes was a superior method of
+input/output:</p>
+
+<blockquote>
+    <p><font size="2">It's not that you couldn't do those kind of
+    things, because I had already written redirection; it
+    predates pipes by a noticeable amount. Not a tremendous
+    amount, but it definitely predates it. That's an oldish idea.
+    That's enough to do most of the things that you currently do
+    with pipes; it's just not notationally anywhere near so
+    convenient. I mean, it's sort of loosely analogous to working
+    with Roman numerals instead of Arabic numerals. It's not that
+    you can't do arithmetic, it's just a bitch. Much more
+    difficult, perhaps, and therefore mentally...more
+    constraining. </font></p>
+</blockquote>
+
+<p>Pipes went far beyond McIlroy's original goal of creating a
+new I/O mechanism; the programmers used pipes to send an output
+of one program to the input of another. As Kernighan explains:</p>
+
+<blockquote>
+    <p><font size="2">That was the time, then, I could start to
+    make up these really neat examples [of pipe commands] that
+    would show things like doing, you know, running <code>who</code>,
+    and collecting the output in a file, and then word counting
+    the file to say how many users there were, and then saying,
+    'Look how much easier it is with...[piping] the <code>who</code>
+    into the word count, and running <code>who</code> into <code>grep</code>,'
+    and starting to show combinations that were things that were
+    never thought of, and yet they were so easy that you could
+    just compose them at the keyboard and get them right every
+    time. That's, I think, when we started to think, probably
+    consciously, about tools, because then you could compose the
+    things together if you had made them so that they actually
+    worked together. </font></p>
+</blockquote>
+
+<p>It was the pipes concept that allowed the notion of the
+software toolbox to develop. When interviewed by Mahoney, McIlroy
+insisted that pipes &quot;not only reinforced, [but] almost
+created&quot; the toolbox.</p>
+
+<h4><a name="tools">Software Tools</a></h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first step in developing
+what would come to be known as the software toolbox was to ensure
+that all programs could read from the standard input. McIlroy
+explains the problem, and its solution:</p>
+
+<blockquote>
+    <p><font size="2">Most of the programs up until that time
+    couldn't take standard input, because there wasn't the real
+    need. They had file arguments. <code>grep</code> had a file
+    argument, <code>cat</code> had a file argument. Thompson saw
+    that that wasn't going to fit into this scheme of things, and
+    he went in and changed all those programs in the same night.
+    I don't know how. In the next morning we had this orgy of
+    'one-liners.' Everybody had one-liner. 'Look at this, look at
+    that.' </font></p>
+</blockquote>
+
+<p>Kernighan elaborates with an example:</p>
+
+<blockquote>
+    <p><font size="2">And that's when people went back and
+    consciously put into programs the idea that they read from a
+    list of files, but if there were no files they read from the
+    standard input, so that they could be used in pipelines.
+    People went back and did that consciously in programs, like <code>sort</code>.
+    <code>Sort</code>--an example of a program that cannot work
+    in a pipeline, because all the input has to be read before
+    any output comes out--it doesn't matter, because you're going
+    to use it in a pipeline, right? And you don't care whether it
+    piles up there briefly; it's going to come out the other end.
+    It's that kind of thing, where we say, 'Hey, make them work
+    together. Then they become tools.' Somewhere in there, with
+    the pipes, and maybe somewhere the development of <code>grep</code>--which
+    Ken did, sort of overnight--the quintessential tool, as I
+    guess Doug refers to it. A thing which, in a different
+    environment probably you don't see it that way. But, in the
+    Unix environment you see it as the basic tool, in some sense.
+    </font></p>
+</blockquote>
+
+<p><code>grep</code> was, in fact, one of the first programs that
+could be classified as a software tool. Thompson designed it at
+the request of McIlroy, as McIlroy explains:</p>
+
+<blockquote>
+    <p><font size="2">One afternoon I asked Ken Thompson if he
+    could lift the regular expression recognizer out of the
+    editor and make a one-pass program to do it. He said yes. The
+    next morning I found a note in my mail announcing a program
+    named <code>grep</code>. It worked like a charm. When asked
+    what that funny name meant, Ken said it was obvious. It stood
+    for the editor command that it simulated, g/re/p (global
+    regular expression print)....From that special-purpose
+    beginning, <code>grep</code> soon became a household word.
+    (Something I had to stop myself from writing in the first
+    paragraph above shows how firmly naturalized the idea now is:
+    'I used <code>ed</code> to <code>grep</code> out words from
+    the dictionary.') More than any other single program, <code>grep</code>
+    focused the viewpoint that Kernighan and Plauger christened
+    and formalized in <i>Software Tools</i>: make programs that
+    do one thing and do it well, with as few preconceptions about
+    input syntax as possible. </font><a
+    href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_3"><font size="2"><sup>3</sup></font></a><font
+    size="2"> </font></p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The idea of specialized programs
+was carried even further with the development of <code>eqn</code>,
+a mathematical text formatter developed by Kernighan and Cherry.
+Kernighan explains how <code>eqn</code> developed:</p>
+
+<blockquote>
+    <p><font size="2">[T]here was a graduate student named [name
+    deleted] who had worked on a system for doing mathematics,
+    but had a very different notion of what it should be. It
+    basically looked like function calls. And so, although it
+    might have worked, he a) didn't finish it, I think, and b)
+    the model probably wasn't right. I remember, he and Lorinda
+    had worked on it, or she had been guiding him, or something
+    like that. I looked at and I thought, 'Gee, that seems wrong,
+    there's got to be a better way to say it.' I mean, then
+    suddenly I drifted into this notion of, do it the way you say
+    it. I don't know where that came from, although I can
+    speculate. I had spent a fair length of time, maybe a couple
+    of years, when I was a graduate student, at Recording for the
+    Blind, at Princeton. I read stuff like computing reviews and
+    scattered textbooks of one sort or another, so I was used to
+    at least speaking mathematics out loud. Conceivably, that
+    trigged some kind of neurons. I don't know. </font></p>
+</blockquote>
+
+<p><code>eqn</code> was an important software tool because,
+according to Kernighan, it 'was the first--something that sat on
+top of, or in front of, a formatter to genuinely broaden what you
+could do with them.' <code>eqn</code> went a step beyond <code>grep</code>;
+not only was it a small program that served one function, but it
+served little purpose without being tied to another program
+through a pipeline.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>eqn</code> and <code>grep</code>
+are illustrative of the Unix toolbox philosophy that McIlroy
+phrases as, &quot;Write programs that do one thing and do it
+well. Write programs to work together. Write programs that handle
+text streams, because that is a universal interface.&quot; This
+philosophy was enshrined in Kernighan and Plauger's 1976 book, <i>Software
+Tools</i>, and reiterated in the &quot;Foreword&quot; to the
+issue of <i>The Bell Systems Technical Journal</i> that also
+introduced pipes. <a href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_4"><sup>4</sup> </a>By
+the time these were published in the late 1970s, software tools
+were such an integral part of Unix that one could hardly imagine
+the operating system without them. As Kernighan explains:</p>
+
+<blockquote>
+    <p><font size="2">People would come in and they'd say, 'Yeah,
+    this is nice, but does the system do X?' for some X, and the
+    standard answer for all of this was, 'No, but it's easy to
+    make it do it.' Unix has, I think for many years, had a
+    reputation as being difficult to learn and incomplete.
+    Difficult to learn means that the set of shared conventions,
+    and things that are assumed about the way it works, and the
+    basic mechanisms, are just different from what they are in
+    other systems. Incomplete means, because it was meant as a
+    program development environment, it doesn't have all the
+    finished products necessarily. But, as a program development
+    environment, it's very easy to build a lot of these things.
+    It's sort of like a kit. And if you want a new thing, you can
+    take the pieces out of the kit and assemble them to make your
+    new thing, rather more rapidly than you would be able to do
+    the same thing in some other kind of environment. So, we used
+    to say that. 'Does it do X?' 'No, but it's real easy. Do you
+    want one by tomorrow? I'll give you one by tomorrow.' </font></p>
+</blockquote>
+
+<p>As the software tools concept solidified, there was an
+increased interest among Unix programmers in developing a wider
+variety of specialized tools, and in developing them more
+quickly. </p>
+
+<h4>Little Languages</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The idea of tools was extended
+to include the idea that people would actually use tools to
+develop other tools. Thus, the Unix programmers developed highly
+specialized scripting tools that became known as &quot;little
+languages.&quot; Kernighan explains how the concept of little
+languages developed for him:</p>
+
+<blockquote>
+    <p><font size="2">Somewhere, somebody asked me to give a
+    talk. I looked back and realized that there was, in some way,
+    a unifying theme to a lot of the ways that I had been fooling
+    around over the years, which is that I had been building
+    languages to make it easy to attack this, that, or the other
+    problem. In some way, make it easy for somebody to talk to
+    the machine. I started to count them up, and, gee, there were
+    a lot of things there that were languages. Some of them were
+    absolutely conventional things, some of them were
+    pre-processors that sat on other things, some were not much
+    more than collections of subroutines; but, you know, you
+    could sort of call them languages. And they were all
+    characterized by being relatively small, as they were things
+    that were done by one or two people, typically. And they were
+    all not mainstream; I never built a C compiler. They were
+    attacking sort of off-the-wall targets. So, I said, gee,
+    well, they're little languages. </font></p>
+</blockquote>
+
+<p>According to the broad definition given by Kernighan, software
+tools such as <code>eqn</code>, <code>tbl</code>, and <code>make</code>
+can be considered little languages. Scripting languages are also
+little languages because they simplify tasks that would otherwise
+become complex under a full-scale language such as C. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One such scripting language, <code>awk</code>,
+was developed by Aho, Peter Weinberger, and Kernighan to be used
+for &quot;simple one or two-line programs to do some filtering as
+part of a larger pipeline.&quot;<a href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_5"><sup>5</sup></a>
+The modern language <code>perl</code>, a prominent scripting
+language used on the World Wide Web, is a descendant of <code>awk</code>.
+Kernighan explains the origins of <code>awk</code>: </p>
+
+<blockquote>
+    <p><font size="2">We had this thing called <code>qed</code>....It
+    was a programmable editor, but it was programmable in some
+    formal sense. It was just awful, and yet it was the only
+    thing around that let you manipulate text in a program
+    without writing a hell of a lot of awkward code. So I was
+    interested in programmable editors, things that would let you
+    manipulate text with somewhat the same ease that you can
+    manipulate numbers. I think that that was part of my interest
+    in <code>awk</code>. The other thing is--that I remember as a
+    trigger for me--was a very, very specialized tool that a guy
+    named Mark Rochkind developed....He had a program that would
+    let you specify basically a sequence of regular expression
+    and message...and then it would create a program such that,
+    if you pass data through this program, when it's an instance
+    of the regular expression, it would print the message. And
+    we'd use it for data validation. And I thought, what a neat
+    idea! It is a neat idea. It's a really elegant idea. It's a
+    program that creates a program that then goes off and
+    validates data, and you don't have to put all the baggage in.
+    Some program creates the baggage for you. The only problem
+    with it was that it was specialized, this one tiny
+    application. And so my contribution to <code>awk</code>, if
+    you like, is the notion that you can generalize this. </font></p>
+</blockquote>
+
+<p>Weinberger explains that one of the main purposes of <code>awk</code>
+was to improve the database capabilities of Unix: </p>
+
+<blockquote>
+    <p><font size="2">So we sat around and talked about this
+    stuff and there's roughly speaking two pieces to databases.
+    One is the question of how you get stuff out of the database.
+    And the other is the question of how you sort of put stuff
+    into the database. And putting stuff into a database gets
+    involved in these &#145;are we going to allow for concurrent
+    transactions?' and &#145;do we have to do locking?' because
+    Unix was not particularly good...was incapable of in those
+    days. And it was just all too weird. Eventually we settled on
+    the idea of what we wanted was some...tool that would let you
+    get stuff out of ordinary Unix files in a way that was...more
+    general, more useful, more database-like, more report
+    generally like. </font></p>
+</blockquote>
+
+<p><code>awk</code> used a regular expression matching function
+similar to <code>grep</code>, but greatly expanded on it by
+adding the ability to replace the original expressions with the
+desired data stream. </p>
+
+<h4><a name="attic">The Attic</a></h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It might have been more
+difficult for the Unix programmers to develop software tools as
+quickly as they did had they been working in a different
+environment. The center of Unix activity was a sixth-floor room
+at Murray Hill which contained the PDP-11 that ran Unix.
+&quot;Don't think of a fancy laboratory, but it was a room up in
+the attic,&quot; as Morris describes it. In addition to the
+programmers, four secretaries from the patent department worked
+in the attic, performing the text-processing tasks for which Unix
+was ostensibly developed. Morris describes the environment:</p>
+
+<blockquote>
+    <p><font size="2">We all worked in the same room. We worked
+    all up in an attic room on the sixth floor, in Murray Hill.
+    In space that maybe was one and a half times the size of this
+    hotel room. We were sitting at adjacent terminals, and
+    adjacent, and we knew each other and we always in fact ate
+    lunch together. Shared a coffeepot. So, it was a very close
+    relationship and most of us were both users and contributors
+    and there was a significant initiative for research
+    contribution at all points. </font></p>
+</blockquote>
+
+<p>The unique working conditions of the programmers led to a free
+exchange of ideas and complete access to information. Moreover,
+the close-knit environment led to certain standards of etiquette
+among the programmers. Cherry gives an example:</p>
+
+<blockquote>
+    <p><font size="2">[T]here was this attitude that he who
+    touched it last owned it. So if you needed <code>pr</code> to
+    do something <code>pr</code> didn't do, and you went and
+    added it, you now owned <code>pr</code>. And so if some other
+    part of it broke, you owned it. </font></p>
+</blockquote>
+
+<p>Despite the additional responsibilities that resulted from
+changing a tool, the programmers did not hesitate to make any
+improvements they deemed necessary. For example, Morris modified <code>pr</code>,
+as he explains:</p>
+
+<blockquote>
+    <p><font size="2">I remember, for example, one piece of
+    software that I made a noticeable change in. I was listening
+    one day in about 1974 to Ken and Dennis arguing about when
+    something happened, and even at that point they couldn't
+    agree to the nearest year it happened. They had a printout in
+    front of them which had the date on it--month and day of the
+    month. And I looked at them, looked at the piece of paper,
+    their argument, and in my best Southern drawl I said, 'Ah
+    shit,' and turn around [to the] console and actually changed
+    the print programming program called <code>pr</code> and so
+    it would now print out the year. </font></p>
+</blockquote>
+
+<p>Morris greatly appreciated the fact that tools were easy to
+use and fix, even fixing problems before they were vocalized.</p>
+
+<blockquote>
+    <p><font size="2">One day early on--let me pick about 1973--I
+    was watching Dennis Ritchie do some arithmetic computations.
+    I don't mean anything fancy. He was just adding up a list of
+    numbers, using <code>dc</code> to do it, and as he was typing
+    them in he made a error of typing, and <code>dc</code> for no
+    particular reason except just the way it was designed--it
+    could have just printed him an error comment, but that's not
+    what it did--it printed him an error comment and wiped out
+    the current sum. So, he had to start from scratch, and [I]
+    again went back to my favorite Southern drawl. Went in made
+    the change to the first program of <code>dc</code>.
+    Recompiled it and installed it and it when about ten minutes
+    later. Dennis, who probably hadn't seen me, the fact that I
+    was watching him, said, 'There's a problem with your program
+    and think I ought to fix it.' 'Hey, it's already installed.'
+    And that kind of thing could happen with any person, any
+    software, any time and was the rule rather than the
+    exception. </font></p>
+</blockquote>
+
+<p>This example illustrates how the open, cooperative environment
+in the attic improved the responsiveness and flexibility of the
+system. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More importantly, each
+programmer used all of the tools himself, and thus could correct
+and enhance them in ways that would not have been possible in a
+different environment. As Morris explains, no person involved in
+the project could be a user without being a programmer.</p>
+
+<blockquote>
+    <p><font size="2">I was a user and I was creating [a] system
+    that in part, in large parts I wanted to use. So, the parts I
+    was creating were in many cases the part I needed for my own
+    work. So, I was both a user and a contributor. But, that was
+    generally true. It was true of everyone. </font></p>
+</blockquote>
+
+<p>He specifically discusses his calculator program, <code>dc</code>:
+</p>
+
+<blockquote>
+    <p><font size="2">Though I didn't write [<code>dc</code>] for
+    the public, I wrote it for myself and that&#146;s true of a
+    lot of software that people are by and large writing software
+    according to their own standards. The way they wanted to. For
+    their own use, and the use of their friends and associates. </font></p>
+</blockquote>
+
+<p>Similarly, Kernighan believes that no one could be a
+programmer in Unix without being a user of the system.</p>
+
+<blockquote>
+    <p><font size="2">We use our own stuff, and I think that's a
+    critical observation about this group here. We do not build
+    tools for other people. We do not build anything for other
+    people. I think it's not possible to build things for other
+    people, roughly speaking. </font></p>
+</blockquote>
+
+<p>He continues: </p>
+
+<blockquote>
+    <p><font size="2">If I build something for you, even if you
+    spend a lot of time describing to me what you want, and why
+    it's the way it is, it's not going to be as successful as
+    something where I personally face the problems. Now, I may
+    live with you long enough that I start to understand what
+    your problems are, and then I'll probably do a better job,
+    but I think that we have historically done the best on
+    building things that address problems that we face ourselves.
+    That we understand them so well because we face them, either
+    directly--you know, I face that problem myself--or it's the
+    person in the next office. </font></p>
+</blockquote>
+
+<p>This environment fostered not only the toolbox idea, but an
+entire philosophy of programming.</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

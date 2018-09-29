@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title></title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF"
+vlink="#551A8B" alink="#FF0000">
+
+<h2 align="left">Finding a Machine </h2>
+
+<h4 align="left">Darice Wong and Jake Knerr</h4>
+
+<p>After Multics' cancellation in March of 1969, essentially no
+department was allowed to buy a computer powerful enough to
+continue Multics research. Sam Morgan became the department head
+of computing science research at Bell Labs in 1967, well into the
+Multics program. He was present during the cancellation of
+Multics and the birth of Unix. </p>
+
+<blockquote>
+    <p><font size="2">There was an announcement, a formal
+    announcement that the work was stopping, that we were
+    [devoting] no more effort to [Multics], and that we were
+    simply out of it. I believe it had to be done that way
+    because ... unless there is a definite statement that you are
+    not going to work on a project anymore, why, some people will
+    continue to work on it. That's the way... research goes. Folk
+    from day to day do their own thing. And so there was a clear
+    announcement that the work was over...It was simply... using
+    up effort and was not... advancing and showed no promise
+    of... turning into a user useful thing. </font></p>
+</blockquote>
+
+<p>A number of factors contributed to AT&amp;T's decision to not
+buy any more computers powerful enough to run Multics. As Sam
+Morgan was able to recount about the removal of service computing
+from all technical organizations in Bell Labs in the middle of
+1969: </p>
+
+<blockquote>
+    <p><font size="2">... service computing at all Bell Labs
+    locations ... merged into a single division under a man named
+    Phil Thayer... All the comp centers were put under unified
+    management and for a year and a half I was both Director of
+    Service Computing at Murray Hill and Whippany, and Director
+    of Computing Science Research. ... It just wasn't reasonable
+    ... for a research organization also to try to manage a
+    stable computing center. So anyhow, having a separate
+    computing service organization was long overdue. [The
+    separate computing organization] was started in the middle of
+    1969. And this was another impetus I think toward the
+    development of an operating system for small machines, namely
+    Unix, that went on in computing science research. Because
+    once the comp center machines were moved out from under the
+    research aegis, we had in research had our own machines, and
+    management would not buy big DEC PDP 10's and so we had to do
+    something on minicomputers. And that was another impetus
+    toward Thompson and Richie in the Unix direction. Anyway,
+    that's, that's kind of the history of things. </font></p>
+</blockquote>
+
+<p>Many scientists did not understand, or did not want to
+understand, that AT&amp;T was out of computers. Thompson in
+particular recalls, &quot;There was no explicit policy that we
+weren't going to get back into the computer business&quot; </p>
+
+<p>Thompson and Ritchie began work on a Multics like file system
+because they enjoyed using Multics, as didmost of the scientists,
+and wanted to continue research. Sam Morgan felt that scientists
+liked Multics because &quot;[Multics] was fun. You could develop
+software, you could do all sort of things with it. It just wasn't
+... cost effective.&quot; Because the writers of Unix liked the
+type of environment Multics provided, when Unix was developed, it
+&quot;turned out to be a much simpler, more cost effective
+environment which provided users with the pleasures of... the
+same kind of sandbox,&quot; the best of both worlds. Thompson and
+Ritchie were determined to find a computer to continue
+Multics-like research. What they found was an aging DEC PDP-7,
+the only system available. It had a very limited memory but at
+least they could implement a file system. </p>
+
+<p>The PDP-7 in question was specially equipped for fancy
+graphics work being done by Bill Minkey. It belonged to
+department 13, headed by Joseph Condon, an electrical engineer
+who worked on current flow. Condon's group wasn't using the
+computer, and Ken Thompson and Dennis Ritchie were fooling around
+with it. They even programmed a famous computer game, &quot;Space
+Travel&quot;. Sam Morgan noted &quot;that Ken Thompson had a
+space war game that he played for a while when he was looking for
+something to replace Multics.&quot; </p>
+
+<p>When asked how Thompson and Ritchie were using a computer not
+in their department, Condon said, &quot;I don't know.&quot; In
+fact, Condon had become the head of the department that owned the
+PDP-7 after Thompson and Ritchie began borrowing the machine.
+Thompson explains how it happened:</p>
+
+<blockquote>
+    <p><font size="2">It was another department that owned it,
+    and when it would break, it would be a hassle over who
+    maintained it, and we didn't maintain it because we couldn't
+    get our department to pay for maintenance. There was... no
+    money ...[and] they just didn't want us to do this. ... this
+    department that owned the machine ... wanted to throw it
+    away, but [we wanted] to keep it, on their space and maintain
+    it for [ourselves]. That was a precarious situation, and that
+    persisted. Then when it became clear that these machines were
+    nearing the end of their life, we ... tried to get them
+    officially ours, which failed, our manager wouldn't pick up
+    these machines, at zero cost, you know, they didn't
+    want...the cost of the space. </font></p>
+</blockquote>
+
+<p>When Thompson realized that the PDP-7 was not powerful enough
+to implement a file system that could offer some of the
+advantages of Multics he initially programmed a bare-bones file
+system. The file system was then put on a PDP-10. Using this
+enhanced capability, Thompson and the others slowly added tools
+that helped them monitor what the file system was doing. Thompson
+devoted a month apiece to the shell, editor, assembler, and other
+software tools. When asked when he realized that a new operating
+system was being born, Thompson replied, </p>
+
+<blockquote>
+    <p><font size="2">... in the summer of '69, it was totally
+    rewritten in a form that looked like an operating system,
+    with tools that were sort of known, you know, assembler,
+    editor, and shell -- if not maintaining itself, right on the
+    verge of maintaining itself, to totally sever the GECOS
+    connection. </font></p>
+</blockquote>
+
+<p>It was this point that the epic birth of UNIX became a
+reality. After the OS was implemented in assembly language it was
+dubbed UNIX as a play on Multics; MULTI- being many and UNI-
+being one. </p>
+
+<p>The file system on the PDP-7 was created in assembly language.
+As noted above, Thompson realized that for an operating system to
+be useful it needed to be created in a high-level programming
+language by which it could be ported to any system. Thompson
+initially began programming a Fortran compiler, but changed his
+mind and created a very simple language called B. Ritchie
+improved upon B and renamed the language C. UNIX was written in C
+and could be ported to any computer. </p>
+
+<p>Because of its portability, Unix could now be tried on a
+larger machine. The only trouble was finding a machine around the
+size of Multics and a department head to purchase it. Thompson
+was able to recall the process. </p>
+
+<blockquote>
+    <p><font size="2">... we started on a set of proposals for
+    getting a new machine,...... So what would happen was that we
+    would take these proposals for these machines and do all the
+    research on them and get the vendors in and waste everybody's
+    time, and get these proposals up and they'd be thought about
+    our management for a extended periods of time and they'd say
+    'no' for some funny reason, you know, never for a real one
+    (unclear) computing anymore. There were several, really
+    several, of these big rounds of trying to get a vendor and a
+    machine and, to get....to do this work. Most of it was
+    carried on by Osanna and me, and the interference type
+    people. Ultimately what happened was um we found a PDP-11, it
+    was in fact not announced yet, but it was right on the edge
+    of being announced. ...Osanna and I put together a proposal
+    to buy a PDP-11 to do ... research in text processing,
+    (unclear) and document preparation, ... it was the first of
+    the goals that were specific, ... The other ones were...we
+    wanted to play with computers and operating systems, and they
+    were unspecific, and the our management went off and thought
+    about it, and rejected it again. But in the meantime going up
+    and down the hierarchy a sister department, 122, psychology
+    research, came over and said 'well we'll fund it out of our
+    area,' embarrassed the hell out of our management. And they
+    bought it, gave it to us, and...They just had Insight, and
+    inspiration and unfortunately our management didn't.... our
+    management was suffering from wounds from the Multics days. </font></p>
+</blockquote>
+
+<p>Eventually, Lee McMahon, one of the four members of the Unix
+machine proposal group, the only one who belonged to another
+department, convinced his own department head to fund a machine. </p>
+
+<p>Meanwhile, Joe Osanna convinced the Bell Labs patent office
+that Unix would be a worthwhile investment as a text processing
+system. Use of Unix started in the patent office of Bell Labs,
+but by 1972 there were a number of non-research organizations at
+Bell Labs that were beginning to use Unix for software
+development. Morgan recalls the importance of text processing in
+the establishment of Unix. </p>
+
+<blockquote>
+    <p><font size="2">[Space Travel] was fun but the, the first
+    real application of the file system that became Unix was a
+    text processing system. And this was kind of the merging of
+    file system work and work that folks had been interested in
+    for a long time, text processing... </font></p>
+    <p><font size="2">People were interested in text editing and
+    formatting and you could do this on a small computer... if
+    you had an operating system that involved easy handling of
+    files and... time sharing, ... people could access and use
+    each other's files. The Unix file system and the text editing
+    and formatting work kind of came together... </font></p>
+    <p><font size="2">[A text processing system] was a system the
+    Labs was willing to buy a machine for. When this, the
+    proposal was first made that we should buy a machine for text
+    processing it was presented to me because I had to sign the
+    purchase order. </font></p>
+</blockquote>
+
+<p>Though in afterthought Morgan admits to the merits of text
+processing, he had this defense to his initial rejection: </p>
+
+<blockquote>
+    <p><font size="2">[T]he pitch was not really that two of
+    Morgan's MTS, having been thrown out of Morgan's office (I
+    exaggerate here, but having been thrown out of Morgan's
+    office), trot down the hall to Matthew's and say, 'Morgan
+    doesn't love us what can you do for us?' They came in through
+    McMahon's director ...The people who originally made the
+    proposition to me were Osanna, Thompson and McMahon, who were
+    working together. </font></p>
+</blockquote>
+
+<p>Morgan admits to his underestimation of the proposals but,
+acting as a department head, his responsibility was to rely on
+what he knew, which wasn't much about text processing. </p>
+
+<blockquote>
+    <p><font size="2">I didn't understand at the time the
+    innovative nature of the Unix file system, and we had done
+    text processing work in the past and I didn't see that we
+    were, that any great research advance was being made. It
+    sounded as if people wanted to provide a service or something
+    with a typing pool. So the first proposal to buy a, I guess
+    it was a PDP1120 I turned down...As I said the first time
+    that Thompson and company asked for a computer they asked for
+    a DEC PDP10 and they were told no on that. It was simply too
+    big and you are not going to do operating system research for
+    a big computer just after Multics has been turned off. The
+    second time they asked, they wanted a PDP-1120 and I said, 'I
+    am not convinced yet, I want to see more of what you say you
+    are going to do with your text processing system.' </font></p>
+</blockquote>
+
+<p>In any event, his philosophy followed a somewhat lax path. </p>
+
+<blockquote>
+    <p>I<font size="2"> didn't stomp on them, but neither did I
+    sign their order and they found somebody else, another
+    director to sign the order, and the third time they came
+    around they wanted an 11/45 and by that time they had a
+    perfectly plausible and defensible story. So they got
+    selective enthusiasm used on them but not too violently or
+    with too short of a time scale. If it is going to be good it
+    will prove itself. </font></p>
+</blockquote>
+
+<p>One of Morgan's problems with accepting the proposals was in
+dealing with his own management and the bureaucracy in the upper
+levels of Bell Labs. </p>
+
+<blockquote>
+    <p><font size="2">well I guess I had some difficulty in
+    sorting out the signal from the noise. I was quite well aware
+    that my bosses wouldn't approve the purchase of a really
+    large computer to support any surreptitious continuation of
+    the Multics effort. And I was I think willing to wait for the
+    initial shouting to die down, and I figured that if there was
+    a research component involved in the text processing work
+    that it would appear in due course. And indeed it did. </font></p>
+</blockquote>
+
+<p>Being a manager, Morgan had rules of management to follow. </p>
+
+<blockquote>
+    <p><font size="2">The management principles here are that you
+    hire bright people and you introduce them to the environment,
+    and you give them general directions as to what sort of thing
+    is wanted, and you give them lots of freedom. Doesn't mean
+    you always necessarily give them all the money that they
+    want. ...You exercise selective enthusiasm over what they do.
+    And if you mistakenly discourage or fail to respond to
+    something that later on turns out to be good, if it is really
+    a strong idea it will come back... </font></p>
+</blockquote>
+
+<p>To Morgan, his decision and the effects of his decision were a
+natural process, and there was nothing to regret. </p>
+
+<blockquote>
+    <p><font size="2">I have never been in an organization that
+    had enough money, or enough hiring slots, or enough office or
+    land space to do everything that we would like to do. So one
+    provides some back pressure. And in the case of the
+    transition from Multics to Unix, the Multics faucet had to be
+    turned off reasonably hard. It was a part of turning off, I
+    mean it was a management decision that this was going to be
+    turned off. And part of turning it off was not immediately
+    buying hardware on which Multics could be continued. In
+    retrospect, Thompson and Ritchie and other people did find
+    partly through their own efforts and partly by looking for a
+    director that was willing to buy a small amount of hardware,
+    did find machines on which they could work. And in due course
+    when it was clear to everybody around the research area that
+    Unix was going to go somewhere and needed to be supported,
+    they have had the machines that they wanted. They simply went
+    to the director of the other person in the trio. And I didn't
+    think there was anything wrong with this or unreasonable
+    about it. </font></p>
+</blockquote>
+
+<p>There was a reasonable justification for the way things
+eventually worked out. </p>
+
+<blockquote>
+    <p><font size="2">Max Matthews was a person who collected
+    little computers anyway, and it may be that he had more money
+    at the time than I did. We have certain plant budgets.
+    Anyway, I didn't think that there was anything out of the way
+    about this and I didn't feel that somebody was criticizing my
+    judgment. Max was perhaps in a better position to support the
+    machine, or I don't know what. But anyway it didn't seem
+    unusual to me, and now that I recall McMahon reported to me
+    for a long time. He transferred from Max's organization into
+    mine not too long after this particular incident. But at the
+    time he was a department head for Max Matthews. So he added
+    his voice to the desires that the other fellows had and so
+    Max bought the first computer. But there was nothing, there
+    was nothing particularly unusual about this. And since it
+    would have been a little more unusual if people entirely from
+    one center had gone to a different director and said, 'Can
+    you support this?' In which case, I am sure that Max would
+    have come to me and said, 'Look, two of your guys have come
+    to me and have said, will I buy them a computer? If a
+    computer is going be bought, you ought to buy it. Let's
+    discuss whether it should be bought or not.' The reason it
+    didn't happen that way was that one of Max's department heads
+    was in this story. </font></p>
+</blockquote>
+
+<p>In Morgan's view, Matthews' department was a better choice for
+supporting the funding of a new machine than his own. </p>
+
+<blockquote>
+    <p><font size="2">I was told, 'Look, Max Matthews can support
+    this.' He was the other director. And why could he support
+    it? He could support it because he was interested in text
+    processing. He was doing, ... he was in behavioral sciences
+    and psychology, and he had people who were working on text
+    processing, and in fact one of the folk who was, came in with
+    the proposition for the 11/20 that I turned down. </font></p>
+</blockquote>
+
+<p>Fraught with difficulties, the search for a machine came to a
+successful end. Though Thompson and his fellow Unix programmers
+eventually obtained a PDP-11/45, the PDP7, the machine that was
+too small, was integral in the way Unix developed. Had the PDP-7
+not been available, history might have been different. </p>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Text Processing and the Writer's Workbench</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>Text Processing and the Writer's Workbench</h2>
+
+<h4>David Silverman</h4>
+
+<p>The Writer&#146;s Workbench exemplifies the collaborative
+nature of the UNIX group. The people of the Unix project had
+always done text processing. They had been writing and editing
+code to create Unix and its tools. The project, moreover, had
+received funding from the patent department in exchange for a
+document preparation package. Lorinda Cherry, an experienced
+programmer who had earned a computer science degree from Stevens
+Institute in 1969, and Brian Kernighan built an open-ended system
+of programs to deal with text. Their work on formatting, text
+analysis and style helped to create <font face="Courier New">troff</font>,
+<font face="Courier New">ntroff</font> and <i>Writer&#146;s
+Workbench</i>, programs still used today.</p>
+
+<p>Three factors contributed to the interest in text processing:
+in-house use, parts-of-speech programs, and statistical analysis
+of text. As various groups investigated or required new ways to
+process text, the number of tools grew. The team used text
+processing to work on programs and prepare reports. Some of the
+Unix team&#146;s tinkering, moreover, led to improvements in the
+new tools. Cherry&#146;s self-described goal was to &quot;see
+what kind of neat new things I can make the computer do.&quot;
+Although Unix had used the text processor <font
+face="Courier New">ed</font> since its inception, Kernighan and
+Cherry improved not only the way <font face="Courier New">ed</font>
+performed its old functions, but created new functions for it.</p>
+
+<p>The first improvements were <font face="Courier New">troff</font><b>
+</b>and <font face="Courier New">ntroff</font>. These commands
+facilitated &quot;a wide variety of formatting tasks by providing
+flexible fundamental tools rather than specific features,&quot;
+according to the <i>Bell Labs Technical Journal </i>(Kernighan,
+Lesk, and Ossanna 2119). Combined with the little languages
+described above, notably <font face="Courier New">eqn</font>,
+these features allowed the text processing and formatting both on
+the computer and in printed documents. This was particularly
+important for a company such as Bell Labs where so many reports
+were on technical matters.</p>
+
+<p>The second project to assist with text processing was Brent
+Aker&#146;s work on the Votrex machine, a peripheral that spoke
+for the computer. The Votrex did not intonate or emphasize
+properly. Cherry worked on a parts-of-speech program that would
+allow the computer to pronounce words properly. The computer
+needed &quot;parts of speech &#133;for syllabic stress.&quot;</p>
+
+<p>The third project was Bob Morris and Lee McMahon&#146;s work
+on the authorship of the Federalist papers. Working with the
+ideas of statistician Fredrick Mosteller, Morris and McMahon were
+trying to determine who wrote which paper using statistical
+analysis. &quot;Taking turns typing,&quot; they entered the
+papers into the machine to run them through various filters and
+counters. They &quot;developed lots of tools for processing text
+in the process.&quot; Typo, for example, was &quot;one of the
+early spell-checkers.&quot; It worked based on trigram
+statistics, a Mosteller technique that analyzed chunks of
+repeated letters. Cherry&#146;s familiarity with trigram
+statistics had come from a compression project she worked on in
+1976. She describes the process:</p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2">You take the whole string, if your
+        ten-letter work had maybe a trigram that was six letters
+        long that had a high enough count to be worthwhile, you
+        pick that entire six-letter string off and store it in a
+        dictionary and replace it with a byte and then with an
+        index into the dictionary.</font></p>
+    </blockquote>
+</blockquote>
+
+<p>This counting procedure was applied to the other forms of
+analysis, for example, the Federalist papers authorship research.</p>
+
+<p>Unix&#146;s special capabilities made much of the text
+processing work possible. Because <font face="Courier New">ed</font><b>
+</b>was general purpose, &quot;programs originally written for
+some other purpose&quot; could be used in document preparation.
+Rudimentary spell checkers utilized the <font face="Courier New">sort</font>
+command, for example. &quot;Case recognition,&quot; which
+&quot;changed with Unix,&quot; also enhanced the
+programmer&#146;s ability to analyze text. New methods of
+accounting<b> &quot;</b>for punctuation and blank space and
+upper-lower case&quot; also contributed.</p>
+
+<p>With the background of formatting, part of speech analysis and
+statistical filtering, Cherry embarked on the project <i>Writer&#146;s
+Workbench</i>. As the &quot;grandmother&quot; of this new aid,
+Cherry created a word processor with the capacity to analyze
+style, determine readability and facilitate good writing.</p>
+
+<p>Cherry heard through a colleague that Bill Bestry, an
+instructor in Princeton University&#146;s English department
+&quot;had his students &#133; count parts of speech.&quot; The
+students were then able to use the objective statistics to
+improve their writing. Drawing on Cherry&#146;s previous part of
+speech work, <i>Writer&#146;s Workbench</i> did the count
+automatically. As Cherry put it:</p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2">There are various things you would
+        count and look at using parts of speech to decide whether
+        you&#146;ve got a compound or compound sentencing
+        sentences types, so the part of speech program turned
+        into the style program.</font></p>
+    </blockquote>
+</blockquote>
+
+<p>This &quot;layer on top of style and diction&quot; features
+filled the program with a wider range of capabilities for both
+students and colleagues at Bell Labs. &quot;There was a human
+factors group in Piscataway,&quot; for example, that wanted to
+&quot;look at [computer] documentation and decide whether it was
+reasonable from a human factors standpoint.&quot; The readability
+indices of <i>Workbench</i> helped to edit the manuals of Unix
+itself.</p>
+
+<p>During beta testing with Colorado State, the <i>Workbench</i>
+saw active faculty and student use. This program succeeded for
+three main reasons &#150; its reliability, structure, and the
+programmers&#146; understanding of the writing process. The
+competing IBM product, <i>Epistle</i>, was based on a parser,
+making it slow and incapable of coping with incorrect student
+grammar. <i>Workbench</i> &quot;never really did check
+grammar&quot; but did illuminate the style of sentences employed.
+The &quot;press-on-regardless attitude&quot; of workbench lead to
+accuracy across the entire paper. The most important factor,
+however, was the programmers understanding of the writing process
+itself. They knew to present readability scales as estimates, not
+to squeeze papers into pure numbers. They knew that the ultimate
+lesson was to teach students that writing is a series of choices,
+not a matter of pretty formatting on a laser printer. Cherry
+expressed her vision of the Workbench&#146;s use:</p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2">My feeling about a lot of those tools
+        is their value in education um is as much pointing out to
+        people who are learning to write that they have choices
+        and make choices when they do it. They don&#146;t think
+        of a writing task as making choices per se. Once they get
+        it on paper they think it&#146;s cast in stone. So it
+        makes them edit.</font></p>
+    </blockquote>
+</blockquote>
+
+<p>This step beyond formatting is what makes Unix truly able to
+process text and improve the writing skills of its user.</p>
+
+<p>&nbsp;</p>
+</body>
+</html>
