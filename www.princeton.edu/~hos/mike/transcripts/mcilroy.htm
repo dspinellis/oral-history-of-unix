@@ -1,0 +1,1083 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+ 
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+ 
+  <meta name="Generator" content="Microsoft Word 97">
+  <title>Interview with M.D. McIlroy</title>
+</head>
+ <body>
+  <font face="Garamond"><b>
+<p>Interview with M.D. McIlroy</p>
+ 
+<p>Murray Hill, 18 August 1989</p>
+ 
+<p>Michael S. Mahoney, Interviewer</p>
+  </b></font>
+<p><font face="Garamond"> </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I was looking over some of the literature
+and one of the things that struck me as I was looking back at Ritchie’s retrospective
+and other retrospectives of it are the circumstances under which it got started.
+ I gather that the name "Unix" came from Brian [Kernighan] and it came in
+‘70 and it was a play on Multics.  And the more I read the literature, the
+more Multics looms behind Unix, both positively and negatively.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	Um hmm  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	What was the relationship there?<br>
+ </font></p>
+ 
+<p><font face="Garamond"><b>McIlroy</b>:  Ritchie, Thompson and Osanna and
+Peter Neumann and I were all in on the Multics project from the time Bell
+Labs joined.  Ed David, who was Executive Director of [not clear] sciences,
+I guess it’s called, and later went on to be Nixon’s science advisor, …</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Go ahead.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  …was  the really strong … was really
+pushing for this Multics project, but (it was) the dream of the computer
+utility that just grabbed him.  And he got other people to join in and meet
+with MIT and start laying plans and early people doing that were … included
+Vyssotsky.  Osanna and Neumann were particularly committed to the project.
+ I would say the rest of us were in on the project and dove in with a will
+and did a lot of design work, but were perhaps not quite as confirmed believers
+that this was the wave of  the future.  Nevertheless, we devoted an awful
+lot of time to it.  When Multics began to work, the very first place it worked
+was here.  We had our GE 645 machine.  MIT had one too.  But, they were doing
+their development on another machine, carrying tapes across and just taking
+measurements, making tests on the Multics machine.  As soon as we got a tape,
+we tried to run it as a computing home.  Thompson … so in a day, we would
+have a Multics machine running, fitfully.  It was amazing how three people
+could absolutely overload this giant room full of equipment.  And that was
+because of several … because Multics actually changed the way people worked.
+ The Multics user was not the same as a user of previous time sharing systems.
+</font></p>
+  
+<p><font face="Garamond">And the principle reason was that he could do multiple
+things at a time and that he could be typing ahead of where he was working.
+ Previous ones had been strictly half duplex.   You typed for awhile, and
+then you waited for the computer to respond.   Multics went full duplex.
+ It was amazing how this one tiny little change absolutely permeated the
+way you use the system.  And that and the fact that you could very easily
+set things going in the background.  So, any one user could start several
+things going, and when the machine was slow, that’s exactly what you would
+do.  Your mind would be racing way ahead of the machine.  And that just brought
+it down even worse. </font></p>
+  
+<p><font face="Garamond">So, Multics was clearly not going … once it was
+running was clearly not the boon that was going immediately solve our need
+for computing cycles.  Three people could bring it down.  Also there developed
+a wonderful Multics system programmers’ manual.  An eight foot shelf or something.
+ I don’t recall how long it was.  Nobody here had a complete copy.  Volume
+after volume of design documents.  Very daunting.   Thompson and Ritchie
+and Rudd Canaday, who was an intern in my department for a year, were talking
+about, well, how could we do this in a less massive way?  And, there were
+many afternoons spent across the hall there, working at the blackboard, working
+out the design of the Multics file system.  I’m sorry, the Unix file, what
+became the Unix file system.  If we were to make a file system, what would
+it look like?  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Let me interrupt you for a second. 
+What is it that … Was it the file system that made that Multics so big and
+daunting? </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  It was the…  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Why did you start with the file system?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	OK. The real reason for the…   
+one already knew why time sharing was such a boon.  It wasn’t that it allowed
+many people to share the cycles in the machine.  It was that it allowed many
+people to work in the same huge pot of data, and it was the synergy of sharing
+data, being able to quickly look at other people’s files, pass messages around
+and so on, that was the best thing that time sharing had to offer.  The other
+was a merely economic advantage, but the one of sharing was a qualitatively
+different way of using the machines.  So the file system was the heart of
+the matter.  And …</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Oh, so it was the idea of sharing?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yes.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	And, make it easy to share?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yes. And make it easy to find …
+to store away and retrieve information.  The Unix system owes much to the
+Multics file system,  most notably the directory tree idea. </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	How many of these design features of
+Multics had sprung from you people in the first place?   Or did you …?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  The basic concepts of Multics really
+come from MIT.  We joined the project after they got started.  And it was
+going to be the follow-on to their CTSS, and they talked about it for a long
+time.  One significant design thing for Multics came from Vyssotsky.  Multics
+had these two ideas: the file system and the segmented address space for
+processes.  And they were separate.  You would do IO from files into the
+address space.  Vyssotsky said, "Why don’t …, why are not files exactly the
+same as segments?"  And there is no… and IO disappears.  Well in fact FORTRAN
+programs still have read and write.  But, when you open a file, all you’re
+doing is putting a segment in your address space.  Multics really worked
+that way. </font></p>
+  
+<p><font face="Garamond">And our later systems have backed off from that
+wonderful unifying idea.  There was … in the working out of the idea, there
+was a great deal of overhead.  The other big thing of Multics was the idea
+of dynamic linking.  And what that imposed upon the rest of the architecture,
+… I’m sorry,  I should say (even more than dynamic) dynamic linking and the
+so-called ring structure for memory protection, the various layers of access
+permissions. The collection of those things together … the hardware was conceived
+to support those, but it was a first cut.  The collection of them together
+turned out to be take a great deal of implementation to make them work. 
+One of the surprises late in the project was....  So you got automatic… (back
+up).  The way the shell worked.  When  you invoked a program, what it did
+was simply link the program into your address space and run it right there.
+ Well, suppose you recompile the program.  It’s already in your address space
+and you run it again, and you run the old one. </font></p>
+  
+<p><font face="Garamond">And, how to undo.  There is lots of effort exerted,
+design effort that went into the binder.  Then.  But nobody thought about
+unbinding, which turned out to be something that had to be put in later on.
+ And unbinding turned into quite a big monster.  Especially, to have unbinding
+occur in any…  people really didn’t like this idea.  So, I rewrote the program
+and I got the old one and you would like that to happen.  You get the latest
+version automatically.  It took a great deal of implementation.  This kind
+of thing mushroomed and the system got huge.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	What did MIT look to get from Bell Labs
+in that project?  … what was your role?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Why was Bell Labs part of it?</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	What were the expectations in both directions?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  All right. MIT had the basic vision
+of the computer utility, in those words.  And Bell Labs certainly was a window
+into getting that out of the academic world.  I suspect that would be the
+principal motivation for having Bell Labs in.  Of course, Bell Labs, too,
+had a good reputation for having built interesting operating systems for
+many years.  When, for example, IBM came out with a 709/7090, which had data
+channels.  We…  It was in the market for well over a year, before we got
+one.  Probably a couple of years.  But, we built our own operating system
+for it, similar to the one we’d built for the 704.  We used the data channels,
+and it did asynchronous I/O. None of the software that came from IBM used
+the data channels in any way…, although the hardware was there, but it didn’t
+exploit the software.  So, we were in there exploiting the hardware: data
+channels, interrupts, all that,  first. When the disk drives were announced
+as a product,  lots of people put them on, but we were the first people to
+put them into a file system where you could leave your files.  So, Bell Labs
+did have plenty of background in creation of operating systems.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Where you part of that?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yes. I was not part of the 704
+operating system, which was built before I came to work here.  But, the 7090
+operating system, I certainly was,  although the two principal players were
+Ron Drummond and Gwenn Hanson. </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	So what you joined was a continuing
+tradition of building your own operating systems?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:   …of building our own operating
+systems, absolutely.  And this was…  Everybody agreed that operating systems
+that do multiple things at a time were the next step ,and Multics was the
+best hope in that direction.  It was multiple in every sense, as its name
+indicated.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	And the Labs in turn hoped to get a
+share on that?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Well, the Labs was looking for…
+ to move to a new generation of equipment and a new way of running its …
+and a new way of using it, and here was a way.  It looked like that might
+be a very big undertaking, because operating systems, although they had been
+built by two people here,  back in 1968 uh ‘58.  You found more and more
+people when you looked outside at the ones that were built around ‘64 and
+you find that there were fifty people building them.  Maybe too much to be
+doing in the corner of the math department.  </font></p>
+  
+<p><font face="Garamond">Of course, what Unix showed after that was that
+two people could still build a operating system if they had the right model.
+ So, we had Multics in the background.  Ken Thompson very  quietly in the
+wee hours would take the machine when nobody was on,  would take the machine
+down, was building his own operating system for the giant 645, starting from
+scratch.  He got to the point where it actually came up to the console and
+said log-in or something like that.  I do not know what the architecture
+of that operating system was.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	He was just doing it to explore operating
+systems?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yes.  He felt that he could do
+it with far less fuss and bother than the megabytes that had been written
+for Multics.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	So, you really were disappointed as
+a group in the way Multics ended?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  I think that’s true of most of
+us.  Yeah.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	And so it just petered out?<br>
+ </font></p>
+ 
+<p><font face="Garamond"><b>McIlroy</b>:  No.  We were still working.  But,
+(pause) the computer centers had been ... had put up the money for the machine.
+ The computer centers by now were separate from research; that happened sometime
+during the Multics projects.  The computer centers, hoping to get something
+out it, and with big budgets … Research had never had computers of their
+own;  computers always belonged to the Computing Center, which once belonged
+to Research.  The computer centers move away, research is left as clients.
+ Only no hardware and no capital budget.  Well, the computer center began
+to see that this was not going to provide the cycles that they were going
+to need in the next couple of years.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	No. I see, if three people can bring
+it down, this is not the answer to their needs.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  They needed computing cycles. 
+They were selling them.  They had this million dollars worth of equipment
+up in the attic that was sitting there being played with by three folks,
+and the day that it was going to make into the comp center, we did have some
+fairly interesting assessments of what it could do.  I think, I still have
+those up on the shelf, where various people predicted when Multics might
+become useful and how useful it would be.  You’ll find positive and negative
+things written about it.  I could get that kind of stuff out for you if you’re
+interested.  But it’s Multics, it,s not Unix.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	[inaudible]</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	So, it became clear that we were
+a drag on the Computer Center’s budget.  We were not going to pull them out
+of their hole, you know, in the near future.  They were going to have start
+buying hardware and go with whatever was in the market at the time for operating
+systems.  And the project was, … there was a clean, sharp decision made to
+get out.  The project did not wind down, it just stopped.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	When was that?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  It was in 1969.  I forget what
+month, and the astonishing thing is that we got a visit from the President,
+Bill Baker, himself to tell us about the turning off of the project. And
+he poured wonderful Bakerian oil upon the waters.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I’ve seen him in charming action (Laughing)</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  As was so often proposed in Vietnam,
+he declared a victory and retreated.  (Laughing)  The research value of Multics
+was declared to have been...  the research potential of the Multics project
+was declared to have been exhausted.  So, we would get out of it as a research
+project.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I gather it was about the same time
+the research group got split into two halves, mathematicians and computer
+research?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  That had happened about ‘67 or
+so.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Had that split come simply because things
+were getting too big?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yeah.  I think so.  There were
+two degrees of split.  The first split was, computer research left math and
+kept the comp center.  And fairly shortly thereafter, the comp center left
+research entirely and went over to a more operational department.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	You were Computing Research, but you
+didn’t have any computers?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  That’s correct.  Visual and Acoustics
+Research had computers, and they’d had them for some time.  They were early
+… they wanted to listen to signals in real time and make digital filters
+…  simulate digital filters and stuff like this, and they could eat up all
+cycles of a machine.  So, they started getting little, they were the  pioneers
+of minicomputers at Bell Labs.  They had some that were stuck on the side
+of our 7090.  The Packard Bell 250 was the first one they had.  This guy
+could reach in and grab cycles off the ‘90, or run a collection of interesting
+acoustic gear on the side.  Gather digitized tapes, which would then be moved
+immediately to the ‘90 and processed.  Perhaps that was the first workstation.
+I think that Rand Corporation had some more or less at the same time frame,
+the early sixties.  As more minicomputers became available, Visual and Acoustics
+Research kept getting them.  Now, we would look at their…  there was interesting
+observation back and forth. They had nice hardware, and we would look how
+inefficiently they were using their cycles.  You know, do a little improvement
+in your software, and you wouldn’t have to have all these machines.  They
+broke the ice for minicomputers.  And, because they really didn’t like making
+software, instead when things got tough, they would just buy another machine.
+ And if things got a little faster, the machines got a little faster, they
+would just throw out the old one and that was the origin of the PDP 7,  which
+…</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Where is this famous PDP 7?  Does it
+still exist?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Long gone.  That was a graphics
+engine, put together by Bill Nidke and Ed McDonald, Ed Setarp and some others.
+ It was a graphics engine with a really very nice display on it.  A display
+with a program display list, so that you could have graphics subroutines…
+ and it was more or less … it had been displaced by an improved graphics
+engine, which was sitting idle and that’s what Thompson grabbed on and built,
+finally built…  fairly soon after the Unix shut off, and I think he was happier
+doing that than he was, trying to make the GE645 do its thing.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Now, you people must have been in something
+of a bind. You were a computer research group.  You haven’t got computers.
+ Were you looking around for a mission?  Did you have a mission?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Oh. We had, we still could work
+on the...  We had always been associated with the comp center.  We still
+had good times with the comp center.  If we produced interesting compilers
+the comp center would install them. So, we had the computing cycles down
+there in principle.  But, they were not at your fingertips, the way  we got
+used to after having CTSS at MIT available to us for some years.  From ‘66
+on, we were connected to CTSS from here.  This little machine came up, and
+Thompson brought up his operating system, and Ritchie joined in, and I saw
+that it was a neat thing and I was the department head, so I muscled in,
+and they turned it from a one user to a two user system.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	What were you doing at the time when
+this caught your interest? </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Well, I had been the languages
+person for Multics.  Bob Morris and I wrote the PL/1 compiler, and Multics
+was all written in PL/1.  That came about, because I was on the IBM-SHARE
+PL/1 committee.  So, I had.  We were looking for a higher level language
+to program Multics in.  This was not a first.  Burroughs had programmed the
+B5000 in some dialect of Algol.  But, that pretty well … that wasn’t good
+enough for…  It really wasn’t too well suited to bit-picking algorithms that
+go on in a operating system.  The PL/1 had everything you needed, and a lot
+more.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Did you like PL/1?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  The answer is, not very much, even
+though I helped design it.  It was a neat idea to put everything that was
+known about programming languages into one pot.  (Laughing)  Almost everything.
+ But, they didn’t meld together very well.  And I have only written one PL/1
+program in my life, after having designed it and built a compiler for it.
+ Which says something about the language.  The compiler was built in TMG
+compiler writing system, that I had taken over from Bob McClure of Texas
+Instruments and then improved a good bit.  The two of us built a very large
+portion of PL/1.  We left out all the I/O,  which turns out to be half of
+it; if you look at the grammar of PL/1,  half of the grammar is about I/O,
+so that really cut off a lot. We left out the I/O.  We left out parallel
+processing, and we left out almost nothing else, including some very elaborate
+data structure handling: self-describing structures and so on, which IBM
+didn’t have in their first release.  Uh, compiler …the compiler, the two
+of us built in about a year, and it was used for several years before finally
+being replace with a real one.  This compiler had two diagnostics:  the syntax
+error and the other was redeclaration. </font></p>
+  
+<p><font face="Garamond">(Laughing)</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Sounds like BASIC.</font></p>
+  
+<p><font face="Garamond">(Laughing)</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  But, to build the compiler, we
+had this TMG compiler writing system, and PL/1, being a huge language, stretched
+it to its limit and we kept … every once in a while we’d fill up all of the
+memory and now there were two choices:  you would work on the compiler, 
+or you would work on the compiler compiler.  And we had both at our disposal,
+went back and forth, squeezing out one or the other, and out of this I got
+an idea of how TMG really ought to work, and that’s what I did on the PDP-7.
+ The first thing I brought up was from absolute scratch. We had an assembler
+only.  I brought up a compiler writer, a compiler compiler, written in its
+own language.  Bootstrapped it up.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Now, is that TMG or did you do that
+in B?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  It was TMG.  TMG was a begun in
+itself.   There was no B. There was no C.  There was an assembler.   </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	One of the sources talks about roff
+having come from run off.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yes.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Which you did for Multics?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  No, roff was done by Jerry <u>Salzer</u>
+at Multics, he invented it -- I’m sorry, for CTSS.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	And you got up roff here?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  I wrote roff for Multics, that’s
+true, that’s correct.  And I wrote that in BPCL.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	You wrote it in BPCL.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Dennis Ritchie had brought BPCL
+up on our machines.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	He brought that in?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Mm. Hm.  (yes)</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Was B ever used in Multics?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  No.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	So, that history of BCPL to B to C,
+is it all here?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  All here.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  And TMG fed into that too.  Some
+of things like the two-address assignment operators were in TMG here first
+and then were adopted by B and by C.  I can’t say I invented them because
+they also came from … they were also in Algol 68 at the same time.  B is
+where the unusual express… uh, declaration syntax of C came from.  That was
+Ken’s invention, that the declaration should look like any…  should have
+the same syntax as an expression.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Since we’re on C.  One of the…  I’ll
+ask Dennis this when I get to it, but one of the features is, that struck
+me about C was when I was writing a LISP interpreter for … in it.  This property
+of C, of always…   of any statement bringing back a value, in the type, so
+that all operators have values, and so I found that at a certain point my
+core C LISP was beginning to look like LISP expressions, and at a certain
+point it just seemed automatic to go over to a LISP library.because I was
+just stacking parenthesis in C.  Where did that come from?  Is that part
+of B?  Or …   the notion that all operators have values?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yeah.  It was also in Algol 68.
+ In BCPL, which came out of CPL, they had the very, very strong distinction
+between functions and commands.  An assignment was a command.  So, they did
+not have…  I do not think the assignment was an operator in the expression.
+ But, it was in Algol68.  So, that was in…   So that happened sort of everywhere
+at the same time.  In fact, the first place I saw it was McClure’s proposal
+called Linear C, which was way before the language C.   Just liked it because
+it sounded nice.  Like after Linear A and Linear B.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Oh I see, I see </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  It was an obscure looking language
+and it was linear, because you wrote tremendous long expressions.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Must have placed you on the borderline
+between a procedural and functional language?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yes. It did.  And roughly speaking
+what it had was a "break" and a "continue" statement.  "Continue" simply
+went back to the last parenthesis, and "break" simply jumped over to the
+next one, and those were the major controls, plus an "if" of course, those
+were the major controls in the language.  So, there wasn’t an actual key
+word "for".  Just the fact that you said "continue" meant you would jump
+back. </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Let’s jump ahead for a second.  </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yeah.</font></p>
+  
+<p><font face="Garamond">(some chat about whether the machine is recording,
+red light, etc.)</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I was talking to my daughter,  who’s
+a computer science/music major at Harvard, before I came up here.   She said,
+"What’s the name of this project?"  And I said, "Well, it’s the oral history
+of Unix."  She said, "That’s not particularly jazzy." (Laughing)  "Can’t
+you think of a jazzier name?" and she said, "Who are you going to talk to?"
+ and I said, "Doug <b>McIlroy</b>."  And she said, "Well, what did he do?"
+ I said, "Well, he had something to do with pipes."  She said, "Why don’t
+you call it Pipe Dream?"</font></p>
+  
+<p><font face="Garamond">	(laughter)</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I do want to talk about pipes, because
+Ritchie says in his retrospective that … not only was it your suggestion,
+but indeed, he suggests, at your insistence. </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  That is one of the only places
+where I very nearly exerted managerial control over Unix was pushing for
+those things.  Yes.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Why pipes?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Why pipes?</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Where did the idea come from?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Goes way back.  There was … in
+the early sixties,  Conway wrote an article about co-routines.  ‘63, perhaps,
+in the CACM.  I had been doing macros, starting back in ‘59 or ‘60.   And,
+if you think about macros, they mainly involve switching data streams.  You’re
+taking in your … you’re taking input, you suddenly come to a macro call,
+and that says, "Stop taking input from here, go take it from the definition."
+ In the middle of the definition, you’ll find another macro call.  So, macros…
+ even as early as ’64, ah,  somewhere I talked of a macro processor as a
+switchyard for data streams.  Also, in ‘64, there’s a paper that’s hanging
+on Brian’s wall, still.  He dredged out somewhere, where I talked about screwing
+together streams like garden hoses.   </font></p>
+  
+<p><font face="Garamond">So, this idea had been hanging around in my head
+for a long time.  On Multics, Joe Osanna, who was actually beginning to build
+a way to do input-output plumbing.  Input-output was interpreted over this
+idea of the segmented address space in the file system, really…   files were
+really just segments of the same old address space.  Nevertheless, you had
+to do I/O, because all the programming languages did it.   And he was making
+ways of connecting programs together.  They were fairly kludgey and no one
+really exploited them, because it took too much … you had to explicitly say
+connect this to that, and that to that.  Nothing so nice as the piping operator
+in the shell appeared.   Then, at the same time that Thompson and Ritchie
+were, on their blackboard, sketching out their file system,  I was sketching
+out how to do data processing on this blackboard, by connecting together
+cascades of processes and looking for a kind of prefix notation language
+for connecting processes together and failing because…  it’s very easy to
+say "cat into grep into…  or who into cat into grep, and so on.  It was very
+easy to say that, and it was clear from the start, that that was something
+you’d like to say.  But, there are all these side parameters that these commands
+have.  They don’t just have input and output arguments, but they have the
+options.  And syntactically, it was not clear how to stick the options into
+this chain of things written in prefix notation: cat of grep of who [i.e.
+<i>cat</i>(<i>grep</i>(<i>who</i> ...))].</font></p>
+  
+<p><font face="Garamond">Syntactic blinders…  didn’t see how to do it.  
+So, I had these very pretty programs written on the blackboard in a language
+that wasn’t strong enough to cope with reality.  So, we didn’t actually do
+it.  Nevertheless,  I tried to get, who was it…?   somebody was playing with…
+  was getting into the I/O system of the Honeywell, ah, or the GE 635 that
+the comp center had --they got that in anticipation of replacing it with
+the 645 the minute Multics was working.  I asked them, "Could you make… 
+I’ve got this wonderful I/O system…  where you can… relatively machine indepen…
+relatively device independent."  By and large, you wrote the same way on
+tapes as on disks as on printers…   in fact, that was true back in BESYS-3,
+the operating system that was built here for the 7090.  Largely, device independent
+I/O calls, like many other operating systems.  So that device independence
+was something that was around here for a long time.   It was clearly a beautiful
+mental model, this idea that the output from one process would just feed
+in as input to another. There was syntactic difficulty in talking about that
+mental model, and I have a co-routine paper written in 1968 that was never,
+never printed, because it was always a little too ugly, struggling with syntax.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I understand that one time you were
+thinking of an infix notation.  According to Ritchie’s article, you were
+going to use your pipe…   we see these piping  as form of operator, linking
+two arguments, it would be an infix notation, but that was …</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yes, yes. Well, we finally…   or
+a filter, a whole filter process was going to be an operator between two,
+you know …   and I…   over a period from 1970 til ’72,  I’d from time to
+time, say "How about making something like this?", and I would put up another
+proposal, another proposal, another proposal.  Then one day I came up with
+a syntax for the shell that went along with the piping and Ken said, "I’m
+gonna do it."  He was tired of hearing all this stuff…   and that was certainly
+what it… the next …  that, that …   you’ve read about it several times, I’m
+sure.  That was absolutely a fabulous day, the next day.  He said, "I’m gonna
+do it."  He didn’t do exactly what I had proposed for the pipe system call.
+ He invented a slightly better one that finally got changed once more to
+what we have today.  He did use my clumsy syntax.   [Turns to the blackboard
+behind him] He  had … he had, ah, a function that produces …[inaudible] output
+into a file, and ah we simply said, "This is passing it through another …
+ this is going to be another process, concatenation of functions."  He put
+pipes into Unix.  He put this notation into the shell  [<i>Here <b>McIlroy</b>
+points to the board, where he had written f &gt;g&gt; c</i>], all in one
+night.  The next morning we had this… people came in, people came in…   Oh,
+and he also changed a lot of…   most of the programs up until that time couldn’t
+take standard input, because, there wasn’t the real need.  They all had file
+arguments.  grep had a file argument, cat had a file argument.  Thompson
+saw that that wasn’t going to fit into this scheme of things, and he went
+in and changed all those programs in the same night.  I don’t know how. 
+ And the next morning we had this orgy of  "one liners."  Everybody had another
+one liner.  Look at this, look at that.  </font></p>
+  
+<p><font face="Garamond">nroff had a program called ov, overlay.  It was
+to make multi-column output.  What you did was (writing on blackboard), out
+of  nroff, you produced a series of pages like this: one page had stuff over
+here, the next page had stuff over here, and then OV would OR these two pages
+together.  Then it was nroff into ov into ov into the printer [<i>writes</i>
+nroff &gt; ov &gt; ov &gt; lpr on board]:  four-column output. </font></p>
+ <font face="Garamond"><b> </b></font>
+<p><font face="Garamond"><b>MSM</b>:	Oh, marvelous.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	All that happened.   However…  
+and if you go back look at the Unix manual we wrote about this, discussion
+of how to use pipes in the shell goes on for a whole page.  It clearly had
+not yet been internalized.  Because, now… [<i>puts thumb and forefinger together
+in sign for small</i>] there’s this much in the shell manual that describes
+what pipes are all about?  One of them had to explain the syntax.  How you
+recognize which "greater than [&gt;]" is to a file, which "greater than"…
+.  {<b>McIlroy</b> is writing on the blackboard] And you also had "less thans
+[&lt;]."  Which were really funny.  Less than a process.  When Thompson was
+to give a talk on Unix at a meeting in London, we all said, "What you really
+want is function concatenation." And we would write informally a little function
+concatenation symbol [<b>McIlroy</b> writes f ø g ø].  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Yeah.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  To prepare this talk,  Thompson
+said, "Let’s take a simple one, and he took that one [writes |] and distinguished
+it from the "greater than" for files, and then he could give a respectable
+talk.  I can remember giving a talk at WG2.3, sort of, just two weeks after
+pipes were up and apologetically talking about this.  Folks are not reticent
+with their criticism in 2.3.   They said, "That’s ridiculous. You gotta have
+better notation." And the better notation did come a few months later.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I just want to get that,  because I
+haven’t got a video camera on this.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	I think that notation is somewhere
+in Dennis’ paper.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	It’s in Dennis’ paper.  But you do it
+in a ….  What’s not in Dennis’ paper is the story about the meeting of Ken
+(Thompson) and you.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	Cleaning up something up so you
+can talk about it is really quite typical of Unix.  Every time a manual,
+another edition of the manual would be made, there would be a flurry of activity.
+ When you wrote down the uglies, we’d say;  "We can’t put this in print."
+ Take features out, or put features in, in order to make them easier to talk
+about.  The virtue of being in a research center,  you don’t have to keep
+any old software running. </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	The compatibility is a human function?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Right.  Incompatibility is just
+a terrible burden borne by IBM and Bell Labs selling facility.  We’re trying
+make production.  They have users who have code out there that works and
+probably nobody even who knows how to repair the code, if any syntax or semantics
+are changed.  So everything is competing…  the burden of history is with
+them.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I was talking with…  when I was working
+with Charlie Stenard down at Holmdel, we came up to see Carolyn Childs. 
+I think it is.  We were talking to her about the problem of maintenance of
+software and the problems of trying maintaining it when you don’t have documentation.
+  "So, what kind of documentation would you like most of all?" She said,
+"We would like some record of the decisions… of the things you didn’t do."
+ "The decisions you made not to do something. Because… </font></p>
+  
+<p><font face="Garamond"> </font></p>
+ 
+<p><font face="Garamond">(END OF SIDE A; CONTINUED – SIDE B)</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	It was a version of SREM, which is now
+called RDD 100,  says that one of the values of that way of designing is
+that you can keep a record of your previous designs.  And so in form of version
+control,  go back and just archive that.  You can always go back and see
+why it was you didn’t do something.  Because, you got this problem here and
+this problem there.  </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  That kind of stuff disappears,
+when the personnel…   Well, in fact, it even disappears out of your own mind
+after three years.  Somebody wrote me mail the other night, saying, "Why
+is such and such an option in diff?"  I knew I put it in.  And, as far as
+I knew it had no use.  (Laughter)  It was 24 hours, before I realized it
+was special feature in there, just for the special benefit of one other program
+that used diff.   Perhaps, I should have never perturbed diff.  I should
+have put this glue outside, instead of in the program.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	To me one of the lovely features of
+pipes is the way it reinforces the notion of the toolbox.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Not only reinforced, almost created.
+</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Well, that was my question.  Was the
+notion of the tool there before…  (interrupted)</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  No.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	pipes…   or did pipes create it?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Pipes created it.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Unix looked different after pipes.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yes.  The philosophy that everybody
+started putting forth: "This is the Unix philosophy.  Write programs that
+do one thing and do it well.  Write programs to work together.  Write programs
+that handle text streams because that is a universal interface."  All of
+those ideas, which add up to the tool approach, might have been there in
+some unformed way prior to pipes.  But, they really came in afterwards. 
+</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Was this sort of your agenda?   Specifically,
+what does it have to do with mass produced software?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Not much.  It’s a completely different
+level than I had in mind.  It would nice if I could say it was.  (Laughter)
+ It’s a realization.  The answer is no.  I had mind that one was going to
+build relatively small components, good sub-routine libraries, but more tailorable
+than those that we knew from the past, that could be combined into programs.
+ What has… the tool thing has turned out to be actually successful.  People
+just think that way now.  That’s providing programs that work together. 
+And, you can say, if you if stand back, it’s the same idea.  But, it’s at
+a very different level, a higher level than I had in mind.  Here, these programs
+worked together and they could work together at a distance.  One of you can
+write a file, and tomorrow the other one can read the file.  That wasn’t
+what I had in mind with components.  I had in mind that … you know, the car
+would not be very much use if its wheels were in another county.  They were
+going to be an integral part of the car.  Tools take the car and split it
+apart, and let the wheels do their thing and then let the engine do its thing
+and they don’t have to do them together.  But, they can do them together
+if you wish.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Yeah.  I take your point. If I understand
+it correctly, and think about it, a macro based on a pipeline is an interesting
+thing to have in your toolbox. But, if you were going write a program to
+do it, you wouldn’t just take the macro, you’d have to go and actually write
+a different program.  It wouldn’t be put together out of components, in that
+sense.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  So, when I wrote this critique
+a year or two ago of Knuth’s web demonstration. Jon Bentley got Knuth to
+demonstrate his web programming system, which is a beautiful idea.  You write
+a program in an order that fits the exposition of the program, rather than
+the order that fits the syntax of the programming language.  And then you
+have a processor which takes the program written in expository order and
+turns it into a Pascal program and files it.  The expository order not only
+contains program fragments, it contains lots of text right with it.  The
+declarations are stuck in at the point were you need them, rather than up
+at the head of the block, and then they’re moved by the web processor to
+the right place to compile the run.  Really elegant, and he calls it, Knuth
+calls it "literate programming".   And Bentley asked him to write a demonstration
+literate program for Bentley’s "Programming Pearls" column.  I wrote a critical
+report about Knuth’s program.  It’s a little unfair, because his program
+was written as illustration of a technique and I, my report criticizes it
+on engineering grounds, that that was not the right way to write the program.
+ And one of the things I wrote about his  program was, it reads the text
+and prints out a list of the distinct words in the text and word counts,
+sorted by word count.  An easy problem.   And he wrote one monolithic program
+to do whole job, and I said "Look, here’s the way you do it in Unix with
+canonical pipelines, and although I don’t recommend it … although this is
+not what he was out to do,  I really think that he should have not put definition
+of what word is, into the program that builds tables, that these were completely
+unrelated things. </font></p>
+  
+<p><font face="Garamond">Now, in 1968, I would have thought he was doing
+just right.  He was taking this sub-routine and that sub-routine, and putting
+them together in one program.  Now, I don’t think that is just right.  I
+think that the right way to do that job is as we do it in Unix, in several
+programs, in several stages, keeping their identity separate, except in cases
+where efficiency is of extreme importance.  You never put the parts into
+more intimate contact.  It’s silly.  Because, once you’ve got them there,
+it’s hard to get them apart.  You want to change from English to Norwegian,
+you have to go way to the heart of Knuth’s program.  You really ought to
+be able to just change the pre-processors that recognize this is a different
+alphabet.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Going back to ...</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  So, I learned a lot from Brian,
+who really is the guy, the person who articulated the tools idea.  It seemed
+to be in the air, but it was not an overt, communicable design philosophy.
+ You discovered it only by hanging around the Unix room.  Brian put it out
+in the world. </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Now, this is before or after pipe?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  After.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Your sense is that pipe galvanized this
+notion?   But, it was there in embryo?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  To some extent the shell …  The
+ease of writing a shell script in Unix.  There had been something like that
+on CTSS before.  But, it wasn’t easy.  You couldn’t do more than six commands
+in it.  It had very curious limitations.  You could do six things, but not
+seven.  The very ease of writing the shell script.  Tomorrow capturing… 
+ having a machine govern or guide a set of processes, that yesterday were
+guided by humans, was certainly in Thompson’s dream.  And he did a beautiful
+job of bringing it to reality. </font></p>
+ 
+<p><font face="Garamond">  </font></p>
+ 
+<p><font face="Garamond"><b>MSM</b>:	Yes, there is that …</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	So, we were all ready.  Because
+it was so easy to compose processes with shell scripts.  We were already
+doing that.  But, when you have to decorate or invent the name of intermediate
+files and every function has to say put your file there.  And the next one
+say get your input from there.  The clarity of composition of function, which
+you perceived in your mind when you wrote the program, is lost in the program.
+ Whereas the piping symbol keeps it.  It’s the old thing about notations
+are important.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I just got through beating somebody
+up about that.  I’m not going to call on Newton.</font></p>
+  
+<p><font face="Garamond">(Laughing)</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	 I just say it’s the dangers of translating
+Newton’s geometry into algebra and what you want to understand as Newton’s
+habits of thought.  He thought in geometry. </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  He certainly, well he .… </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	No, he did not translate it from the
+fluxions. </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>	He did not?</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	He never wrote that text in anything
+but geometrical form.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Did he discover the theorems in
+geometrical form?  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Yes,</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	All of those method of exhaustion
+arguments were. (Laugh)</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	No. Those are after the fact.  They’re
+meant to give logical rigor to what was a more intuitive form of … Which
+is not classical geometry.  It’s an infinitesimalist geometry that was developed
+by  people like Cavalieri and others in the 17<sup>th</sup> century.  I’ll
+send you the article.  </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yeah.  So, he really didn’t?</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	No, he did it geometrically.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Christian Huygens, among others, taught
+him how to do that.  Not…  I mean, indirectly through his work.  But, it
+was common to think in geometrical terms.  Because, actually, you could see
+your parameters.  But, also, when you went to the continuous case, you would
+quite often lose your parameters.  For example [<b>MSM</b> moves to the board]
+if you were… as he does in first proposition, talking about Keplerian motion,
+he says, "All right, you got the body, it’s moving like that (here’s your
+center force).  Now, imagine it moving for a short period of time at uniform
+speed.  Now, give it a push.  Then it will move like that.  Give it a push
+toward the center, and it will move like that."  Well, these are impulses
+and then he just goes to the  continuous curve by shortening the intervals
+and increasing the number of pulses until you get to the continuous curve.
+ The trouble is that geometrically, what you do is you lose your geometric
+measure of  the velocity. </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yeah.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	So, you have to relocate it.  Well it
+turns out that if you draw… if you have an orbit with the center of force
+here, and you want to know what velocity  is here, you draw the tangent to
+the curve and draw a perpendicular to that tangent and the velocity is inversely
+proportional to that length.  And you prove it as a separate theorem, to
+show that’s the case.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>: 	And that is …   So, when you do
+the algebraic…  when you do the usual algebraic derivation, and pulling a
+rabbit out of a hat, they convert from r, to 1/r, and the equations become
+nice?    Are they just, are they …?   (laughter)</font></p>
+  
+<p><font face="Garamond"> <b>MSM</b>:	No, they’re not.  It would be nice
+to say that they are a translation of that.  But no, the beauty of algebra
+is that you don’t worry about dimensionality, and you don’t worry about losing
+terms.  Because, ultimately you have a picture of an orbit here, which is
+a physical object in space.  Well, there’s no room in space of three dimensions
+for things like velocity, acceleration, time...   so that any time you draw
+them on a diagram, you’re imposing another dimensionality.  And then you
+have to be able to work in several dimensions and are not using it another
+way.  Whereas in the calculus,  it’s just a question of how you write your
+terms and you can keep all your dimensions in multidimensional space.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  But there is this amazing transformation
+that turns the equations of orbital motion.   If you use 1/r, instead of
+r, as your dependent variable, the equations are nice.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Yes. I’ve done the trick.  But, no.
+ That does not come from that.  Anyway, you’re right, notation makes a difference.
+ </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  The…   We talk about more elaborate…
+ So, pipes are there for linear pipelines.  More elaborate arrangements,
+such as we talked about in a language from NSA called P<u>OCAL</u>, a data
+processing language. This was an amazing language which … data processing…
+  you…  often data processing problem or solution is expressed with pictures
+of here’s the tape being carried here to there and it’s being put onto cards,
+and what you’re seeing is a data flow diagram and not a classical program
+flow diagram.  They had the idea that the data flow diagram really was the
+right way to express data processing, at a very fine grain, even between
+two successive steps.  So, we would put together a data processing application
+as a whole bunch of little things connected up with files.  Often fifty files.
+ And then their compiler would optimize the files out of existence.  It’s
+gotta be biggest optimizing compiler (interrupted by laughter).  You know,
+when you throw away a file pass, that’s really different from saving an instruction,
+which most optimizing compilers do.  A very impressive optimizing compiler.
+ It would throw away as many files as it could.  Even when there’s loop structures,
+if it could, by reading the code, determine that there would be a bounded
+feedback queue,  then all you need to do is provide enough temporary storage
+to handle the bounding queue, and…   furthermore, when there are  loop structures,
+you can’t do it with real live files.  Because, you have to start reading
+the file…  real live tapes, which is what they had at the time… because you
+have to start reading the tape while you’re still writing it. How did I get
+onto POCAL?  (laughter)  Oh, other topologies of pipes. </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Let me ask you about a topology of pipes
+that is mentioned, and that’s APL,  as a form of pipelining process.  Or,
+a language that pipelines.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  APL?  Yes. It’s the beautiful prefix…
+ this composition of functions.  Certainly APL was one of the things in mind
+when I was doing these blackboard exercises. </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	That was my question.  Did you have
+APL in mind?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  That was certainly in mind and
+APL just did not allow us to have operators with variance, such as all the
+options that our utilities had.  As long as you take the good clean operators,
+it’s a beautiful notation.  It only took this one willingness to throw in
+a new separator, the vertical bar, and we were able to handle that, but 
+it took us about four years, from the time we started talking about it to
+the time it happened.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Let me ask you what you were thinking
+about in another sense, and that is related to something we were talking
+about when I had lunch here last time, which is the extent to which Unix
+is the instantiation of really a theory of computing, of ideas in computer
+science:  yacc, the instantiation of a theory of parsers; lex, of finite
+automata; and so on. To what extent can we take something like pipeline?
+ You could treat pipes as they appear in Unix, or indeed as they appear in
+any instantiation as the instantiation of a mathematical idea and … what
+was the relationship over these early years between theoretical comp sci.
+ What were you thinking about?   Were you thinking about how to get an operating
+system working…  a computing system working…  or were there a set of ideas
+that you people were pursuing…   that you were using this to test out?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Well, there were two.  I would
+say that for most of us, the theory was there on the side and they were certainly
+alert to it.  I went to Oxford for a year, solely so I could imbibe denotational
+semantics from the source.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I lived with him in the same program
+for two years and didn’t realize he was the source. (Laughing)  Dana was
+part of the history of science program at Princeton for two years.  </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  He had been at Oxford just the
+year before I was, but Strachey was ….  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Oh, Strachey was the person you’d gone
+to study with?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:	But Strachey was sort of the catalyst
+for the whole thing, although Dana was the one who made it mathematically
+respectable. </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	You had gone to work with Strachey?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  I went to work with Strachey. 
+ Most of us are more computer types than mathematicians, even though we write
+papers occasionally with mathematical…    With exception of the language
+theory.  I had in my department system builders like Thompson and theoretical
+computer scientists like Aho.   And Aho plowed the fields of language theory
+from ‘6…  He joined us in around ’66, just about the same time as Thompson.
+  Putting out paper after paper of slightly different models of parsing and
+automata.   And that was supported with the overt idea that one day out of
+it this really would feed computing practice.  Even though it was not.  In
+the same way, we have we have today folks working on denotational semantics.
+  Which seems to be a longer term …  But, I have the same belief that semantics
+is going to be change practice, and ML, which is the current embodiment of
+that.  This long line of playing with the mathematical ideas, which happened
+all over the country (it wasn’t just here), finally led to Knuth’s one paper
+on LR parsing, which got repatriated back here, and one day Steve Johnson
+went in to Al Aho (although I wasn’t present, I’m attributing something here)
+ and said, "I want to make your stuff work".  We had compiler compilers before,
+ TMG.  And in some ways, TMG was nicer than yacc.  Not specification of grammar,
+but it actually helps you do the translation.  yacc only helps you do the
+parsing,  it’s up to you to do the translation after that.  </font></p>
+  
+<p><font face="Garamond">When the sound theory of parsing went into a compiler
+writing system, it became available to the masses.  It.. .  There’s a case
+where, there’s absolutely no doubt that, overtly, theory fed into what we
+do.   There are lots of other places where theory is an inspiration, or it’s
+in the back of your mind.  Very few of them are…   well,  the regular expression
+business also came out of automata theory.   Thompson wrote one famous recognizer,
+which is the one that’s still in grep.  And Al Aho decided that he was going
+to take that part of automata theory, and he built egrep, which determine…
+ you have the deterministic one in egrep, and the nondeterministic one in
+grep.   I think really that yacc and grep are what people hold up as the
+"real tools" and…   they’re the ones where we find a strong theoretical underpinning.
+ troff has none.   And of course it’s used, and indispensable.  Nobody holds
+up it as a programming gem. (Laughing)  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	When I used yacc in the compiler course
+that Sethi taught us at Princeton, one liked to go in and actually look at
+the state machine in it and admire it and see how it did it, I have no desire
+to look into ms…  (Laughing) …and see what those macros are.  </font></p>
+  
+<p><font face="Garamond">(Laughing)</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  … if you do look at it once,  you
+recoil in just absolute terror.  You know, there’s no model there.  It’s
+true of all its competitors, too. Things like TEx, are slightly more powerful,
+but, fundamentally they are the same thing.  You still don’t have a model
+of what typesetting is about.  But, one of the difficulties is it’s partly
+esthetic.  You cannot bend the page to meet some theoretical requirements.
+ Nobody cares what you’re compiler looks like on the inside, so you can bend
+it to agree with automata theory.  troff has to feed into a different market.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Yea, and you’re also, it seems to me,
+with tools like YACC accomplishing more than just getting a compiler together,
+you’re getting  some assurance about  ambiguity, or …</font></p>
+ 
+<p><font face="Garamond"><b>McIlroy</b>:	Oh, yes.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	If it says that there’s an equivocation
+in it, then there certainly is.  But, if whether you’re really healthy if
+you get a clean bill of health is another matter,  but still, it’s comforting
+to know that you’ve gone through there, and you don’t have any ambiguities
+in it.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  This is the nice thing about programming
+in a language like ML, which we have not...  I have not yet been able to
+say, "All right, I’m going to abandon C, and I’m going to  write in ML."
+ I think I ought to.  But, I will have burned my bridges.  I will no longer
+be able to work with…  I will have left all these old parts…  that I could
+use.  Starting from scratch.  But, there’s a language which is built on mathematical
+ideas of algebra: category theory, how composition of functions and higher
+level functions in that language…  functions that work on functions…  functions
+are return functions… come straight out of modern algebra.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	I haven’t seen this.  Is there text
+now available?  </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  There is a book available.  It’s
+a job jointly done  by Edinburgh, who are the center and  Dave McQueen here…
+  and now there’s also a big outpost of it at Cornell.  I think it spread…
+In England, where they like their computer science to be more scientific,
+I think it’s spreading quite well.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	The algebraic reminds me of sort of
+the use of set theoretic specification through Z and… at Oxford.  When I
+was looking at it, it seemed to be more mathematical than would suit the
+American taste, or at least the homegrown taste.   So, I avoided it.  ML,
+I’ll take a look at it.  And you say there is a book out on it?</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yeah.  </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	One of my interests, as an historian
+in mathematics, is the effort to mathematize computing.  One thinks of the
+computer as a mathematical  instrument, and of course it is.  But the difficulty
+of getting it and capturing it in mathematical forms, especially dynamic
+behavior of programs, makes an interesting chapter in efforts at mathematization.
+and what it would mean to mathematize it.  </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  It’s interesting that computing
+is feeding back  into the foundations of mathematics.  I think computing
+is the engine that’s driving type theory now.</font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Type theory through mathematical logic.</font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  Yeah, the logicians are now getting
+their inspiration from the computing side.   </font></p>
+  
+<p><font face="Garamond"><b>MSM</b>:	Good, I’m glad there’s a justification
+for it.  Because, I must say when I first encountered it, I thought the problem
+can’t be that bad, that we have to go through this.  </font></p>
+  
+<p><font face="Garamond"><b>McIlroy</b>:  But, sound type theory is really
+at the heart of the design of a language like ML.   We often talk strongly
+typed languages, but the idea doesn’t really mean much until you get to second
+order functions and polymorphic functions.  The general identity function
+in that identity can be applied to anything.   It just produces....  (END
+OF TAPE)</font></p>
+   <br>
+</body>
+</html>

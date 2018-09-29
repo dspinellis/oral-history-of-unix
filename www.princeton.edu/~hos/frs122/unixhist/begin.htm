@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>The Beginning</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>The Beginning</h2>
+
+<h4>Michael Errecart and Cameron Jones</h4>
+
+<h3>Files to Share</h3>
+
+<p>Development of Unix did not actually begin as work on an
+operating system. Rather, the small group of computer scientists
+who had seen their positions on the Multics project evaporate at
+Bell Labs' exit set out to create a file system that could be
+shared efficiently within their workgroup. The operating system
+was little more than an afterthought resulting from a need to
+test this file system. </p>
+
+<p>When Bell Labs broke off from the Multics project, Ken
+Thompson and the rest of his subgroup had been working on the
+file system for the project, &quot;which never really came to
+exist&quot; because of several technical problems that had grown
+so complex that they could not be ironed out. The goal that they
+were seeking was &quot;to develop read and write calls that were
+sequential calls that turned around and ended just reading
+sequentially out of pages,&quot; but problems arose with a
+technology called &quot;paging&quot;, which was intended to
+simplify the process of reading and writing files to disk but
+finally was abandoned. </p>
+
+<p>The Unix file system was based almost entirely on the file
+system for the failed Multics project. The idea was for file
+sharing to take place with explicitly separated file systems for
+each user, so that there would be no locking of file tables. The
+main ideas of the file system as outlined by Thompson are
+&quot;to have the activity locus of manipulation of data for user
+one and user two to be disjoined, so that in fact, [they]
+wouldn't be locking common tables. [They] wouldn't be going
+through anything common unless [they] in fact shared files. To
+try to keep up real high, efficient access to disks. In fact,
+interleave accesses in a way.&quot; It is clear that the main
+goal of Multics &#151; universal access to unlimited central
+computing power &#151; was carried on in a large way through the
+work of Thompson, Canaday and Ritchie as they developed the file
+system for Unix. Stu Feldman noted that Project MAC and Multics
+combined to influence the file system:</p>
+
+<blockquote>
+    <p><font size="2">Project MAC had a rather weird, not really
+    tree-structured, two-deep file system, for every name also
+    had a two complement identifier. Multics had a very complex
+    file system, which went the opposite end from this, and had a
+    very messy directory structure... in which you could
+    represent a remarkable number of important things. Very
+    complicated access control, very complicated linking
+    control... All kinds of wonderful things. All this list of
+    wonderful things caused the system to sink into the mud...
+    Everything takes cycles. Many of these ideas have reappeared
+    in other forms. So, in some sense Unix, the Unix file system
+    was the reaction to both of these, if you look at it. It had
+    the flexibility. It had the essential tree flexibility of
+    Multics. But a real dirty idea for implementation, which was
+    to say that the file space was flat. </font></p>
+</blockquote>
+
+<p>Ken Thompson was the person most involved in the creation of
+the file system, as he handled all the coding and debugging,
+while he bounced ideas off the others on a whiteboard. Doug
+McIlroy, the project manager, talked about the transition between
+Multics and Unix, saying </p>
+
+<blockquote>
+    <p><font size="2">Thompson and Ritchie and Rudd Canaday, who
+    was an intern in my department for a year, were talking
+    about, 'Well, how could we do this in a less massive way?'
+    And, there were many afternoons spent across the hall there,
+    working at the blackboard, working out the design of... what
+    became the Unix file system. 'If we were to make a file
+    system, what would it look like?' </font></p>
+</blockquote>
+
+<p>A major part of the answer to this question is that the file
+system had to be open. The needs of the group dictated that every
+user had access to every other user's files, so the Unix system
+had to be extremely open. This openness is even seen in the
+password storage, which is not hidden at all but is encrypted.
+Any user can see all the encrypted passwords, but can only test
+one solution per second, which makes it extremely time consuming
+to try to break into the system. Another example of the openness
+of the file system was the omission of records, a decision which
+came under heavy criticism from all sides. The proprietary nature
+of records made them inaccessible to users who did not utilize
+the exact same record format, and they were anathema to the
+group. Thompson would &quot;give talks, it would always come up,
+you know, why you didn't do records and I'd have some extra
+slides, cause I knew I'd be asked this.&quot; And he would walk
+the audience through a sample problem that could occur between
+incompatible record types to prove his point. </p>
+
+<p>During this design process, Thompson made it clear that there
+were certain aspects of the file system on the Multics project
+that he would have liked to see happen, but which were never
+implemented. A major example is &quot;treating files and devices
+the same... having the same read calls.&quot; This meant that
+terminals would input and output data in the same format that
+mainframes did, leveling the playing field between users on
+different computers. &quot;Typically during those days there were
+special calls for the terminal and then the file system itself...
+Confusing them and redirecting I/O was just not done in those
+days.&quot; The idea of standard input and output for devices
+eventually found its way into Unix as pipes. Pipes enabled users
+and programmers to send one function's output into another
+function by simply placing a vertical line, a '|' between the two
+functions. Piping is one of the most distinct features of Unix
+and will be covered in greater detail in a later section.
+Thompson thought &quot;everyone sort of viewed [standard I/O] as
+a clean concept and the right thing to do but for some reason it
+just wasn't done.&quot; </p>
+
+<p>When the file system was finally past the point where it could
+be developed and modified exclusively in the abstract, but rather
+had to be implemented and tested on real hardware, Thompson laid
+out his idea of what the file system should look like:
+&quot;there was the I-list, which is a definition of all the
+files on the system; and then some of those files were
+directories which just contained name and I-number. There's
+nothing in there that constrains it to a tree. So it was not in
+fact, not hierarchical at all.&quot; Just as terminals were to be
+treated no differently from mainframes, directories were just
+files that had an index attached to them. However, the flaws
+inherent in the original implementation became clear:</p>
+
+<blockquote>
+    <p><font size="2">When [the group] started writing things
+    like file systems checking programs and stuff, the locking of
+    the spaghetti bowl directories and finding of disjointed
+    things, you'd dissever something and never get it back,
+    because, you know, you'd lost it. Those problems became close
+    to insurmountable, and so in the next implementation we
+    forced a topology stronger than that.</font></p>
+</blockquote>
+
+<p>This new topology, while slightly more constrained, still
+treated files and directories roughly equally, true to the ethos
+of the project. </p>
+
+<p>Having moved past the question of whether one user was able to
+use the system effectively, it became time to test the system as
+it was intended be used, with many users connected at once making
+read and write calls to the disk simultaneously. </p>
+
+<blockquote>
+    <p><font size="2">To run the file system you had to create
+    files and delete files, re-unite files to see how well it
+    performed. To do that you needed a script of what kind of
+    traffic you wanted on the file system, and the script we had
+    was, you know, paper tapes, that said, you know, read a file,
+    read a file, write a file, this kind of stuff. And you'd run
+    the script through the paper tape and it would rattle the
+    disk a little bit... you wouldn't know what happened. You
+    just couldn't look at it, you couldn't see it, you couldn't
+    do anything.</font></p>
+</blockquote>
+
+<p>Because of this inability to effectively monitor the successes
+and failures of the file system in these tests, the group </p>
+
+<blockquote>
+    <p><font size="2">built a couple of tools on the file
+    system... used this paper tape to load the file system with
+    these tools, and then we would run the tools out of the file
+    system... and type at these tools... to drive the file system
+    into the contortions that we wanted to measure how it worked
+    and reacted. So [the file system] only lasted by itself for
+    maybe a day or two before we started developing the things
+    that we needed to load it. </font></p>
+</blockquote>
+
+<p>It was in this fashion, with the addition of system tools,
+that the idea of the hierarchical file system became the
+foundation for something more. </p>
+
+<p>At this point, there were the first glimmers within the group
+that they were working on something that would be more than just
+a file system for some larger operating system. While most of the
+file commands were still the pure system commands (&quot;the
+system read call was in fact the read call of the file system and
+it was very synchronous&quot;) there followed &quot;a very quick
+rewrite that admitted it was an operating system, and it had a
+kernel user interface that you trapped across.&quot; At that
+point it could officially be called an operating system. It is
+interesting to note that other members of the Unix group had
+quite different opinions about the infancy of the file system
+from those of its creator Ken Thompson. Stu Feldman claims
+&quot;[Thompson] was writing Space Wars and he got sick and tired
+of having no support. So, he built a few things.&quot; This
+concept of building tools for one's own benefit, and adapting
+them to fit the needs of the group also stood out in Thompson's
+interview, as he explained his motivations for working on Unix.
+&quot;I was more interested in myself. Just selfish notions of
+trying to get a environment to work in.&quot; Dennis Ritchie, who
+was also involved in the creation of the file system to a small
+extent, further backs up this statement about the file system: </p>
+
+<blockquote>
+    <p><font size="2">I think that (the file system research) was
+    basically part of Ken's desire to do a system of his own. So
+    I don't know what very specific thing sparked it... Then he
+    and I and Rudd Canaday started drawing pictures on the
+    blackboard or maybe white board. Drawing the structure of
+    this proposed system which was in most ways the predecessor
+    of Unix... Most of the ideas were Ken's. </font></p>
+</blockquote>
+
+<p>Whatever the motivations for Unix, however, it began to look
+as if it had the potential to become something that nobody could
+have anticipated. And, for it to continue on its path, it needed
+solid code in a solid language. </p>
+
+<h3>Language from B to C</h3>
+
+<p>The selection of a programming language in which to write Unix
+was one that would help to define it almost as much as the
+development of the hierarchical file system had, if not more. At
+first, Ken Thompson believed that Unix would have to have a
+Fortran compiler in order to be considered a &quot;serious
+system.&quot; After sitting down to do the Fortran grammar,
+&quot;it took him about a day to realize that we wouldn't want to
+do a Fortran compiler at all.&quot; The Unix group knew that they
+still wanted a high-level language, but PL/1, which was used in
+Multics, was too high-level. So instead, Thompson created a new
+but very simple language, called B. </p>
+
+<p>At the time, both Thompson and Ritchie had worked with a new
+language which was just emerging from MIT, BCPL, and were taken
+by it. Unfortunately, it was too big to run on the 4K Unix
+machines, so Thompson made B, which was nearly exactly the same,
+although it was an interpreter, instead of a compiler. B made two
+passes, one to turn code into an intermediate language and
+another to interpret the intermediate language. Ritchie wrote a
+compiler for B which worked off of the intermediate language.
+Some system tools and utilities were written in B, but never the
+operating system itself. B was essentially the same language as
+BCPL; semantically, the two were exactly the same. Syntactically,
+however, it looked like what became C, although it lacked types. </p>
+
+<p>Thompson had the idea that B would be a very simple, very
+clean and very portable language. &quot;It was written in its own
+language. That's why its so portable. Because you just pull it
+through and its up real quickly.&quot; Thompson was intent on
+having Unix be portable, and the creation of a portable language
+was intrinsic to this. </p>
+
+<p>B was a word-oriented language, and it operated on a
+word-oriented machine, the PDP-7. However, when it was moved to
+the new PDP-11, the interpreter had some trouble. Because the
+PDP-11 was byte-oriented, the machine and the language didn't fit
+well together; in particular, B and BCPL had notions of pointers
+which were names of storage cells and were oriented to a single
+size of object, while the PDP-11 had objects of different sizes.
+In addition, since B was an interpreter, it was doomed to be
+slow, so the Unix group decided they wanted something better as
+the systems language, which prompted Ritchie to begin to develop
+C, which occurred in two phases. </p>
+
+<p>Ritchie began by adding a type structure to B, and soon after
+wrote a compiler for it, marking the first phase. After the
+language changes, &quot;it was called NB for New B... [and] it
+was also an interpreter.&quot; To make the C compiler, Ritchie
+began with the B compiler, and &quot;sort of merged it into the C
+compiler&quot; with the new type structure. </p>
+
+<blockquote>
+    <p><font size="2">The basic construction of the compiler, of
+    the co-generator for the compiler, was based on an idea that
+    I heard about from someone at the Labs at Indian Hill &#151;
+    I never actually did find and read the thesis, but I had the
+    ideas in it explained to me so that the co-generator for NB
+    was... based on this Ph.D. thesis. </font></p>
+</blockquote>
+
+<p>Basically, C ended up containing B: &quot;some of the
+anachronisms of C, that are now gone, or, at least are not [but]
+are unpublished to the point that no one knows they're there, are
+B.&quot; </p>
+
+<p>&quot;The second phase was slower; it all took place within a
+very few years, but it was a bit slower, so it seemed, and it
+stemmed from... the first attempt to rewrite Unix.&quot; In the
+summer of 1972, Thompson undertook this project, but gave up.
+&quot;It may [have been] because he got tired of it or whatnot,
+but there were sort of two things that went wrong. One was his
+problem that he couldn't figure out how to... switch control from
+one process to another. The second thing that he couldn't easily
+handle &#151; from my point of view the more important &#151; was
+the difficulty of getting proper data structure.&quot;
+Originally, C did not have structures, so it was &quot;really
+fairly painful&quot; to make various types of tables; a technique
+found to deal with this was clumsy at best. &quot;It was a
+combination of things that caused Ken to give up that
+summer.&quot; </p>
+
+<p>Over the next year, Ritchie added structures to C and made the
+compiler somewhat better, with better code. &quot;And so over the
+next summer that was when we made the concerted effort and
+actually did redo the whole operating system in C. That was
+fairly successful. It took the winter of '73 to do that. And
+there were no really tough problems.&quot; </p>
+
+<p>After this, C took off. Part of its success was simply its
+association with Unix. As Unix's popularity increased, so did
+C's: &quot;it just got carried along.&quot; Another reason for
+its popularity was that a number of machine dependent things can
+be visible to C programs, and with a little care, portability is
+possible. &quot;Part of the art is to learn what sorts of things
+you can depend on, and what you shouldn't. I guess the only real
+explanation for success is that there were a lot of people
+writing in the language, typically prose, [who] are now able to
+write in C. The programs are likely to be a lot better for
+it.&quot; </p>
+
+<p>Before Unix had begun to be a widely used system, a number of
+interesting tools were being developed, so there was an effort to
+make the tools available to other people. &quot;The best way to
+do that was to have a C compiler on other machines.&quot;
+However, the real difficulties that the Unix group ran into when
+moving the various Unix tools to the IBM, GE or Honeywell systems
+were not due to differing underlying machine architecture,
+although C made it possible to see, but to operating system
+differences: &quot;how you do I/O? How you write the so-called
+portable libraries? There were messes in... keeping these
+programs portable. It had nothing to do with the program itself.
+It had a lot to do with the interaction with the rest of the
+system.&quot; The solution: to not waste time trying to make
+individual programs portable while fighting the operating system,
+but to make the operating system portable, too. Thompson had
+proposed early on, while the group was still on the PDP-7, to
+write </p>
+
+<blockquote>
+    <p><font size="2">in B the very simple operating system that
+    would be very, very portable. It would run on all sorts of
+    microcomputers that were just here. It would not be
+    ambitious. The idea would be that this is something that
+    could be distributed widely... The idea was just put out one
+    day and I don't think he spent any time at all working on it.
+    Even though nothing came of that immediately, or very
+    directly, that was the first sort of specific impulse towards
+    Unix portability. Upright system portability. </font></p>
+</blockquote>
+
+<p>The early emphasis of the Unix group was both on the
+development of the file system and on the portability brought
+about by C. This set the stage for further development of the
+operating system by laying down a basic framework in which the
+group would function, and paved the way to the realization of the
+Unix philosophy. But, before they could do so, they had to find a
+computer of their own.</p>
+</body>
+</html>

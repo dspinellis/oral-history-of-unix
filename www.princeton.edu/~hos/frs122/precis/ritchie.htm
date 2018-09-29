@@ -1,0 +1,94 @@
+<html>
+<head>
+  <title>Precis of Interview with Dennis M. Ritchie</title>
+</head>
+<body bgcolor="#ffffff">
+Mike Errecart<br>
+April 17, 1998<br>
+<h2>Precis of <a href="https://www.princeton.edu/~hos/frs122/transcripts/ritchie.htm">Interview</a> with Dennis M. Ritchie</h2>
+<p>
+<h3>The development of Unix</h3>
+Contributing to the development of Unix was the combination of the
+disappearance of Multics and the simple fact that Ken Thompson had always
+wanted to write an operating system of his own.  Ritchie was struck by
+how much more pleasant interactive computing was, as opposed to working
+with decks of cards and rigid formatting.  Having a smooth interaction
+with a machine was “a lot more fun, [and] a lot less clumsy.”  This, as
+well as Ritchie’s previous work with Thompson, led to his involvement in
+the development of Unix, for “the style of thing that Ken was headed for
+seemed very...desirable.”
+<p>
+<h3>Unix’s relationship with Multics</h3>
+The relationship of Multics with Unix is relatively complicated.  Taken
+from Multics, Unix internalized many important things, such as the
+hierarchical file system, the I/O system (a simplified version of it),
+some editing characteristics, as well as the basic idea of interaction
+with the machine, including the notion of a command line, making it an
+explicit shell program.  However, “as far as other technical details,
+there were enormous differences.”  The scale of both projects was quite
+disparate, in terms not only of effort and of resources, but also of
+machine resources.  The PDP-7 on which Unix was designed had only 8k
+words of memory, while Multics, although small by today’s standards, used
+68k.  The vast difference in complexity was due to both conditional
+restraints, as well as a difference in taste.  According to Ritchie,
+Multics was never a commercial success simply because it was
+over-engineered &#151; “there was just too much in it.”  It was heavily
+consumptive of resources &#151; both machine and human &#151; and there
+was a reaction to this in the design of Unix.  What made Multics
+technically unique was its virtual memory system, of which nothing
+existed in Unix, primarily because it was complicated, but it also
+required more sophisticated hardware.  Also, Ritchie adds that there were
+some conceptual problems with the Multics memory model; the Multics
+people wanted to make a “very uniform view of the world based on [memory]
+segments in which the paradigm for all relationship with the file system
+was to institute operations on segments in memory.”  But because there
+are always different devices, such as the terminal, which can’t work on
+the same model, there must be a different model for dealing with I/O. 
+“If you're going to restrict to one main paradigm, the one Unix has
+chosen is more powerful in some sense because... it can apply to objects
+other than addressable memory.  In particular that's how things like
+pipelines and our current form of interprocess communication and so forth
+all work: by using this same scheme of doing reads and writes.”
+<p>
+<h3>Unix and theory</h3>
+Although Ritchie’s graduate work was in recursive function theory, which
+was fairly abstract, he did not alter Unix’s course to one that was more
+theoretical because the work largely did not have any direct
+applicability.   However, there were both theoreticians and more
+practical-oriented people doing quite a range of different things nearby
+at Bell Labs, so people contributed things that were not “just sort of
+hacked out solutions to the problems” but were also doing programs or
+systems based on theoretical principals.
+<p>
+<h3>“Genius” of Unix and C</h3>
+While both C and Unix take a fairly strict approach about what they are
+willing to do and what they’re not willing to do, they both managed to
+cover sufficiently large fractions of what people really needed, while
+still retaining smallness and compactness of design.  Also, there was no
+pressure involved in the work; designs were pushed as far as they could
+be while still doing what needed to be done, “but we didn't have to make
+a product.  We didn't have to write enough pages to get a thesis.  It
+really was a matter of being able to push things in directions that were
+interesting to go.  And you only had to push as far as seemed to be
+worthwhile.”  
+<p>
+<h3>Development, success, and structure of C</h3>
+Once Ken Thompson realized that the PDP-7 Unix system should not actually
+have a Fortran compiler, he wrote a simple language called B, based on
+BCPL, on which some system utilities were written, although not the
+operating system itself.  B was an interpreter, so it was fairly slow,
+and it was byte oriented, as opposed to all the machines the Unix group
+had used before which were word oriented.  The biggest limitation of B
+from a linguistic point of view was that it was oriented towards a single
+size of object, and for this reason, Ritchie began to add types for the
+language, and then wrote a compiler for it.  It was called New B (NB) for
+a while, yet it was still an interpreter.  The C compiler began with the
+B compiler, but merged into C when new type structures were added.  The
+second phase of C was when the first attempt was made to rewrite Unix,
+and the language was refined.  What made C successful was its association
+with Unix, and the fact that it made portability possible with a little
+care.
+
+</body>
+</html>
+

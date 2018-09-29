@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="Author" content="Nick Spicher">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Brian Kernighan</title>
+</head>
+
+<body>
+
+<p>Nicholas Spicher <br>
+FRS 122w <br>
+April 17, 1998 </p>
+
+<p><b><a href="https://www.princeton.edu/~hos/frs122/transcripts/kernighan.htm">Interview</a> with Brian Kernighan</b> </p>
+
+<blockquote>
+    <p><tt>Unix has, I think for many years, had a reputation as
+    being difficult to learn and incomplete....But, as a program
+    development environment, it's very easy to build a lot of
+    these things.&nbsp; It's sort of like a kit.&nbsp; And if you
+    want a new thing, you can take the pieces out of the kit and
+    assemble them to make your new thing, rather more rapidly
+    than you would be able to do the same thing in some other
+    kind of environment.&nbsp; So, [when asked] &quot;Does it do
+    X?&quot; [we would say] &quot;No, but it's real easy.&nbsp;
+    Do you want one by tomorrow?&nbsp; I'll give you one by
+    tomorrow.&quot;</tt></p>
+</blockquote>
+
+<p>Brian Kernighan saw Unix as more than simply an operating
+system; to him, it was an entirely new way of viewing computers
+and programming.&nbsp; Although he claims he did not invent the
+notion of software tools, the idea was prominent throughout all
+of his work at Bell Labs, from creating <i>eqn</i>, to writing
+tutorials and manuals for all aspects of Unix and C, to
+developing a clean and efficient model of programming in <i>The
+Elements of Programming Style</i>.&nbsp; For Kernighan, the
+greatest strength of Unix lies in its flexibility. </p>
+
+<p>Kernighan's work began in 1966 at MIT, ostensibly with the
+Multics project.&nbsp; However, he reports that he did little or
+no actual work on the output side of Multics.&nbsp; Instead, his
+work was primarily concerned with the CTSS system, and had very
+little to do with Multics specifically.&nbsp; He began working at
+Bell Labs over the summers of 1967 and 1968, while he was a
+graduate student at Princeton.&nbsp; He was not involved with
+Multics at Bell Labs, either; instead, he studied storage
+allocation algorithms under Doug McIlroy and graph partitioning
+under Shen Lin.&nbsp; Eventually, he wrote his Ph.D. thesis on
+graph partitioning, although he did not care for the subject very
+much.&nbsp; He began to work at the Labs on a permanent basis in
+February of 1969, and continued working on graph partitioning and
+combinatorial problems.&nbsp; As Thompson and Ritchie began to
+develop Unix, Kernighan quickly became involved; he was assigned
+user ID #9 on the main system, although he is not sure what
+brought him to the project so early. </p>
+
+<p>His first significant work in Unix was writing <i>eqn</i> with
+Lorinda Cherry around 1973.&nbsp; He was actually inspired by his
+work as a grad student for Recording for the Blind; he would read
+math and science materials, and realized there was a natural way
+to orally communicate mathematical symbols and equations.&nbsp;
+Thus, his goal in writing <i>eqn</i> was to develop a similar
+means of communicating mathematical information to the text
+formatter.&nbsp; <i>Eqn</i> was the first program written to work
+&quot;on top&quot; of a text formatter; independently, it was not
+capable of much, but when used in conjunction with <i>troff</i>
+or a similar program, it could greatly broaden the printing and
+formatting abilities. </p>
+
+<p>It was around the time of <i>eqn</i> that the notion of Unix
+as a toolkit began to develop among the programmers.&nbsp;
+Although Kernighan is reluctant to take credit for the idea of
+software tools, he concedes that he may have coined the phrase,
+as McIlroy claims.&nbsp; The notion of pipes, although closely
+related to software tools, may have come about as an independent
+idea, according to Kernighan.&nbsp; He states that the concept of
+pipes and the ability to layer programs was around long before
+the pipes idea was formally developed and implemented, although
+the actual implementation was a revelation in itself. </p>
+
+<p>For several years Kernighan continued his work in developing
+Unix programs, mainly working with Al Aho and Peter
+Weinberger.&nbsp; Together, the three experimented a great deal
+with <i>awk</i> and its various implementations.&nbsp; Kernighan
+found the atmosphere at the Labs to be ideal for the development
+of Unix; in general, there were no restrictions on
+creativity.&nbsp; He compared it to Xerox PARC; nobody was
+assigned a specific task, but the atmosphere was such that one
+would quickly find a project to work on.&nbsp; Management did an
+excellent job of staying out of the way; there were no demands
+for immediate results, although once a year workers were called
+upon to justify their work and explain its significance or
+long-term benefits.&nbsp; Programmers were rewarded if their
+project could be seen to somehow have an impact on the company,
+on the community, or simply on the body of knowledge in the
+field.&nbsp; It was the hands-off approach of management, as well
+as the fact that everything the programmers designed was for
+their own use, that led the team at Bell Labs to be so
+successful.&nbsp; Kernighan believed a programmer could not
+successfully write a program unless the programmer himself had a
+use for it. </p>
+
+<p>Kernighan has been called the &quot;group's scribe&quot;
+because of the amount of time he spent writing for and about
+Unix.&nbsp; His first significant writings were tutorials for
+various Unix programs, starting with a simple set of instructions
+for Sandy Fraser's secretary on using <i>qed</i>; eventually, he
+wrote a complete tutorial on the B language.&nbsp; His ability to
+write about programming led him to examine just how programmers
+were writing programs; he found that most programmers had
+terrible techniques due to a lack of proper training.&nbsp; He
+and Bill Plauger set out to write <i>The Elements of Programming
+Style</i>, which did for programmers what Strunk &amp; White's
+book did for essay writers.&nbsp; Like the famous grammar text, <i>Programming
+Style</i> explained how to program correctly by using examples of
+bad programming, largely drawn from contemporary textbooks. </p>
+
+<p>Through his work with Unix and in writing <i>Programming Style</i>,
+Kernighan developed a method and philosophy of programming that
+grew in importance as Unix itself grew.&nbsp; He developed the
+idea of &quot;little languages,&quot; which essentially was a
+manifestation of the software tools notion.&nbsp; Given a
+specific task, Kernighan could write something similar to a
+language compiler designed to handle one specific problem.&nbsp;
+The idea was appealing because it was exactly analogous to
+compiling in a complete language, but done on a small enough
+scale that one person could complete the task, and allows the
+programmer freedom to make his own rules.&nbsp; Again, although
+he was clearly instrumental in developing little languages,
+Kernighan claims he did not realize the full impact of little
+languages until much later, and is reluctant to take full credit
+for the idea. </p>
+
+<p>In his work Kernighan also experimented with writing
+structured and unstructured programs.&nbsp; He found writing
+structured programs (programs that did not use <i>goto'</i>s)
+difficult at first, but now he cannot imagine writing programs in
+any other manner.&nbsp; The idea of recursion in programs also
+seemed to develop slowly; the advantage to the programmer was
+clear, but recursion statements were generally perceived as
+expensive, and thus were discouraged.&nbsp; Kernighan found that
+hardware manufacturers, especially DEC, eventually made recursion
+a more feasible option.&nbsp; In Kernighan's view, however, Unix
+made the hardware largely irrelevant; the ease of portability
+meant that virtually any machine was capable of running
+Unix.&nbsp; Once again, flexibility proved to be the most
+significant aspect of Unix; it was this flexibility that was
+paralleled in all of Brian Kernighan's work. <br>
+&nbsp; </p>
+</body>
+</html>

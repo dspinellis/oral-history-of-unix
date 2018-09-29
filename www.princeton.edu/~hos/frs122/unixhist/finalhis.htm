@@ -1,0 +1,3328 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Unix:</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="center">Unix: An Oral History</h1>
+
+<h2>Introduction</h2>
+
+<p>[Still to come]</p>
+
+<h2>Multics </h2>
+
+<h4>Gordon M. Brown</h4>
+
+<p>This is the story of Unix. To fully understand the evolution
+of Unix, however, the story of Multics must first be told. Unix
+was born at Bell Labs out of the aborted attempt to make Multics
+the most advanced time sharing computer system yet available.
+When Bell Labs pulled out of the joint venture, in 1969, it
+brought with it numerous important ideas from Multics that would
+later serve to define Unix. Furthermore, the shift in momentum at
+Bell Labs, away from computing, created an environment of
+creativity and independent thought which was integral to Unix
+development. Multics, and Bell Labs decision to pull out of the
+Multics project, were multi-faceted influences in the history of
+the Unix time-sharing system. </p>
+
+<p>Multics, MULTiplexed Information and Computing Service,
+followed in the line of time sharing systems whose development
+was driven by the need for greater access to computing. A key
+proponent of this was J.C.R. Licklider, the head of ARPAs
+Information Techniques Processing Office, who sought to more
+efficiently integrate computers with human activities. IPTO
+funded many computer related projects at the time, as was the
+case with MITs Project MAC (Cambell-Kelly and Aspray, pg. 214).
+Project MAC (standing for <em>M</em>ultiple <em>A</em>ccess <em>C</em>omputers
+and also known as <em>M</em>an <em>A</em>nd <em>C</em>omputer in
+Marvin Minsky's Artificial Intelligence Lab) was headed by Robert
+M. Fano and included the Compatible Timesharing System. One of
+the earliest time sharing systems, CTSS was a fully functional
+system that could support up to 30 remote users and was an
+integral part of Project MAC. Yet by 1965 Project MAC had
+overloaded CTSS, and MIT had begun looking for a second
+generation time sharing system. This was the Multics project,
+which was intended as a dynamic, modular system capable of
+supporting hundreds of users. Joining MIT in the effort was
+General Electric and Bell Telephone Labs. GE had previously
+supplied hardware for the Dartmouth Timesharing System and
+provided a 635 mainframe (later to become known as the 645) for
+the Multics project (Cambell-Kelly and Aspray, pg. 215). Bell
+Labs, on the other hand, provided much of the programming
+experience. As a public utility, Bell was constrained by the 56
+Consent Decree which effectively limited independent computing
+endeavors, hence the Multics project was a perfect outlet for
+Bells computing talent and a great opportunity to build up its
+software writing capability. Together, these three groups sought
+to create a system that would set new standards for the computer
+as a utility. </p>
+
+<p>Multics was not simply intended as a replacement for the
+overloaded CTSS, it was meant to go beyond time sharing to create
+a community computing facility. An integral part of this was to
+make the system modular, so as to support growth and change. To
+enable this type of system to be maintained and to maximize
+lucidity within the coding for it, PL/I was chosen as the
+programming language. The development of the PL/I compiler was
+contracted out to Digitek (Multics History, pg. 3) and while
+waiting for the compiler to come back, the design of Multics was
+laid out in the Multics System Programmers Manual (MSPM)
+(Corbato, F.J., Saltzer, J.H., and C.T.Clingen, pg. 2). This
+methodical approach to the planning reflected the disciplined
+style that the programming team used to build the system, and was
+thought necessary to effectively manage the complicated nature of
+the project. The system was designed to include fault-free
+continuous operation capabilities, convenient remote terminal
+access and selective information sharing. One of the most
+important features of Multics was to follow the trend towards
+integrated multi-tasking and permit multiple programming
+environments and different human interfaces under one operating
+system. Doug McIlroy emphasized that it wasn't that it [Multics]
+allowed many people to share the cycles in the machine:</p>
+
+<blockquote>
+    <p><font size="2">It was that it allowed many people to work
+    in the same huge pot of data and it was this synergy of
+    sharing data, to be able to quickly look at other people's
+    files, pass messages around and so on, that was the best
+    thing that time sharing had to offer. The other was merely an
+    economic advantage, but the one of sharing was a
+    qualitatively different way of using the machines. </font></p>
+</blockquote>
+
+<p>Although this greatly increased the complexity of Multics it
+reflected the desire for an interactive system that could
+increase the capacity of the computer as a communications tool. </p>
+
+<p>Development continued on the system design for a year and
+still no PL/I compiler had appeared. This was attributed to the
+difficulties involved with implementing the full PL/I language.
+Doug McIlroy and Bob Morris took it upon themselves to create a
+backup for the system by using EPL/I (early PL/I) to write a
+compiler which produced output in EPL Bootstrap Assembler
+(Multics History, pg. 3). This was not only very slow in
+compiling, but was also limiting in the features that could be
+implemented using it. For example, McIlroy remarked that
+&quot;There were only two error messages, syntax error and
+redeclaration, and one warning, idiotic structure&quot; (Salus,
+Peter, pg. 28). This problem was compounded by the necessity of
+an unanticipated phase of design iterations due to gross
+discrepancies between the actual and expected performance of the
+various logical execution paths throughout the software. </p>
+
+<p>As a result, the project began to fall behind schedule,
+threatening the intermediate funding being provided by the
+Cambridge Project, an ARPA funded political science computing
+project (Multics History, pg. 4). Concern over the extent of the
+software problems soon became widespread and as early as 1967
+there existed growing doubts about the future of Multics. Sam
+Morgan, director of Computing Science Research at Bell Labs
+during this period, expressed his own concerns that Multics
+research was going very slowly and wasting effort, saying:
+&quot;It was becoming clear to people that Multics was an attempt
+to climb too many trees at once. The development was moving more
+slowly than had been expected and users were sighing with varying
+degrees of pungency.&quot; In fact, to the entire labs computing
+community, the failure of Multics to deliver promptly any sort of
+useable system was increasingly obvious. </p>
+
+<p>Consequently, Bell Labs pulled out of the project in March of
+1969, leaving GE and MIT to salvage what they could of the
+system. According to Berk Tague, it was Bill Baker who made the
+decision to pull the plug, saying &quot;Like Vietnam, he [Bill
+Baker] declared victory and got out of Multics.&quot; McIlroy
+echoed these thoughts, mentioning that Bell Labs &quot;had a
+million dollars worth of equipment in the attic that was sitting
+there being played with by three people. It became clear that we
+were a drag on the computer center's budget.&quot; This sudden
+loss of the Multics system was to have important consequences on
+the direction of computing at Bell Labs and on the creation of
+Unix. </p>
+
+<p>It was about this time that Sandy Fraser arrived at Bell Labs.
+An aeronautical engineer by trade, Fraser had been working with
+the ATLAS time sharing system in Cambridge, England, when he
+decided that the future of computing lay not in England, but on
+the other side of the Atlantic. He came with the hope of working
+on Multics and was quite startled to discover that it had been
+canceled, noting a similar reaction at Bell Labs: </p>
+
+<blockquote>
+    <p><font size="2">It was quite clear that we were in the
+    course of a fairly traumatic change for a lot of people. [For
+    example], the end of the 60s, was a time of change for all
+    universities. It used to be that the computing science
+    research communities used to run the computing centers for
+    the university. However, as the budgets grew, soon this
+    became less and less practical, [and] one by one the
+    universities started moving the computers from the
+    responsibility of the computer centers into the
+    administrative area.That is what happened when Multics
+    departed. </font></p>
+</blockquote>
+
+<p>With Multics gone, there was a decisive shift in the momentum
+away from computing at Bell Labs, as the administration sought to
+transfer impetus to other research areas. </p>
+
+<p>Characteristic of the time was the loss of computer science
+personnel to other departments or research organizations, and the
+absence of both space and funding for computer science projects.
+In fact, to prevent Multics from resurfacing, directors were
+discouraged from buying any machines big enough for Multics to
+run on. However, the group that was most involved with the
+Multics project (Ken Thompson, 
+<a href="http://cm.bell-labs.com/cm/cs/who/dmr/bigbio1st.html">
+Dennis Ritchie</a>, McIlroy and J.F.
+Ossanna) desired to continue the communal computing environment
+provided by Multics. They found an alternative to Multics in
+Unix. </p>
+
+<p>Unix, while not necessarily a reaction to Multics, certainly
+represented a different approach to the time sharing problem.
+Ritchie, a systems programmer at Bell Labs, expressed that
+&quot;it was really the combination of the disappearance of
+Multics and the fact that Ken [Thompson] had always wanted to
+write an operating system of his own [that] led fairly directly
+to Unix.&quot; He went on to explain another reason the
+programming group created Unix was that </p>
+
+<blockquote>
+    <p><font size="2">we didn't want to lose the pleasant niche
+    we occupied, because no similar ones were available; even the
+    time-sharing service that would later be offered under GE's
+    operating system did not exist. What we wanted to preserve
+    was not just a good environment in which to do programming,
+    but a system around which a fellowship could form (Dennis M.
+    Ritchie, pg. 1).</font> </p>
+</blockquote>
+
+<p>This mentality fostered a simple, yet effective system design
+based on the ideals of ease of use and close communication. </p>
+
+<p>Moreover, two key concepts had been picked up on in the
+development of Multics that would later serve to define Unix.
+These were that the less important features of the system
+introduced more complexity and, conversely, that the most
+important property of algorithms was simplicity. Ritchie
+explained this to Mahoney, articulating that: </p>
+
+<blockquote>
+    <p><font size="2">The relationship of Multics to [the
+    development of Unix] is actually interesting and fairly
+    complicated. There were a lot of cultural things that were
+    sort of taken over wholesale. And these include important
+    things, [such as] the hierarchical file system and
+    tree-structure file system - which incidentally did not get
+    into the first version of Unix on the PDP-7. This is an
+    example of why the whole thing is complicated. But any rate,
+    things like the hierarchical file system, choices of simple
+    things like the characters you use to edit lines as you're
+    typing, erasing characters were the same as those we had. I
+    guess the most important fundamental thing is just the notion
+    that the basic style of interaction with the machine, the
+    fact that there was the notion of a command line, the notion
+    was an explicit shell program. In fact the name shell came
+    from Multics. A lot of extremely important things were
+    completely internalized, and of course this is the way it is.
+    A lot of that came through from Multics.</font> </p>
+</blockquote>
+
+<p>As will be discussed later, the integration of numerous
+aspects of Multics design into Unix maintained the power of Unix
+as a time-sharing system. In contrast, the simplicity of the Unix
+system avoided many of negative facets of the Multics system, as
+Ritchie relates below: </p>
+
+<blockquote>
+    <p><font size="2">As far as other technical details, there
+    were enormous differences. The scale of not only both effort
+    and human resources, as well as machine resources, was just
+    incomparable. I forget now how big the Multics machine was,
+    it wasn't very big of course by today's standards, but the
+    first PDP-7 was tiny. [Unix was designed on] only 8k words of
+    memory, [whereas the machine Multics ran on had] 68k. So
+    there was a vast difference in complexity. And a lot of that
+    was forced just by conditions. But a lot of it really was a
+    sense of taste as well. One of the obvious things that went
+    wrong with Multics as a commercial success was just that it
+    was sort of over-engineered in a sense. There was just too
+    much in it. And it certainly explained why it took so long to
+    get going. Heavily consumptive of resources, of machine and
+    certainly in terms of people required to produce it. </font></p>
+</blockquote>
+
+<p>Ritchie's remarks reflect the impact of Multics failure on the
+computing atmosphere at Bell Labs and subsequently illustrate
+that the key to Unix was in avoiding these attributes through
+simple, well written programs. As Sam Morgan alluded to, &quot;if
+you order an operating system of a group of programmers, you get
+Multics. If you leave them to their own resources and
+imagination, things like Unix will grow out of their
+creativity.&quot; As discussed next, the development of the file
+system leading to Unix was clearly derivative of this mentality. </p>
+
+<p>&nbsp;</p>
+
+<h2>The Beginning</h2>
+
+<h4>Michael Errecart and Cameron Jones</h4>
+
+<h3>Files to Share</h3>
+
+<p>Development of Unix did not actually begin as work on an
+operating system. Rather, the small group of computer scientists
+who had seen their positions on the Multics project evaporate at
+Bell Labs' exit set out to create a file system that could be
+shared efficiently within their workgroup. The operating system
+was little more than an afterthought resulting from a need to
+test this file system. </p>
+
+<p>When Bell Labs broke off from the Multics project, Ken
+Thompson and the rest of his subgroup had been working on the
+file system for the project, &quot;which never really came to
+exist&quot; because of several technical problems that had grown
+so complex that they could not be ironed out. The goal that they
+were seeking was &quot;to develop read and write calls that were
+sequential calls that turned around and ended just reading
+sequentially out of pages,&quot; but problems arose with a
+technology called &quot;paging&quot;, which was intended to
+simplify the process of reading and writing files to disk but
+finally was abandoned. </p>
+
+<p>The Unix file system was based almost entirely on the file
+system for the failed Multics project. The idea was for file
+sharing to take place with explicitly separated file systems for
+each user, so that there would be no locking of file tables. The
+main ideas of the file system as outlined by Thompson are
+&quot;to have the activity locus of manipulation of data for user
+one and user two to be disjoined, so that in fact, [they]
+wouldn't be locking common tables. [They] wouldn't be going
+through anything common unless [they] in fact shared files. To
+try to keep up real high, efficient access to disks. In fact,
+interleave accesses in a way.&quot; It is clear that the main
+goal of Multics &#151; universal access to unlimited central
+computing power &#151; was carried on in a large way through the
+work of Thompson, Canaday and Ritchie as they developed the file
+system for Unix. Stu Feldman noted that Project MAC and Multics
+combined to influence the file system:</p>
+
+<blockquote>
+    <p><font size="2">Project MAC had a rather weird, not really
+    tree-structured, two-deep file system, for every name also
+    had a two complement identifier. Multics had a very complex
+    file system, which went the opposite end from this, and had a
+    very messy directory structure... in which you could
+    represent a remarkable number of important things. Very
+    complicated access control, very complicated linking
+    control... All kinds of wonderful things. All this list of
+    wonderful things caused the system to sink into the mud...
+    Everything takes cycles. Many of these ideas have reappeared
+    in other forms. So, in some sense Unix, the Unix file system
+    was the reaction to both of these, if you look at it. It had
+    the flexibility. It had the essential tree flexibility of
+    Multics. But a real dirty idea for implementation, which was
+    to say that the file space was flat. </font></p>
+</blockquote>
+
+<p>Ken Thompson was the person most involved in the creation of
+the file system, as he handled all the coding and debugging,
+while he bounced ideas off the others on a whiteboard. Doug
+McIlroy, the project manager, talked about the transition between
+Multics and Unix, saying </p>
+
+<blockquote>
+    <p><font size="2">Thompson and Ritchie and Rudd Canaday, who
+    was an intern in my department for a year, were talking
+    about, 'Well, how could we do this in a less massive way?'
+    And, there were many afternoons spent across the hall there,
+    working at the blackboard, working out the design of... what
+    became the Unix file system. 'If we were to make a file
+    system, what would it look like?' </font></p>
+</blockquote>
+
+<p>A major part of the answer to this question is that the file
+system had to be open. The needs of the group dictated that every
+user had access to every other user's files, so the Unix system
+had to be extremely open. This openness is even seen in the
+password storage, which is not hidden at all but is encrypted.
+Any user can see all the encrypted passwords, but can only test
+one solution per second, which makes it extremely time consuming
+to try to break into the system. Another example of the openness
+of the file system was the omission of records, a decision which
+came under heavy criticism from all sides. The proprietary nature
+of records made them inaccessible to users who did not utilize
+the exact same record format, and they were anathema to the
+group. Thompson would &quot;give talks, it would always come up,
+you know, why you didn't do records and I'd have some extra
+slides, cause I knew I'd be asked this.&quot; And he would walk
+the audience through a sample problem that could occur between
+incompatible record types to prove his point. </p>
+
+<p>During this design process, Thompson made it clear that there
+were certain aspects of the file system on the Multics project
+that he would have liked to see happen, but which were never
+implemented. A major example is &quot;treating files and devices
+the same... having the same read calls.&quot; This meant that
+terminals would input and output data in the same format that
+mainframes did, leveling the playing field between users on
+different computers. &quot;Typically during those days there were
+special calls for the terminal and then the file system itself...
+Confusing them and redirecting I/O was just not done in those
+days.&quot; The idea of standard input and output for devices
+eventually found its way into Unix as pipes. Pipes enabled users
+and programmers to send one function's output into another
+function by simply placing a vertical line, a '|' between the two
+functions. Piping is one of the most distinct features of Unix
+and will be covered in greater detail in a later section.
+Thompson thought &quot;everyone sort of viewed [standard I/O] as
+a clean concept and the right thing to do but for some reason it
+just wasn't done.&quot; </p>
+
+<p>When the file system was finally past the point where it could
+be developed and modified exclusively in the abstract, but rather
+had to be implemented and tested on real hardware, Thompson laid
+out his idea of what the file system should look like:
+&quot;there was the I-list, which is a definition of all the
+files on the system; and then some of those files were
+directories which just contained name and I-number. There's
+nothing in there that constrains it to a tree. So it was not in
+fact, not hierarchical at all.&quot; Just as terminals were to be
+treated no differently from mainframes, directories were just
+files that had an index attached to them. However, the flaws
+inherent in the original implementation became clear:</p>
+
+<blockquote>
+    <p><font size="2">When [the group] started writing things
+    like file systems checking programs and stuff, the locking of
+    the spaghetti bowl directories and finding of disjointed
+    things, you'd dissever something and never get it back,
+    because, you know, you'd lost it. Those problems became close
+    to insurmountable, and so in the next implementation we
+    forced a topology stronger than that.</font></p>
+</blockquote>
+
+<p>This new topology, while slightly more constrained, still
+treated files and directories roughly equally, true to the ethos
+of the project. </p>
+
+<p>Having moved past the question of whether one user was able to
+use the system effectively, it became time to test the system as
+it was intended be used, with many users connected at once making
+read and write calls to the disk simultaneously. </p>
+
+<blockquote>
+    <p><font size="2">To run the file system you had to create
+    files and delete files, re-unite files to see how well it
+    performed. To do that you needed a script of what kind of
+    traffic you wanted on the file system, and the script we had
+    was, you know, paper tapes, that said, you know, read a file,
+    read a file, write a file, this kind of stuff. And you'd run
+    the script through the paper tape and it would rattle the
+    disk a little bit... you wouldn't know what happened. You
+    just couldn't look at it, you couldn't see it, you couldn't
+    do anything.</font></p>
+</blockquote>
+
+<p>Because of this inability to effectively monitor the successes
+and failures of the file system in these tests, the group </p>
+
+<blockquote>
+    <p><font size="2">built a couple of tools on the file
+    system... used this paper tape to load the file system with
+    these tools, and then we would run the tools out of the file
+    system... and type at these tools... to drive the file system
+    into the contortions that we wanted to measure how it worked
+    and reacted. So [the file system] only lasted by itself for
+    maybe a day or two before we started developing the things
+    that we needed to load it. </font></p>
+</blockquote>
+
+<p>It was in this fashion, with the addition of system tools,
+that the idea of the hierarchical file system became the
+foundation for something more. </p>
+
+<p>At this point, there were the first glimmers within the group
+that they were working on something that would be more than just
+a file system for some larger operating system. While most of the
+file commands were still the pure system commands (&quot;the
+system read call was in fact the read call of the file system and
+it was very synchronous&quot;) there followed &quot;a very quick
+rewrite that admitted it was an operating system, and it had a
+kernel user interface that you trapped across.&quot; At that
+point it could officially be called an operating system. It is
+interesting to note that other members of the Unix group had
+quite different opinions about the infancy of the file system
+from those of its creator Ken Thompson. Stu Feldman claims
+&quot;[Thompson] was writing Space Wars and he got sick and tired
+of having no support. So, he built a few things.&quot; This
+concept of building tools for one's own benefit, and adapting
+them to fit the needs of the group also stood out in Thompson's
+interview, as he explained his motivations for working on Unix.
+&quot;I was more interested in myself. Just selfish notions of
+trying to get a environment to work in.&quot; Dennis Ritchie, who
+was also involved in the creation of the file system to a small
+extent, further backs up this statement about the file system: </p>
+
+<blockquote>
+    <p><font size="2">I think that (the file system research) was
+    basically part of Ken's desire to do a system of his own. So
+    I don't know what very specific thing sparked it... Then he
+    and I and Rudd Canaday started drawing pictures on the
+    blackboard or maybe white board. Drawing the structure of
+    this proposed system which was in most ways the predecessor
+    of Unix... Most of the ideas were Ken's. </font></p>
+</blockquote>
+
+<p>Whatever the motivations for Unix, however, it began to look
+as if it had the potential to become something that nobody could
+have anticipated. And, for it to continue on its path, it needed
+solid code in a solid language. </p>
+
+<h3>Language from B to C</h3>
+
+<p>The selection of a programming language in which to write Unix
+was one that would help to define it almost as much as the
+development of the hierarchical file system had, if not more. At
+first, Ken Thompson believed that Unix would have to have a
+Fortran compiler in order to be considered a &quot;serious
+system.&quot; After sitting down to do the Fortran grammar,
+&quot;it took him about a day to realize that we wouldn't want to
+do a Fortran compiler at all.&quot; The Unix group knew that they
+still wanted a high-level language, but PL/1, which was used in
+Multics, was too high-level. So instead, Thompson created a new
+but very simple language, called B. </p>
+
+<p>At the time, both Thompson and Ritchie had worked with a new
+language which was just emerging from MIT, BCPL, and were taken
+by it. Unfortunately, it was too big to run on the 4K Unix
+machines, so Thompson made B, which was nearly exactly the same,
+although it was an interpreter, instead of a compiler. B made two
+passes, one to turn code into an intermediate language and
+another to interpret the intermediate language. Ritchie wrote a
+compiler for B which worked off of the intermediate language.
+Some system tools and utilities were written in B, but never the
+operating system itself. B was essentially the same language as
+BCPL; semantically, the two were exactly the same. Syntactically,
+however, it looked like what became C, although it lacked types. </p>
+
+<p>Thompson had the idea that B would be a very simple, very
+clean and very portable language. &quot;It was written in its own
+language. That's why its so portable. Because you just pull it
+through and its up real quickly.&quot; Thompson was intent on
+having Unix be portable, and the creation of a portable language
+was intrinsic to this. </p>
+
+<p>B was a word-oriented language, and it operated on a
+word-oriented machine, the PDP-7. However, when it was moved to
+the new PDP-11, the interpreter had some trouble. Because the
+PDP-11 was byte-oriented, the machine and the language didn't fit
+well together; in particular, B and BCPL had notions of pointers
+which were names of storage cells and were oriented to a single
+size of object, while the PDP-11 had objects of different sizes.
+In addition, since B was an interpreter, it was doomed to be
+slow, so the Unix group decided they wanted something better as
+the systems language, which prompted Ritchie to begin to develop
+C, which occurred in two phases. </p>
+
+<p>Ritchie began by adding a type structure to B, and soon after
+wrote a compiler for it, marking the first phase. After the
+language changes, &quot;it was called NB for New B... [and] it
+was also an interpreter.&quot; To make the C compiler, Ritchie
+began with the B compiler, and &quot;sort of merged it into the C
+compiler&quot; with the new type structure. </p>
+
+<blockquote>
+    <p><font size="2">The basic construction of the compiler, of
+    the co-generator for the compiler, was based on an idea that
+    I heard about from someone at the Labs at Indian Hill &#151;
+    I never actually did find and read the thesis, but I had the
+    ideas in it explained to me so that the co-generator for NB
+    was... based on this Ph.D. thesis. </font></p>
+</blockquote>
+
+<p>Basically, C ended up containing B: &quot;some of the
+anachronisms of C, that are now gone, or, at least are not [but]
+are unpublished to the point that no one knows they're there, are
+B.&quot; </p>
+
+<p>&quot;The second phase was slower; it all took place within a
+very few years, but it was a bit slower, so it seemed, and it
+stemmed from... the first attempt to rewrite Unix.&quot; In the
+summer of 1972, Thompson undertook this project, but gave up.
+&quot;It may [have been] because he got tired of it or whatnot,
+but there were sort of two things that went wrong. One was his
+problem that he couldn't figure out how to... switch control from
+one process to another. The second thing that he couldn't easily
+handle &#151; from my point of view the more important &#151; was
+the difficulty of getting proper data structure.&quot;
+Originally, C did not have structures, so it was &quot;really
+fairly painful&quot; to make various types of tables; a technique
+found to deal with this was clumsy at best. &quot;It was a
+combination of things that caused Ken to give up that
+summer.&quot; </p>
+
+<p>Over the next year, Ritchie added structures to C and made the
+compiler somewhat better, with better code. &quot;And so over the
+next summer that was when we made the concerted effort and
+actually did redo the whole operating system in C. That was
+fairly successful. It took the winter of '73 to do that. And
+there were no really tough problems.&quot; </p>
+
+<p>After this, C took off. Part of its success was simply its
+association with Unix. As Unix's popularity increased, so did
+C's: &quot;it just got carried along.&quot; Another reason for
+its popularity was that a number of machine dependent things can
+be visible to C programs, and with a little care, portability is
+possible. &quot;Part of the art is to learn what sorts of things
+you can depend on, and what you shouldn't. I guess the only real
+explanation for success is that there were a lot of people
+writing in the language, typically prose, [who] are now able to
+write in C. The programs are likely to be a lot better for
+it.&quot; </p>
+
+<p>Before Unix had begun to be a widely used system, a number of
+interesting tools were being developed, so there was an effort to
+make the tools available to other people. &quot;The best way to
+do that was to have a C compiler on other machines.&quot;
+However, the real difficulties that the Unix group ran into when
+moving the various Unix tools to the IBM, GE or Honeywell systems
+were not due to differing underlying machine architecture,
+although C made it possible to see, but to operating system
+differences: &quot;how you do I/O? How you write the so-called
+portable libraries? There were messes in... keeping these
+programs portable. It had nothing to do with the program itself.
+It had a lot to do with the interaction with the rest of the
+system.&quot; The solution: to not waste time trying to make
+individual programs portable while fighting the operating system,
+but to make the operating system portable, too. Thompson had
+proposed early on, while the group was still on the PDP-7, to
+write </p>
+
+<blockquote>
+    <p><font size="2">in B the very simple operating system that
+    would be very, very portable. It would run on all sorts of
+    microcomputers that were just here. It would not be
+    ambitious. The idea would be that this is something that
+    could be distributed widely... The idea was just put out one
+    day and I don't think he spent any time at all working on it.
+    Even though nothing came of that immediately, or very
+    directly, that was the first sort of specific impulse towards
+    Unix portability. Upright system portability. </font></p>
+</blockquote>
+
+<p>The early emphasis of the Unix group was both on the
+development of the file system and on the portability brought
+about by C. This set the stage for further development of the
+operating system by laying down a basic framework in which the
+group would function, and paved the way to the realization of the
+Unix philosophy. But, before they could do so, they had to find a
+computer of their own.</p>
+
+<h2 align="left">Finding a Machine </h2>
+
+<h4 align="left">Darice Wong and Jake Knerr</h4>
+
+<p>After Multics' cancellation in March of 1969, essentially no
+department was allowed to buy a computer powerful enough to
+continue Multics research. Sam Morgan became the department head
+of computing science research at Bell Labs in 1967, well into the
+Multics program. He was present during the cancellation of
+Multics and the birth of Unix. </p>
+
+<blockquote>
+    <p><font size="2">There was an announcement, a formal
+    announcement that the work was stopping, that we were
+    [devoting] no more effort to [Multics], and that we were
+    simply out of it. I believe it had to be done that way
+    because ... unless there is a definite statement that you are
+    not going to work on a project anymore, why, some people will
+    continue to work on it. That's the way... research goes. Folk
+    from day to day do their own thing. And so there was a clear
+    announcement that the work was over...It was simply... using
+    up effort and was not... advancing and showed no promise
+    of... turning into a user useful thing. </font></p>
+</blockquote>
+
+<p>A number of factors contributed to AT&amp;T's decision to not
+buy any more computers powerful enough to run Multics. As Sam
+Morgan was able to recount about the removal of service computing
+from all technical organizations in Bell Labs in the middle of
+1969: </p>
+
+<blockquote>
+    <p><font size="2">... service computing at all Bell Labs
+    locations ... merged into a single division under a man named
+    Phil Thayer... All the comp centers were put under unified
+    management and for a year and a half I was both Director of
+    Service Computing at Murray Hill and Whippany, and Director
+    of Computing Science Research. ... It just wasn't reasonable
+    ... for a research organization also to try to manage a
+    stable computing center. So anyhow, having a separate
+    computing service organization was long overdue. [The
+    separate computing organization] was started in the middle of
+    1969. And this was another impetus I think toward the
+    development of an operating system for small machines, namely
+    Unix, that went on in computing science research. Because
+    once the comp center machines were moved out from under the
+    research aegis, we had in research had our own machines, and
+    management would not buy big DEC PDP 10's and so we had to do
+    something on minicomputers. And that was another impetus
+    toward Thompson and Richie in the Unix direction. Anyway,
+    that's, that's kind of the history of things. </font></p>
+</blockquote>
+
+<p>Many scientists did not understand, or did not want to
+understand, that AT&amp;T was out of computers. Thompson in
+particular recalls, &quot;There was no explicit policy that we
+weren't going to get back into the computer business&quot; </p>
+
+<p>Thompson and Ritchie began work on a Multics like file system
+because they enjoyed using Multics, as didmost of the scientists,
+and wanted to continue research. Sam Morgan felt that scientists
+liked Multics because &quot;[Multics] was fun. You could develop
+software, you could do all sort of things with it. It just wasn't
+... cost effective.&quot; Because the writers of Unix liked the
+type of environment Multics provided, when Unix was developed, it
+&quot;turned out to be a much simpler, more cost effective
+environment which provided users with the pleasures of... the
+same kind of sandbox,&quot; the best of both worlds. Thompson and
+Ritchie were determined to find a computer to continue
+Multics-like research. What they found was an aging DEC PDP-7,
+the only system available. It had a very limited memory but at
+least they could implement a file system. </p>
+
+<p>The PDP-7 in question was specially equipped for fancy
+graphics work being done by Bill Minkey. It belonged to
+department 13, headed by Joseph Condon, an electrical engineer
+who worked on current flow. Condon's group wasn't using the
+computer, and Ken Thompson and Dennis Ritchie were fooling around
+with it. They even programmed a famous computer game, &quot;Space
+Travel&quot;. Sam Morgan noted &quot;that Ken Thompson had a
+space war game that he played for a while when he was looking for
+something to replace Multics.&quot; </p>
+
+<p>When asked how Thompson and Ritchie were using a computer not
+in their department, Condon said, &quot;I don't know.&quot; In
+fact, Condon had become the head of the department that owned the
+PDP-7 after Thompson and Ritchie began borrowing the machine.
+Thompson explains how it happened:</p>
+
+<blockquote>
+    <p><font size="2">It was another department that owned it,
+    and when it would break, it would be a hassle over who
+    maintained it, and we didn't maintain it because we couldn't
+    get our department to pay for maintenance. There was... no
+    money ...[and] they just didn't want us to do this. ... this
+    department that owned the machine ... wanted to throw it
+    away, but [we wanted] to keep it, on their space and maintain
+    it for [ourselves]. That was a precarious situation, and that
+    persisted. Then when it became clear that these machines were
+    nearing the end of their life, we ... tried to get them
+    officially ours, which failed, our manager wouldn't pick up
+    these machines, at zero cost, you know, they didn't
+    want...the cost of the space. </font></p>
+</blockquote>
+
+<p>When Thompson realized that the PDP-7 was not powerful enough
+to implement a file system that could offer some of the
+advantages of Multics he initially programmed a bare-bones file
+system. The file system was then put on a PDP-10. Using this
+enhanced capability, Thompson and the others slowly added tools
+that helped them monitor what the file system was doing. Thompson
+devoted a month apiece to the shell, editor, assembler, and other
+software tools. When asked when he realized that a new operating
+system was being born, Thompson replied, </p>
+
+<blockquote>
+    <p><font size="2">... in the summer of '69, it was totally
+    rewritten in a form that looked like an operating system,
+    with tools that were sort of known, you know, assembler,
+    editor, and shell -- if not maintaining itself, right on the
+    verge of maintaining itself, to totally sever the GECOS
+    connection. </font></p>
+</blockquote>
+
+<p>It was this point that the epic birth of UNIX became a
+reality. After the OS was implemented in assembly language it was
+dubbed UNIX as a play on Multics; MULTI- being many and UNI-
+being one. </p>
+
+<p>The file system on the PDP-7 was created in assembly language.
+As noted above, Thompson realized that for an operating system to
+be useful it needed to be created in a high-level programming
+language by which it could be ported to any system. Thompson
+initially began programming a Fortran compiler, but changed his
+mind and created a very simple language called B. Ritchie
+improved upon B and renamed the language C. UNIX was written in C
+and could be ported to any computer. </p>
+
+<p>Because of its portability, Unix could now be tried on a
+larger machine. The only trouble was finding a machine around the
+size of Multics and a department head to purchase it. Thompson
+was able to recall the process. </p>
+
+<blockquote>
+    <p><font size="2">... we started on a set of proposals for
+    getting a new machine,...... So what would happen was that we
+    would take these proposals for these machines and do all the
+    research on them and get the vendors in and waste everybody's
+    time, and get these proposals up and they'd be thought about
+    our management for a extended periods of time and they'd say
+    'no' for some funny reason, you know, never for a real one
+    (unclear) computing anymore. There were several, really
+    several, of these big rounds of trying to get a vendor and a
+    machine and, to get....to do this work. Most of it was
+    carried on by Osanna and me, and the interference type
+    people. Ultimately what happened was um we found a PDP-11, it
+    was in fact not announced yet, but it was right on the edge
+    of being announced. ...Osanna and I put together a proposal
+    to buy a PDP-11 to do ... research in text processing,
+    (unclear) and document preparation, ... it was the first of
+    the goals that were specific, ... The other ones were...we
+    wanted to play with computers and operating systems, and they
+    were unspecific, and the our management went off and thought
+    about it, and rejected it again. But in the meantime going up
+    and down the hierarchy a sister department, 122, psychology
+    research, came over and said 'well we'll fund it out of our
+    area,' embarrassed the hell out of our management. And they
+    bought it, gave it to us, and...They just had Insight, and
+    inspiration and unfortunately our management didn't.... our
+    management was suffering from wounds from the Multics days. </font></p>
+</blockquote>
+
+<p>Eventually, Lee McMahon, one of the four members of the Unix
+machine proposal group, the only one who belonged to another
+department, convinced his own department head to fund a machine. </p>
+
+<p>Meanwhile, Joe Osanna convinced the Bell Labs patent office
+that Unix would be a worthwhile investment as a text processing
+system. Use of Unix started in the patent office of Bell Labs,
+but by 1972 there were a number of non-research organizations at
+Bell Labs that were beginning to use Unix for software
+development. Morgan recalls the importance of text processing in
+the establishment of Unix. </p>
+
+<blockquote>
+    <p><font size="2">[Space Travel] was fun but the, the first
+    real application of the file system that became Unix was a
+    text processing system. And this was kind of the merging of
+    file system work and work that folks had been interested in
+    for a long time, text processing... </font></p>
+    <p><font size="2">People were interested in text editing and
+    formatting and you could do this on a small computer... if
+    you had an operating system that involved easy handling of
+    files and... time sharing, ... people could access and use
+    each other's files. The Unix file system and the text editing
+    and formatting work kind of came together... </font></p>
+    <p><font size="2">[A text processing system] was a system the
+    Labs was willing to buy a machine for. When this, the
+    proposal was first made that we should buy a machine for text
+    processing it was presented to me because I had to sign the
+    purchase order. </font></p>
+</blockquote>
+
+<p>Though in afterthought Morgan admits to the merits of text
+processing, he had this defense to his initial rejection: </p>
+
+<blockquote>
+    <p><font size="2">[T]he pitch was not really that two of
+    Morgan's MTS, having been thrown out of Morgan's office (I
+    exaggerate here, but having been thrown out of Morgan's
+    office), trot down the hall to Matthew's and say, 'Morgan
+    doesn't love us what can you do for us?' They came in through
+    McMahon's director ...The people who originally made the
+    proposition to me were Osanna, Thompson and McMahon, who were
+    working together. </font></p>
+</blockquote>
+
+<p>Morgan admits to his underestimation of the proposals but,
+acting as a department head, his responsibility was to rely on
+what he knew, which wasn't much about text processing. </p>
+
+<blockquote>
+    <p><font size="2">I didn't understand at the time the
+    innovative nature of the Unix file system, and we had done
+    text processing work in the past and I didn't see that we
+    were, that any great research advance was being made. It
+    sounded as if people wanted to provide a service or something
+    with a typing pool. So the first proposal to buy a, I guess
+    it was a PDP1120 I turned down...As I said the first time
+    that Thompson and company asked for a computer they asked for
+    a DEC PDP10 and they were told no on that. It was simply too
+    big and you are not going to do operating system research for
+    a big computer just after Multics has been turned off. The
+    second time they asked, they wanted a PDP-1120 and I said, 'I
+    am not convinced yet, I want to see more of what you say you
+    are going to do with your text processing system.' </font></p>
+</blockquote>
+
+<p>In any event, his philosophy followed a somewhat lax path. </p>
+
+<blockquote>
+    <p>I<font size="2"> didn't stomp on them, but neither did I
+    sign their order and they found somebody else, another
+    director to sign the order, and the third time they came
+    around they wanted an 11/45 and by that time they had a
+    perfectly plausible and defensible story. So they got
+    selective enthusiasm used on them but not too violently or
+    with too short of a time scale. If it is going to be good it
+    will prove itself. </font></p>
+</blockquote>
+
+<p>One of Morgan's problems with accepting the proposals was in
+dealing with his own management and the bureaucracy in the upper
+levels of Bell Labs. </p>
+
+<blockquote>
+    <p><font size="2">well I guess I had some difficulty in
+    sorting out the signal from the noise. I was quite well aware
+    that my bosses wouldn't approve the purchase of a really
+    large computer to support any surreptitious continuation of
+    the Multics effort. And I was I think willing to wait for the
+    initial shouting to die down, and I figured that if there was
+    a research component involved in the text processing work
+    that it would appear in due course. And indeed it did. </font></p>
+</blockquote>
+
+<p>Being a manager, Morgan had rules of management to follow. </p>
+
+<blockquote>
+    <p><font size="2">The management principles here are that you
+    hire bright people and you introduce them to the environment,
+    and you give them general directions as to what sort of thing
+    is wanted, and you give them lots of freedom. Doesn't mean
+    you always necessarily give them all the money that they
+    want. ...You exercise selective enthusiasm over what they do.
+    And if you mistakenly discourage or fail to respond to
+    something that later on turns out to be good, if it is really
+    a strong idea it will come back... </font></p>
+</blockquote>
+
+<p>To Morgan, his decision and the effects of his decision were a
+natural process, and there was nothing to regret. </p>
+
+<blockquote>
+    <p><font size="2">I have never been in an organization that
+    had enough money, or enough hiring slots, or enough office or
+    land space to do everything that we would like to do. So one
+    provides some back pressure. And in the case of the
+    transition from Multics to Unix, the Multics faucet had to be
+    turned off reasonably hard. It was a part of turning off, I
+    mean it was a management decision that this was going to be
+    turned off. And part of turning it off was not immediately
+    buying hardware on which Multics could be continued. In
+    retrospect, Thompson and Ritchie and other people did find
+    partly through their own efforts and partly by looking for a
+    director that was willing to buy a small amount of hardware,
+    did find machines on which they could work. And in due course
+    when it was clear to everybody around the research area that
+    Unix was going to go somewhere and needed to be supported,
+    they have had the machines that they wanted. They simply went
+    to the director of the other person in the trio. And I didn't
+    think there was anything wrong with this or unreasonable
+    about it. </font></p>
+</blockquote>
+
+<p>There was a reasonable justification for the way things
+eventually worked out. </p>
+
+<blockquote>
+    <p><font size="2">Max Matthews was a person who collected
+    little computers anyway, and it may be that he had more money
+    at the time than I did. We have certain plant budgets.
+    Anyway, I didn't think that there was anything out of the way
+    about this and I didn't feel that somebody was criticizing my
+    judgment. Max was perhaps in a better position to support the
+    machine, or I don't know what. But anyway it didn't seem
+    unusual to me, and now that I recall McMahon reported to me
+    for a long time. He transferred from Max's organization into
+    mine not too long after this particular incident. But at the
+    time he was a department head for Max Matthews. So he added
+    his voice to the desires that the other fellows had and so
+    Max bought the first computer. But there was nothing, there
+    was nothing particularly unusual about this. And since it
+    would have been a little more unusual if people entirely from
+    one center had gone to a different director and said, 'Can
+    you support this?' In which case, I am sure that Max would
+    have come to me and said, 'Look, two of your guys have come
+    to me and have said, will I buy them a computer? If a
+    computer is going be bought, you ought to buy it. Let's
+    discuss whether it should be bought or not.' The reason it
+    didn't happen that way was that one of Max's department heads
+    was in this story. </font></p>
+</blockquote>
+
+<p>In Morgan's view, Matthews' department was a better choice for
+supporting the funding of a new machine than his own. </p>
+
+<blockquote>
+    <p><font size="2">I was told, 'Look, Max Matthews can support
+    this.' He was the other director. And why could he support
+    it? He could support it because he was interested in text
+    processing. He was doing, ... he was in behavioral sciences
+    and psychology, and he had people who were working on text
+    processing, and in fact one of the folk who was, came in with
+    the proposition for the 11/20 that I turned down. </font></p>
+</blockquote>
+
+<p>Fraught with difficulties, the search for a machine came to a
+successful end. Though Thompson and his fellow Unix programmers
+eventually obtained a PDP-11/45, the PDP7, the machine that was
+too small, was integral in the way Unix developed. Had the PDP-7
+not been available, history might have been different. </p>
+
+<h2>Building Unix</h2>
+
+<h4>Jason Aughenbaugh<br>
+Jonathan Jessup<br>
+Nicholas Spicher </h4>
+
+<p>Once the group had a machine of its own, its members began to
+articulate both the system and the style of computing they had
+envisioned from their experience with Multics. Ostensibly in
+support of the development of the text processing system for
+which the machine had been purchased, they began to forge a
+collection of software tools that would come to characterize the
+Unix approach to computing. Designed to foster and facilitate
+interactive programming, the tools formed the basis of a set of
+&quot;Workbenches&quot; that turned Unix into a production
+environment for Bell Labs at large. In the process, Unix itself
+became as much a toolbox as an operating system. Central to that
+toolbox was pipes, a system process that allowed routines to be
+linked in sequence, the output of one providing the input for its
+successor. According to both McIlroy and Kernighan, pipes created
+the concept of tools. So the story of software tools must begin
+with the creation of pipes. </p>
+
+<p>As a metaphor, pipes emphasized the notion of tools as filters
+or, more technically put, transducers, which transform a sequence
+of input symbols into a sequence of output symbols. That notion
+fit well with the line of research being pursued by the
+theoreticians in Computing Research, most notably Al Aho. As a
+result, many of the tools reflected in their conceptual structure
+the application of recent results in the theory of automata and
+formal languages and in the theory of algorithms. This tie to
+theory became another characteristic of the Unix approach to
+computing, or the Unix ethos.</p>
+
+<p>Unix was intended to recreate the communal computing
+environment that had so impressed the Bell Labs participants in
+the Multics project. During the years in which the toolbox took
+shape, its creators shared not only a computer system but also a
+small attic room, and their physical proximity was often as
+important to their collaboration as was the ability to share
+files and programs. To understand the economy and efficiency of
+the Unix programming environment, one must appreciate the
+tight-knit community that created it.</p>
+
+<p>What emerged from the building of Unix was not only, or even
+primarily, a text-processing and programming systems that were
+the vehicles of its dissemination throughout Bell Labs, AT&amp;T,
+and soon the academic community. In its inspiration and
+articulation, Unix embodied an ethos of computing, a view of what
+computers were for and how they should be used, indeed a view of
+how computers could enable and encourage human community.</p>
+
+<p>The sections to follow will begin, then, with the creation of
+pipes and the development of some of the basic tools of Unix.
+After a look at the theory that informed this work, we will take
+a peek at the attic room and the patterns of collaboration that
+are embedded in Unix. We will then follow the main lines of its
+dissemination to the larger world, starting with the text
+processing system that was its initial justification and moving
+then to the spread of Unix itself. Finally, we will consider the
+ethos that accompanied the software and that made Unix more than
+just another operating system.</p>
+
+<h3><a name="pipes">The Origin of Pipes</a></h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first edition of Thompson
+and Ritchie's <i>The Unix Programmer's Manual</i> was dated
+November 3, 1971; however, the idea of pipes is not mentioned
+until the Version 3 Unix manual, published in February 1973.
+Although Unix was functional without pipes, it was this concept
+and notation for linking several programs together that
+transformed Unix from a basic file-sharing system to an entirely
+new way of computing. The ideas that led to pipes had existed in
+various forms long before the concept was formally implemented.
+In fact, McIlroy explains that pipes sprang from the earlier use
+of macros:</p>
+
+<blockquote>
+    <p><font size="2">[I]n the early sixties, Conway wrote an
+    article about co-routines. Sixty-three, perhaps in the <i>C[ommunications
+    of the] ACM</i>, I had been doing macros, starting back in
+    &#145;59 or &#145;60. And if you think about macros, they
+    mainly involve switching data streams. You're taking in your
+    input, you suddenly come to a macro call, and that says,
+    'Stop taking input from here, go take it from the
+    definition.' In the middle of the definition, you'll find
+    another macro call. So, macros... even as early as
+    &#145;64... Somewhere I talked of a macro processor as a
+    switchyard for data streams. </font></p>
+</blockquote>
+
+<p>Aho recalls that McIlroy had developed the concept of pipes
+much further:</p>
+
+<blockquote>
+    <p><font size="2">Doug McIlroy, though, I think is probably
+    the author of translation...of pipes. That he had written, I
+    think, this unpublished paper when he [was] at Oxford back in
+    the &#145;60s....You should read this paper because it's UNIX
+    pipes. One of the interesting things about Doug is that he
+    has had these great, seminal ideas which not everyone knows
+    about. And whether his standards are so high that he doesn't
+    publish them...or what? But it's remarkable.... <!--webbot
+    bot="PurpleText"
+    preview="This is really a different issue, and should be taken up in a section devoted to McIlroy and his management of the project."
+    --></font></p>
+</blockquote>
+
+<p>According to Thompson, the concept of pipes developed as a
+result of a combination of ideas from the 940 system, CTSS, and
+Multics. </p>
+
+<blockquote>
+    <p><font size="2">There were a lot of things that were talked
+    about but weren't really done. Like treating files and
+    devices the same, you know, having the same read calls.
+    Typically during those days there were special calls for the
+    terminal and then the file system itself. Those calls weren't
+    the same. Confusing them and redirecting I/O was just not
+    done in those days. So, that was... I think everyone sort of
+    viewed that as a clean concept and the right thing to do, but
+    for some reason it just wasn't done. </font></p>
+</blockquote>
+
+<p>Ritchie is even more willing to acknowledge the contributions
+of earlier systems to pipes. To him, &quot;the pipeline is merely
+a specific form of co-routine. Even the implementation was not
+unprecedented, although we didn't know it at the time; the
+&#145;communication files' of the Dartmouth Time-Sharing System
+did very nearly what Unix pipes do, though they seem not to have
+been exploited so fully.&quot;<a href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_1"><sup>1</sup></a></p>
+
+<h4>McIlroy, Thompson, and Pipes</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Although the concept of pipes
+existed in some form long before 1972, it was McIlroy who
+advocated an implementation of a pipeline structure into Unix.
+From the beginning stages of the project, he had been seeking an
+improved method of dealing with input/output structures. &quot;It
+was clearly a beautiful mental model, this idea that the output
+from one process would just feed in as input to another.&quot;
+McIlroy further explains:</p>
+
+<blockquote>
+    <p><font size="2">So, this idea had been ironed on in my head
+    for a long time....at the same time that Thompson and Ritchie
+    were on their blackboard, sketching out their file system, I
+    was sketching out on how to do data processing on this
+    blackboard, by connecting together cascades of processes and
+    looking for a kind of prefix notation language for connecting
+    processes together... </font></p>
+</blockquote>
+
+<p>It was largely a result of his insistence that pipes was
+finally implemented.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;According to Ritchie, McIlroy
+later explained the pipeline idea to the Unix team on a
+blackboard. However, this did not spark immediate enthusiasm.
+There were objections to the notations and the one-input,
+one-output command execution structure. <a
+href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_2"><sup>2</sup></a> Nevertheless,
+McIlroy succeeded in convincing Thompson to add pipes to Unix.
+Thompson explains the difficulty in implementing McIlroy's ideas:</p>
+
+<blockquote>
+    <p><font size="2">Doug had...talked to us continually about
+    it, a notion of interconnecting computers in grids, and
+    arrays, you know very complex, you know, and there were
+    always problems in his proposals....I mean there's just no
+    way to implement his ideas and we kept trying to pare him
+    down and weed him down and get him down, you know, and get
+    something useful and distill it. What was going on, what was
+    needed, what was real ideas, what was the fantasy of
+    his...and we ...there were constant discussions all through
+    this period, and it hit just one night, it just hit, and they
+    went in instantly, I mean they are utterly trivial. </font></p>
+</blockquote>
+
+<p>McIlroy recalls the events a bit differently:</p>
+
+<blockquote>
+    <p><font size="2">Over a period from 1970 till '72, I would,
+    from time to time, say 'How about making something like
+    this?', and I would put up another proposal, another
+    proposal, another proposal. Then one day I came up with a
+    syntax for the shell, that went along with the piping and Ken
+    said, 'I'm gonna do it.' He was tired of hearing all this
+    stuff...and that was certainly what makes it....That was
+    absolutely a fabulous day, the next day too. 'I'm gonna do
+    it.' He didn't do exactly what I had proposed for the pipe
+    system call. He invented a slightly better one, that finally
+    got changed once more to what we have today. He did use my
+    clumsy syntax... </font></p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Originally, pipes used the same
+syntax as redirection (&lt; and &gt;). However, this proved to be
+cumbersome, as several different combinations could represent the
+same command. Just before a presentation in London, Thompson
+decided to replace McIlroy's syntax with the vertical bar,
+eliminating the ambiguities of the old syntax. As Kernighan
+recalls, &quot;I remember the preposterous syntax, that
+&quot;&gt;&gt;&quot; or whatever syntax, that somebody came up
+with, and then all of a sudden there was the vertical bar, and
+just [snaps fingers] everything clicked at that point.&quot; The
+beauty of the structure that McIlroy once described as
+&quot;garden hoses&quot; was recognized; data would simply flow
+from one program to another.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In retrospect, the notation and
+syntax of pipes were just as important as the concept itself;
+pipes might not have been so successful without this further
+distinction from redirection. As Aho recalls, the full
+implications of pipes gradually developed after this:</p>
+
+<blockquote>
+    <p><font size="2">I really didn't appreciate the significance
+    of what you could do with it, at the time, in the &#145;60s.
+    And I don't think anyone did, because...what made a lot of
+    this philosophy...a lot of these tools go was the framework
+    that Unix provided. That you could have pipes on which you
+    could take the output of one program, and transmit it as
+    input to another program. </font></p>
+</blockquote>
+
+<p>Kernighan explains why pipes was a superior method of
+input/output:</p>
+
+<blockquote>
+    <p><font size="2">It's not that you couldn't do those kind of
+    things, because I had already written redirection; it
+    predates pipes by a noticeable amount. Not a tremendous
+    amount, but it definitely predates it. That's an oldish idea.
+    That's enough to do most of the things that you currently do
+    with pipes; it's just not notationally anywhere near so
+    convenient. I mean, it's sort of loosely analogous to working
+    with Roman numerals instead of Arabic numerals. It's not that
+    you can't do arithmetic, it's just a bitch. Much more
+    difficult, perhaps, and therefore mentally...more
+    constraining. </font></p>
+</blockquote>
+
+<p>Pipes went far beyond McIlroy's original goal of creating a
+new I/O mechanism; the programmers used pipes to send an output
+of one program to the input of another. As Kernighan explains:</p>
+
+<blockquote>
+    <p><font size="2">That was the time, then, I could start to
+    make up these really neat examples [of pipe commands] that
+    would show things like doing, you know, running <code>who</code>,
+    and collecting the output in a file, and then word counting
+    the file to say how many users there were, and then saying,
+    'Look how much easier it is with...[piping] the <code>who</code>
+    into the word count, and running <code>who</code> into <code>grep</code>,'
+    and starting to show combinations that were things that were
+    never thought of, and yet they were so easy that you could
+    just compose them at the keyboard and get them right every
+    time. That's, I think, when we started to think, probably
+    consciously, about tools, because then you could compose the
+    things together if you had made them so that they actually
+    worked together. </font></p>
+</blockquote>
+
+<p>It was the pipes concept that allowed the notion of the
+software toolbox to develop. When interviewed by Mahoney, McIlroy
+insisted that pipes &quot;not only reinforced, [but] almost
+created&quot; the toolbox.</p>
+
+<h3><a name="tools">Software Tools</a></h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first step in developing
+what would come to be known as the software toolbox was to ensure
+that all programs could read from the standard input. McIlroy
+explains the problem, and its solution:</p>
+
+<blockquote>
+    <p><font size="2">Most of the programs up until that time
+    couldn't take standard input, because there wasn't the real
+    need. They had file arguments. <code>grep</code> had a file
+    argument, <code>cat</code> had a file argument. Thompson saw
+    that that wasn't going to fit into this scheme of things, and
+    he went in and changed all those programs in the same night.
+    I don't know how. In the next morning we had this orgy of
+    'one-liners.' Everybody had one-liner. 'Look at this, look at
+    that.' </font></p>
+</blockquote>
+
+<p>Kernighan elaborates with an example:</p>
+
+<blockquote>
+    <p><font size="2">And that's when people went back and
+    consciously put into programs the idea that they read from a
+    list of files, but if there were no files they read from the
+    standard input, so that they could be used in pipelines.
+    People went back and did that consciously in programs, like <code>sort</code>.
+    <code>Sort</code>--an example of a program that cannot work
+    in a pipeline, because all the input has to be read before
+    any output comes out--it doesn't matter, because you're going
+    to use it in a pipeline, right? And you don't care whether it
+    piles up there briefly; it's going to come out the other end.
+    It's that kind of thing, where we say, 'Hey, make them work
+    together. Then they become tools.' Somewhere in there, with
+    the pipes, and maybe somewhere the development of <code>grep</code>--which
+    Ken did, sort of overnight--the quintessential tool, as I
+    guess Doug refers to it. A thing which, in a different
+    environment probably you don't see it that way. But, in the
+    Unix environment you see it as the basic tool, in some sense.
+    </font></p>
+</blockquote>
+
+<p><code>grep</code> was, in fact, one of the first programs that
+could be classified as a software tool. Thompson designed it at
+the request of McIlroy, as McIlroy explains:</p>
+
+<blockquote>
+    <p><font size="2">One afternoon I asked Ken Thompson if he
+    could lift the regular expression recognizer out of the
+    editor and make a one-pass program to do it. He said yes. The
+    next morning I found a note in my mail announcing a program
+    named <code>grep</code>. It worked like a charm. When asked
+    what that funny name meant, Ken said it was obvious. It stood
+    for the editor command that it simulated, g/re/p (global
+    regular expression print)....From that special-purpose
+    beginning, <code>grep</code> soon became a household word.
+    (Something I had to stop myself from writing in the first
+    paragraph above shows how firmly naturalized the idea now is:
+    'I used <code>ed</code> to <code>grep</code> out words from
+    the dictionary.') More than any other single program, <code>grep</code>
+    focused the viewpoint that Kernighan and Plauger christened
+    and formalized in <i>Software Tools</i>: make programs that
+    do one thing and do it well, with as few preconceptions about
+    input syntax as possible. </font><a
+    href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_3"><font size="2"><sup>3</sup></font></a><font
+    size="2"> </font></p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The idea of specialized programs
+was carried even further with the development of <code>eqn</code>,
+a mathematical text formatter developed by Kernighan and Cherry.
+Kernighan explains how <code>eqn</code> developed:</p>
+
+<blockquote>
+    <p><font size="2">[T]here was a graduate student named [name
+    deleted] who had worked on a system for doing mathematics,
+    but had a very different notion of what it should be. It
+    basically looked like function calls. And so, although it
+    might have worked, he a) didn't finish it, I think, and b)
+    the model probably wasn't right. I remember, he and Lorinda
+    had worked on it, or she had been guiding him, or something
+    like that. I looked at and I thought, 'Gee, that seems wrong,
+    there's got to be a better way to say it.' I mean, then
+    suddenly I drifted into this notion of, do it the way you say
+    it. I don't know where that came from, although I can
+    speculate. I had spent a fair length of time, maybe a couple
+    of years, when I was a graduate student, at Recording for the
+    Blind, at Princeton. I read stuff like computing reviews and
+    scattered textbooks of one sort or another, so I was used to
+    at least speaking mathematics out loud. Conceivably, that
+    trigged some kind of neurons. I don't know. </font></p>
+</blockquote>
+
+<p><code>eqn</code> was an important software tool because,
+according to Kernighan, it 'was the first--something that sat on
+top of, or in front of, a formatter to genuinely broaden what you
+could do with them.' <code>eqn</code> went a step beyond <code>grep</code>;
+not only was it a small program that served one function, but it
+served little purpose without being tied to another program
+through a pipeline.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>eqn</code> and <code>grep</code>
+are illustrative of the Unix toolbox philosophy that McIlroy
+phrases as, &quot;Write programs that do one thing and do it
+well. Write programs to work together. Write programs that handle
+text streams, because that is a universal interface.&quot; This
+philosophy was enshrined in Kernighan and Plauger's 1976 book, <i>Software
+Tools</i>, and reiterated in the &quot;Foreword&quot; to the
+issue of <i>The Bell Systems Technical Journal</i> that also
+introduced pipes. <a href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_4"><sup>4</sup> </a>By
+the time these were published in the late 1970s, software tools
+were such an integral part of Unix that one could hardly imagine
+the operating system without them. As Kernighan explains:</p>
+
+<blockquote>
+    <p><font size="2">People would come in and they'd say, 'Yeah,
+    this is nice, but does the system do X?' for some X, and the
+    standard answer for all of this was, 'No, but it's easy to
+    make it do it.' Unix has, I think for many years, had a
+    reputation as being difficult to learn and incomplete.
+    Difficult to learn means that the set of shared conventions,
+    and things that are assumed about the way it works, and the
+    basic mechanisms, are just different from what they are in
+    other systems. Incomplete means, because it was meant as a
+    program development environment, it doesn't have all the
+    finished products necessarily. But, as a program development
+    environment, it's very easy to build a lot of these things.
+    It's sort of like a kit. And if you want a new thing, you can
+    take the pieces out of the kit and assemble them to make your
+    new thing, rather more rapidly than you would be able to do
+    the same thing in some other kind of environment. So, we used
+    to say that. 'Does it do X?' 'No, but it's real easy. Do you
+    want one by tomorrow? I'll give you one by tomorrow.' </font></p>
+</blockquote>
+
+<p>As the software tools concept solidified, there was an
+increased interest among Unix programmers in developing a wider
+variety of specialized tools, and in developing them more
+quickly. </p>
+
+<h4>Little Languages</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The idea of tools was extended
+to include the idea that people would actually use tools to
+develop other tools. Thus, the Unix programmers developed highly
+specialized scripting tools that became known as &quot;little
+languages.&quot; Kernighan explains how the concept of little
+languages developed for him:</p>
+
+<blockquote>
+    <p><font size="2">Somewhere, somebody asked me to give a
+    talk. I looked back and realized that there was, in some way,
+    a unifying theme to a lot of the ways that I had been fooling
+    around over the years, which is that I had been building
+    languages to make it easy to attack this, that, or the other
+    problem. In some way, make it easy for somebody to talk to
+    the machine. I started to count them up, and, gee, there were
+    a lot of things there that were languages. Some of them were
+    absolutely conventional things, some of them were
+    pre-processors that sat on other things, some were not much
+    more than collections of subroutines; but, you know, you
+    could sort of call them languages. And they were all
+    characterized by being relatively small, as they were things
+    that were done by one or two people, typically. And they were
+    all not mainstream; I never built a C compiler. They were
+    attacking sort of off-the-wall targets. So, I said, gee,
+    well, they're little languages. </font></p>
+</blockquote>
+
+<p>According to the broad definition given by Kernighan, software
+tools such as <code>eqn</code>, <code>tbl</code>, and <code>make</code>
+can be considered little languages. Scripting languages are also
+little languages because they simplify tasks that would otherwise
+become complex under a full-scale language such as C. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One such scripting language, <code>awk</code>,
+was developed by Aho, Peter Weinberger, and Kernighan to be used
+for &quot;simple one or two-line programs to do some filtering as
+part of a larger pipeline.&quot;<a href="http://www.princeton.edu/~hos/frs122/unixhist/footnote.htm#footnote_5"><sup>5</sup></a>
+The modern language <code>perl</code>, a prominent scripting
+language used on the World Wide Web, is a descendant of <code>awk</code>.
+Kernighan explains the origins of <code>awk</code>: </p>
+
+<blockquote>
+    <p><font size="2">We had this thing called <code>qed</code>....It
+    was a programmable editor, but it was programmable in some
+    formal sense. It was just awful, and yet it was the only
+    thing around that let you manipulate text in a program
+    without writing a hell of a lot of awkward code. So I was
+    interested in programmable editors, things that would let you
+    manipulate text with somewhat the same ease that you can
+    manipulate numbers. I think that that was part of my interest
+    in <code>awk</code>. The other thing is--that I remember as a
+    trigger for me--was a very, very specialized tool that a guy
+    named Mark Rochkind developed....He had a program that would
+    let you specify basically a sequence of regular expression
+    and message...and then it would create a program such that,
+    if you pass data through this program, when it's an instance
+    of the regular expression, it would print the message. And
+    we'd use it for data validation. And I thought, what a neat
+    idea! It is a neat idea. It's a really elegant idea. It's a
+    program that creates a program that then goes off and
+    validates data, and you don't have to put all the baggage in.
+    Some program creates the baggage for you. The only problem
+    with it was that it was specialized, this one tiny
+    application. And so my contribution to <code>awk</code>, if
+    you like, is the notion that you can generalize this. </font></p>
+</blockquote>
+
+<p>Weinberger explains that one of the main purposes of <code>awk</code>
+was to improve the database capabilities of Unix: </p>
+
+<blockquote>
+    <p><font size="2">So we sat around and talked about this
+    stuff and there's roughly speaking two pieces to databases.
+    One is the question of how you get stuff out of the database.
+    And the other is the question of how you sort of put stuff
+    into the database. And putting stuff into a database gets
+    involved in these &#145;are we going to allow for concurrent
+    transactions?' and &#145;do we have to do locking?' because
+    Unix was not particularly good...was incapable of in those
+    days. And it was just all too weird. Eventually we settled on
+    the idea of what we wanted was some...tool that would let you
+    get stuff out of ordinary Unix files in a way that was...more
+    general, more useful, more database-like, more report
+    generally like. </font></p>
+</blockquote>
+
+<p><code>awk</code> used a regular expression matching function
+similar to <code>grep</code>, but greatly expanded on it by
+adding the ability to replace the original expressions with the
+desired data stream. </p>
+
+<h2>Formal Methods</h2>
+
+<h4>Mark Tygert</h4>
+
+<p>The Unix development group had a rich background in
+mathematical methods. Peter Weinberger had studied number theory
+as a professor at the University of Michigan. Brian Kernighan
+wrote his Ph.D. thesis on graph partitioning. Alfred Aho minored
+in mathematics as a graduate student. And M. Douglas McIlroy
+reports, &quot;I went to Oxford for a year, solely so I could
+imbibe denotational semantics from the source.&quot; </p>
+
+<p>Not surprisingly, then, the Unix group utilized formal methods
+very early in its history. In fact, Aho arrived at Bell
+Laboratories in 1967, and immediately began researching concepts
+that are now fundamental to computer science. In Kernighan's
+view, </p>
+
+<blockquote>
+    <p>The theory-based part of it [Unix] goes back to Al Aho, I
+    think, starting here [at Bell Labs] -- having just finished a
+    thesis at Princeton on a particular class of formal
+    languages, having worked with <a
+    href="http://www.cs.cornell.edu/faculty/annual_reports/hopcroft.htm">John
+    Hopcroft</a>, having had <a
+    href="http://www-db.stanford.edu/~ullman/">Jeff Ullman</a> as
+    best friend all the way through graduate school, when the
+    analysis of formal languages was the hot topic in computer
+    science. Computer science didn't really exist in those days,
+    but that was the topic. People were studying the properties
+    of languages [especially those useful for computing]. So,
+    when Al got here, he was still interested in that, and I
+    suspect that there were times when his management would wish
+    that he'd get off this damn language stuff and do something
+    that mattered. Fortunately, in the best tradition, he never
+    did. </p>
+</blockquote>
+
+<p>During the initial development of Unix, Aho co-authored many
+of the standard textbooks associated with computer languages and
+analysis of algorithms. Interestingly, all of these books include
+examples of programming within Unix. Through these texts, Aho,
+Hopcroft, and Ullman intertwined programming and Unix, while
+helping to give compiler design a firm theoretical basis. Aho
+relates, </p>
+
+<blockquote>
+    <p>So, in the early '70s, we [Aho and Ullman] wrote this
+    two-volume sequence, <cite>Theory of Parsing, Translation,
+    and Compiling</cite>, that attempted to distill the essence
+    of automata and language theory with applications to the
+    process of compilation. And, I think this was one of the
+    interesting demonstrations of putting a theoretical
+    foundation onto an important practical area of computer
+    science, that people in programming languages and compilers
+    are, I think, an indigenous part of computer science. </p>
+</blockquote>
+
+<p>Aho and Ullman wanted to formalize the construction of
+programming languages and their compilers. Aho recalls, </p>
+
+<blockquote>
+    <p>What we discovered when we wrote the theory of parsing
+    book...what we discovered was that the literature -- the
+    scientific literature, if you could call it that -- was very
+    inaccurate. These objects were so new, and the techniques for
+    dealing with them were so incomplete, that many of the claims
+    that were made and published about various parsing methods
+    were just wrong. The proofs did not hold. So one of the
+    things that Jeff [Ullman] and I did was to attempt to
+    understand what kind of techniques could be used to analyze
+    these formalisms, and also to put a clear picture into the
+    scientific literature -- what was true and what wasn't. </p>
+</blockquote>
+
+<p>Clearly, Aho was interested in theory at least partly for its
+own sake. However, theoretical work at Bell Laboratories involved
+much more than just theory. Researchers always attempted to
+create something useful. Aho reports, </p>
+
+<blockquote>
+    <p>And there's also a certain consulattive aspect to the work
+    that the Math Center used to do that we would be treated as
+    consultants by the rest of the company, who could be called
+    upon to help out, to help understand phenomena that was
+    important to the telephone company. But, they were given a
+    charter in which there were no holds barred in how they
+    solved those particular problems, and some very innovative
+    solutions came out of that. I think that kind of tradition
+    was inherited by the Computing Science Research Center [the
+    home of the Unix development group]. And I think it's a good
+    tradition to have. That...there were also very high standards
+    for the work and the people, that, no matter who came in, you
+    were expected to be the forefront of your field, and be able
+    to interact with the forefront of your field. There was
+    probably also an implication that the real contribution was
+    not just writing the paper, or, in fact, in many cases papers
+    were never written. But, the real contributions were the
+    ideas, and the refinement of the ideas, and showing people
+    how to use these ideas, to solve problems of interest. </p>
+</blockquote>
+
+<p>Of course, others had somewhat different viewpoints. As
+manager of the Unix development team, McIlroy regarded theory as
+strictly a means, rather than an end: </p>
+
+<blockquote>
+    <p>Most of us are more computer types than mathematicians....
+    I had, in my department, system builders like Thompson, and
+    theoretical computer scientists like Aho. And Aho plowed the
+    fields of language theory from '60.... He joined us in around
+    '66 -- just around the same time as Thompson. Handing out
+    paper after paper of slightly different models of parsing and
+    automata. And that was supported with the overt idea that,
+    one day out of it, this really would feed computing
+    practice.... When the sound theory of parsing went into a
+    compiler writing system, it became available to the masses.
+    It...there is a case where...there's absolutely no doubt
+    that, overtly, theory fed into what we do. There are lots of
+    other places where theory is an inspiration, or it's in the
+    back of your mind. </p>
+</blockquote>
+
+<p>But even though McIlroy subordinated theory to &quot;what we
+do,&quot; he realized that theory was absolutely essential:
+&quot;I think really that <code>yacc</code> [yet another
+compiler-compiler] and <code>grep</code> are what people hold up
+[as] the 'real tools' -- and they are the ones where we find a
+strong theoretical underpinning.&quot; <!--webbot
+bot="PurpleText"
+preview="Removed: &quot;Unix would have developed far differently were it not inextricably linked to formal methods.&quot;  At best, this would be a counterfactual guess, but you don't really have enough information about the subject to make such a judgment."
+--></p>
+
+<p>Interestingly, since some members of the Unix development team
+had such pragmatic, tool-oriented views, they invented their
+theoretically-based ideas in a somewhat peculiar manner. For
+instance, when the Unix project had just begun, Stephen C.
+Johnson asked Aho to construct a C parser for him. Aho remembers,
+</p>
+
+<blockquote>
+    <p>I foolishly decided to construct the parser by hand,
+    implementing one of these LR parser construction techniques
+    [a formalism from language theory]. And I had a huge sheet of
+    paper -- big piece of cardboard -- on which I carried out the
+    sets of items construction, usually while I was watching
+    television, 'cause it is such a trivial and mind-numbing
+    task. And, of course, I didn't get it right. And I gave this
+    piece of cardboard to Steve, and Steve would then encode it
+    into his computer program. After a while, he become so
+    frustrated with me, that I couldn't get it 100% right, he
+    wrote a program that automated this parser construction
+    technique. And that's how the tool <code>yacc</code> was
+    born. </p>
+</blockquote>
+
+<p>Soon after the birth of <code>yacc</code>, Michael Lesk,
+another Bell Labs scientist, created <code>lex</code>, a tool for
+creating lexical analyzers. <code>lex</code> could create
+programs that would take raw text, fresh from the fingertips of a
+programmer, and group the characters of the text into lexical
+units.<!--webbot bot="PurpleText"
+preview="&quot;Lexical&quot; inserted in place of &quot;meaningful&quot;.  The one thing a lexical unit is not, is meaningful."
+--> Then, a <code>yacc</code>-generated compiler could map these
+lexical units into object code, the binary code that computers
+actually run. Thus, by feeding <code>lex</code> with regular
+expressions (formalisms from language theory), and by feeding <code>yacc</code>
+with a specification of a context-free grammar (another formalism
+from language theory) and code for the actions associated with
+each grammatical unit, one could automatically construct a
+compiler for a programming language. </p>
+
+<p>Obviously, such automation depended upon the associated formal
+methods. The Unix group needed theory. Aho notes, </p>
+
+<blockquote>
+    <p>Well, with ad hoc methods you can do anything, but...at
+    least my point of view is that, if you have a scientific base
+    on which you can measure performance, and you can iterate and
+    improve your algorithms with this scientific understanding,
+    and then build an engineering design theory on that, you are
+    going to be unassailable in the work and some of the compiler
+    construction tools.... The other aspect of this is that it
+    improves software quality in a significant way, and
+    productivity in a significant way, 'cause you can write a
+    compiler much more quickly using these tools, than if you had
+    to do it from scratch. None of these stories that the first
+    FORTRAN compiler took dozens of staff years to produce.
+    Whereas now you could construct a compiler -- a significant
+    compiler -- as part of a classroom project in an
+    undergraduate computer science course. </p>
+</blockquote>
+
+<p>Clearly, then, theory had practical value.<!--webbot
+bot="PurpleText"
+preview="changed from &quot;could work wonders&quot;." --> Formal
+methods often encouraged efficiency and clean coding. In
+Weinberger's eyes, </p>
+
+<blockquote>
+    <p>If you have a theory-based program, you can believe you
+    got the last bug out. If you have a hacked-up program, all it
+    is is bugs -- surrounded by, you know, something that does
+    something. You never get the last bug out. So, we've got both
+    kinds. And it's partly the style of the programmer. Both
+    kinds are useful. But one kind's a lot easier to explain and
+    understand, even if it's not more useful. </p>
+</blockquote>
+
+<p>Aho prized formal techniques even more than Weinberger, as he
+reveals in the following tale: </p>
+
+<blockquote>
+    <p>Doug McIlroy, in the previous year, had had a summer
+    student who had taken a classical algorithm for constructing
+    a deterministic automaton from a regular expression and
+    looked for these patterns. And it was written in machine
+    language. I was astonished to discover that the program that
+    I had written ran several times faster that what this machine
+    language program did. And, in fact, this sort of became an
+    avocation of mine for a number of years subsequently, and the
+    improvement in performance of that program has gone up by
+    almost two orders of magnitude.... </p>
+</blockquote>
+
+<p>Without a doubt, the Unix group benefitted enormously from
+using formal methods. </p>
+
+<p>Yet, formalism would sometimes prove cumbersome and
+inefficient. Weinberger assesses early versions of the methods
+underlying <code>yacc</code> as follows: </p>
+
+<blockquote>
+    <p>The theory is correct. The theorems are correct. But the
+    implications aren't what they sound like. You learn...that's
+    one of the annoyances. Now, on the other hand, if you don't
+    base it on theory, it's just chaos; you say, 'Well, I can
+    hack it.' We have programs which are not based on theory, and
+    some of our quite successful programs are not based on
+    theory. </p>
+</blockquote>
+
+<p>Furthermore, on occasion the creators of Unix would make
+theoretical discoveries inadvertently. In attempt to make
+practical tools, they would generate new theories. For example,
+while implementing efficient mathematical routines, Bob Morris
+produced publishable techniques: </p>
+
+<blockquote>
+    <p>By and large, when I did things like writing sine, cosine,
+    tangent, exponential, and logarithm functions, I tried very
+    hard, to some success, to first do a very good job, and,
+    second, there was enough originality [<i>i.e.</i>, theory] in
+    it that most of the work of that sort that I did got
+    published. </p>
+</blockquote>
+
+<p>Indeed, Kernighan believes that practical concerns strongly
+influenced theoretical developments: </p>
+
+<blockquote>
+    <p>I think the reason [<code>yacc</code>] was well done is --
+    aside from the intrinsic brightness of the people involved,
+    and the fact that they picked good algorithms and continued
+    to refine them over the years -- I think it's the milieu of
+    other people sort of banging against it, and trying things
+    with it, and building things with it -- build up sort of a
+    collection of things, where you could look at it and say,
+    'Yeah, this is actually useful stuff. It's not an academic
+    exercise. It's genuinely a better way to do things than what
+    you might have had before.' </p>
+</blockquote>
+
+<p>So, practicality dominated the Unix group. Yet, a wide range
+of activities qualified as &quot;practical.&quot; For example,
+the abstruse research into language theory eventually fueled the
+automation of compiler construction, and therefore qualified as
+practical. Kernighan clarifies exactly how Bell Labs scientists
+were judged: </p>
+
+<blockquote>
+    <p>Impact is, I think, ultimately the criterion, but there's
+    quite a long view taken, and quite a broad view of what
+    impact is. So, somebody who does purely theoretical work --
+    but whose theoretical work affects the community in some
+    sense, either because other people take it and produce
+    artifacts, or because that person is able to shape a field,
+    or something like that -- that's fine. That's good work. That
+    has impact. It doesn't mean that you can see it in a
+    telephone or anything like that; it means that it has had an
+    effect -- a positive effect -- on something of substance. </p>
+</blockquote>
+
+<p>In this way, the Unix group practiced a distinctive type of
+theory. For Kernighan, </p>
+
+<blockquote>
+    <p>...it's [programming] different from at least pure
+    mathematicians; there is, in addition, the reward of utility
+    if you do it well. People come along and say, 'Hey, look what
+    I did!' Maybe mathematicians don't get any jollies when
+    somebody says, 'Oh, I used your theorem.' But I think people
+    who write programs do get a kick out of it when somebody
+    comes along and says, 'Hey, I used your program.' </p>
+</blockquote>
+
+<p>Thus, the creators of Unix valued theory for its utility.
+While speaking about <code>awk</code>, a scripting language
+invented by Aho, Weinberger, and Kernighan, Weinberger noted that
+&quot;a lot of the other aspects of the program are irrelevant
+compared to the fact that it does something useful.&quot;<!--webbot
+bot="PurpleText"
+preview="Removed: &quot;The Unix group had a decidedly unique outlook on theoretical techniques.&quot;  Again, you really don't know enough to say this, since you don't know anything about other outlooks on theoretical techniques elsewhere."
+--> As he puts it at another point: </p>
+
+<blockquote>
+    <p>When you prove a theorem, you now sort of know something
+    you didn't know before. But when you write a program, the
+    universe has changed. You could do something you couldn't do
+    before. And I think people are attracted to...these kinds of
+    things. I've always found thinking a lot of work. And
+    anything you can get the computer to do -- that's not what
+    you would call thinking.... And once the program is working,
+    it's working, and if it can do different forms of the
+    calculation for you, it's not just that it's faster, it's
+    also more accurate than doing them over and over by hand.... </p>
+</blockquote>
+
+<p>In short, formal methods were powerful, practical tools in the
+Unix architects' toolbox. </p>
+
+<h3><a name="attic">The Attic</a></h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It might have been more
+difficult for the Unix programmers to develop software tools as
+quickly as they did had they been working in a different
+environment. The center of Unix activity was a sixth-floor room
+at Murray Hill which contained the PDP-11 that ran Unix.
+&quot;Don't think of a fancy laboratory, but it was a room up in
+the attic,&quot; as Morris describes it. In addition to the
+programmers, four secretaries from the patent department worked
+in the attic, performing the text-processing tasks for which Unix
+was ostensibly developed. Morris describes the environment:</p>
+
+<blockquote>
+    <p><font size="2">We all worked in the same room. We worked
+    all up in an attic room on the sixth floor, in Murray Hill.
+    In space that maybe was one and a half times the size of this
+    hotel room. We were sitting at adjacent terminals, and
+    adjacent, and we knew each other and we always in fact ate
+    lunch together. Shared a coffeepot. So, it was a very close
+    relationship and most of us were both users and contributors
+    and there was a significant initiative for research
+    contribution at all points. </font></p>
+</blockquote>
+
+<p>The unique working conditions of the programmers led to a free
+exchange of ideas and complete access to information. Moreover,
+the close-knit environment led to certain standards of etiquette
+among the programmers. Cherry gives an example:</p>
+
+<blockquote>
+    <p><font size="2">[T]here was this attitude that he who
+    touched it last owned it. So if you needed <code>pr</code> to
+    do something <code>pr</code> didn't do, and you went and
+    added it, you now owned <code>pr</code>. And so if some other
+    part of it broke, you owned it. </font></p>
+</blockquote>
+
+<p>Despite the additional responsibilities that resulted from
+changing a tool, the programmers did not hesitate to make any
+improvements they deemed necessary. For example, Morris modified <code>pr</code>,
+as he explains:</p>
+
+<blockquote>
+    <p><font size="2">I remember, for example, one piece of
+    software that I made a noticeable change in. I was listening
+    one day in about 1974 to Ken and Dennis arguing about when
+    something happened, and even at that point they couldn't
+    agree to the nearest year it happened. They had a printout in
+    front of them which had the date on it--month and day of the
+    month. And I looked at them, looked at the piece of paper,
+    their argument, and in my best Southern drawl I said, 'Ah
+    shit,' and turn around [to the] console and actually changed
+    the print programming program called <code>pr</code> and so
+    it would now print out the year. </font></p>
+</blockquote>
+
+<p>Morris greatly appreciated the fact that tools were easy to
+use and fix, even fixing problems before they were vocalized.</p>
+
+<blockquote>
+    <p><font size="2">One day early on--let me pick about 1973--I
+    was watching Dennis Ritchie do some arithmetic computations.
+    I don't mean anything fancy. He was just adding up a list of
+    numbers, using <code>dc</code> to do it, and as he was typing
+    them in he made a error of typing, and <code>dc</code> for no
+    particular reason except just the way it was designed--it
+    could have just printed him an error comment, but that's not
+    what it did--it printed him an error comment and wiped out
+    the current sum. So, he had to start from scratch, and [I]
+    again went back to my favorite Southern drawl. Went in made
+    the change to the first program of <code>dc</code>.
+    Recompiled it and installed it and it when about ten minutes
+    later. Dennis, who probably hadn't seen me, the fact that I
+    was watching him, said, 'There's a problem with your program
+    and think I ought to fix it.' 'Hey, it's already installed.'
+    And that kind of thing could happen with any person, any
+    software, any time and was the rule rather than the
+    exception. </font></p>
+</blockquote>
+
+<p>This example illustrates how the open, cooperative environment
+in the attic improved the responsiveness and flexibility of the
+system. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More importantly, each
+programmer used all of the tools himself, and thus could correct
+and enhance them in ways that would not have been possible in a
+different environment. As Morris explains, no person involved in
+the project could be a user without being a programmer.</p>
+
+<blockquote>
+    <p><font size="2">I was a user and I was creating [a] system
+    that in part, in large parts I wanted to use. So, the parts I
+    was creating were in many cases the part I needed for my own
+    work. So, I was both a user and a contributor. But, that was
+    generally true. It was true of everyone. </font></p>
+</blockquote>
+
+<p>He specifically discusses his calculator program, <code>dc</code>:
+</p>
+
+<blockquote>
+    <p><font size="2">Though I didn't write [<code>dc</code>] for
+    the public, I wrote it for myself and that&#146;s true of a
+    lot of software that people are by and large writing software
+    according to their own standards. The way they wanted to. For
+    their own use, and the use of their friends and associates. </font></p>
+</blockquote>
+
+<p>Similarly, Kernighan believes that no one could be a
+programmer in Unix without being a user of the system.</p>
+
+<blockquote>
+    <p><font size="2">We use our own stuff, and I think that's a
+    critical observation about this group here. We do not build
+    tools for other people. We do not build anything for other
+    people. I think it's not possible to build things for other
+    people, roughly speaking. </font></p>
+</blockquote>
+
+<p>He continues: </p>
+
+<blockquote>
+    <p><font size="2">If I build something for you, even if you
+    spend a lot of time describing to me what you want, and why
+    it's the way it is, it's not going to be as successful as
+    something where I personally face the problems. Now, I may
+    live with you long enough that I start to understand what
+    your problems are, and then I'll probably do a better job,
+    but I think that we have historically done the best on
+    building things that address problems that we face ourselves.
+    That we understand them so well because we face them, either
+    directly--you know, I face that problem myself--or it's the
+    person in the next office. </font></p>
+</blockquote>
+
+<p>This environment fostered not only the toolbox idea, but an
+entire philosophy of programming.</p>
+
+<h2>Text Processing and the Writer's Workbench</h2>
+
+<h4>David Silverman</h4>
+
+<p>The Writer&#146;s Workbench exemplifies the collaborative
+nature of the UNIX group. The people of the Unix project had
+always done text processing. They had been writing and editing
+code to create Unix and its tools. The project, moreover, had
+received funding from the patent department in exchange for a
+document preparation package. Lorinda Cherry, an experienced
+programmer who had earned a computer science degree from Stevens
+Institute in 1969, and Brian Kernighan built an open-ended system
+of programs to deal with text. Their work on formatting, text
+analysis and style helped to create <font face="Courier New">troff</font>,
+<font face="Courier New">ntroff</font> and <i>Writer&#146;s
+Workbench</i>, programs still used today.</p>
+
+<p>Three factors contributed to the interest in text processing:
+in-house use, parts-of-speech programs, and statistical analysis
+of text. As various groups investigated or required new ways to
+process text, the number of tools grew. The team used text
+processing to work on programs and prepare reports. Some of the
+Unix team&#146;s tinkering, moreover, led to improvements in the
+new tools. Cherry&#146;s self-described goal was to &quot;see
+what kind of neat new things I can make the computer do.&quot;
+Although Unix had used the text processor <font
+face="Courier New">ed</font> since its inception, Kernighan and
+Cherry improved not only the way <font face="Courier New">ed</font>
+performed its old functions, but created new functions for it.</p>
+
+<p>The first improvements were <font face="Courier New">troff</font><b>
+</b>and <font face="Courier New">ntroff</font>. These commands
+facilitated &quot;a wide variety of formatting tasks by providing
+flexible fundamental tools rather than specific features,&quot;
+according to the <i>Bell Labs Technical Journal </i>(Kernighan,
+Lesk, and Ossanna 2119). Combined with the little languages
+described above, notably <font face="Courier New">eqn</font>,
+these features allowed the text processing and formatting both on
+the computer and in printed documents. This was particularly
+important for a company such as Bell Labs where so many reports
+were on technical matters.</p>
+
+<p>The second project to assist with text processing was Brent
+Aker&#146;s work on the Votrex machine, a peripheral that spoke
+for the computer. The Votrex did not intonate or emphasize
+properly. Cherry worked on a parts-of-speech program that would
+allow the computer to pronounce words properly. The computer
+needed &quot;parts of speech &#133;for syllabic stress.&quot;</p>
+
+<p>The third project was Bob Morris and Lee McMahon&#146;s work
+on the authorship of the Federalist papers. Working with the
+ideas of statistician Fredrick Mosteller, Morris and McMahon were
+trying to determine who wrote which paper using statistical
+analysis. &quot;Taking turns typing,&quot; they entered the
+papers into the machine to run them through various filters and
+counters. They &quot;developed lots of tools for processing text
+in the process.&quot; Typo, for example, was &quot;one of the
+early spell-checkers.&quot; It worked based on trigram
+statistics, a Mosteller technique that analyzed chunks of
+repeated letters. Cherry&#146;s familiarity with trigram
+statistics had come from a compression project she worked on in
+1976. She describes the process:</p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2">You take the whole string, if your
+        ten-letter work had maybe a trigram that was six letters
+        long that had a high enough count to be worthwhile, you
+        pick that entire six-letter string off and store it in a
+        dictionary and replace it with a byte and then with an
+        index into the dictionary.</font></p>
+    </blockquote>
+</blockquote>
+
+<p>This counting procedure was applied to the other forms of
+analysis, for example, the Federalist papers authorship research.</p>
+
+<p>Unix&#146;s special capabilities made much of the text
+processing work possible. Because <font face="Courier New">ed</font><b>
+</b>was general purpose, &quot;programs originally written for
+some other purpose&quot; could be used in document preparation.
+Rudimentary spell checkers utilized the <font face="Courier New">sort</font>
+command, for example. &quot;Case recognition,&quot; which
+&quot;changed with Unix,&quot; also enhanced the
+programmer&#146;s ability to analyze text. New methods of
+accounting<b> &quot;</b>for punctuation and blank space and
+upper-lower case&quot; also contributed.</p>
+
+<p>With the background of formatting, part of speech analysis and
+statistical filtering, Cherry embarked on the project <i>Writer&#146;s
+Workbench</i>. As the &quot;grandmother&quot; of this new aid,
+Cherry created a word processor with the capacity to analyze
+style, determine readability and facilitate good writing.</p>
+
+<p>Cherry heard through a colleague that Bill Bestry, an
+instructor in Princeton University&#146;s English department
+&quot;had his students &#133; count parts of speech.&quot; The
+students were then able to use the objective statistics to
+improve their writing. Drawing on Cherry&#146;s previous part of
+speech work, <i>Writer&#146;s Workbench</i> did the count
+automatically. As Cherry put it:</p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2">There are various things you would
+        count and look at using parts of speech to decide whether
+        you&#146;ve got a compound or compound sentencing
+        sentences types, so the part of speech program turned
+        into the style program.</font></p>
+    </blockquote>
+</blockquote>
+
+<p>This &quot;layer on top of style and diction&quot; features
+filled the program with a wider range of capabilities for both
+students and colleagues at Bell Labs. &quot;There was a human
+factors group in Piscataway,&quot; for example, that wanted to
+&quot;look at [computer] documentation and decide whether it was
+reasonable from a human factors standpoint.&quot; The readability
+indices of <i>Workbench</i> helped to edit the manuals of Unix
+itself.</p>
+
+<p>During beta testing with Colorado State, the <i>Workbench</i>
+saw active faculty and student use. This program succeeded for
+three main reasons &#150; its reliability, structure, and the
+programmers&#146; understanding of the writing process. The
+competing IBM product, <i>Epistle</i>, was based on a parser,
+making it slow and incapable of coping with incorrect student
+grammar. <i>Workbench</i> &quot;never really did check
+grammar&quot; but did illuminate the style of sentences employed.
+The &quot;press-on-regardless attitude&quot; of workbench lead to
+accuracy across the entire paper. The most important factor,
+however, was the programmers understanding of the writing process
+itself. They knew to present readability scales as estimates, not
+to squeeze papers into pure numbers. They knew that the ultimate
+lesson was to teach students that writing is a series of choices,
+not a matter of pretty formatting on a laser printer. Cherry
+expressed her vision of the Workbench&#146;s use:</p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2">My feeling about a lot of those tools
+        is their value in education um is as much pointing out to
+        people who are learning to write that they have choices
+        and make choices when they do it. They don&#146;t think
+        of a writing task as making choices per se. Once they get
+        it on paper they think it&#146;s cast in stone. So it
+        makes them edit.</font></p>
+    </blockquote>
+</blockquote>
+
+<p>This step beyond formatting is what makes Unix truly able to
+process text and improve the writing skills of its user.</p>
+
+<h2>Ethos</h2>
+
+<h4>Robert Murray-Rust and Malika Seth</h4>
+
+<p>The creation of the Unix operating system was a collaborative
+effort of many mathematicians and theorists, and much of the
+success of the project was due to the people involved and the
+environment in which the system was written. Unlike most
+businesses, the workplace at Bell Labs was relaxed, and specific
+tasks were not assigned to individuals. According to Kernighan,
+who worked with the same group at Bell Labs before joining the
+Unix project, each person worked on projects of their choice:</p>
+
+<blockquote align="JUSTIFY">
+    <p>It's interesting, I had so much fun here in '67 and
+    '68-just, you know, the people. It was just such a good
+    collection of people, and I've enjoyed it. I never
+    interviewed anyplace else; I never even thought of any other
+    place. I simply said I'd like to work here. And Sam Morgan,
+    in his wisdom, said, &quot;We don't want any Ph.D. dropouts,
+    so you have to get your degree finished. But, other than
+    that, sure, we'd love to have you.&quot; That was it, and I
+    came early in '69 and the charter, or my instructions,
+    were-as they are for everyone else-non-existent. Do what you
+    want. The hope is that the combination of people around you,
+    doing things that are interesting-and perhaps ultimately
+    relevant, but not instantaneously relevant, I don't even
+    know-but the combination of people around you doing
+    interesting things, and getting their jollies, I think, from
+    having their interesting things affect other people, means
+    that there's this sort of gentle gravitational pull towards
+    doing the same kind of thing yourself. It's clear the reward
+    mechanism ultimately favors those people who have an impact
+    on the local community, impact on the Bell Labs community,
+    impact on AT&amp;T, impact on the scientific community, in
+    some combination.</p>
+</blockquote>
+
+<p>Likewise, Bob Morris felt that the researchers' freedom was
+essential and probably would not have been possible at any other
+point in time.</p>
+
+<blockquote align="JUSTIFY">
+    <p>...General attitude. People contributing system software
+    and that crucial, there were not working toward externally
+    separate departments. We were not bidding on some Goddamn
+    government project. Which meant somebody who didn't know
+    anything had set out a lot of ways of how the system should
+    operate...We had almost total freedom in that, and we were
+    able to, and it's a luxury. I mean no one could do that kind
+    of stuff with Unix now. Couldn't possibly. Not with AT&amp;T
+    Unix. Not with any Unix. You just couldn't possibly laugh and
+    see something go so wrong with a program. See that it was
+    wrong. Go in, find the place when the change needed to be
+    made and install the result. Hey, that was perfectly
+    reasonable in 1974. By 1978, it was absolutely out of the
+    question. </p>
+</blockquote>
+
+<p>From the management side, this idea of freedom and the
+importance of creating personal projects was reflected in
+Morgan's hiring practices. Morgan relates,</p>
+
+<blockquote align="JUSTIFY">
+    <p>...We have the philosophy that you hire bright people, you
+    expose them to interesting problem areas, and you keep an eye
+    on what they are doing and in particular on their
+    interactions with other people. You attempt to give them
+    guidance only in a very general sort of way. Often times this
+    guidance is simply a lot of enthusiasm for something that
+    they are working on. An environment like that is self
+    perpetuating, so long as you keep your hiring standards up
+    and your management keeps its eyes open.</p>
+</blockquote>
+
+<p>Another unique feature of the Unix project was that the
+mangers were technically trained people with similar
+qualifications to those developing the tools. Morgan says,</p>
+
+<blockquote align="JUSTIFY">
+    <p>...The management around, around Bell Labs all are, at
+    least around the research area, all came up through the
+    technical route. And people don't get promoted to management
+    in the research area here unless they have a good track
+    record. You may find a few folk who disagree with that. But
+    my view is that our department heads and directors and
+    executive directors were once technical hot shots. Sometimes
+    that back fires, because you get a technical hot shot who has
+    no people skills. But that is a different story. Your
+    technical people, your managers were once technical hot shots
+    and they were imbued with this general philosophy of how you
+    conduct, how you manage research at this kind of place. And
+    good things come out of this...philosophy of research
+    management...I didn't create this, to some extent I keep it
+    going</p>
+</blockquote>
+
+<p>Morgan felt there was a delicate balance between giving people
+complete freedom and assigning tasks. Also, he only gave explicit
+approval to certain projects when he felt the group was ready
+(&quot;selective enthusiasm&quot;), for instance when Thompson's
+group asked for a computer. In Morgan's words,</p>
+
+<blockquote align="JUSTIFY">
+    <p>You can't make it happen. You hire bright people, provide
+    them with a stimulating environment. And you do selective
+    pruning and encouragement of what they undertake. But you
+    don't do this with too short a time constant. As I said, the
+    first time that Thompson and company asked for a computer,
+    they asked for a DEC PDP-10 and they were told no on that. It
+    was simply too big and you are not going to do operating
+    system research for a big computer just after Multics has
+    been turned off. The second time they asked, they wanted a
+    PDP-11/20 and I said, &quot;I am not convinced yet, I want to
+    see more of what you say you are going to do with your text
+    processing system.&quot; So I didn't stomp on them, but
+    neither did I sign their order, and they found somebody else,
+    another director to sign the order, and the third time they
+    came around they wanted an 11/45 and by that time they had a
+    perfectly plausible and defensible story. So they got
+    selective enthusiasm used on them but not too violently or
+    with too short of a time scale. If it is going to be good it
+    will prove itself. </p>
+</blockquote>
+
+<p>Similarly, Kernighan felt that there was no direct management
+and that the group's success was due to both coincidence and the
+people involved. He explains,</p>
+
+<blockquote align="JUSTIFY">
+    <p>I don't think it was directed, or least if it was
+    directed, it was done in an incredibly deft and unobtrusive
+    way. Maybe management will tell you that that's worse... .If
+    that is true then it is to their eternal credit. Now, I
+    think, in a sense-I mean, Doug was management of at least
+    some part of that. I guess Ken technically was in Doug's
+    department, and Doug is superb [with] that kind of stuff.
+    Insofar as he manages it, he does by superlative constructive
+    criticism at the right time, and by going out and trying your
+    stuff and finding out where it works and where it doesn't
+    work, and then telling you what was good about it and what
+    didn't work. To a lesser degree, I suspect that, in some
+    sense, we all do that. I don't think that this was done by
+    any direct management, so we can dispose of that part. </p>
+</blockquote>
+
+<blockquote align="JUSTIFY">
+    <p><!--webbot bot="PurpleText"
+    preview="We need a lead-in to this paragraph." -->Part of it
+    is a confluence of really good people with reasonably good
+    taste. Particularly Ken and Dennis, who, as far as I can
+    tell, genuinely have truly deep insight, and at the same
+    time, good taste, and at the same time, essentially very
+    close to parallel taste, so that they don't get going in
+    opposite directions. Part of it is happy coincidence, that
+    technology had gotten just about the right point where you
+    could get hardware-a machine to work on-where you didn't have
+    to, in some sense, be beholden to other people. You didn't
+    have to use that machine their way because they paid for it,
+    or something like that; that you could have something that's
+    sort of your own, so you could furnish your computing world
+    the way you wanted it, the way you are comfortable with it.</p>
+</blockquote>
+
+<p>Bob Morris also commented on Doug McIlroy's role in the
+project, both on the managerial and technical levels. Morris
+narrates,</p>
+
+<blockquote align="JUSTIFY">
+    <p>Doug was a manager and he had a supervisory responsibility
+    for the whole thing anyway...He was a department head and I
+    think it was being done by people in his department. There
+    may well be exceptions but, most of them certainly were in
+    his department. So, at the early stage, he simply watched
+    this happen and thought it was a good idea, supported it, and
+    helped in an administrative way to make it happen. Perhaps a
+    couple of years later, he was right along in there pushing
+    along with the rest of them. On the technical level. That's
+    why in this stage I include him. I don't mean Doug as a
+    manager, as a department head. But, as a technical might, he
+    was in there by 1973 thereabouts. </p>
+</blockquote>
+
+<p>At the same time, he felt that there was no particular
+leadership during the project, and stressed the importance of
+doing things yourself. Morris remarks,</p>
+
+<blockquote align="JUSTIFY">
+    <p>It was [more cooperative]. I don't think there was any
+    time when there was any notion of anybody adopting on
+    leadership. If Ken asked somebody to do something, the answer
+    would be, &quot;Go suck a grapefruit&quot;...Oh, no matter
+    who he asked. Or if someone in the group had been asked to do
+    something, &quot;Do it yourself.&quot; There was no
+    leadership that I detected for being in, was community.</p>
+</blockquote>
+
+<p>In addition, there was a strong sense of responsibility for
+the quality of the work, resulting in projects supported by
+theory. According to Weinberger, </p>
+
+<blockquote align="JUSTIFY">
+    <p>...there's definitely been a tendency is, if you don't
+    know how to do it right, just don't bother in the Unix
+    development. And I think that's one of the things
+    that...leads one to choose things that are backed by theory.</p>
+</blockquote>
+
+<blockquote align="JUSTIFY">
+    <p>Because I have this feeling I make mistakes, everybody
+    makes mistakes, I also have this feeling that you never want
+    to have to touch the programs. So it's important to do it
+    right early and that it [will] always be okay.... It's not
+    just a problem of the minute, although one writes a lot of
+    code that's got to do the problem of the minute. It's got to
+    fill the niche permanently, which is completely unrealistic
+    but it's certainly an attitude. And I think that matches this
+    other. If it's just going to be a slipshod temporary hacked
+    up way of doing it it's just not going to work long enough.
+    And you're going to just have to come back and do it again
+    and it's just too much like work. Not that reality actually
+    matches this in any way but I think that's the attitude. I
+    think that makes it easier to pick up that ethos.</p>
+</blockquote>
+
+<p>Although there was a push towards excellent quality of work,
+Weinberger asserts,</p>
+
+<blockquote align="JUSTIFY">
+    <p>It's clear that the most powerful pieces of it have that
+    property [of being theory-driven] and that many of the
+    pieces, even where there's no clear theoretical piece behind
+    them, have sort of... the next best cousin in programming
+    language, designer stuff like that... .Unix is famous for
+    this theory that it's best to do 80% because the last 20% is
+    way too hard. But if there were a big piece you could chop
+    off, then you did it. And that's why you get general regular
+    expressions instead of some other version...I think regular
+    expressions is clearly the...single thing that distinguishes
+    the Unix way from other ways, the MS DOS way and many others.
+    Yes, I think the compromises that are made are made somewhere
+    else. Not made in these places where there are strong
+    algorithms.</p>
+</blockquote>
+
+<p>Lorinda Cherry felt that the theoretical foundation for the
+work led to an attitude of discipline. Nothing was included
+unless it was essential and people had to justify what they were
+doing, to some extent. Cherry comments,</p>
+
+<blockquote align="JUSTIFY">
+    <p>There's certainly some discipline in what's allowed to
+    hang around and what isn't. One can watch that in whatever
+    manual is produced and Doug starts throwing programs or
+    people start, 'Rather than document this file, we're going to
+    remove it. It's not really necessary, there's another way to
+    do it.'</p>
+</blockquote>
+
+<p>As previously discussed, this was also a sense a sense of
+ownership, in that the last person to touch a program owned it.
+These two factors, discipline and ownership, were unique to this
+Unix project, according to Cherry. She compares it to the
+Berkeley Unix system, suggesting that the variations are possibly
+due to the differences between environments:</p>
+
+<blockquote align="JUSTIFY">
+    <p>If you look at the Berkeley Unix system and some of the
+    commands that are similar, the same in Berkeley as what we
+    have here but you look at the Berkeley manual they've added
+    85 flags to the <code>cat</code> command or something. It was
+    a very simple elegant thing that did a very simple job. I
+    guess we've always had the attitude that it has to be really
+    useful to be worthwhile putting in. Maybe just 'cause it was
+    a smaller group than at Berkeley or maybe people in Berkeley,
+    everybody needs to find a niche so they've got to put a flag
+    on something, I don't know what the environment is there. But
+    I think it was here to prevent featurism. I think that's the
+    difference between the two systems. And I think that
+    undoubtedly has to do with the university environment where
+    everybody has to do something as opposed to the environment
+    where in some sense everybody had to justify what it is they
+    were doing to your cause. And there is also some hesitancy
+    'cause if you touched it you owned it, you thought hard about
+    whether you needed to add that flag or whether there was some
+    other way around it. Whether there was some program. You said
+    &#145;I'll find some other way to do this 'cause I don't want
+    to own this program.&#146;</p>
+</blockquote>
+
+<p>At the same time, however, people were both willing and
+expected to help others with their programs in any way possible.
+One example of this responsiveness was the previously mentioned
+account of dc, told by Bob Morris. As shown from this example,
+collaboration played an integral role in the success of the
+project. The group discussed problems they were having, and often
+worked together to solve problems. A perfect example of this is
+AWK, a text processing language developed by Al Aho, Peter
+Weinberger, and Brian Kernighan. As the name implies, it was
+certainly not a singular effort. </p>
+
+<p>According to McIlroy, the trend towards working together grew
+stronger with the introduction of pipes. One aspect of this
+approach that made their work more difficult was that they had to
+be very careful that all the parts would work together; when many
+small pieces are put together to form a finished project, the
+interaction between the pieces can often lead to mistakes. It is
+because of the internal efficacy of the individual pieces that
+the project as a whole was a success. McIlroy says,</p>
+
+<blockquote align="JUSTIFY">
+    <p>This is the Unix philosophy. Write programs that do one
+    thing and do it well. Write programs to work together. Write
+    programs that handle text streams because, that is a
+    universal interface. All of those ideas, which add up to the
+    tool approach, might have been there in some unformed way
+    prior to pipes. But they really came in afterwards.</p>
+</blockquote>
+
+<p>In Morgan's opinion, the management encouraged this
+collaboration but sometimes had to help organize the partnership.
+Morgan observes,</p>
+
+<blockquote align="JUSTIFY">
+    <p>We do encourage people to be enterprising, that if they
+    want something done, or if they want somebody to cooperate
+    with them...You will occasionally get someone with feels that
+    he would like to have somebody working with him and this
+    won't happen until somebody's boss says, &#145;You two guys
+    collaborate.&#146; One does not tell researchers to
+    collaborate with each other. You find, you find common
+    interests in somebody and then the collaboration occurs. So
+    if somebody came to me and said, &#145;You tell somebody to,
+    you tell such and so to work with me.&#146; You make your own
+    contacts. So folks...are encouraged to be entrepreneurial in
+    the sense that they make contacts and they get collaborations
+    going.</p>
+</blockquote>
+
+<p>The cooperative efforts were facilitated by the close working
+environment. The attic had a lot to do with that, but the success
+was also due to the people working in the attic. Morgan remembers
+the group as tight-knit, spending time with each other even when
+they were not working. In his words,</p>
+
+<blockquote align="JUSTIFY">
+    <p>From about 1970 to about 1976 or 1977 we had about two
+    dozen people, twenty four people in the whole group. We were
+    essentially not hiring anybody, we were in one of our chronic
+    hiring freezes and we just had a small group of good people
+    who generally ate lunch together, and who were quite willing
+    to argue with each other and to discuss and to use the
+    techniques they knew about to put together things that they
+    thought were interesting. It was a lot of work in text
+    processing at that time. There was a lot of work in practical
+    operating system development. There was a lot of work in
+    theoretical computer science, compiler theory and algorithms.
+    It was done essentially by a handful of people. But they were
+    people who did a lot of talking to each other and a lot of
+    shouting and who essentially collaborated. And that is the
+    way that research is supposed to be done.</p>
+</blockquote>
+
+<p>This led to what Aho called &quot;Darwinism in Unix.&quot; The
+programming languages were tested by users so that they would
+best suit the users' needs. Aho says,</p>
+
+<blockquote align="JUSTIFY">
+    <p>Well, you [Mahoney] talked about Unix being a spirit. The
+    one way that I view it is that there's a great deal of
+    Darwinism in Unix. If one looked at how certain commands and
+    languages came into being, it was because someone had an
+    idea. Say like Kernighan and Cherry for this language for
+    typesetting equations. They got a rudimentary form of the
+    language processor to be up and running, and then they let
+    their friends use it. Then the language evolved on the basis
+    of usage patterns. That, as users gained more experience with
+    the language, they would be able to say, &#145;I'd like to
+    have these additional features.&#146; Or, &#145;These are
+    some awkwardnesses in the language.&#146; So there was a
+    Darwinistic evolution of the language, and, in fact, of the
+    Unix system itself. That it is satisfied a certain user's
+    needs, and there was enough time to refine the system so that
+    it satisfied those needs...I thought, quite efficiently and
+    quite elegantly. There is this &quot;European approach,&quot;
+    if you want to use that term, or this more dogmatic approach
+    to language design, where you have some august committee that
+    meets for a period of several years to come up with a
+    language specification. They...write a document. Compiler
+    writers work off that document for several years to produce a
+    compiler, only to discover that there may be some
+    infelicities in the language design. And, the process is much
+    more cumbersome. Natural languages evolve, and I think,
+    &#145;Why shouldn't programming languages?&#146;</p>
+</blockquote>
+
+<p>Lorinda Cherry also described the importance of a natural
+programming language, specifically in reference to <font
+face="Courier New">eqn</font>:</p>
+
+<blockquote align="JUSTIFY">
+    <p>...the graphics is easy. The hard part is getting a
+    language that you can teach to a math typist that will just
+    flow off her fingertips to complicated graphics. I think the
+    language part of that was what was neat about it. It's still
+    what's neat about it.</p>
+</blockquote>
+
+<p>Morris also described the same necessity for an intuitive math
+program, also in reference to <font face="Courier New">eqn</font>:</p>
+
+<blockquote align="JUSTIFY">
+    <p>...the damn thing ought to work and it ought to work in
+    obvious ways and I didn't have a manual. Wasn't going to get
+    one and never intended to look at one. [Brian Kernighan's]
+    view was completely supportive of that...his view was if I
+    used common sense and tried to create some construct, and I
+    wrote integral from A to B of X that it should damn well
+    produce a nice integral sign and an A at the bottom of it and
+    a B at the top of it and an integrand and do all that without
+    a lot of messing around and if it didn't recognize common
+    sense ways that ordinary people say this is mathematical text
+    so ordinary people who were writing that mathematical text,
+    then it ought to be changed. And that's the way it stayed.
+    I'm still a user of <font face="Courier New">eqn</font>, and
+    I still never seen a manual with <font face="Courier New">eqn</font>.
+    That's one of the credible ones. Because there are an awful
+    lot of possible differences. I mean looking at competing
+    packages of that sort damn near unusable, because you have to
+    learn so many rules to operate them that by the time you
+    learn half of the rules, you're already bored with the whole
+    thing.</p>
+</blockquote>
+
+<p>Morris conveyed this to Condon early on, and Condon expressed
+a similar feeling, describing it as &quot;cognitive
+engineering&quot;. He spoke of going to Bob Morris and asking</p>
+
+<blockquote align="JUSTIFY">
+    <p>&#145;How do you understand what these commands do? The
+    manual pages aren't all that clear.&#146; [Morris] would say,
+    &#145;What do you think is the reasonable thing to do?&#146;
+    Try some experiments with it and find out. I think that was a
+    very interesting clue. At least his philosophy and some of
+    the other people's philosophy, of Dennis's also, of how
+    system commands should work. It should work in a way that is
+    easy to understand. It shouldn't be a complex function which
+    is all hidden in a bunch of rules. I think the concept of
+    cognitive engineering...is that people form a model. You
+    present them with some instruments, tools, like a faucet,
+    electric stove or something like that and demonstrate how it
+    works. They then form in their heads a model that shows how
+    it works inside to help them remember how to use it in the
+    future. It may be a totally erroneous model of what is going
+    on inside the black box. What in fact is going on inside, I
+    think Bob Morris [told] me, I know he felt this way, is that
+    the black box itself should be simple enough. Such as when
+    you form a model of what is going on in the black box that's
+    in fact is going on in the black box. [Don't] write a program
+    to try and outwit and double guess what they're going to want
+    to do. You should make it such that it is clear about what it
+    does.</p>
+</blockquote>
+
+<p>This idea of clarity characterizes of the Unix philosophy.
+Unix was created in a environment of bright, motivated people
+from various backgrounds. They were given the freedom to invent
+their own projects and the system developed as a combination of
+inputs from a variety of people. There was no a organized
+structure, and tools were written as they were needed. Much of
+the work had a strong theoretical basis resulting in disciplined
+programming. Collaboration was also key to success, and this was
+enhanced by the close working environment. The researchers all
+worked together in the attic, and then continued their
+discussions outside working hours. They strove for intuitive and
+efficient programs, qualities that perhaps could not be
+replicated if the project were to take place under other
+conditions.</p>
+
+<h2>The dissemination of Unix, with a focus on what went on
+within Bell Labs</h2>
+
+<h4>Steve Chen</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; One of the appealing characteristics
+of the Unix operating system is its efficiency. This aspect of
+Unix arose out of two factors. First, the researchers at Bell
+Labs were working on small machines to create Unix. Second, the
+desire for efficiency was a natural reaction to the complexity of
+Multics which turned out to included much code that didn't have
+anything to do with the operating system. Ken Thompson and Dennis
+Ritchie understood what to leave out of an operating system
+without impairing its capability. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; The way in which the Unix operating
+system evolved in AT&amp;T and within Bell Laboratories was
+complementary to the philosophy that underlay the development of
+Unix. When Unix evolved within Bell Laboratories, it was not a
+result of a deliberate initiative by managememt. Rather, it
+spread through channels of technical need and technical contact.
+The popularity of Unix was not the result of some grand
+advertising campaign, nor was it the result of brilliant
+marketing strategy. Instead, departments at Bell Laboratories
+came to know Unix simply because it was the most efficient and
+flexible operating system available at that time. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Unix had several advantages. First of
+all, it was written in a high level language, C, rather than in
+assembly language as were almost all of the previous operating
+systems. This in turn meant improved portability. Unix eventually
+became the only operating system to run on supercomputers and
+micros alike. Also, the concept of pipes allowed streams for
+connecting processes together. The Berkeley System Distribution
+(BSD) added many of the network features such as sockets, and
+many of the software tools came in with System V. Unix featured
+simple treatment of files and devices. It was flexible enough to
+be used on systems of all sizes, and its workbench concept
+provided the user with an easily extendible toolset. <!--webbot
+bot="PurpleText"
+preview="Removed: &quot;Another aspect of the flexibility of Unix is that it is user-centered, as opposed to MS-Windows which is PC centered. &quot;  Windows is simply not relevant to this story.  Indeed, the second half of the paragraph has little bearing on the spread of Unix within BTL in the mid-'70s."
+--></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; After the withdrawal from Multics, as
+researchers in Bell Laboratories were searching for the operating
+system that Multics failed to become, the Bell System was faced
+with the problem of automating its telephone operations using
+minicomputers. According to Berk Tague, &quot;The discovery that
+we had the need-- or actually, the opportunity-- in the early
+'70s to use these minis to support telephone company operations
+encouraged us to work with the Unix system. We knew we could do a
+better job with maintenance, traffic control, repair, and
+accounting applications.&quot; (&quot;Interview with Berkley
+Tague,&quot; <em>Unix Review</em>, June 1985, p.59.) Tague
+continues, &quot;The existing systems were made up of people and
+paper. The phone business was in danger of being overwhelmed in
+the early '70s with the boom of the 60's. There was a big
+interest then in using computers to help manage that part of the
+business.&quot; Coming into the late 1960's, the New York Public
+Service Commission and other such regulatory bodies began putting
+pressure on AT&amp;T to solve what was termed as a &quot;service
+crises.&quot; This pressure led AT&amp;T in search of
+technological advances that would make its support operations
+more efficient. This search eventually led to Unix. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; At first, AT&amp;T had looked for
+operating systems from outside vendors. However, it turned out
+that the vendor operating systems that were available simply were
+not adequate. Also, during that time, a number of people had
+already started building their own operating systems. Thus,
+AT&amp;T launched into the development of Unix to satisfy its own
+needs. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Berk Tague played a major role in
+providing support for the Unix system. He had been responsible
+for systems engineering as head of the Computer Planning
+Department. It was Tague who pushed for Unix to be adopted and
+made the internal standard. In September of 1973, he had in place
+an organization called Unix Development Support to provide
+support for a standard Unix. In an interview with Michael S.
+Mahoney, Tague talks about how he get started in Unix. </p>
+
+<blockquote>
+    <p>I got into the Unix business... in September of '73 [and]
+    I got permission to put together the first Unix support group
+    in Bell Laboratories. I put a supervisory group together and
+    staffed that up. And at that time I was also interested in
+    supporting MERT. I thought I'd do MERT for real time and Unix
+    for a time sharing kind of application. MERT never got off
+    the ground. We wasted energy on that. Though MERT actually
+    got embedded in some of the Unix line systems that underlined
+    the ESS processors... But I was driven by my customers. When
+    I went into business all of my customers knew more than my
+    people did. So we spent the first year in documenting the
+    product, getting an LDI to Western that made it an official
+    product which is a submission of design information that had
+    to be done. And my people [were] learning to be as good as
+    their customers were in understanding what it was we had. But
+    we quickly got to the point where we understood what the
+    business was and we were trying to gain control of the
+    customers... We ended up just at the end putting in a lot of
+    that stuff in Unix to hold it together. (Berk Tague,
+    Interview with Michael S. Mahoney.)</p>
+</blockquote>
+
+<p>This organization, along with Bell Labs Research, agreed on
+the need for Unix portability. The goal was to allow Unix to
+become an interface between hardware and software that would
+allow applications to keep running while the hardware underneath
+was changing. The fact that Unix was later rewritten in C meant
+that it was no longer machine dependent. The decision to rewrite
+Unix in C came from Ritchie and Thompson. This was a major
+breakthrough in portability for the Unix operating system. Tague
+recounts his first sale of Unix, </p>
+
+<blockquote>
+    <p>I vividly remember the first guy I sold Unix to. There was
+    a fellow here at Whippany and he'd gotten a crew of pretty
+    good programming talent off of Safeguard. They'd never
+    written for anything but large machines. They'd never done an
+    operating system before or a compiler or anything very
+    sophisticated in the way of systems software. And they had a
+    schedule that said they were going to buy a PDP-11... build
+    an operating system... write their own language and they were
+    going to compile an application that was going to be in the
+    field in the spring. I came around to review this purchase.
+    And I sat down with... a fella named Jan Norton... and he and
+    I were eyeball to eyeball pretty quickly... I said, 'Look,
+    here's the deal: I understand you guys will probably want the
+    world's most portable operating system, but what I'm going to
+    insist you do, is you pick up Unix and that you use it as a
+    basis for your development because it'll get this machine
+    running. And if you don't do that you don't have a prayer.
+    I'll bet you money on that.' So I said, 'You can go on and do
+    your own operating system.' Of course I knew what would
+    happen when they got this thing up, and they really realized
+    what they were up against. UNIX would be the only way they
+    had a prayer of getting anything done even close to the time
+    schedule. And indeed that was... and I repeated that process
+    with several people and the PDP-11 DEC had a good reputation.
+    It was clearly the machine they liked. (Ibid.)</p>
+</blockquote>
+
+<p>Unix sold because it was the most effective operating system
+for the job at hand. Along with Unix came various software tools
+such as the programmer's workbench and a technical staff to
+support the operating system. This type of marketing and support
+mirrored that of telephone systems at Bell Labs. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Providing support for Unix was a
+major part of Tague's work at Bell Labs. In this sense, selling
+Unix was like selling telephone systems. One couldn't just sell
+the product and be done with it. When selling Unix, one also sold
+people to help support Unix. </p>
+
+<blockquote>
+    <p>I've always seen the business as having three layers.
+    There's always been a top and middle and a small. And those
+    have changed their definition over the years but from about
+    the end of the '60s on I can always find those three layers
+    and they're defined not just by machine size but the approach
+    to the marketing machine was bundled is how it is. And it
+    ranges from the large end which is this thing when you buy a
+    machine we put people on your premises. It's all a package.
+    The unbundling of course has attacked that a little bit but
+    it still stems from that tradition. It's very much
+    seen.&quot; (Ibid.)</p>
+</blockquote>
+
+<p>When talking of the support for Unix in Bell Labs, Tague says,
+</p>
+
+<blockquote>
+    <p>It was clear that people wanted central support for UNIX.
+    For a developer to take an uncommented batch or code from
+    Research would normally be impossible. But you see these guys
+    had (hooked) themselves. Because they were promising to write
+    their own operating system from scratch. So I could point out
+    to them, 'Look, you're going to have to support an operating
+    system, so you might as well support one that exists. And
+    don't tell me it's going to be easier to write your own and
+    to beat this guy who's doing his third operating system.' And
+    by that time it was beginning to get some momentum. So that
+    was a seller. But I knew life would be easier if we had
+    central support. So I went to my boss and in effect what we
+    agreed to do was to split the planning department into two
+    pieces. And I took on a department that became UNIX-MERT
+    development... (Ibid.)</p>
+</blockquote>
+
+<p>When talking about the PWB programmer's workbench-- a set of
+tools that were started up independently but eventually grew to
+become a tightly held complement of Unix-- Tague says, </p>
+
+<blockquote>
+    <p>And there were very good tools that Dick and his people
+    had produced on the PWB for managing code and doing code
+    control and that sort of thing. Dick was not very patient for
+    that, but he appreciated [it]; his managers needed it. We
+    referred to them as a manager's &quot;Linus' blanket,&quot;
+    and there was a certain amount of fairness about it.&quot;
+    (Ibid.)</p>
+</blockquote>
+
+<p>Clearly, Unix was a very marketable product. However, the
+transition from the research environment to the sales department
+still had to be made. In addition, there was the need to
+standardize Unix in order to present it as a marketable product.
+Tague was a key player in facilitating this transition. </p>
+
+<p>When the idea of marketing Unix as a product was presented to
+Research, it was not very well received. Nonetheless, Research
+eventually agreed to Tague's proposal. </p>
+
+<blockquote>
+    <p>... I had this vision we ought to be able to take Unix as
+    an operating system but as a company we can support this as
+    an internal standard operating system along with C in an
+    environment. And then we can then front end a large external
+    agency and commercial agency in this. With the idea that
+    people would sort of see the machine and use a common front.
+    It was not well received by Research... My story is they may
+    not have appreciated it but it all came true. That really is
+    pretty much the way the business has gone. (Ibid.)</p>
+</blockquote>
+
+<p>In his interview with Tague, Mahoney asks, &quot; Did you
+decide at a certain point then that it was time to take over the
+latest version of Unix and standardize it?&quot; Tague replies, </p>
+
+<blockquote>
+    <p>Yes, as I say, in '73 it was apparent that we needed the
+    support and the right thing to do was to go up to Research
+    and tell Ritchie... And we synchronized reasonable well in
+    that and my people took care of the dog work of putting
+    together the design information files and things that Western
+    required in order to capture the configuration and to do
+    configuration control. (Ibid.)</p>
+</blockquote>
+
+<p>By 1976 Unix support was established, and Unix internally was
+a sole product. </p>
+
+<blockquote>
+    <p>In September of '78 Jack Scanlon was putting together the
+    initial computing business center... I guess there were five
+    of us. I was brought in for Unix, Lee Thomas was brought in
+    for the MAC-8 micro-processor chip, Nick Maralotto was
+    brought in for some of the software support tools for Jay and
+    Dick Haddon... I believe there was another whole hardware
+    center that did the 3B development... [We] tried to put
+    together a single Unix that would sell very easily across the
+    board in those places... The C machine was all very nice but
+    they really wanted to have the hottest Unix in the
+    marketplace out there... [that] the 3B should sell itself
+    because it was the hottest Unix box around was the idea
+    behind it. (Ibid.)</p>
+</blockquote>
+
+<p>The 3B machines were mostly used within Bell Laboratories, and
+very few were picked up outside the Labs. </p>
+
+<p>In 1973, the first Unix applications were installed on a
+system involved in updating directory information and
+intercepting calls to numbers that had been changed. This was the
+first time Unix had been used in supporting an actual, ongoing
+operating business. Soon, Unix was being used to automate the
+operations systems at Bell Laboratories. It was automating the
+monitoring, involved in measurement, and helping to rout calls
+and ensure the quality of the calls. Tony Cuilwik states, </p>
+
+<blockquote>
+    <p>Among the varied and wide-ranging functions these systems
+    perform are network performance measurement, automated
+    network testing, circuit order planning, circuit order record
+    keeping, automated trouble detection, automated or directed
+    trouble repair, service quality assurance, quality control,
+    inventory control, customer record-keeping, and customer
+    billing-- as well as any number of other operational and
+    administrative functions. These functions all require the
+    ability to present data to users in real time.&quot;
+    (&quot;Reach out and Touch the Unix System,&quot; by Tony
+    Cuilwik, &quot;Unix Review,&quot; June 1985, p.50.)</p>
+</blockquote>
+
+<p>Cuilwik, who was the head of the Operations Systems
+Development Department at Bell Laboratories and later the
+director of AT&amp;T Information Systems Laboratories at
+Columbus, Ohio, relates the object in these systems was &quot;to
+guarantee a minimal acceptable human response time. This
+challenge has been met by tuning the underlying Unix
+system.&quot; (Ibid.) In the end, the fundamental integrity of
+the national telecommunications network came to depend on over
+1000 real-time, mini-computer-based systems that were all built
+on a version of the Unix operating system. </p>
+
+<p>Because AT&amp;T was not in the business of selling operating
+systems, Unix soon became readily available to academic
+institutions at a very small charge. There were numerous reasons
+for the friendliness the academic society, especially the
+academic Computer Science community, showed towards Unix. John
+Stoneback relates a few of these: </p>
+
+<blockquote>
+    <p>Unix came into many CS departments largely because it was
+    the only powerful interactive system that could run on the
+    sort of hardware (PDP-11s) that universities could afford in
+    the mid '70s. In addition, Unix itself was also very
+    inexpensive. Since source code was provided, it was a system
+    that could be shaped to the requirements of a particular
+    installation. It was written in a language considerably more
+    attractive than assembly, and it was small enough to be
+    studied and understood by individuals. (John Stoneback,
+    &quot;The Collegiate Community,&quot; Unix Review, October
+    1985, p. 27.)</p>
+</blockquote>
+
+<p>Stoneback also relates how research Unix aided academic
+computer science departments in establishing and developing
+research in computer science. </p>
+
+<blockquote>
+    <p>Unix had another appealing virtue that many may have
+    recognized only after the fact -- its faithfulness to the
+    prevailing mid-'70s philosophy of software design and
+    development. Not only was Unix proof that real software could
+    be built the way many said it could, but it lent credibility
+    to a science that was struggling to establish itself as a
+    science. Faculty could use Unix and teach about it at the
+    same time. In most respects, the system exemplified good
+    computer science. It provided a clean and powerful user
+    interface and tools that promoted and encouraged the
+    development of software. The fact that it was written in C
+    allowed actual code to be presented and discussed, and made
+    it possible to lift textbook examples into the real world.
+    Obviously, Unix was destined to grow in the academic
+    community. (Ibid., p. 27)</p>
+</blockquote>
+
+<p>At its outset, Unix was very compatible with academic
+institutions. Not only was it a capable operating system, but it
+also provided professors with a model for teaching the newly
+emerging field of Computer Science. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The power of Unix as a tool in the
+computer science research field was also been felt. By using Unix
+as a basis for operating systems research, researchers have
+benefited in three major was. First, the portability and
+flexibility of Unix gave researchers a means through which they
+could verify each other's experiments by way of a common
+operating system. Second, researchers were able to use the solid
+base of systems software provided by Unix to build on the work of
+others and to approach problems without wasting time by
+developing all the pieces from scratch. Third, by allowing both
+research and computing to be carried on within the same system,
+Unix made it possible for researchers to move results from the
+laboratory to the production environment rather quickly. This
+speed is mandatory for state-of-the-art computing. <!--webbot
+bot="PurpleText"
+preview="This last claim moves well beyond what the sources support."
+--></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Though AT&amp;T gave Unix to the
+academic community at a very low cost, the academic community
+gave back to Unix in the form of testing and contributing to the
+system. An example of this is the virtual memory version of Unix
+for the VAX computer which was created by Babaoglu and Porker at
+UC Berkeley and later optimized by Bill Joy. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Within Bell Labs, as Unix was being
+used for real-life applications, bugs would be discovered and
+reported back to the programmers. There were also situations
+where the departments using the Unix system would create new
+applications for their own tasks. It was the job of the research
+labs to provide maintenance for Unix, update the software, and
+reporting the discovered bugs to the programmers and distributing
+the fixes. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The support group for Unix became
+important in 1978 when Bell Labs started to depend heavily on the
+Unix system for their operations. This trend began to show itself
+with the introduction of Edition 7. At this point, the vision of
+the support group was to develop a polished and more stable
+version of Unix, while at the same time stabilizing the system so
+that everything would run smoothly at Bell Labs. Unix was being
+used as the operating system basis for many of the support
+systems in the Bell Operating Companies, and Bell Labs simply
+could not afford to let these support systems go down. Meanwhile,
+in academia, Unix users were responsible for their own
+maintenance. This fostered a community of Unix users who were
+willing to help one another. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;UUCP was introduced with the Version 7
+Unix. This was used to pioneer the advance of Usenet News. Usenet
+News was a step forward from ARPANET, and was embraced
+enthusiastically by the academic community, as it made
+inexpensive electronic communication available to all of its
+members. Through Usenet, a community was formed which was
+democratic in the purest sense. It was a community that supported
+it members and in turn was nurtured by the people it served. It
+was open to new ideas, open to change, and generous with its
+benefits. In 1980, a survey conducted by the Computer Science
+Research Network (CSNET) of academic institution revealed that
+over 90 percent of all departments were served by one or more
+Unix systems. Usenet truly was a landmark in the history of the
+dissemination of Unix, as it displayed in bright colors the
+solidarity of the Unix community in the vast and dynamic world of
+computing. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The popularity of the Unix operating
+system grew because it was innovative and was written efficiently
+in a high level language with code that could be modified to fit
+individual preferences. The key features and characteristics of
+Unix that held it above other operating systems at the time were
+its software tools, its portability, its flexibility, and the
+fact that it was simple, compact, and efficient. The development
+of Unix in Bell Labs was carried on under a set of principles
+that the researchers had developed to guide their work. These
+principles included: </p>
+
+<blockquote>
+    <p>(i) Make each program do one thing well. To do a new job,
+    build afresh </p>
+    <p>rather than complicate old programs by adding new
+    features. </p>
+    <p>(ii) Expect the output of every program to become the
+    input to another, as yet unknown, program. Don't clutter
+    output with extraneous information. Avoid stringently
+    columnar or binary input formats. Don't insist on interactive
+    input. </p>
+    <p>(iii) Design and build software, even operating systems,
+    to be tried early, ideally within weeks. Don't hesitate to
+    throw away the clumsy parts and rebuild them. </p>
+    <p>(iv) Use tools in preference to unskilled help to lighten
+    a programming task, even if you have to detour to build the
+    tools and expect to throw some of them out after you've
+    finished using them.&quot; </p>
+    <p>(M.D. McIlroy, E.N. Pinson, and B.A. Tague &quot;Unix
+    Time-Sharing System Forward,&quot; The Bell System Technical
+    Journal, July-Aug 1088 vol 57, number 6 part 2. P. 1902)</p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The amazing aspect of Unix lies in the
+philosophy that was used in creating the system and then realized
+in the dissemination of Unix first within Bell Labs and later
+among the academic community. Although it would be unjust to try
+to describe the underlining philosophy behind Unix in one short
+paragraph, it is nonetheless important to realize that this new
+philosophy of computing was a revolutionary one. It encompassed
+freedom and individuality. It featured efficiency, flexibility,
+and versatility. It produced openness and a sense of community in
+a world of programmers and researchers. Without a sales force,
+without a marketing team, and without the support of hardware
+makers, the Unix operating system was enthusiastically embraced
+around the world. Therein lies the genius of Unix. </p>
+
+<h2><b>From Dissemination back to </b><b><i>Ethos</i></b></h2>
+
+<h4><b>J. Graham Spence</b></h4>
+
+<p>While the story of Unix's dissemination and the story of the
+evolution of its ethos<i> </i>are two distinct stories, one can
+hardly refer to one without making reference to the other. The
+Unix <i>ethos </i>as it existed at Bell Labs did not become
+etched in stone the moment that Unix was exported to the outside
+world. Dissemination played a major role in the evolution of the
+Unix <i>ethos </i>because Unix found its way back to Bell Labs.
+As surely as it was exported to the outside world, it was
+imported back to Bell Labs. Here, once again we see that
+indispensable Unix saying at work: &quot;the last one who touches
+it, owns it.&quot; This statement may have been coined during the
+construction of Unix at Bell Labs, but it is equally applicable
+to the story of dissemination. For example, when Berkeley System
+Designs redesigned the main Unix kernel in the late 70's, its
+modified version of Unix made its way back to Bell Labs. Berkeley
+touched it last, so they owned it. The onus was on the Bell Labs
+group to address the challenges and flaws of the new version.
+These challenges were constantly reviving the Bell Labs
+environment, forcing it to innovate. Moreover, this innovation
+was not restricted to the design of Unix itself; in fact, it
+encompassed the structure of the entire Unix operation. </p>
+
+<p>So whose voice can begin to tell these intertwined stories of
+dissemination and ethos<i>, </i>the story of Unix&#146;s spread
+to the outside world and then back to Bell Labs again? Who can
+describe how Unix created a full-fledged international community
+and with it, a reputation for innovation and portability? This
+reputation, while well deserved, is nonetheless in need of some
+support. Great claims have been made for Unix; in their broad
+historical overview, <i>Computer</i>, historians Martin
+Campbell-Kelly and William Aspray state that &quot;Unix is one of
+the great design masterpieces of the twentieth
+century&quot;(Campbell-Kelly and Aspray, 222). The surprising
+candidate to describe the ongoing reinvention of the Unix
+environment is Stu Feldman, best known as the author of
+Unix&#146;s <code>make</code>. </p>
+
+<p>Feldman&#146;s qualifications to tell this story are not
+immediately evident. Feldman&#146;s background and the profile of
+his work on Unix do not indicate right away his value to the
+project. Feldman got his undergraduate degree from Princeton in
+astrophysics, and his Ph.D from MIT in applied mathematics and
+the theories of galaxies in 1973. For a long time, Feldman
+considered computing to be &quot;a side interest&quot;, and
+claims that his only computer related academic work was a
+graduate course at Princeton and Seymour Papert&#146;s MIT
+graduate seminar on automata. Feldman&#146;s obvious aptitude
+earned him summer work at Murray Hill, and some early work with
+Bell Labs on the Multics project. Feldman&#146;s rare blend of
+technical expertise and relative inexperience tended to land him
+on the periphery of some of the larger projects within Unix. This
+perspective, in limbo between insider and outsider, is the
+optimal vantage point from which to view the stages of
+Unix&#146;s dissemination and the evolution of its ethos. After
+all, isn't the story Feldman is trying to tell, that relationship
+between ethos<i> </i>and dissemination, a classic case of trying
+to link inside with outside? Feldman is that unusual composite of
+insider and outsider, so who better to try and reconcile the
+inside story of Unix with its outside story?</p>
+
+<p>Feldman&#146;s official contributions to the Unix project are
+the <code>efl</code><b> </b>language<b>, </b>the first complete <code>f77</code>
+compiler, and <code>make</code>. Anyone familiar with the
+technical obstacles which faced the Unix workers should
+immediately acknowledge the importance of these contributions to
+the construction of Unix itself. And yet these contributions do
+not seem nearly as integral to the story of the dissemination of
+Unix as they do to the story of Unix&#146;s construction.
+However, the value of Feldman's contributions, <code>make</code>
+in particular, can be recognized only through a more thorough
+examination. </p>
+
+<p><code>make </code>is a script for Unix, a program designed by
+Feldman to take control of the compilation process and form an
+executable program. Feldman puts his invention of <code>make </code>in
+1976, &quot;give or take a year.&quot; In <i>Unix Systems for
+Microcomputers</i>, Ross Burgess explains the value of <code>make</code>
+in the Unix programming environment.</p>
+
+<blockquote>
+    <p><font size="2">If your program consists of a number of
+    different files, it may be difficult to remember which files
+    are included in a particular program, and which ones have
+    changed recently. For instance, you may have a number of
+    programs under development, any of which use a selection of
+    various common subroutines that you have written. Maybe you
+    have a team of programmers, each of them working on different
+    aspects of an overall suite of programs. To keep track of
+    what needs to be recompiled and linked in which program, you
+    can use the <code>make</code> utility. This keeps track of
+    which files are needed in which program, and what has to be
+    done with them. By noting the dates when the various files
+    were last altered, <code>make </code>can work out which of
+    them need to be reprocessed to produce the new version of the
+    complete program(Burgess, 194).</font></p>
+</blockquote>
+
+<p><code>make</code> searches out dependencies within files with
+the aim of updating files and forming executable programs. In
+short, <code>make</code> is a clerical system for Unix. Hear
+Feldman place <code>make</code><b> </b>in the larger Unix
+perspective, both as a key tool to the system and as a symbol of
+the system itself.</p>
+
+<blockquote>
+    <p><font size="2">So, </font><code>make</code><font size="2"><b>
+    </b>was possible because you could ask the file system a dumb
+    question, and it would answer, and if you wanted to run a
+    command, you would just run a command. You didn&#146;t have
+    to plan it in advance, you didn&#146;t have to get God&#146;s
+    permission&#133; you just did the damn thing. Therefore, I
+    just put it together without thinking.</font></p>
+</blockquote>
+
+<p>In <i>Life with Unix, </i>as a prelude to his section on <code>make</code>,
+Don Libes offers the following saying from Richard E. Fairley:
+&quot;The structure of a system reflects the structure of the
+organization that built it&quot;(Libes, 181). <font size="1">Make</font>
+is a worthy reflection of some basic components of Unix. <code>make</code>
+is simple; Feldman put it together &quot;without thinking.&quot; <code>make</code>
+is portable; it was used across Bell Labs by a wide variety of
+workers performing a wide variety of tasks within the Unix
+project.</p>
+
+<p>As it turns out, virtually every download of Unix that takes
+place anywhere around the world relies on <code>make</code><b> </b>to
+govern and expedite the process. New users download Unix as a
+series of <font size="2">makefiles</font>. These files are key to
+the efficient and successful download of Unix. <code>make</code>
+is essentially a program designed by Feldman to take control of
+the compilation process and form an executable program. Without <code>make</code>,
+Unix users would have to make use of an array of programs such as
+<code>cc</code>, <code>ld, as</code>, <code>yacc, lex</code>, <code>mv</code><b>,
+</b><code>cp, sed</code> and <code>ln</code>, to rebuild
+sophisticated software sets. In short, the entire process would
+become much more confused and inefficient. In fact, one could
+even argue that without <code>make</code>, Unix itself might not
+be as enticing an option to the potential user. Without the <code>make</code><b>
+</b>program around to ease the installment, Unix might well have
+lost ground to other operating systems. Without <code>make</code>,
+Unix would retain the same level of portability, but the
+resulting inefficiency of installation would equate to a lack of
+portability for many potential users. Potential users might not
+be able to take on the difficulties of installation, regardless
+of Unix's technical level of portability.</p>
+
+<p>As things stand now, however, <code>make</code><b> </b>retains
+its elegant simplicity, and its indispensability is given its due
+respect for every efficient download of Unix. <code>make</code>&#146;s
+ongoing services are continually reasserting the value of Feldman
+to the dissemination of Unix. <code>make</code><b> </b>never was
+the key to the dissemination of Unix; only the design features of
+Unix itself can lay claim to that title. Portability, relative
+simplicity, self-sufficiency, and friendly manuals are the
+features that earned Unix its reputation. <code>make</code><b> </b>did
+not &quot;sell&quot; Unix, but insofar as it aided the spread of
+Unix&#146;s reputation, it did serve as an agent to that sale,
+and a catalyst to its dissemination. </p>
+
+<p>Feldman stands further qualified to reflect on the
+dissemination of Unix because of the year he spent at Berkeley,
+working on the pivotal Berkeley Systems Design, or BSD. Not
+realizing the full potential of their curious little operating
+system, Bell Labs gave Unix away to educational institutions for
+free, charging them only for the cost of the tape. BSD was the
+first significant offshoot of Unix designed outside of its Bell
+Labs home. Certainly it could not be claimed that BSD is solely
+responsible for the pioneering, innovative spirit of Unix outside
+Bell Labs. The string of early BSD Unix releases was so important
+because it proved to the rest of the computing world that that
+same spirit of innovation could thrive outside of the sheltered
+environment at Bell Labs. BSD also gave Unix an unshakable
+foothold in educational institutions, and helped in developing a
+close relationship with those institutions that remains today.</p>
+
+<p>So here we have <code>make</code><b> </b>and its maker. We
+have the surprise catalyst to the dissemination of Unix and the
+man who designed that catalyst. What can they tell us about the
+spread of Unix? Most of what Feldman offers us relates back to
+the nurturing of the Unix ethic at Bell Labs. In the true spirit
+of UNIX, Feldman seems to suggest that his listeners utilize a
+tools approach in understanding the history of Unix. The onus is
+on the listener (or user) to use these tools as a means of
+extending their database of UNIX history. Feldman does not dole
+out facts and dates, but instead chooses to reminisce about the
+aura surrounding UNIX, and how that aura translated into
+international success. </p>
+
+<blockquote>
+    <p><font size="2">&#133; if I have to say there&#146;s a
+    technical strand to the things that I&#146;ve done and that
+    I&#146;m interested in now, it&#146;s that of how do you use
+    one technology to get you out of the trouble of another one?
+    (Pause) And I&#146;ve been quoted more than once on the line
+    that one of the great things about UNIX is that it lets you
+    get out of the troubles it puts you into. </font></p>
+</blockquote>
+
+<p>If troubleshooting is a Unix trademark, then one could hardly
+exclude the importance of serendipity to the project. </p>
+
+<blockquote>
+    <p><font size="2">I'll tell you one or two simple stories
+    about it(<code>make</code>) to give you an idea of the
+    environment. After a few months of its being used locally, it
+    spread around to other Unix systems. Unix was already in use
+    lightly throughout the company. Somebody came up from the
+    first floor support group; they decided to try using <code>make</code>
+    to support their systems releases. And somebody came into my
+    office saying, 'I'm having trouble with this <code>makefile.'
+    And they dropped this 1500 page makefile</code> on my
+    desk&#133; My jaw dropped. I said, 'Goddamn, it works on
+    that.' Of course, I'd never used a <code>makefile</code>
+    longer than about 15 to 100 lines.</font></p>
+</blockquote>
+
+<p>Feldman makes a key insight here. He reveals the feeling of
+serendipity and constant surprise that pervades much of the Unix
+ethos. In this passage, we see that Feldman did not know the
+capability of his own tool, a program which he himself authored,
+until that tool had been taken to work, used and dirtied. And if
+he did not even know what his own tool could, how could he know
+what the entire Unix system was capable of? How could he even
+begin to assess the worldwide prospects of this new operating
+system? This Feldman episode is even somewhat of a microcosm for
+the Unix dissemination. Make a quaint little tool and give it
+away, not knowing its real working capacity, and pretty soon that
+same tool is being slammed back down on your desk. With it come a
+list of capabilities you never knew it had, but also a whole new
+host of flaws to address. </p>
+
+<blockquote>
+    <p><font size="2">Well, Unix is a sparsely furnished or
+    spartanly furnished home. It lacks all the plush conveniences
+    of professional operating systems. The bad news is that over
+    the years, it has picked up much of the plushness and the
+    lousy handling&#133; It was&#133; I&#146;m not a car expert,
+    but it was sort of the MG of operating systems in the early
+    days. It had just enough to get you from here to there. It
+    was fun to play with. It didn&#146;t have the handling of a
+    Buick or a Cadillac, nor did it have the performance of a
+    Ferrari. It was fun. And if you wanted to do something, you
+    did it. This openness went, however, with the fact that
+    things were going to change under your feet. More than once,
+    the C compiler died with me as its only user at two in the
+    morning, because Dennis is a late night person also. And at
+    one thirty, he might install a small bug. He was actually
+    extremely good at this. More than once, I was the first
+    person to be hit. And the good answer was that at two thirty,
+    it would be fixed. That&#146;s sort of the Unix ethic. We
+    were living in a high-risk, fun, changing place. That
+    hasn&#146;t been true, of course, for a decade, since it
+    became an official product, and a major force in the
+    universe. With all the problems of annual releases and two
+    year bug recycles. Unix has gotten by with the world&#146;s
+    dumbest loader and pretty offensive debuggers&#133; because
+    nobody was going to build anything intrinsic.</font></p>
+</blockquote>
+
+<p>Armed with hindsight, Feldman hits the high points of the Unix
+ethos<i>, </i>and relates it to the early dissemination of Unix.
+It is unlikely that Feldman, nor anyone for that matter, could
+have predicted the overwhelming worldwide success of Unix. But of
+course, this uncertainty only added to that &quot;high-risk, fun,
+changing environment&quot; that was the Bell Labs Unix project.
+What's more, as a computing success story, Unix may just be
+getting started. As recently as 1995, in <i>The Unix Philosophy, </i>Mike
+Gancarz made the bold prediction that &quot;it is only a matter
+of time before Unix becomes the world's operating
+system&quot;(Gancarz, xix). Feldman would likely refute this
+statement: &quot;Unix is a superb, simple&#133; but it's a
+time-bound concept.&quot; No one can really say whether Unix's
+days are numbered or whether we are just touching the tip of the
+iceberg. What we can count on is that as long as Unix moves
+throughout the computing community, the ongoing reinvention of
+Unix will go on, trademark licenses and troubleshooting be
+damned. </p>
+
+<p>&nbsp;</p>
+</body>
+</html>

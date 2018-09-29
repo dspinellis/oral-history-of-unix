@@ -1,7 +1,7 @@
 get:
 	# Obtain files
-	wget -m --convert-links https://www.princeton.edu/~hos/Mahoney/unixhistory.htm
-	wget -m --convert-links http://www.princeton.edu/~hos/frs122/unixhist/
+	-wget -m --convert-links https://www.princeton.edu/~hos/Mahoney/unixhistory.htm
+	-wget -m --convert-links http://www.princeton.edu/~hos/frs122/unixhist/
 
 fix-links:
 	# Correct HTTPS URLs in the precis pages to transcripts

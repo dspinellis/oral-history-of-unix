@@ -1,0 +1,306 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>FRASER</TITLE>
+</HEAD>
+<BODY>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<B><FONT FACE="Arial"><P>Interview with A.G. (Sandy) Fraser</P>
+</B><P>&nbsp;</P>
+<P>Fraser: &#9;… programming business and probably a few years before that.  So, I’m a latecomer to the scene.  I ‘m really not a good source for you.  But, I’ll happily provide what I can provide.. </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I’m gonna resist the temptation to talk to you about <I>commerce</I>.  At some time I want to talk to you about, talk to as many people as I can.  See if we can recreate or I can get some sense of what was going on there. </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Well, it’s a long interesting story associated with leading up towards that.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I gather there was.</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Anyway, so I came here in ‘69.  May of ‘69.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;At about the time UNIX was started.</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Before UNIX.  And as an MTS, I sat in the corridor - I don’t know where that is now - and sort of heard various discussions going on.  But, I really had nothing much to do with the evolution of UNIX.  I was more of an observer. I had worked for a number of years in a file system and I don’t know whether any of my inputs had any impact on the UNIX system. </P>
+<P>&nbsp;</P>
+<P>M:  &#9;What did you come here to do?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Incidentally, I arranged to come here.  I thought we were working on Multics.</P>
+<P>&nbsp;</P>
+<P>(MSM - Laughing)</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;I was interested at the time in trying to build a distributed operating system.  </P>
+<P>&nbsp;</P>
+<P>M: &#9;Uh huh.</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;At that time nobody had ever done that.  There were no such things locally networked or anything.   I’ve done some, I’ve just written the file system for the Atlas computer operating system of the Atlas computer, which is England’s first time sharing system.  I had done some arithmetic which led me to think that distributed operating system might be whim.  In order to do that sort I would model it first using Multics.  On my way over here.  I bumped into Peter Neuman who told me that Multics had just left and so I walked into this building and to find it in somewhat of a disarray and certainly very down. It had appeared I was the newcomer to the scene.  It was quite clear that we were in the course of fairly traumatic change for a lot  of people.  In  end of the ‘60’s you may recall there was - ah - a time of change for all universities where it used to be that the computing science research communities as often as not  used to run the computing centers for the university.  As the buckets grew - and soon it became less and less practical in the end of the ‘60’s - the universities one by one started moving the computers from the responsibility of the computer centers into the administrative area.  That’s what happened when Multics departed.  With Multics here as I understand it,  it was expected that it would become the vehicle for computing service.  And at that time, responsibility was held in the computing science research organization.  So, not only did they lose their research project, but, they also lost the budget and the  responsibility that goes along with management comp center.  I can alert you to the need to explore the dynamics of that occasion, but I’m not the person to really tell you about it.  But, I would say the mood here occasionally was fairly important to what happened… at that time… what carried over with the Multics and what didn’t. Who stayed around and didn’t.  A number of people left and so on…</P>
+<P> </P>
+<P>MSM:&#9;How did you respond when you found there was no Multics around?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;I set about building my own.  It was obvious that what I needed to do was build a model that I could build a distributed system with.  At that time there were beginning to be a small number of  mini computers - Honeywell 516 was one of them around here. The AP224 and the PDP-10 hadn’t yet arrived.  I’m sorry to say that. I would make a network, a ring network as a matter of fact, to link together a number of these mini computers.   I would use that as a vehicle to put a file system…  My first idea was to have one file system in a computer all by itself, and then a number of number crunchers.  The idea was to build a ring, which would have this file system on it and then a number of mini computers on it.  That took me from  … til about 1972 to finish that.  By which time Multics had become real.  So, we’re co-inhabitants of the building.  But, you can’t really say I had much to do with those early days.  I was an observer at the scene - perhaps.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;What was going on in UNIX ?… influencing your own design?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Not really, not really.  The file system ended up being probably the first file system that I made - a file server was an early version of UNIX which I  modified, so that I could build a new (not clear) on it.  That was the only way UNIX influenced it that time. Um… After that, maybe I contributed a little bit on the UNIX front when I started with Paul Jensen.  He and I worked on the circuit design aids package.  Which was used (not clear) inside MSI circuit boards.  At that time it was very much a hand process.  We mechanized it.  Since then there had been many such systems of course.  I’m sure that I’m a real um really the right person.  Maybe I can give you some pointers on how. If it well help.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Most …What are the things that um… What Ken Thompson had finished talking about was um.  I asked him if he had any - looking back on it now - if he wishes he had done anything differently now. One of the things he said was, he wished he’d thought more in terms of distributing systems from the outset.  When it came time…time to make UNIX part of his distributing system, was it readily adaptable to&#9;that?</P>
+<P>  </P>
+<P>FRA.&#9;Well what has happened I would say that the UNIX is remarkably adaptable but not particularly attuned to be distributed and UNIX, UNIX is seems to me that UNIX is not entirely, but very much a file system.  The file system wasn’t designed to be distributed.  You have UNIX systems that hooked together.  You could see one another’s file systems.  That’s the way it appears to be.  It’s only recently I  think that  a effort has been made to make it feel like the file system conveys the network as an entity. Its a planned effort that is underway there now. There are mechanics of networking that over the last four or five years have been systematically tackled and I think it’s substantially improved.  Which helped… most of the implementation of the distribution system with network in general, then it was just (unclear) streams.  Dave was on his connection server. Those were the two main starting points. All that’s very recent stuff. </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Back to what you were doing in the ‘60’s. Before you came here, were you working?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;…at…at…Cambridge. It was a project known as Atlas 2, or more pertinently as Titan. Um… Atlas 1 was made at Manchester University. Fairly expensive activity funded by Ferranti for whom I worked originally.</P>
+<P>  </P>
+<P>MSM:&#9;I see</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;At Cambridge, they wanted to make this time sharing system.  They didn’t really have all the funds that were available for the Atlas 1 project.  So, they had a ‘cheap man’s’ Atlas.  They also had different ideas about architecture.  Much of the technology is the Atlas technology, but the architecture was somewhat different.  Different emphasis anyway.  And a very much stronger emphasis on software.  So, this slightly different Atlas computer arrived at Cambridge at about the same time I, or a little bit before, I arrived there.  They were in the process of trying to figure out how to make a operating system for it.  At the time I arrived at Cambridge, it was because of my history - I knew a little bit about file systems.  So, I took on the job of building a file system, the files, the dumping system, archiving system as a whole complex of uses.. and uh…  There was just a single machine thing that did lead to these thoughts about how much traffic flowed between the different parts of the system and whether it made sense to cut off the piece of the system and put it in another machine.  Um, um</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;How did people think about an operating system at that time?  Was the idea get maximum use out of the machine or to make maximum use of programmers time? Maybe I should put that in content.  In thinking about this, trying to map out some general themes.  It occurred to me that during the ‘60s’ most of these operating systems had been aimed at maximizing the machines.  Making the machine efficient. They were expensive items.  Corporations that bought expected them to be doing the work of the corporation.  Programmer was viewed as someone who serviced the machine and worked off to the side.  The idea that you would design an operating system to be a programming environment, it was a rather strange notion.  How did… was that on target?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;I think the situation was a bit of…  Yes, the operating system was a device which would allow the person to use the machine efficiently.  I would say that um.  There’s a person named George Feld at Ferranti who I think was a very strong influence over the early days evolution of operating systems.  Ferranti which certainly influenced…  a number of people in the United Kingdom, certainly when it came to the Atlas type of operating system.   It wasn’t for programmers who were incidental to the business.  The users were the… the programmers were the users.  Yes, there was a concern to use the machine efficiently, but  there’s a great deal of concern to make it, also make it a human one, convenient software productivity or something was not a word that was used at that time. But, the notion was implicit in (unclear).  That goes back to George Felton and the ORION operating system that Ferranti had.  Where for example, there were quite lengthy discussions over the uh… both the instruction set and the operating system for the machine. Looking at it from a point of view of what is the easiest thing to compute. (unclear) for the programmer to do, not only what is the most cost effective thing for the engine to do.  There were a lot of things in the Atlas operating system I think  that helped with that .  That also built upon the day that we learned, you know, David Wheeler and Maurice Wilkes were at that time working on that set too.  Which was the first micro programmed machine.  There was also a machine which had its subroutine… had a really quite advanced subroutine library.  Maybe they were pioneers at that.</P>
+<P>&nbsp;</P>
+<P>M: &#9;I think they were.  Because the EDSAC 1 had it out then.</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Then that was not there, because of the most efficient way of doing it.  It was done, because it was the most easy way, the most convenient way doing it from the point of view of the users.  I think, they had been thinking about how to structure programs and make them manageable and so on for quite some while.  Although interestingly they had not… that crew had not really paid a lot of attention to the higher level languages.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Just about to ask…</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Of course <U>Stretch?</U> was there around that time, I’ve been working on programming languages before this.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Um, um.</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;It worked with Christopher with various things.  He didn’t  manage to influence that group, and eventually he went off and had his own place in (unclear) Rd. in Oxford.  Established his own line of research on the CP/M languages generally.  Cambridge stayed pretty much more interested in structure but less in language. For some reason, I don’t really  understand, for quite a number of years. Maybe that was a concern about efficiency.  I don’t know.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Was that all split between, those who were mathematically interested in computing as opposed to those who understood the machine?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;That could be.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Making a system work?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Yes.   Uh…there was no computer science department at Cambridge all the time I was there.  It was quite recent phenomena.  It wasn’t a respectable discipline in some sense.  It was on the corner of the Cavendish very definitely a latter arrival.  It was called the University Mathematical Laboratory. It gained it first origins with a differential engine - difference engine.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Hartree’s?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Think so.  I guess Miller was one of the key drivers at that and Miller was asked numerical methods.  Instilled that interest in most students that came through the place.  The biggest users were crystallographers. Definitely a machine for mathematicians.  Even for people who did other types of activity.  I wrote a checkers program - the first thing I did for EDSAC.  It was looked upon as a frivolous activity.  Not as a research activity.  I think</P>
+<P>&nbsp;</P>
+<P>M: &#9;What had been your background?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Very varied.  I’m a aeronautical engineer.  Who is interested in computers.  Although I didn’t know it in high school.  Didn’t know what they were.  That I invented a machine that had computer like attributes. Burroughs used some of that stuff to say &quot;Hey guy here are some things around why don’t you come and get involved in it?&quot;  So, I got interested in computers, but there’s no way you can get an education in that.  So, I took up aeronautical engineering education, as being the most mathematical of the engineering discipline at the time.  Then I went to work on summer jobs working with computers.  Numerical mathematical course with…uh, Miller and co. at Cambridge for a year.  It was the nearest thing to a degree in computing that you could get.  Then I went to work for Ferranti - wrote an operating system for a small computer.  I became responsible for a language which was competitive to COBALT.  We worked on that for a number of years. It was a major project for engineering.  Of course…that’s where I got in touch at…where I was in touch with Atlas.  Eventually I was given some responsibility with respect to the compilers on the Atlas, although I really didn’t do very much.  I came to know both Tony Brooker, Derek Morrison and also Christopher Strachey, Peter Landin, working originally at Cambridge and then Oxford.  I got involved in writing compilers for a while.  Did... I think I’ve made some contributions in the early days of compilers.  The work at Cambridge I was just talking about…</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Is that compiler work theory driven at all?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;No.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;More on lines of fortunes trying to get something in the machine that will do the job?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Yeah.  At that time for Ferranti was just beginning to sell large machines to </P>
+<P>commercial establishments.  What was clearly needed was something that combined the file system and the programming language.  So, for example, when an insurance company could… didn’t have to solve the problems of file management and the like, that could have that done for them.  Could express their algorithms or whatever, in a language at some reasonable level - at some FORTRAN-like level.  But, very about concerned about efficiency, particularly data representation. Um, um.  In the those days everything was done on tape to tape processing.  So, when one wanted to have reasonable compressed data representation.  One was concerned with having fields which were bits and bytes.  Packing things down.  So, we’re really (not clear) compiler. Probably there are few that had such a broad spectrum of challenges to try to go for. We did it with very little knowledge.  It was strongly influenced, the mechanism was strongly influence by I guess two things: by <U>Tony Brooker’s</U> compiler - we used something that would derive from that.  And, by a determination on my part.  That the <U>Ferranti</U> software should be written quote a ‘higher level’  language.  In fact, we invented the language for that purpose, called COMPL, C-O-M-P-L, which we used to write the compiler.  That I think influenced our thinking greatly.  It was the only thing that ever got used for anything else.  But, it allowed us to contemplate more elaborate tasks, then we would otherwise have contemplated, and thereby hang ourselves.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;The iron 3… [laughing]</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Yes, that was right.  I have a pretty varied background.  Even before I arrived there.  I’ve written the…, they had a small computer they called the <U>Serious</U>.  I had written the operating system for that.  Called ‘The Monitor’ actually. We didn’t call them operating systems in those days. I wrote the subroutine library for that machine.  That was in the days, when you couldn’t get it into 256 words.  It was too big.  Squeezing into a small amount of space was the sort of thing that you were doing at that time.  I think what I might do is just come more directly onto the UNIX front for a minute.  Doug hasn’t already told you.  I think it is important to know the relationship of the UNIX activity to the way that (Ariel Eaton? - not clear) was managed at the time.  You probably know how that was managed then and it’s not a whole lot different, but there were some particular things.  Particularly as it came (break) was Multics.  There were a few key players.  Were not in the management structure anymore.  You probably - if you want to do a complete job, you probably need to talk to them. Um, um.  The person who had this job was Ed David.  He was quite instrumental in making Multics happen.  I don’t know whether he was instrumental at all in making UNIX happen.  But, he certainly created the environment that lead to UNIX.  By default.  By first of all what he did with Multics, by the series of things that happened in it’s demise. By a discussion that was taking place when I arrived in which Ken and Doug and Jason and various people were trying to buy people a PDP-10 which Ed David eventually had turned down.  Um, um.  The rationale for that was (bell ringing) was going to assume responsibility (bell ringing)  for a fairly large piece of equipment, than it had to do with any operating system concept.  They just came out spending a lot of money on a large piece of equipment gone wrong  as a research project.  Ed David could probably explain to you why we didn’t get the PDP-10.  But, I guess that very strongly influenced the course of events.  Because it was after that they turned down the PDP-10 and came and built this thing on the PDP-7.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Is there any sense that labs have try to get involved in the large designing a large system and got itself burned eventually in the business?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;I don’t whether he shouldn’t be in that business.  But, I would say that he got burned.  It may well be that these juxtapositions of these different events were sufficiently close that the proper assessment of what had gone on had not yet materialized.  They didn’t stay around a lot longer of course.  But, it certainly had something to do with that environment.  The…uh…Ken’s activities as far as I know, were not supported by his management for a little while.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;That’s what I gather.</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;That might be explainable.  Another person to talk to is Sam Morgan.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Yeah we talked with him.  </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;He happened to be director in 1127 at that time.  I think had a great deal to do with the evolution of 1127 at that time.  I think that the way UNIX turned out had a lot to do with the type of person who had been hired.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;That’s where I was hoping we could head…in this way…(unclear) background.[pause]  What it is about the Bell Labs environment that attracted you here, or how congenial you found it when you got here.  In terms of the kinds of problems people were taking up, the kinds of  models they had in mind,… for what computing ought to be.  </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;I’m an oddity, not going to help.  Sorry.  The reason is that I came here for two reasons. Three reasons.  None of which had anything to do with computer science development at Bell Labs.  One reason was when I was at Ferranti I had this theory that which says that Ferranti really ought to have a research or exploratory development  software activity.  I had tried to talk them into doing that.  In the process of doing that I  learned something about Bell Labs and come to admire it from a distance.  More from a point of view of where it managed and relayed the research to the rest of the company.  </P>
+<P>&nbsp;</P>
+<P>M: &#9;Um</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;So, I had that in my head.  Secondly, the scene in England was declining rather rapidly.  It was fairly clear to me and not only to me that the … that the, uh,…initiative for research and networking and computing - two things which were clearly in my future.  The funding and the opportunities were going to be on this side of the Atlantic.  The third thing, neither of those, I wouldn’t have moved for either of those two if my wife hadn’t died and I needed a change.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Ah, I see…</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;A combination of the three things that put me in this place.  When I got here, I guess &#9;I was a little unusual.  In fact, most of the people here were hired straight out of college.  I have this very varied background, managing a fairly large organization, being involved in research.  Teaching for awhile. So, I think I had a slightly different perspective and sort of a broader interest in the role of the research organization, than many people come here with.  Um, um.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;But, you came as a MTS, not as a manager.</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Oh yes indeed. An MTS [coughing].I didn’t come with a preconception of, I didn’t know what I was going to do in reality.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Especially since there was no Multics. [chuckling]</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Yeah, I just don’t have the vaguest  idea of (unclear).</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;What struck you when you arrived? As far as computing?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;They were in this transient state.  The toy had gone.  The computer room was empty.  People were just despondent.  Some people were leaving. There was a clear lack of momentum.  People working other subjects.  I remember there were a whole bunch of people, Al Aho and others, who were working on bubble automata.  Um, um.  Which would have never gotten very far at Cambridge, I must admit.  Even though I think they were of some value.  <U>Morostov</U> used to make comments along the line that industrial researchers had to do things of a more theatrical nature in order to prove that researchers in universities didn’t have any such hangups, I think was the expression [Laughing] that he had. He tended to encourage things which had a practical, if not commercial, flavor to them.  There was rather more of the theoretical here.  Secondly, at that time almost nobody in the company was taking any notice as far as I could tell, of the computing science research center.  Which is a blessing as well as a disadvantage.   I shared an office with a Paul Jensen who was a intern that Doug McIlroy had brought in, a person whose who was given the assignment of studying the <U>ESS1</U> system and trying to make certain suggestions about how it might be improved, or what languages might be used on it.   Paul had a varied influence on some of the things that I did and we shared an office with him for awhile.  But, I don’t think anybody else in the corporation and anybody else on the ESS1 banquet cared… could have cared less about what the computing science organization thought of what they were doing.  At that time, maybe I misread it, but I was very quite surprised to see how disconnected such activity was with the rest of the company.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Yet the company retained it.  </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Oh yes.  They have (not clear) strong, strong concurrent of long term investment in belief in hiring people.  Making more aware of what’s needed and leaving them to make decisions about what’s the appropriate branch computer science is to pursue.  In order to produce what’s needed.  Maybe I didn’t say that quite right.   A lot of individual autonomy, hiring process, in the hiring process one can steer the course of the company.  But, I think particularly for the computing research science center at that time, a lot of emphasis has been put on getting…simply getting good people.  Regardless of it, they didn’t know much about switching or anything.  There wasn’t too much software.  The switching business, you must remember that, of what… twelve, fifteen years before that.  They had a agreement with the Justice Department not to get into the computer business.  That’s something you probably need to understand.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Um, um.  </P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;It had a very broad impact on Bell Labs position in 1969 and on its treatment of UNIX.  </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;The Consent Decree, the ’69 Consent Decree was relinquished only as a result of the divestiture agreement of ‘84 or ‘83.  In that interval, we had agreed that we wouldn’t engage in certain activities.  Which basically meant that we would selling computers.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Did that incentive Consent Decree exclusively keep Bell Labs out of software development only?  In 56 what a computer meant, and what being in the computer business meant. </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;You should read the Consent Decree.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I should.</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Okay. But, let me tell you two things.  First of all, the 456 - and I don’t know this, all of this, this is just history. I just have a smattering of it. - Western Electric was in all sorts of businesses.  We made tape decks.  We made televisions.  We made just a whole variety of different things.  I guess there was some real concern that telephone revenues would be used to subsidize some of these other commercial products.  Generally, rip off the consumer in some way.  So, a anti-trust case was brought and the result was that we agreed to stay to our case, stay to our meeting.</P>
+<P>&nbsp;</P>
+<P>M: &#9;Um, hum…</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;I think that was more the emphasis.  Corporate lawyers have very strong incentive to be conservative.  They gain nothing from taking risks, they can lose their jobs if they lose their risks and so, as my interpretation, my reasoning,… my interpretation of why it seemed that we as a company took a …took a very self constraining view of the Consent Decree.  To give you an idea of that, the first packet switch that I built in 1970 was a minicomputer programmed like many other minicomputers have since been programmed to behave like packet switches.  There were long debates in AT&amp;T about whether that was legal.  Whether it was legal for us to make and install a minicomputer that behaved like a switch.  In fact, strong feelings that it wasn’t legal, even later than that.  So you can imagine that anything that looked like UNIX operating system was hardly regarded by anybody as a legitimate product of the corporation.  We did make software, of course, for inclusion in our own systems.  The operation supports systems were of that nature, but  um they were strictly connected with managing the network and somehow they were more legal than a packet switch.</P>
+<P>&nbsp;</P>
+<P>M: &#9;[chuckles]</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;You can remember the days, I’m sure, when the FCC was debating whether protocol translation within the network was legitimate - in fact, it wasn’t.  And now the question arises, what is protocol translation.  You have characters coming in on an RS232 line and you’ve got to feed them onto a screen - is that protocol translation?  All sorts of things like that, well lawyers and all sorts of people were preoccupied with such minutiae at that time.  And anything as gross as an operating system or a compiler or a language were just clearly out of court.  Had a lot to do, I think, with the companies attitude towards UNIX.  What we did and indeed, with its success um… Well, the…the way it actually went to universities..</P>
+<P>&nbsp;</P>
+<P>M: &#9;I see.</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Had a lot to do with….</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;- you mean free? </P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Yes. [Laughing]  And both pluses and minuses of all of that .  There was no great strategy associated with it.  It was a more of a question of responding to something which seemed to be irrelevant.  I would say.  Or something we couldn’t make money from.  So it wasn’t (unclear), there was no cleverness in my view to what we did.  Others may have followed suit and thought that our giving away UNIX to universities was our masterstroke - our bread and butter - but that was no such thing.  It was just a response to some very [laughing] (unclear) views.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Now the other side of that, as I understand it, and I wasn’t involved at the computing scene at Princeton University at all at the time, was the attitude of the central computer facility, which was an IBM installation.  But if the engineers wanted to go off and bring home this strange operating system from Bell Labs, well then they could damn well maintain it themselves and  I wanted not part of it…</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Yes, yes I…</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;So the university first drew no great advantage from bringing it in here and </P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;The computer science department is like that.</P>
+<P>&nbsp;</P>
+<P>M: &#9;They like it for its own sake and they would have to absorb the responsibility, take on the responsibility of maintaining it.</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;I think you have to understand the legal environment…had a lot to do with what the company did and didn’t do.. had a lot to do, perhaps had a lot to do with… the amount of support that was given to UNIX, or not given to UNIX in the early days. Given that we had just spent a lot of money on an operating system that had produced ah… that had come to a rather unhappy end.   That operating systems, per say, weren’t clearly in the future of the company. I don’t know what was going through people’s minds, but I think that it is worth understanding…</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I’m…I’m very much trying to understand…</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;I think that Sam Morgan might be able to help you with that.  The  uh department heads, who influenced this thing the most <U>Doug McIlroy and Elliot Hickson</U>. And Elliot is no longer at the company, he is an MTS in this building.  His role in there, I’ll let you discover, I don’t think he’d consider himself a key member of that group, but he did have some of the people reporting to him.  I think he did influence some of the forces that were in play at the time.  Doug’s involvement is one that I would hope that you can uh… that you can divine…uh.  I… I’ll give you a hobby horse of mine… I think Doug’s contribution to the computing science research center here and to UNIX in particular is uh.. substantially under-rated.  It’s not been recognized by any public bodies that I know.  It is by and large not recognized in internal documentation.  I think that it is enormous.  He was a disclaimer of his own contributions.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I had this sense in talking to him personally, this (unclear) </P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;You have to learn a bit about Doug to understand what I’m saying. You may have the time to do that.   Doug used to be a (unclear) that he no longer is.. he’s department head for twenty years.  He decided twenty years was enough.  He is a mentor - probably the best mentor we have.  Of his strengths and weaknesses as a department head, he was not a strong bureaucrat, but an absolutely first class mentor. He had the subject all over his hands and (unclear).   It is my impression, without any real data, Doug has a great deal to do with the climate that made UNIX happen.  And the course of events, not because he instilled any particular course of events - Doug doesn’t take decisions like that - but what he does do is involve himself in the conversation and insert a certain level of understanding into the conversation that may not have been there before,  perhaps from the juxtaposition of other things that he knows about.  And as a result, steers the thing that is evolving, without any clear identifiable contribution.  But it was certainly my impression, listening to the tone of the conversation, and so on, that the clarity of thought that led to the cleanness of UNIX, had a lot to do with Doug McIlroy.  If I’m right, I would really appreciate some explanation of that, because I’ve had a really difficult time getting people to understand that.  </P>
+<P>&nbsp;</P>
+<P>M: &#9;Some explanation of it in …?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;His role.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Of his role..</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;In trying to get…all the credit is going to the creators of UNIX and I think that a little bit of it should have spread across to Doug, but getting acceptance of that is a little difficult.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Um hum. It seems to me that something of that sense (unclear) amidst every work that is said, there is a little bit of Doug McIlroy sticking in it.  Underneath the surface.</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Yes, you see Doug is a facilitator.   He had a great deal to do with the nature of the group, the sorts of discussions they had, the sorts of things they did.  He had a lot to do specifically with the manual.  Now you may think of that as a terrible job, but don’t think of it that way.  The manual was, the fact that there was a manual.  That he insisted on a high standard in the manual, meant that he insisted there was a high standard in every one of the programs that was documented.  When they say if they have just done to produce the next edition of the manual… the work that had gone into producing the manual.. had involved re-writing all sorts of programs in order that they should meet the same high standard.  And then added to all of that, it was probably the first manual that ever had a section with bugs in it.  That’s a level of honesty you don’t find.  It wasn’t that they documented the bugs but were too lazy to fix them, they fixed a lot of bugs - but some of them weren’t so easy to fix, or there were uncertainties as to what they would do - so they documented that. I think a level of intellectual honesty was present in that activity that was rare.  Most people gloss over the (unclear) of their system’s research activities, they are not true scientists.  Doug is a true scientist.</P>
+<P>&nbsp;</P>
+<P>MSM: &#9;Do you think the fact that, that this was a - heaven knows how to choose the adjective here - underground operation or unapproved operation led to - I don’t want to say led to it, but contributed to that intellectual honesty. That is, here is something that we can’t ever market, here is something that we are doing for ourselves: we might as well be honest about what we are doing? </P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Well, maybe, but there are plenty of other things that are done under the same uh with the same lack of commercial pressure, but I don’t see any of them with a bugs page. It was more than that.  But the fact that the Consent Decree existed, that it implied that operating system was not a product of AT&amp;T in some way and that .. that the activity was not frowned on.  I think that it was probably not funded at the level that (name) wanted it to be funded at because its future role was not clear.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I get some difference of you…some from the literature, some from the few conversations I’ve had that its something that I want to pursue more.  About whether it was frowned on or not..</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Well…</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;They feel it wasn’t frowning, but others were seeing frowns there.</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Well, OK, that may be an interpretation, but I tell you another person to talk to if you get the chance… You probably have to do it sooner rather than later, is Max Mathews. Max Mathews was the director of 1122, organizations (unclear) Flannigan now heads, which is a sister organization to computer science.  Max in fact 1122 was primarily involved with wave form processing one way or another.  Max was in innovator in the use of minicomputers for his work.  He was interested in these things.  Max paid for the first PDP-11 that UNIX ran on.  Even though the work was being done in the computer science research center.  He simply thought that somebody ought to encourage this activity.  So ah, it isn’t that that money was put up by somebody with an agenda, other than supporting interesting things.  It wasn’t even his laboratory - he just put up the money.  There are many people who ah, will do there best to recognize good science and support it.  Nobody’s nose was put out of joint for that, that is the nature of the business.  And, I think it is fairly well recognized that uh you get uh three or four scientists in a room, all of whom work on the same subject, that they can have different views about the value or likelihood of a particular line of research.  And accepts that.  It isn’t completely out of the question that Max and his speech research activities might look over at what was going on in the operating systems arena and say ‘Hey that looks interesting.  I think that I’ll put some dollars that way.’  That’s how it happened.  It wasn’t a recognized upline project that got authorized…</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;This, I gather,  do you recall when it was that people generally become aware that they had something here…taking off?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Oh, I think that even the science research center knew that they had something real interesting even in (unclear) days.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;How about the rest of the company?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;[quietly] Oh, it took a while. Don’t know about it now. [louder] But there are people,  things grow slowly.  Max Mathews obviously though that it was interesting.  He had one person, Lee McMahon - who recently died - who was working with these folk, and maybe Lee was the person who go Max interested…</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;[Under his breath] I’d like to talk to Max.</P>
+<P>&nbsp;</P>
+<P>Fraser:  &#9;[quietly and reserved]  It is really unfortunate.  Um [pause] ya…Bell Labs tries to maintain within the research area, we try to maintain a balance between things which people simply think are good and interesting science and things which point at reasons for their application.  And we hope that by having a balance that we will- it is like investing some your money in guaranteed interest and some of it on the stock market.  Its probably a good policy to have a mixture of them, if you go one way too much and take too many risks you can end up not getting any return for your bucks, and on the other side if you are too conservative you’re not going to get your UNIX’s.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Has (unclear) changed that much?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;No, don’t think so.  There are a number of things.  I would say the  (break) emination [?] of the Consent Decree has changed a great deal.  Which is part of the </P>
+<P>&nbsp;</P>
+<B><P>*** End of Side One ***</P>
+</B><P>&nbsp;</P>
+<P>Fraser:&#9;the end of that he makes a statement of work.  Um that maybe the circumstances of UNIX may never be repeated.  And in particular he worries that today, even here, the circumstances would not allow so much neglect of such a promising activity.  And without that neglect the polishing and redesign that went into making it what it was, would never have happened.  Today and it is true that there is so much hunger for new technology, for getting it into the pipeline, that it takes a great deal of self restraint to give people the time to do a good job.  And in that sense the circumstances have changed.  Of course now, computing, in very many facets, is clearly much more urgently related to the product line - the potential product line is much broader. What the corporation decides to do is of course still evolving, but uh, it is quite clear that operating systems and compilers and all these things are now legal tender.  We have very much more interaction now then we used to with the rest of the corporation.  I would say we are much more towards the center of the focus of attention than we were. It isn’t because of UNIX.  It is because of divestiture and opportunity - the demise of the ’56 Consent Decree, which makes that the case.  Whether you can stand by and watch something of great promise slowly evolve through a really quite inefficient and understaffed um but high qualified staff, see that happen and let it happen at the pace that it has to happen in order to be done excellently.  Whether you can do that or not is the question, the open question that I think Dennis raised, and I don’t think yet that we can say clearly that we know how to do that. We are definitely struggling with that balance or how to balance exploitation of mind neglect, or not neglect, but um - let the artist finish the painting.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Um huh.  So that’s your perspective on it.  Your association with it came directly</P>
+<P> (unclear).</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Well the first thing was the, the file store that I built.  And I think it had no influence whatsoever on the future of UNIX.  It may be, I think it probably was the first file server that anybody ever built.  It was a modified version of the UNIX file system.  Really, I mean slightly modified.  But it had no real impact on the course of UNIX. And the second thing that I ever had any significant thing to do with was this design (unclear) system - designing integrated circuits.  Which did, which was an unusual application of the operating system. At the time it did have some influence.  In particular, it let to other circuit design H systems and now widely used by the company.  That was at a time when we had just acquired some Tektronix 4014’s.  Do you know what a 4014 is?  Its got this great big..</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Screen you throw up...pipelines…</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;And you’ve got a cursor um, two little wheels that you turn - that moves the cross-hairs. You can point to a piece of the screen that way. A rather clumsy process. You can draw pictures.  And it was an attempt to allow us to directly enter the schematics of circuits and gates…gates and all the rest of it…representations for the chips, pieces of chips and then a series of software packages that processed the data from that input to give us as much as possible without human intervention, a fabricated board.  It was a little dream driving it - which is that it was possible to push buttons until a little board popped out of the wall - all made.  Just a fantastic dream in those days, because it was an incredibly intense human activity at that time.  So the schematic input. I guess I did it about the same time that there was this,  that a similar thing was done at Stanford.  Sort of in parallel.  We purchased a semi-automatic ware machine and hooked it up to UNIX.  Up to the operating system. That gave us our way of making the circuit board. Indeed, we got it so that the placement, routing, checking all the processes that you need to do to make a circuit card were done.  And the model for that was troff, believe it or not.  There had been other design aids, there was a design aids system running at Bell Labs at that time running on the mainframe - not interactive - there were no schematic capture, and you didn’t hook the (unclear) on the output director.  But there were programs for doing parts of the job.  And they tended to be sort of model (unclear) data-based things.  I noticed that they didn’t evolve - the software got stuck.  I noticed that the troff, the text processing stuff, was evolving nicely.  The EQN preprocessors and so on and so forth.  And that having the files, the intermediate files, be ASCII strings even thought that wasn’t a very efficient representation, (break) rather than data-base, working off a data-base, seemed to be the key.  So I think the thing that characterized the UNIX (unclear) design aid system we built, was it was a bunch of little processors that passed string to one another, by and large. And it has turned out, indeed, to be a remarkably versatile structure.  Not the world’s most successful, uh, uh, efficient, but its evolved immensely.  We have a tremendously varied capability in this thing now for uh designing communicatorial circuits inside the read-only memories and designing PLA’s and doing layout and uh,  fabrication of multiwire circuits and quick connect circuits, wire-up circuits and so on and so forth.  All this great menagerie of capabilities has blossomed mainly because the interconnection between them is a very simple mechanism - namely the passage of strings.  And a language that I came up with at that time which was in fact modeled on troff.  You could have sublanguages buried inside the whole language, I mean, it could for example - troff - with a macro package using dot and a couple of letters or something to signify a command.  All of the programs are written to ignore the commands they don’t understand, just pass them straight through.  So EQN will recognize ‘dot’ eq and ‘dot’ en, but ‘dot’ t or something ‘t’, ‘tb’ or whatever they are ‘ts’ which come from tables, they pass straight though.  And the designed this package to do exactly the same thing, ripped off the idea from troff.  So each of these packages just interprets stuff that the package understands.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I see.</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;Turned out to be very powerful. So… I think it was really quit a successful uh …we only spent a few years on it and it took off.  I’m sorry, I’m not much help to you.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Oh, no, on the contrary, you’re doing, doing…(unclear) helping in part in creating that helping to recreate the atmosphere.  </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;I’ll tell you another person, if you want to understand the atmosphere, I’m pointing you off to other people that are hard to get, I’m sorry to do that but they are not all around - Peter Dennis.  He is somewhere around, he lives in the neighborhood.  Doesn’t work here anymore.  I would think that Flannigan’s secretary could find him.  He’s left Bell Labs and consults - I know he consults for Nynex and so on.  He worked for Max Mathews, was the proud owner of two DDP 224’s, at that time, and probably represented the person that was most interested in the minicomputer business, in 1970.  And although he probably, it was some while before he paid any attention whatsoever to using UNIX.  I think he could explain the attitude towards minicomputers at that time quite well, which was part of the environment here.  Bell Labs was one of the leaders, I would say, in the use of minicomputers.  Starting in the late 60’s, there were quite a lot of them here.  And in fact, the one that Ken used, the PDP-7 he used, was a castoff minicomputer that had been used for graphics.  Something of the flavor of computing in that time - I think Peter could give you a reading on it. Very strong influence, particularly on ..I think, Max Mathew’s attitude that you could use these little machines to do a great deal.  With lots of autonomy and so on.  A lot of the flavor that was present there and is sort of characteristic of many views you get of UNIX.  One… sort of aspires to the simple direct practical approach rather than the grandiose … (unclear) sledgehammer.  I think that in part, that in part grew out of the use of minicomputers around here.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Interesting thought…It’s ironic that …  I hear about all of these groups that had minicomputers and then I hear a story about a central group that couldn’t get a minicomputer for the longest while.. [Laughing]</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;They had one - it wasn’t a minicomputer.  It was a GE 645.  And they blew a bundle on it.  Eventually caused enough of a cuffuffle around here…I mean the conceptor really failed to deliver to his customers.  At that time the research organization was running the comp center and they failed.  </P>
+<P>&nbsp;</P>
+<P>M: &#9;Multics was their responsibility within the company?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Yes, sorry, I didn’t make that clear. Prior to that, the computer science research was running the comp center at Murray Hill.  And they had decided that what they should do is build this new time sharing system - Multics - on the GE 645.  And that would be the next generation, all modern, wonderful, computing service.  The people and the physicists who simply wanted to crunch numbers had to wait until that happened.  I’m inferring that they failed to deliver and eventually someone pulled the plug.  And the result of pulling the plug was, the comp center was separated out, budget moved away from computer science research, and the computer scientific research guild became small in number - all the others left or moved into the comp center or something, and the small number had to find their own future.  And that was the point in time at which I arrived.  They (unclear) very definitely.  Bell Labs is not going to harbor any grudge, that bright people are going to be doing any experiments.  However, people that thought…allowing any responsibility for something…do have a responsibility that they have to own up to.  I think that it was correctly recognized that this was an ambiguous situation having aligned responsibility with a research organization which had not managed to handle the line of responsibility really.  So I think the correct thing was done to separate it out.  But I am sure there were a lot of raw edges immediately after that happened.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I um until you said it hadn’t thought about that question, of living with the responsibility of that.  Also given what, given generally celebratory tones surrounding Project MAC and Multics.  So it is hard to put to recreate a time when that would have looked like a failure.  </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Bell Labs…of course you see there was another issue which is that Bell Labs was one third of that project.  MIT and GE were the other two pieces.  And we pulled out. That is not good for your relationships with your colleagues.  A lot of reasons for sore nose.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I should guess so.</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;It was a very complex time.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;1969 was just one hell of a year. [Laughing]</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Let me tell you, one other thing that you might… to my amazement when I arrived, the computing science research center as a result of this debacle did not have a lab.  The absolutely did not have any equipment to speak of apart from a few teletypes.  They used to have all this real-estate, which the comp center was in.  And it had all moved to the comp center, and they wouldn’t have had anywhere to put it really that had one.  They had a situation for example where they had Max Maxwell doing experiments in speech acoustics research, minicomputers coming out of his ears and the computing science research organization had mathematicians and no lab space.  Some of them weren’t mathematicians, they where interested in systems and they wanted their own computer.  So when eventually they did get their own machine, the next thing of course was to find some space to put it. That’s not the easiest thing in the world to achieve.  It was stuck up in the attic.  That gave it a certain character.  I think the organization regards itself - 1127 - regards itself as being something apart.  A smile upon the stupidities of the bureaucracy. Poke fun at it - they don’t stand and salute it.  Having your thing be in the attic is somehow consistent with that.  (Laughing) </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Bohemian </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Most definitely.  You might to learn and I really don’t want to publicize too many of these things.  There is a offbeat nature to this organization.  Has gone back to the Multics state.  Ken had a little alligator or something, for example, in the jar.  The story was what happened when the alligator got free?  (Laughing) They have done all sorts of things that are, have tested the bureaucracy.  I happened to do that.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;Could you classify them, at least some of them, as a community of hackers?</P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;I don’t know what a community of hackers is.  But, I would say there were.  Hackers are people who write programmers and think afterwards. They are very, very few of them and they are not tolerated.  A hacker is a person who writes programs, because he’s tired of his program. There is… there is…  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;There’s another definition of hacker, which I had in mind..  A person who likes to explore computing systems and refuses to accept closed doors.  </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;There is some of that.  But, there’s very strong sense of responsibility.  It could be that both of these are originally from Doug’s value set.  Doug was one of the people. Who in the early days, wished out loud that there were a process and standards associated with the publication of computer programs that were comparable with the publications of literature.  That is to say people were expected to read it.   Writers would expect it to be read.  They would be embarrassed if it wasn’t readable.  So on and so forth.  I’ve never been in a organization that was able to write literature of that nature.  But, I think there is a ethic, which says that the programs you write, should be well conceived and defendable.  Although you may write a few programs  that aren’t that way, you’re not proud of it.  So, in that sense they’re not happy.  So, in that sense they’re not hackers.   If the hacker is the opposite of that.</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I didn’t have (name)’s hacker as much as I had Minsky’s hacker, which is a person that does creative things, because one turns blind eye to the probing that is going on. </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;There is a great deal of programming.  The knapsack protocol and uh a lot of work in encryption here.  We’ve had some attention from the NSA from our efforts as people did.  We have some outstanding mathematicians here.  I would say that the level of education, of interest, broad interest of the programmers here is pretty good, I suppose.  Which is not at all common. So, lunch time conversation will center around all sorts of subjects, from what’s going on some strange moon and the planet someplace, to encryption problems. Whether something works or how you can make it work differently and so on and so forth.  However, there is a fairly strong sense of responsibility, social responsibility, which might be contributed to Doug.  I don’t know whether it comes from him, but it might. It basically says that you don’t hurt people.  So, they have not only do they have they been very effective  in discovering ways of breaking into systems.  But, they have led the charge within this company, towards finding middle ground between constraints which limit peoples ability to do things, and protection which limits people’s access to your information.  You have to find a middle there.  You can either lock things up so firmly that nobody can do any business with you or leave yourself wide open.  And I… Doug was chairman of Bell Labs committee, that was the first major effort organized to define the security policy at Bell Labs.  And they found a very nice middle ground.  I think they’ve done a fine job. And largely, because of what had been done here.  Fred Ramp for example wrote a program, which would run around and find the loopholes in your version of UNIX and tell you what to fix. So, they enjoyed doing all sorts of nice things like that.  Very clear and capable of driving holes in things.  I don’t think there’s I.. I spend a lot of time trying to make sure that the other members of management don’t go putting really secret stuff on their computer.  Because, I know there are programs around that which will decrypt them, if they are encrypted. There I know that there are people around who find their way into things they want to.  So, I wouldn’t want to feel that the information is not secure.  On the hand, many of the people who possess those tools are also very responsible with them.  So, I don’t have any serious concerns. That both sides of it are present here.  Fred Graham is the only person we have at the moment who is firmly in charge of that.  He has a lot to do with helping the rest of the company deal with crisis, when we find that people are invading (unclear) or something.  </P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I remember when I was in Holmdel. Whether it was a break in or an attempted break in… </P>
+<P>&nbsp;</P>
+<P>Fraser:&#9;Fred was the guy who they consulted about that.  I think by and large everybody has adopted a responsible attitude, even a playful attitude.  Playful but responsible attitude most of what is done.  I tend to do things a little off the wall.  I think all of them, well nearly all of them.  There have been things that were done, which were harmful in some way.  And they by and large are shouted down.   A guy put an (unclear)  bomb outside somebody else’s door, which had liquid nitrogen in it or something, but  those sort of things are fairly rare. More often than not I think, making fun of the stupidities of the corporation.  In all these corridors there is a little shower head.  The reason the shower head is there is that some part of this building they use for chemical research.  There use some dangerous chemicals some of which can get pretty lethal.  Any of it gets on you, you want to wash it off in a real hurry.   Before you get hurt.  So, they have these shower heads as we call them and it’s sort of stupid to put one in a software research organization.  But the bureaucracy says that if you should put one in one place, then you should put one everywhere.  So, the first thing they did was put towel out there and a bar of soap.  A lot of that goes on. [laughing]</P>
+<P>&nbsp;</P>
+<P>MSM:&#9;I was re-reading Ken’s Turing Award lecture last night.   I was struck by how sobering a talk that was.  I was also thinking of the ironies of it, given last year’s &#9;break-in.  Is there anything else I should know?</P>
+<P>&nbsp;</P>
+<P>Fraser: &#9;No.  That’s it.</P>
+<P>&nbsp;</P>
+<P>    (THE END OF TAPE)</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</FONT></BODY>
+</HTML>

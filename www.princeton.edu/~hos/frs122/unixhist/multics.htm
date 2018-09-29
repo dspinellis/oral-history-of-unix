@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title></title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>Multics </h2>
+
+<h3>Gordon M. Brown</h3>
+
+<p>This is the story of Unix. To fully understand the evolution
+of Unix, however, the story of Multics must first be told. Unix
+was born at Bell Labs out of the aborted attempt to make Multics
+the most advanced time sharing computer system yet available.
+When Bell Labs pulled out of the joint venture, in 1969, it
+brought with it numerous important ideas from Multics that would
+later serve to define Unix. Furthermore, the shift in momentum at
+Bell Labs, away from computing, created an environment of
+creativity and independent thought which was integral to Unix
+development. Multics, and Bell Labs decision to pull out of the
+Multics project, were multi-faceted influences in the history of
+the Unix time-sharing system. </p>
+
+<p>Multics, MULTiplexed Information and Computing Service,
+followed in the line of time sharing systems whose development
+was driven by the need for greater access to computing. A key
+proponent of this was J.C.R. Licklider, the head of ARPAs
+Information Techniques Processing Office, who sought to more
+efficiently integrate computers with human activities. IPTO
+funded many computer related projects at the time, as was the
+case with MITs Project MAC (Cambell-Kelly and Aspray, pg. 214).
+Project MAC (standing for <em>M</em>ultiple <em>A</em>ccess <em>C</em>omputers
+and also known as <em>M</em>an <em>A</em>nd <em>C</em>omputer in
+Marvin Minsky's Artificial Intelligence Lab) was headed by Robert
+M. Fano and included the Compatible Timesharing System. One of
+the earliest time sharing systems, CTSS was a fully functional
+system that could support up to 30 remote users and was an
+integral part of Project MAC. Yet by 1965 Project MAC had
+overloaded CTSS, and MIT had begun looking for a second
+generation time sharing system. This was the Multics project,
+which was intended as a dynamic, modular system capable of
+supporting hundreds of users. Joining MIT in the effort was
+General Electric and Bell Telephone Labs. GE had previously
+supplied hardware for the Dartmouth Timesharing System and
+provided a 635 mainframe (later to become known as the 645) for
+the Multics project (Cambell-Kelly and Aspray, pg. 215). Bell
+Labs, on the other hand, provided much of the programming
+experience. As a public utility, Bell was constrained by the 56
+Consent Decree which effectively limited independent computing
+endeavors, hence the Multics project was a perfect outlet for
+Bells computing talent and a great opportunity to build up its
+software writing capability. Together, these three groups sought
+to create a system that would set new standards for the computer
+as a utility. </p>
+
+<p>Multics was not simply intended as a replacement for the
+overloaded CTSS, it was meant to go beyond time sharing to create
+a community computing facility. An integral part of this was to
+make the system modular, so as to support growth and change. To
+enable this type of system to be maintained and to maximize
+lucidity within the coding for it, PL/I was chosen as the
+programming language. The development of the PL/I compiler was
+contracted out to Digitek (Multics History, pg. 3) and while
+waiting for the compiler to come back, the design of Multics was
+laid out in the Multics System Programmers Manual (MSPM)
+(Corbato, F.J., Saltzer, J.H., and C.T.Clingen, pg. 2). This
+methodical approach to the planning reflected the disciplined
+style that the programming team used to build the system, and was
+thought necessary to effectively manage the complicated nature of
+the project. The system was designed to include fault-free
+continuous operation capabilities, convenient remote terminal
+access and selective information sharing. One of the most
+important features of Multics was to follow the trend towards
+integrated multi-tasking and permit multiple programming
+environments and different human interfaces under one operating
+system. Doug McIlroy emphasized that it wasn't that it [Multics]
+allowed many people to share the cycles in the machine:</p>
+
+<blockquote>
+    <p><font size="2">It was that it allowed many people to work
+    in the same huge pot of data and it was this synergy of
+    sharing data, to be able to quickly look at other people's
+    files, pass messages around and so on, that was the best
+    thing that time sharing had to offer. The other was merely an
+    economic advantage, but the one of sharing was a
+    qualitatively different way of using the machines. </font></p>
+</blockquote>
+
+<p>Although this greatly increased the complexity of Multics it
+reflected the desire for an interactive system that could
+increase the capacity of the computer as a communications tool. </p>
+
+<p>Development continued on the system design for a year and
+still no PL/I compiler had appeared. This was attributed to the
+difficulties involved with implementing the full PL/I language.
+Doug McIlroy and Bob Morris took it upon themselves to create a
+backup for the system by using EPL/I (early PL/I) to write a
+compiler which produced output in EPL Bootstrap Assembler
+(Multics History, pg. 3). This was not only very slow in
+compiling, but was also limiting in the features that could be
+implemented using it. For example, McIlroy remarked that
+&quot;There were only two error messages, syntax error and
+redeclaration, and one warning, idiotic structure&quot; (Salus,
+Peter, pg. 28). This problem was compounded by the necessity of
+an unanticipated phase of design iterations due to gross
+discrepancies between the actual and expected performance of the
+various logical execution paths throughout the software. </p>
+
+<p>As a result, the project began to fall behind schedule,
+threatening the intermediate funding being provided by the
+Cambridge Project, an ARPA funded political science computing
+project (Multics History, pg. 4). Concern over the extent of the
+software problems soon became widespread and as early as 1967
+there existed growing doubts about the future of Multics. Sam
+Morgan, director of Computing Science Research at Bell Labs
+during this period, expressed his own concerns that Multics
+research was going very slowly and wasting effort, saying:
+&quot;It was becoming clear to people that Multics was an attempt
+to climb too many trees at once. The development was moving more
+slowly than had been expected and users were sighing with varying
+degrees of pungency.&quot; In fact, to the entire labs computing
+community, the failure of Multics to deliver promptly any sort of
+useable system was increasingly obvious. </p>
+
+<p>Consequently, Bell Labs pulled out of the project in March of
+1969, leaving GE and MIT to salvage what they could of the
+system. According to Berk Tague, it was Bill Baker who made the
+decision to pull the plug, saying &quot;Like Vietnam, he [Bill
+Baker] declared victory and got out of Multics.&quot; McIlroy
+echoed these thoughts, mentioning that Bell Labs &quot;had a
+million dollars worth of equipment in the attic that was sitting
+there being played with by three people. It became clear that we
+were a drag on the computer center's budget.&quot; This sudden
+loss of the Multics system was to have important consequences on
+the direction of computing at Bell Labs and on the creation of
+Unix. </p>
+
+<p>It was about this time that Sandy Fraser arrived at Bell Labs.
+An aeronautical engineer by trade, Fraser had been working with
+the ATLAS time sharing system in Cambridge, England, when he
+decided that the future of computing lay not in England, but on
+the other side of the Atlantic. He came with the hope of working
+on Multics and was quite startled to discover that it had been
+canceled, noting a similar reaction at Bell Labs: </p>
+
+<blockquote>
+    <p><font size="2">It was quite clear that we were in the
+    course of a fairly traumatic change for a lot of people. [For
+    example], the end of the 60s, was a time of change for all
+    universities. It used to be that the computing science
+    research communities used to run the computing centers for
+    the university. However, as the budgets grew, soon this
+    became less and less practical, [and] one by one the
+    universities started moving the computers from the
+    responsibility of the computer centers into the
+    administrative area.That is what happened when Multics
+    departed. </font></p>
+</blockquote>
+
+<p>With Multics gone, there was a decisive shift in the momentum
+away from computing at Bell Labs, as the administration sought to
+transfer impetus to other research areas. </p>
+
+<p>Characteristic of the time was the loss of computer science
+personnel to other departments or research organizations, and the
+absence of both space and funding for computer science projects.
+In fact, to prevent Multics from resurfacing, directors were
+discouraged from buying any machines big enough for Multics to
+run on. However, the group that was most involved with the
+Multics project (Ken Thompson, Dennis Ritchie, McIlroy and J.F.
+Ossanna) desired to continue the communal computing environment
+provided by Multics. They found an alternative to Multics in
+Unix. </p>
+
+<p>Unix, while not necessarily a reaction to Multics, certainly
+represented a different approach to the time sharing problem.
+Ritchie, a systems programmer at Bell Labs, expressed that
+&quot;it was really the combination of the disappearance of
+Multics and the fact that Ken [Thompson] had always wanted to
+write an operating system of his own [that] led fairly directly
+to Unix.&quot; He went on to explain another reason the
+programming group created Unix was that </p>
+
+<blockquote>
+    <p><font size="2">we didn't want to lose the pleasant niche
+    we occupied, because no similar ones were available; even the
+    time-sharing service that would later be offered under GE's
+    operating system did not exist. What we wanted to preserve
+    was not just a good environment in which to do programming,
+    but a system around which a fellowship could form (Dennis M.
+    Ritchie, pg. 1).</font> </p>
+</blockquote>
+
+<p>This mentality fostered a simple, yet effective system design
+based on the ideals of ease of use and close communication. </p>
+
+<p>Moreover, two key concepts had been picked up on in the
+development of Multics that would later serve to define Unix.
+These were that the less important features of the system
+introduced more complexity and, conversely, that the most
+important property of algorithms was simplicity. Ritchie
+explained this to Mahoney, articulating that: </p>
+
+<blockquote>
+    <p><font size="2">The relationship of Multics to [the
+    development of Unix] is actually interesting and fairly
+    complicated. There were a lot of cultural things that were
+    sort of taken over wholesale. And these include important
+    things, [such as] the hierarchical file system and
+    tree-structure file system - which incidentally did not get
+    into the first version of Unix on the PDP-7. This is an
+    example of why the whole thing is complicated. But any rate,
+    things like the hierarchical file system, choices of simple
+    things like the characters you use to edit lines as you're
+    typing, erasing characters were the same as those we had. I
+    guess the most important fundamental thing is just the notion
+    that the basic style of interaction with the machine, the
+    fact that there was the notion of a command line, the notion
+    was an explicit shell program. In fact the name shell came
+    from Multics. A lot of extremely important things were
+    completely internalized, and of course this is the way it is.
+    A lot of that came through from Multics.</font> </p>
+</blockquote>
+
+<p>As will be discussed later, the integration of numerous
+aspects of Multics design into Unix maintained the power of Unix
+as a time-sharing system. In contrast, the simplicity of the Unix
+system avoided many of negative facets of the Multics system, as
+Ritchie relates below: </p>
+
+<blockquote>
+    <p><font size="2">As far as other technical details, there
+    were enormous differences. The scale of not only both effort
+    and human resources, as well as machine resources, was just
+    incomparable. I forget now how big the Multics machine was,
+    it wasn't very big of course by today's standards, but the
+    first PDP-7 was tiny. [Unix was designed on] only 8k words of
+    memory, [whereas the machine Multics ran on had] 68k. So
+    there was a vast difference in complexity. And a lot of that
+    was forced just by conditions. But a lot of it really was a
+    sense of taste as well. One of the obvious things that went
+    wrong with Multics as a commercial success was just that it
+    was sort of over-engineered in a sense. There was just too
+    much in it. And it certainly explained why it took so long to
+    get going. Heavily consumptive of resources, of machine and
+    certainly in terms of people required to produce it. </font></p>
+</blockquote>
+
+<p>Ritchie's remarks reflect the impact of Multics failure on the
+computing atmosphere at Bell Labs and subsequently illustrate
+that the key to Unix was in avoiding these attributes through
+simple, well written programs. As Sam Morgan alluded to, &quot;if
+you order an operating system of a group of programmers, you get
+Multics. If you leave them to their own resources and
+imagination, things like Unix will grow out of their
+creativity.&quot; As discussed next, the development of the file
+system leading to Unix was clearly derivative of this mentality. </p>
+
+<p>&nbsp;</p>
+</body>
+</html>

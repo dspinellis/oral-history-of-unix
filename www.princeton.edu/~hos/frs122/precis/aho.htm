@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Generator" CONTENT="Microsoft Word 97">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.01 [en] (Win95; U) [Netscape]">
+   <TITLE>Aho Summary</TITLE>
+</HEAD>
+<BODY>
+<B><FONT SIZE=-1>A Summary
+of the Al Aho <a href="https://www.princeton.edu/~hos/frs122/transcripts/aho.htm">Interview</a>:</FONT></B><FONT SIZE=-1></FONT><FONT SIZE=-1></FONT>
+
+<P><FONT SIZE=-1>(Note that all citations refer to the page numbers of
+the transcript printed in 10-point Times New Roman, with 6 points interceding
+between paragraphs.)</FONT>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; As an undergraduate at the University
+of Toronto, Al Aho wrote his senior thesis on the minimization of Boolean
+functions. He then studied at Princeton with an assistant professor, John
+Hopcroft, and a graduate student, Jeff Ullman. For his electrical engineering
+general examinations, Aho selected computer science as his major, and communications
+theory and mathematics as his minors (1). After completing his thesis,
+he observed how Bell Laboratories scientists had co-authored many "key
+papers" in the "scientific literature" (3). Moreover, he noted how Hopcroft
+had close connections with Bell Labs and how Ullman had joined the Labs.
+Finally, he was very impressed with Doug McIlroy, whom he met during a
+job interview. So, in 1967, Aho decided to join Bell Labs (3). Like others
+in Bell Labs’ math center, he was treated almost as a consultant by other
+divisions. He soon realized that he had entered a place where "you were
+expected to be [at] the forefront of your field, and be able to interact
+with the forefront of your field" (14). He knew that, at Bell Labs, "the
+real contributions were the ideas" (14).</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; Once he joined Bell Labs, Aho co-authored
+a number of research papers, first with Jeff Ullman, and then with several
+other co-workers. He soon stumbled upon what would become the UNIX project,
+and found that using the early system "was a much nicer way to write papers
+than the old traditional way" (1). Through UNIX, Aho helped develop automata
+theory and its applications to programming language parsing and compilation.
+He initially worked on grammars that Donald Knuth<A HREF="aho.htm#†">†</A> had
+defined in the mid 1950s (6). Aho fleshed-out portions of the linguist
+Noam Chomsky’s hierarchy of grammars that he would eventually apply to
+computing (2).</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; In this way, Aho hoped to provide
+a theoretical basis for designing and analyzing algorithms, especially
+those well-suited for translating high-level programming language source
+code into the object code that computers actually run (3). He had noticed
+that "the scientific literature, if you could call it that, was very inaccurate....
+The proofs did not hold" (6). He wanted to build a "scientific base" on
+which one could "iterate and improve" algorithms and techniques, and thereby
+construct an "engineering design theory" that would make one's work "unassailable"
+(9). Aho recognized the power of formal, mathematical methods, and found
+them invaluable for creating pattern-matching algorithms — algorithms that
+would prove essential for parsing streams of source code. Also, he acknowledged
+his debts to Doug McIlroy, with whom he frequently conversed about "very
+unusual words," such as "the longest word in English...that has no repeated
+letter" — riddles that formalism ultimately trivialized (7).</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; In any event, Aho and Steve Johnson
+eventually used automata theory to automate the construction of parsers
+from the mathematical grammars that specify programming languages. Johnson
+implemented <FONT FACE="Courier New">yacc</FONT>, which automatically translated
+a grammar into a parser of lexical units, and <FONT FACE="Courier New">lex</FONT>,
+which automatically grouped characters from a byte stream into lexical
+units. Thus, Aho and Johnson essentially automated a task that was once
+"considered worthy of a Ph.D. thesis" (4). Using <FONT FACE="Courier New">yacc</FONT>,
+Brian Kernighan and Lorinda Cherry generated the <FONT FACE="Courier New">troff</FONT>
+preprocessor known as <FONT FACE="Courier New">eqn</FONT>, a package for
+typesetting mathematics. Via <FONT FACE="Courier New">eqn</FONT>, Kernighan
+and Cherry demonstrated the flexibility and power of formal methods; <FONT FACE="Courier New">eqn</FONT>
+successfully realized Kernighan’s "philosophy that language should be like
+what a professional uses to communicate, the description of those objects
+over a telephone" (4). Aho always prized scientific, formal methods: During
+his work with pattern matching, he "was astonished to discover that the
+program [based on a deterministic automaton] that I [he] had written ran
+several times faster than what this machine language program did [<I>sic</I>]"
+(7).</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; Later, Aho and Johnson theorized about
+optimizing the output code of automatically generated compilers. Along
+with others in the UNIX group, they scientifically tested the speeds of
+C programs on different computing machine architectures, and thereby developed
+CRISP, a RISC computer optimized for running the stock of C programs in
+which Bell Labs had an "enormous investment" (8). Also, Aho noticed how
+"newer [programming] languages are much easier to lexically analyze and
+to syntactically analyze...the technology has shaped the structure of today's
+languages, to some degree" (9). He saw computing as a scientific enterprise
+whose testing ground was reality, or, rather, speed, power, and reliability.
+In contrast, he viewed the AI community as having made "unsubstantiated
+claims" that "can't be justified by scientific experiment" (14).</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; According to Aho, unlike AI, UNIX
+contained "a great deal of Darwinism" (10). For example, when Kernighan
+and Cherry developed <FONT FACE="Courier New">eqn</FONT>, "they got a rudimentary
+form of the language processor to be up and running, and then they let
+their friends use it. Then the language evolved on the basis of usage patterns"
+(10). According to Aho, the UNIX group realized "very early in the game...that
+computing is a worldwide fellowship. Computing is not done in isolation.
+We like to have access to other people's ideas, programs, information"
+(12). The key is to constantly "refine" one's products by scientific evaluations,
+and not to adopt a "dogmatic approach" centered on an "august committee"
+such as those some European language designers had formed (10). Aho appreciated
+that "there was a great spirit in that UNIX room, in the early days, of
+a lot of camaraderie and discussion" (10).</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; In addition to this "spirit," Aho
+found byte streams and pipes absolutely essential to the development of
+UNIX. Aho saw byte streams as "the common denominator" in UNIX, which had
+the quintessential property that "you can compose functions on a byte stream"
+(11). Interestingly, even though McIlroy had never published a paper on
+such function composition, Aho attributed this idea of pipes to Doug McIlroy,
+who "has had these great seminal ideas which not everyone knows about"
+(11). Aho cherished "Doug's abilities to comprehend work on a broad front
+[even with only ‘cursory’ explanations], and also to appreciate the economy
+of expression that theoretical models gave to the work" (11). Moreover,
+Aho noted how McIlroy had "a flair for language, a flair for economy of
+expression" (3). Aho decided that "UNIX would not be the way it is today
+without Doug. And, also, I don't think the work that I would have done
+would have had the encouragement..." (11). Thus, as Professor Mahoney remarked,
+Doug McIlroy seems to be "the gray eminence" in the history of UNIX (11).</FONT><FONT SIZE=-1></FONT>
+
+<P><A NAME="†"></A><FONT SIZE=-1>† Knuth is probably the most famous and
+influential modern computer scientist. In addition to writing many foundational
+articles, he has produced the definitive 3- to 7-volume series, <I>The
+Art of Computer Programming</I>.</FONT>
+</BODY>
+</HTML>

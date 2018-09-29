@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>Doug McIlroy</TITLE>
+</HEAD>
+
+<BODY bgcolor="white">
+The following is an account of an <a href="https://www.princeton.edu/~hos/frs122/transcripts/mcilroy.htm">interview</a> with Doug McIlroy,
+head of department where UNIX started.
+<BR>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In 1969, Bell Labs decided to
+get out of the Multics project.&nbsp; It became clear that Research was
+a drag on the Computing Center's budget.&nbsp; "They had a million dollars
+worth of equipment in the attic that was sitting there being played with
+by three people. ...A clean, sharp decision was made to get out.&nbsp; The
+project did not wind down.&nbsp; It just stopped."
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With the experience gained from
+Multics, "Ken Thompson began to build his own operating system for the
+giant 645, starting from scratch."&nbsp;&nbsp; In the wee hours of the
+night, Thompson would take the system down when nobody was using it.
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At the same time, the development
+group was still working.&nbsp; The Computer Center still owned the machines
+and was separate from Research.&nbsp; So Computing Research had no computers.&nbsp;
+"Visual and acoustics research had had computers for some time."&nbsp;
+They were interested in listening to signals in real time and make digital
+filters, but this ate up all the cycles of the machine.&nbsp; As more and
+more minicomputers came available, Visual and Acoustics Research kept getting
+them.&nbsp; They had nice hardware, and we would comment on how inefficiently
+they were using their cycles.&nbsp; Because they really didn't like making
+software, when things got tough, they would just buy another machine.&nbsp;
+And if the machines got a little faster, they would just throw out the
+old one.&nbsp; That was the origin of the PDP7."
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The PDP7 had an improved graphics
+engine, that had been sitting idle.&nbsp; "That's what Thompson grabbed
+and finally used to build early versions of Unix on."&nbsp; As Thompson
+brought along his operating system, Ritchie joined in.&nbsp; McIlroy also
+saw its potential, and, being head of the department, he muscled in.
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; One place that McIlroy exerted
+managerial control of Unix was in pushing for pipes.&nbsp; The idea of
+pipes goes way back.&nbsp; McIlroy began doing macros in the CACM back
+in 1959 or 1960.&nbsp; Macros involve switching among  many data streams.&nbsp;
+"You're taking in your input, you suddenly come to a macro call, and that
+says, stop taking input from here, go take it from the definition.&nbsp;
+In the middle of the definition, you'll find another macro call.&nbsp;
+Somewhere I talked of a macro processor as a switchyard for data streams.&nbsp;
+...In 1964, [according to a] paper hanging on Brian's wall, I talked about
+screwing together streams like garden hoses."
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "On MULTICS, Joe Osanna, ... was
+actually beginning to build a way to do input-output plumbing.&nbsp; Input-output
+was interpreted over this idea of the segmented address space in the file
+system: files were really just segments of the same old address space.&nbsp;
+Nevertheless, you had to do I/O because all the programming languages did
+it.&nbsp;&nbsp; And he was making ways of connecting programs together."
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; While Thompson and Ritchie were
+laying out their file system, McIlroy was "sketching out how to do data
+processing by connecting together cascades of processes and looking for
+a kind of prefix-notation language for connecting processes together."
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Over a period from 1970 to 1972,
+McIlroy suggested proposal after proposal.&nbsp; He recalls the break-through
+day:&nbsp; "Then one day, I came up with a syntax for the shell that went
+along with the piping, and Ken said, I'm gonna do it.&nbsp; He was tired
+of hearing all this stuff."&nbsp; Thompson didn't do exactly what McIlroy
+had proposed for the pipe system call, but "invented a slightly better
+one.&nbsp;  That finally got changed once more to what we have today.&nbsp; He
+put pipes into Unix."&nbsp; Thompson also had to change most of the programs,
+because up until that time, they couldn't take standard input.&nbsp; There
+wasn't really a need; they all had file arguments. "GREP had a file argument,
+CAT had a file argument."
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The next morning, "we had this
+orgy of&nbsp; `one liners.'&nbsp; Everybody had a one liner.&nbsp; Look
+at this, look at that.&nbsp; ...Everybody started putting forth the UNIX
+philosophy.&nbsp; Write programs that do one thing and do it well.&nbsp;
+Write programs to work together.&nbsp; Write programs that handle text
+streams, because that is a universal interface."&nbsp;&nbsp; Those ideas
+which add up to the tool approach, were there in some unformed way before
+pipes, but they really came together afterwards.&nbsp; Pipes became the
+catalyst for this UNIX philosophy.&nbsp; "The tool thing has turned out
+to be actually successful.&nbsp; With pipes, many programs could work together,
+and they could work together at a distance."
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; APL influenced the development
+of pipes.&nbsp; APL did not allow the use of operators with variants, which
+many utilities had at the time.&nbsp; It only took a willingness to throw
+in a new separator, the vertical bar.&nbsp; About four years passed, from
+the time they started talking about developing a new separator, to the
+time it happened.
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To most of the Research group at
+Bell Labs, the computing theory was there on the side, while they had functionality
+to deal with.&nbsp; Most of the group members were more computer types
+than mathematicians, even though they wrote papers occasionally with mathematical
+notation.&nbsp; McIlroy went to Oxford for a year, solely to "imbibe the
+notion of semantics form the source."&nbsp; The Research group included
+system builders like Thompson, and theoretical scientists like Aho.&nbsp;
+"Aho handed out paper after paper of slightly different models of parsing
+and automata, and that was supported with the overt idea that one day [it]
+would feed computing practice."
+
+<P>&nbsp;&nbsp;&nbsp; "There is a case where there's absolutely no doubt
+that, overtly, theory fed into what we did.&nbsp; When the sound theory
+of parsing went into a compiler-writing system, it became available to
+the masses.&nbsp; There are lots of other places where theory is an inspiration,
+or it's in the back of your mind."&nbsp; Thompson wrote one famous recognizer,
+which is still used in GREP.&nbsp;&nbsp; And Aho decided that he was going
+to take that part of automata theory, and so he built EGREP.&nbsp; "So,
+you have the deterministic [parser] in EGREP, and the nondeterministic one in
+GREP."
+
+<P>&nbsp;&nbsp;&nbsp; "I think really that YACC and GREP are what people
+hold up as the `real tools' and they are the ones where we find a strong
+theoretical underpinning.&nbsp; TROFF has none.&nbsp;&nbsp; [While]
+it's used, and indispensable, nobody holds it up as a programming
+gem."
+
+<P>&nbsp;&nbsp;&nbsp; This concludes what is contained in the interview,
+as it relates to Unix.
+<BR>&nbsp;
+</BODY>
+</HTML>

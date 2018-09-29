@@ -1,0 +1,471 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>The Dissemination of UNIX within Bell Labs</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>The dissemination of Unix, with a focus on what went on
+within Bell Labs</h2>
+
+<h4>Steve Chen</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; One of the appealing characteristics
+of the Unix operating system is its efficiency. This aspect of
+Unix arose out of two factors. First, the researchers at Bell
+Labs were working on small machines to create Unix. Second, the
+desire for efficiency was a natural reaction to the complexity of
+Multics which turned out to included much code that didn't have
+anything to do with the operating system. Ken Thompson and Dennis
+Ritchie understood what to leave out of an operating system
+without impairing its capability. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; The way in which the Unix operating
+system evolved in AT&amp;T and within Bell Laboratories was
+complementary to the philosophy that underlay the development of
+Unix. When Unix evolved within Bell Laboratories, it was not a
+result of a deliberate initiative by managememt. Rather, it
+spread through channels of technical need and technical contact.
+The popularity of Unix was not the result of some grand
+advertising campaign, nor was it the result of brilliant
+marketing strategy. Instead, departments at Bell Laboratories
+came to know Unix simply because it was the most efficient and
+flexible operating system available at that time. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Unix had several advantages. First of
+all, it was written in a high level language, C, rather than in
+assembly language as were almost all of the previous operating
+systems. This in turn meant improved portability. Unix eventually
+became the only operating system to run on supercomputers and
+micros alike. Also, the concept of pipes allowed streams for
+connecting processes together. The Berkeley System Distribution
+(BSD) added many of the network features such as sockets, and
+many of the software tools came in with System V. Unix featured
+simple treatment of files and devices. It was flexible enough to
+be used on systems of all sizes, and its workbench concept
+provided the user with an easily extendible toolset. <!--webbot
+bot="PurpleText"
+preview="Removed: &quot;Another aspect of the flexibility of Unix is that it is user-centered, as opposed to MS-Windows which is PC centered. &quot;  Windows is simply not relevant to this story.  Indeed, the second half of the paragraph has little bearing on the spread of Unix within BTL in the mid-'70s."
+--></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; After the withdrawal from Multics, as
+researchers in Bell Laboratories were searching for the operating
+system that Multics failed to become, the Bell System was faced
+with the problem of automating its telephone operations using
+minicomputers. According to Berk Tague, &quot;The discovery that
+we had the need-- or actually, the opportunity-- in the early
+'70s to use these minis to support telephone company operations
+encouraged us to work with the Unix system. We knew we could do a
+better job with maintenance, traffic control, repair, and
+accounting applications.&quot; (&quot;Interview with Berkley
+Tague,&quot; <em>Unix Review</em>, June 1985, p.59.) Tague
+continues, &quot;The existing systems were made up of people and
+paper. The phone business was in danger of being overwhelmed in
+the early '70s with the boom of the 60's. There was a big
+interest then in using computers to help manage that part of the
+business.&quot; Coming into the late 1960's, the New York Public
+Service Commission and other such regulatory bodies began putting
+pressure on AT&amp;T to solve what was termed as a &quot;service
+crises.&quot; This pressure led AT&amp;T in search of
+technological advances that would make its support operations
+more efficient. This search eventually led to Unix. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; At first, AT&amp;T had looked for
+operating systems from outside vendors. However, it turned out
+that the vendor operating systems that were available simply were
+not adequate. Also, during that time, a number of people had
+already started building their own operating systems. Thus,
+AT&amp;T launched into the development of Unix to satisfy its own
+needs. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Berk Tague played a major role in
+providing support for the Unix system. He had been responsible
+for systems engineering as head of the Computer Planning
+Department. It was Tague who pushed for Unix to be adopted and
+made the internal standard. In September of 1973, he had in place
+an organization called Unix Development Support to provide
+support for a standard Unix. In an interview with Michael S.
+Mahoney, Tague talks about how he get started in Unix. </p>
+
+<blockquote>
+    <p>I got into the Unix business... in September of '73 [and]
+    I got permission to put together the first Unix support group
+    in Bell Laboratories. I put a supervisory group together and
+    staffed that up. And at that time I was also interested in
+    supporting MERT. I thought I'd do MERT for real time and Unix
+    for a time sharing kind of application. MERT never got off
+    the ground. We wasted energy on that. Though MERT actually
+    got embedded in some of the Unix line systems that underlined
+    the ESS processors... But I was driven by my customers. When
+    I went into business all of my customers knew more than my
+    people did. So we spent the first year in documenting the
+    product, getting an LDI to Western that made it an official
+    product which is a submission of design information that had
+    to be done. And my people [were] learning to be as good as
+    their customers were in understanding what it was we had. But
+    we quickly got to the point where we understood what the
+    business was and we were trying to gain control of the
+    customers... We ended up just at the end putting in a lot of
+    that stuff in Unix to hold it together. (Berk Tague,
+    Interview with Michael S. Mahoney.)</p>
+</blockquote>
+
+<p>This organization, along with Bell Labs Research, agreed on
+the need for Unix portability. The goal was to allow Unix to
+become an interface between hardware and software that would
+allow applications to keep running while the hardware underneath
+was changing. The fact that Unix was later rewritten in C meant
+that it was no longer machine dependent. The decision to rewrite
+Unix in C came from Ritchie and Thompson. This was a major
+breakthrough in portability for the Unix operating system. Tague
+recounts his first sale of Unix, </p>
+
+<blockquote>
+    <p>I vividly remember the first guy I sold Unix to. There was
+    a fellow here at Whippany and he'd gotten a crew of pretty
+    good programming talent off of Safeguard. They'd never
+    written for anything but large machines. They'd never done an
+    operating system before or a compiler or anything very
+    sophisticated in the way of systems software. And they had a
+    schedule that said they were going to buy a PDP-11... build
+    an operating system... write their own language and they were
+    going to compile an application that was going to be in the
+    field in the spring. I came around to review this purchase.
+    And I sat down with... a fella named Jan Norton... and he and
+    I were eyeball to eyeball pretty quickly... I said, 'Look,
+    here's the deal: I understand you guys will probably want the
+    world's most portable operating system, but what I'm going to
+    insist you do, is you pick up Unix and that you use it as a
+    basis for your development because it'll get this machine
+    running. And if you don't do that you don't have a prayer.
+    I'll bet you money on that.' So I said, 'You can go on and do
+    your own operating system.' Of course I knew what would
+    happen when they got this thing up, and they really realized
+    what they were up against. UNIX would be the only way they
+    had a prayer of getting anything done even close to the time
+    schedule. And indeed that was... and I repeated that process
+    with several people and the PDP-11 DEC had a good reputation.
+    It was clearly the machine they liked. (Ibid.)</p>
+</blockquote>
+
+<p>Unix sold because it was the most effective operating system
+for the job at hand. Along with Unix came various software tools
+such as the programmer's workbench and a technical staff to
+support the operating system. This type of marketing and support
+mirrored that of telephone systems at Bell Labs. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Providing support for Unix was a
+major part of Tague's work at Bell Labs. In this sense, selling
+Unix was like selling telephone systems. One couldn't just sell
+the product and be done with it. When selling Unix, one also sold
+people to help support Unix. </p>
+
+<blockquote>
+    <p>I've always seen the business as having three layers.
+    There's always been a top and middle and a small. And those
+    have changed their definition over the years but from about
+    the end of the '60s on I can always find those three layers
+    and they're defined not just by machine size but the approach
+    to the marketing machine was bundled is how it is. And it
+    ranges from the large end which is this thing when you buy a
+    machine we put people on your premises. It's all a package.
+    The unbundling of course has attacked that a little bit but
+    it still stems from that tradition. It's very much
+    seen.&quot; (Ibid.)</p>
+</blockquote>
+
+<p>When talking of the support for Unix in Bell Labs, Tague says,
+</p>
+
+<blockquote>
+    <p>It was clear that people wanted central support for UNIX.
+    For a developer to take an uncommented batch or code from
+    Research would normally be impossible. But you see these guys
+    had (hooked) themselves. Because they were promising to write
+    their own operating system from scratch. So I could point out
+    to them, 'Look, you're going to have to support an operating
+    system, so you might as well support one that exists. And
+    don't tell me it's going to be easier to write your own and
+    to beat this guy who's doing his third operating system.' And
+    by that time it was beginning to get some momentum. So that
+    was a seller. But I knew life would be easier if we had
+    central support. So I went to my boss and in effect what we
+    agreed to do was to split the planning department into two
+    pieces. And I took on a department that became UNIX-MERT
+    development... (Ibid.)</p>
+</blockquote>
+
+<p>When talking about the PWB programmer's workbench-- a set of
+tools that were started up independently but eventually grew to
+become a tightly held complement of Unix-- Tague says, </p>
+
+<blockquote>
+    <p>And there were very good tools that Dick and his people
+    had produced on the PWB for managing code and doing code
+    control and that sort of thing. Dick was not very patient for
+    that, but he appreciated [it]; his managers needed it. We
+    referred to them as a manager's &quot;Linus' blanket,&quot;
+    and there was a certain amount of fairness about it.&quot;
+    (Ibid.)</p>
+</blockquote>
+
+<p>Clearly, Unix was a very marketable product. However, the
+transition from the research environment to the sales department
+still had to be made. In addition, there was the need to
+standardize Unix in order to present it as a marketable product.
+Tague was a key player in facilitating this transition. </p>
+
+<p>When the idea of marketing Unix as a product was presented to
+Research, it was not very well received. Nonetheless, Research
+eventually agreed to Tague's proposal. </p>
+
+<blockquote>
+    <p>... I had this vision we ought to be able to take Unix as
+    an operating system but as a company we can support this as
+    an internal standard operating system along with C in an
+    environment. And then we can then front end a large external
+    agency and commercial agency in this. With the idea that
+    people would sort of see the machine and use a common front.
+    It was not well received by Research... My story is they may
+    not have appreciated it but it all came true. That really is
+    pretty much the way the business has gone. (Ibid.)</p>
+</blockquote>
+
+<p>In his interview with Tague, Mahoney asks, &quot; Did you
+decide at a certain point then that it was time to take over the
+latest version of Unix and standardize it?&quot; Tague replies, </p>
+
+<blockquote>
+    <p>Yes, as I say, in '73 it was apparent that we needed the
+    support and the right thing to do was to go up to Research
+    and tell Ritchie... And we synchronized reasonable well in
+    that and my people took care of the dog work of putting
+    together the design information files and things that Western
+    required in order to capture the configuration and to do
+    configuration control. (Ibid.)</p>
+</blockquote>
+
+<p>By 1976 Unix support was established, and Unix internally was
+a sole product. </p>
+
+<blockquote>
+    <p>In September of '78 Jack Scanlon was putting together the
+    initial computing business center... I guess there were five
+    of us. I was brought in for Unix, Lee Thomas was brought in
+    for the MAC-8 micro-processor chip, Nick Maralotto was
+    brought in for some of the software support tools for Jay and
+    Dick Haddon... I believe there was another whole hardware
+    center that did the 3B development... [We] tried to put
+    together a single Unix that would sell very easily across the
+    board in those places... The C machine was all very nice but
+    they really wanted to have the hottest Unix in the
+    marketplace out there... [that] the 3B should sell itself
+    because it was the hottest Unix box around was the idea
+    behind it. (Ibid.)</p>
+</blockquote>
+
+<p>The 3B machines were mostly used within Bell Laboratories, and
+very few were picked up outside the Labs. </p>
+
+<p>In 1973, the first Unix applications were installed on a
+system involved in updating directory information and
+intercepting calls to numbers that had been changed. This was the
+first time Unix had been used in supporting an actual, ongoing
+operating business. Soon, Unix was being used to automate the
+operations systems at Bell Laboratories. It was automating the
+monitoring, involved in measurement, and helping to rout calls
+and ensure the quality of the calls. Tony Cuilwik states, </p>
+
+<blockquote>
+    <p>Among the varied and wide-ranging functions these systems
+    perform are network performance measurement, automated
+    network testing, circuit order planning, circuit order record
+    keeping, automated trouble detection, automated or directed
+    trouble repair, service quality assurance, quality control,
+    inventory control, customer record-keeping, and customer
+    billing-- as well as any number of other operational and
+    administrative functions. These functions all require the
+    ability to present data to users in real time.&quot;
+    (&quot;Reach out and Touch the Unix System,&quot; by Tony
+    Cuilwik, &quot;Unix Review,&quot; June 1985, p.50.)</p>
+</blockquote>
+
+<p>Cuilwik, who was the head of the Operations Systems
+Development Department at Bell Laboratories and later the
+director of AT&amp;T Information Systems Laboratories at
+Columbus, Ohio, relates the object in these systems was &quot;to
+guarantee a minimal acceptable human response time. This
+challenge has been met by tuning the underlying Unix
+system.&quot; (Ibid.) In the end, the fundamental integrity of
+the national telecommunications network came to depend on over
+1000 real-time, mini-computer-based systems that were all built
+on a version of the Unix operating system. </p>
+
+<p>Because AT&amp;T was not in the business of selling operating
+systems, Unix soon became readily available to academic
+institutions at a very small charge. There were numerous reasons
+for the friendliness the academic society, especially the
+academic Computer Science community, showed towards Unix. John
+Stoneback relates a few of these: </p>
+
+<blockquote>
+    <p>Unix came into many CS departments largely because it was
+    the only powerful interactive system that could run on the
+    sort of hardware (PDP-11s) that universities could afford in
+    the mid '70s. In addition, Unix itself was also very
+    inexpensive. Since source code was provided, it was a system
+    that could be shaped to the requirements of a particular
+    installation. It was written in a language considerably more
+    attractive than assembly, and it was small enough to be
+    studied and understood by individuals. (John Stoneback,
+    &quot;The Collegiate Community,&quot; Unix Review, October
+    1985, p. 27.)</p>
+</blockquote>
+
+<p>Stoneback also relates how research Unix aided academic
+computer science departments in establishing and developing
+research in computer science. </p>
+
+<blockquote>
+    <p>Unix had another appealing virtue that many may have
+    recognized only after the fact -- its faithfulness to the
+    prevailing mid-'70s philosophy of software design and
+    development. Not only was Unix proof that real software could
+    be built the way many said it could, but it lent credibility
+    to a science that was struggling to establish itself as a
+    science. Faculty could use Unix and teach about it at the
+    same time. In most respects, the system exemplified good
+    computer science. It provided a clean and powerful user
+    interface and tools that promoted and encouraged the
+    development of software. The fact that it was written in C
+    allowed actual code to be presented and discussed, and made
+    it possible to lift textbook examples into the real world.
+    Obviously, Unix was destined to grow in the academic
+    community. (Ibid., p. 27)</p>
+</blockquote>
+
+<p>At its outset, Unix was very compatible with academic
+institutions. Not only was it a capable operating system, but it
+also provided professors with a model for teaching the newly
+emerging field of Computer Science. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The power of Unix as a tool in the
+computer science research field was also been felt. By using Unix
+as a basis for operating systems research, researchers have
+benefited in three major was. First, the portability and
+flexibility of Unix gave researchers a means through which they
+could verify each other's experiments by way of a common
+operating system. Second, researchers were able to use the solid
+base of systems software provided by Unix to build on the work of
+others and to approach problems without wasting time by
+developing all the pieces from scratch. Third, by allowing both
+research and computing to be carried on within the same system,
+Unix made it possible for researchers to move results from the
+laboratory to the production environment rather quickly. This
+speed is mandatory for state-of-the-art computing. <!--webbot
+bot="PurpleText"
+preview="This last claim moves well beyond what the sources support."
+--></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Though AT&amp;T gave Unix to the
+academic community at a very low cost, the academic community
+gave back to Unix in the form of testing and contributing to the
+system. An example of this is the virtual memory version of Unix
+for the VAX computer which was created by Babaoglu and Porker at
+UC Berkeley and later optimized by Bill Joy. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Within Bell Labs, as Unix was being
+used for real-life applications, bugs would be discovered and
+reported back to the programmers. There were also situations
+where the departments using the Unix system would create new
+applications for their own tasks. It was the job of the research
+labs to provide maintenance for Unix, update the software, and
+reporting the discovered bugs to the programmers and distributing
+the fixes. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The support group for Unix became
+important in 1978 when Bell Labs started to depend heavily on the
+Unix system for their operations. This trend began to show itself
+with the introduction of Edition 7. At this point, the vision of
+the support group was to develop a polished and more stable
+version of Unix, while at the same time stabilizing the system so
+that everything would run smoothly at Bell Labs. Unix was being
+used as the operating system basis for many of the support
+systems in the Bell Operating Companies, and Bell Labs simply
+could not afford to let these support systems go down. Meanwhile,
+in academia, Unix users were responsible for their own
+maintenance. This fostered a community of Unix users who were
+willing to help one another. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;UUCP was introduced with the Version 7
+Unix. This was used to pioneer the advance of Usenet News. Usenet
+News was a step forward from ARPANET, and was embraced
+enthusiastically by the academic community, as it made
+inexpensive electronic communication available to all of its
+members. Through Usenet, a community was formed which was
+democratic in the purest sense. It was a community that supported
+it members and in turn was nurtured by the people it served. It
+was open to new ideas, open to change, and generous with its
+benefits. In 1980, a survey conducted by the Computer Science
+Research Network (CSNET) of academic institution revealed that
+over 90 percent of all departments were served by one or more
+Unix systems. Usenet truly was a landmark in the history of the
+dissemination of Unix, as it displayed in bright colors the
+solidarity of the Unix community in the vast and dynamic world of
+computing. </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The popularity of the Unix operating
+system grew because it was innovative and was written efficiently
+in a high level language with code that could be modified to fit
+individual preferences. The key features and characteristics of
+Unix that held it above other operating systems at the time were
+its software tools, its portability, its flexibility, and the
+fact that it was simple, compact, and efficient. The development
+of Unix in Bell Labs was carried on under a set of principles
+that the researchers had developed to guide their work. These
+principles included: </p>
+
+<blockquote>
+    <p>(i) Make each program do one thing well. To do a new job,
+    build afresh </p>
+    <p>rather than complicate old programs by adding new
+    features. </p>
+    <p>(ii) Expect the output of every program to become the
+    input to another, as yet unknown, program. Don't clutter
+    output with extraneous information. Avoid stringently
+    columnar or binary input formats. Don't insist on interactive
+    input. </p>
+    <p>(iii) Design and build software, even operating systems,
+    to be tried early, ideally within weeks. Don't hesitate to
+    throw away the clumsy parts and rebuild them. </p>
+    <p>(iv) Use tools in preference to unskilled help to lighten
+    a programming task, even if you have to detour to build the
+    tools and expect to throw some of them out after you've
+    finished using them.&quot; </p>
+    <p>(M.D. McIlroy, E.N. Pinson, and B.A. Tague &quot;Unix
+    Time-Sharing System Forward,&quot; The Bell System Technical
+    Journal, July-Aug 1088 vol 57, number 6 part 2. P. 1902)</p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The amazing aspect of Unix lies in the
+philosophy that was used in creating the system and then realized
+in the dissemination of Unix first within Bell Labs and later
+among the academic community. Although it would be unjust to try
+to describe the underlining philosophy behind Unix in one short
+paragraph, it is nonetheless important to realize that this new
+philosophy of computing was a revolutionary one. It encompassed
+freedom and individuality. It featured efficiency, flexibility,
+and versatility. It produced openness and a sense of community in
+a world of programmers and researchers. Without a sales force,
+without a marketing team, and without the support of hardware
+makers, the Unix operating system was enthusiastically embraced
+around the world. Therein lies the genius of Unix. </p>
+
+<p>Steve Chen </p>
+</body>
+</html>

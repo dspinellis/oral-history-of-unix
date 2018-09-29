@@ -1,0 +1,344 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Formal Methods</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>Formal Methods</h2>
+
+<h4>Mark Tygert</h4>
+
+<p>The Unix development group had a rich background in
+mathematical methods. Peter Weinberger had studied number theory
+as a professor at the University of Michigan. Brian Kernighan
+wrote his Ph.D. thesis on graph partitioning. Alfred Aho minored
+in mathematics as a graduate student. And M. Douglas McIlroy
+reports, &quot;I went to Oxford for a year, solely so I could
+imbibe denotational semantics from the source.&quot; </p>
+
+<p>Not surprisingly, then, the Unix group utilized formal methods
+very early in its history. In fact, Aho arrived at Bell
+Laboratories in 1967, and immediately began researching concepts
+that are now fundamental to computer science. In Kernighan's
+view, </p>
+
+<blockquote>
+    <p>The theory-based part of it [Unix] goes back to Al Aho, I
+    think, starting here [at Bell Labs] -- having just finished a
+    thesis at Princeton on a particular class of formal
+    languages, having worked with <a
+    href="http://www.cs.cornell.edu/faculty/annual_reports/hopcroft.htm">John
+    Hopcroft</a>, having had <a
+    href="http://www-db.stanford.edu/~ullman/">Jeff Ullman</a> as
+    best friend all the way through graduate school, when the
+    analysis of formal languages was the hot topic in computer
+    science. Computer science didn't really exist in those days,
+    but that was the topic. People were studying the properties
+    of languages [especially those useful for computing]. So,
+    when Al got here, he was still interested in that, and I
+    suspect that there were times when his management would wish
+    that he'd get off this damn language stuff and do something
+    that mattered. Fortunately, in the best tradition, he never
+    did. </p>
+</blockquote>
+
+<p>During the initial development of Unix, Aho co-authored many
+of the standard textbooks associated with computer languages and
+analysis of algorithms. Interestingly, all of these books include
+examples of programming within Unix. Through these texts, Aho,
+Hopcroft, and Ullman intertwined programming and Unix, while
+helping to give compiler design a firm theoretical basis. Aho
+relates, </p>
+
+<blockquote>
+    <p>So, in the early '70s, we [Aho and Ullman] wrote this
+    two-volume sequence, <cite>Theory of Parsing, Translation,
+    and Compiling</cite>, that attempted to distill the essence
+    of automata and language theory with applications to the
+    process of compilation. And, I think this was one of the
+    interesting demonstrations of putting a theoretical
+    foundation onto an important practical area of computer
+    science, that people in programming languages and compilers
+    are, I think, an indigenous part of computer science. </p>
+</blockquote>
+
+<p>Aho and Ullman wanted to formalize the construction of
+programming languages and their compilers. Aho recalls, </p>
+
+<blockquote>
+    <p>What we discovered when we wrote the theory of parsing
+    book...what we discovered was that the literature -- the
+    scientific literature, if you could call it that -- was very
+    inaccurate. These objects were so new, and the techniques for
+    dealing with them were so incomplete, that many of the claims
+    that were made and published about various parsing methods
+    were just wrong. The proofs did not hold. So one of the
+    things that Jeff [Ullman] and I did was to attempt to
+    understand what kind of techniques could be used to analyze
+    these formalisms, and also to put a clear picture into the
+    scientific literature -- what was true and what wasn't. </p>
+</blockquote>
+
+<p>Clearly, Aho was interested in theory at least partly for its
+own sake. However, theoretical work at Bell Laboratories involved
+much more than just theory. Researchers always attempted to
+create something useful. Aho reports, </p>
+
+<blockquote>
+    <p>And there's also a certain consulattive aspect to the work
+    that the Math Center used to do that we would be treated as
+    consultants by the rest of the company, who could be called
+    upon to help out, to help understand phenomena that was
+    important to the telephone company. But, they were given a
+    charter in which there were no holds barred in how they
+    solved those particular problems, and some very innovative
+    solutions came out of that. I think that kind of tradition
+    was inherited by the Computing Science Research Center [the
+    home of the Unix development group]. And I think it's a good
+    tradition to have. That...there were also very high standards
+    for the work and the people, that, no matter who came in, you
+    were expected to be the forefront of your field, and be able
+    to interact with the forefront of your field. There was
+    probably also an implication that the real contribution was
+    not just writing the paper, or, in fact, in many cases papers
+    were never written. But, the real contributions were the
+    ideas, and the refinement of the ideas, and showing people
+    how to use these ideas, to solve problems of interest. </p>
+</blockquote>
+
+<p>Of course, others had somewhat different viewpoints. As
+manager of the Unix development team, McIlroy regarded theory as
+strictly a means, rather than an end: </p>
+
+<blockquote>
+    <p>Most of us are more computer types than mathematicians....
+    I had, in my department, system builders like Thompson, and
+    theoretical computer scientists like Aho. And Aho plowed the
+    fields of language theory from '60.... He joined us in around
+    '66 -- just around the same time as Thompson. Handing out
+    paper after paper of slightly different models of parsing and
+    automata. And that was supported with the overt idea that,
+    one day out of it, this really would feed computing
+    practice.... When the sound theory of parsing went into a
+    compiler writing system, it became available to the masses.
+    It...there is a case where...there's absolutely no doubt
+    that, overtly, theory fed into what we do. There are lots of
+    other places where theory is an inspiration, or it's in the
+    back of your mind. </p>
+</blockquote>
+
+<p>But even though McIlroy subordinated theory to &quot;what we
+do,&quot; he realized that theory was absolutely essential:
+&quot;I think really that <code>yacc</code> [yet another
+compiler-compiler] and <code>grep</code> are what people hold up
+[as] the 'real tools' -- and they are the ones where we find a
+strong theoretical underpinning.&quot; <!--webbot
+bot="PurpleText"
+preview="Removed: &quot;Unix would have developed far differently were it not inextricably linked to formal methods.&quot;  At best, this would be a counterfactual guess, but you don't really have enough information about the subject to make such a judgment."
+--></p>
+
+<p>Interestingly, since some members of the Unix development team
+had such pragmatic, tool-oriented views, they invented their
+theoretically-based ideas in a somewhat peculiar manner. For
+instance, when the Unix project had just begun, Stephen C.
+Johnson asked Aho to construct a C parser for him. Aho remembers,
+</p>
+
+<blockquote>
+    <p>I foolishly decided to construct the parser by hand,
+    implementing one of these LR parser construction techniques
+    [a formalism from language theory]. And I had a huge sheet of
+    paper -- big piece of cardboard -- on which I carried out the
+    sets of items construction, usually while I was watching
+    television, 'cause it is such a trivial and mind-numbing
+    task. And, of course, I didn't get it right. And I gave this
+    piece of cardboard to Steve, and Steve would then encode it
+    into his computer program. After a while, he become so
+    frustrated with me, that I couldn't get it 100% right, he
+    wrote a program that automated this parser construction
+    technique. And that's how the tool <code>yacc</code> was
+    born. </p>
+</blockquote>
+
+<p>Soon after the birth of <code>yacc</code>, Michael Lesk,
+another Bell Labs scientist, created <code>lex</code>, a tool for
+creating lexical analyzers. <code>lex</code> could create
+programs that would take raw text, fresh from the fingertips of a
+programmer, and group the characters of the text into lexical
+units.<!--webbot bot="PurpleText"
+preview="&quot;Lexical&quot; inserted in place of &quot;meaningful&quot;.  The one thing a lexical unit is not, is meaningful."
+--> Then, a <code>yacc</code>-generated compiler could map these
+lexical units into object code, the binary code that computers
+actually run. Thus, by feeding <code>lex</code> with regular
+expressions (formalisms from language theory), and by feeding <code>yacc</code>
+with a specification of a context-free grammar (another formalism
+from language theory) and code for the actions associated with
+each grammatical unit, one could automatically construct a
+compiler for a programming language. </p>
+
+<p>Obviously, such automation depended upon the associated formal
+methods. The Unix group needed theory. Aho notes, </p>
+
+<blockquote>
+    <p>Well, with ad hoc methods you can do anything, but...at
+    least my point of view is that, if you have a scientific base
+    on which you can measure performance, and you can iterate and
+    improve your algorithms with this scientific understanding,
+    and then build an engineering design theory on that, you are
+    going to be unassailable in the work and some of the compiler
+    construction tools.... The other aspect of this is that it
+    improves software quality in a significant way, and
+    productivity in a significant way, 'cause you can write a
+    compiler much more quickly using these tools, than if you had
+    to do it from scratch. None of these stories that the first
+    FORTRAN compiler took dozens of staff years to produce.
+    Whereas now you could construct a compiler -- a significant
+    compiler -- as part of a classroom project in an
+    undergraduate computer science course. </p>
+</blockquote>
+
+<p>Clearly, then, theory had practical value.<!--webbot
+bot="PurpleText"
+preview="changed from &quot;could work wonders&quot;." --> Formal
+methods often encouraged efficiency and clean coding. In
+Weinberger's eyes, </p>
+
+<blockquote>
+    <p>If you have a theory-based program, you can believe you
+    got the last bug out. If you have a hacked-up program, all it
+    is is bugs -- surrounded by, you know, something that does
+    something. You never get the last bug out. So, we've got both
+    kinds. And it's partly the style of the programmer. Both
+    kinds are useful. But one kind's a lot easier to explain and
+    understand, even if it's not more useful. </p>
+</blockquote>
+
+<p>Aho prized formal techniques even more than Weinberger, as he
+reveals in the following tale: </p>
+
+<blockquote>
+    <p>Doug McIlroy, in the previous year, had had a summer
+    student who had taken a classical algorithm for constructing
+    a deterministic automaton from a regular expression and
+    looked for these patterns. And it was written in machine
+    language. I was astonished to discover that the program that
+    I had written ran several times faster that what this machine
+    language program did. And, in fact, this sort of became an
+    avocation of mine for a number of years subsequently, and the
+    improvement in performance of that program has gone up by
+    almost two orders of magnitude.... </p>
+</blockquote>
+
+<p>Without a doubt, the Unix group benefitted enormously from
+using formal methods. </p>
+
+<p>Yet, formalism would sometimes prove cumbersome and
+inefficient. Weinberger assesses early versions of the methods
+underlying <code>yacc</code> as follows: </p>
+
+<blockquote>
+    <p>The theory is correct. The theorems are correct. But the
+    implications aren't what they sound like. You learn...that's
+    one of the annoyances. Now, on the other hand, if you don't
+    base it on theory, it's just chaos; you say, 'Well, I can
+    hack it.' We have programs which are not based on theory, and
+    some of our quite successful programs are not based on
+    theory. </p>
+</blockquote>
+
+<p>Furthermore, on occasion the creators of Unix would make
+theoretical discoveries inadvertently. In attempt to make
+practical tools, they would generate new theories. For example,
+while implementing efficient mathematical routines, Bob Morris
+produced publishable techniques: </p>
+
+<blockquote>
+    <p>By and large, when I did things like writing sine, cosine,
+    tangent, exponential, and logarithm functions, I tried very
+    hard, to some success, to first do a very good job, and,
+    second, there was enough originality [<i>i.e.</i>, theory] in
+    it that most of the work of that sort that I did got
+    published. </p>
+</blockquote>
+
+<p>Indeed, Kernighan believes that practical concerns strongly
+influenced theoretical developments: </p>
+
+<blockquote>
+    <p>I think the reason [<code>yacc</code>] was well done is --
+    aside from the intrinsic brightness of the people involved,
+    and the fact that they picked good algorithms and continued
+    to refine them over the years -- I think it's the milieu of
+    other people sort of banging against it, and trying things
+    with it, and building things with it -- build up sort of a
+    collection of things, where you could look at it and say,
+    'Yeah, this is actually useful stuff. It's not an academic
+    exercise. It's genuinely a better way to do things than what
+    you might have had before.' </p>
+</blockquote>
+
+<p>So, practicality dominated the Unix group. Yet, a wide range
+of activities qualified as &quot;practical.&quot; For example,
+the abstruse research into language theory eventually fueled the
+automation of compiler construction, and therefore qualified as
+practical. Kernighan clarifies exactly how Bell Labs scientists
+were judged: </p>
+
+<blockquote>
+    <p>Impact is, I think, ultimately the criterion, but there's
+    quite a long view taken, and quite a broad view of what
+    impact is. So, somebody who does purely theoretical work --
+    but whose theoretical work affects the community in some
+    sense, either because other people take it and produce
+    artifacts, or because that person is able to shape a field,
+    or something like that -- that's fine. That's good work. That
+    has impact. It doesn't mean that you can see it in a
+    telephone or anything like that; it means that it has had an
+    effect -- a positive effect -- on something of substance. </p>
+</blockquote>
+
+<p>In this way, the Unix group practiced a distinctive type of
+theory. For Kernighan, </p>
+
+<blockquote>
+    <p>...it's [programming] different from at least pure
+    mathematicians; there is, in addition, the reward of utility
+    if you do it well. People come along and say, 'Hey, look what
+    I did!' Maybe mathematicians don't get any jollies when
+    somebody says, 'Oh, I used your theorem.' But I think people
+    who write programs do get a kick out of it when somebody
+    comes along and says, 'Hey, I used your program.' </p>
+</blockquote>
+
+<p>Thus, the creators of Unix valued theory for its utility.
+While speaking about <code>awk</code>, a scripting language
+invented by Aho, Weinberger, and Kernighan, Weinberger noted that
+&quot;a lot of the other aspects of the program are irrelevant
+compared to the fact that it does something useful.&quot;<!--webbot
+bot="PurpleText"
+preview="Removed: &quot;The Unix group had a decidedly unique outlook on theoretical techniques.&quot;  Again, you really don't know enough to say this, since you don't know anything about other outlooks on theoretical techniques elsewhere."
+--> As he puts it at another point: </p>
+
+<blockquote>
+    <p>When you prove a theorem, you now sort of know something
+    you didn't know before. But when you write a program, the
+    universe has changed. You could do something you couldn't do
+    before. And I think people are attracted to...these kinds of
+    things. I've always found thinking a lot of work. And
+    anything you can get the computer to do -- that's not what
+    you would call thinking.... And once the program is working,
+    it's working, and if it can do different forms of the
+    calculation for you, it's not just that it's faster, it's
+    also more accurate than doing them over and over by hand.... </p>
+</blockquote>
+
+<p>In short, formal methods were powerful, practical tools in the
+Unix architects' toolbox. </p>
+</body>
+</html>
