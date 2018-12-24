@@ -1,0 +1,116 @@
+{
+    "license": "other-open",
+    "contributors": [
+        {
+            "orcid": "0000-0003-4231-1897",
+            "affiliation": "Athens University of Economics and Business",
+            "type": "Editor",
+            "name": "Spinellis, Diomidis"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Aho, Al"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Condon, Joe"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Feldman, Stu"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Fraser, A.G."
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Kernighan, Brian"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "McIlroy, Doug"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Morris, Bob"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Morgan, Sam"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Ritchie, Dennis"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Tague, Berk"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Thompson, Ken"
+        },
+        {
+            "affiliation": "AT&T Bell Laboratories",
+            "type": "Other",
+            "name": "Weinberger, Peter"
+        }
+    ],
+    "language": "eng",
+    "title": "An Oral History of Unix",
+    "related_identifiers": [
+        {
+            "scheme": "url",
+            "identifier": "https://github.com/dspinellis/oral-history-of-unix",
+            "relation": "isSupplementTo"
+        },
+        {
+            "scheme": "url",
+            "identifier": "https://www.princeton.edu/~hos/Mahoney/unixhistory.htm",
+            "relation": "hasPart"
+        },
+        {
+            "scheme": "url",
+            "identifier": "https://github.com/dspinellis/oral-history-of-unix",
+            "relation": "isCompiledBy"
+        },
+        {
+            "scheme": "url",
+            "identifier": "https://dspinellis.github.io/oral-history-of-unix/index.html",
+            "relation": "isSupplementedBy"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.2525528",
+            "relation": "isVersionOf"
+        }
+    ],
+    "notes": "Original material retrieved from https://www.princeton.edu/~hos/Mahoney/unixhistory.htm on 2018-09-29. The interviews conducted in 1989. The 1998 publication date was obtained from Word document metadata.",
+    "version": "v1.0-site",
+    "upload_type": "other",
+    "keywords": [
+        "Unix",
+        "Interview"
+    ],
+    "publication_date": "1998-04-24",
+    "creators": [
+        {
+            "affiliation": "Princeton University",
+            "name": "Mahoney, Michael S."
+        }
+    ],
+    "access_right": "open",
+    "description": "<p>Work by the late Michael Sean Mahoney, Professor of the History of Science at Princeton University, to create a history of Unix.</p>"
+}

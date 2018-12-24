@@ -24,7 +24,7 @@ rm -rf *
 
 # Bring in current content
 cp -r ../www.princeton.edu/~hos/* .
-cp ../index.html .
+cp ../index.html ../.zenodo.json .
 
 if git diff --quiet ; then
   echo "No changes to the output on this push; exiting."
