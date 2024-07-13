@@ -10,8 +10,8 @@
 
 ## Creation
 This repository contains files retrieved from a subset of
-[an archived site](https://www.princeton.edu/~hos/Mahoney/)
-devoted to Michael Sean Mahoney, Professor of the History of Science at
+[an archived site](https://web.archive.org/web/20211215212716/https://www.princeton.edu/~hos/Mahoney/)
+devoted to late Michael Sean Mahoney, Professor of the History of Science at
 Princeton University.
 They comprise work he did, until his death in summer 2008, to create
 [a history of Unix based on interviews with the system's developers](https://www.princeton.edu/~hos/Mahoney/unixhistory.htm).
